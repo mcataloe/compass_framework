@@ -24,9 +24,6 @@ Use only truthful experience from the latest approved source resume or CV and th
 Keep it concise and role-specific.
 Do not include STRIDE analysis inside the cover letter.
 Do not invent technologies, metrics, ownership, credentials, employment history, or experience.
-
-Target role:
-[ROLE TITLE / COMPANY]
 ```
 
 ## Notes
