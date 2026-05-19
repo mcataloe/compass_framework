@@ -109,16 +109,18 @@ STRIDE-generated resume artifacts should be easy to convert into ATS-safe Word, 
 
 Default formatting guidance for Word/DOCX exports:
 
-- Name: 16–18 pt
-- Target title line: 12–13 pt
-- Section headers: 12–13 pt, bold or accent color
-- Company / role subheaders: 11–12 pt, bold
-- Body text: 10.5–11 pt
-- Skills inventory: 10.5–11 pt
+- Name: 16 pt
+- Target title line: 14 pt
+- Section headers: 13 pt, bold or accent color
+- Company / role subheaders: 12 pt, bold
+- Body text: 11 pt
+- Skills inventory: 11 pt
 - Line spacing: single
 - Paragraph spacing: 3–6 pt after paragraphs, reduced to 0–3 pt when page length exceeds the target
-- Margins: 0.5–0.7 inches
+- Margins: 0.75 inches
 - Layout: single-column for the main ATS version
+
+These font sizes are the default STRIDE resume formatting standard, not loose ranges. Only deviate when the user explicitly requests a different format or when a specific destination system requires it.
 
 Avoid ATS-risky formatting for standard resumes:
 
