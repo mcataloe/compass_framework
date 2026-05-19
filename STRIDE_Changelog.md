@@ -2,6 +2,23 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-05 — Exact ATS-Safe Word Formatting Defaults
+
+Updated STRIDE's ATS-safe Word resume formatting standard from loose ranges to exact default sizes:
+
+- Name: 16 pt
+- Target title line: 14 pt
+- Section headers: 13 pt, bold or accent color
+- Company / role subheaders: 12 pt, bold
+- Body text: 11 pt
+- Skills inventory: 11 pt
+- Margins: 0.75 inches
+- Line spacing: single
+- Paragraph spacing: 3–6 pt after paragraphs, reduced to 0–3 pt when page length exceeds the target
+- Layout: single-column for the main ATS version
+
+These are now the default STRIDE resume formatting values unless the user explicitly requests a different format or a destination system requires it.
+
 ## vNext 2026-05 — ATS-Safe Word Formatting Standard
 
 Added a formatting standard for clean ATS-safe Word resume outputs:
