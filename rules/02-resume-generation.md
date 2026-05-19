@@ -73,6 +73,72 @@ For staff-level and principal-level roles, emphasize:
 - Build-vs-buy and vendor evaluation
 - Security and compliance collaboration
 
+## Skills Formatting Standard
+
+STRIDE resumes should balance ATS parseability with human readability. Use simple, plain-text formatting that survives Markdown, DOCX, PDF, and applicant-tracking-system parsing.
+
+### Core Strength Areas and Strategic Positioning
+
+Use concise bullets for meaning-rich staff-level strengths, strategic capabilities, architectural themes, and product/platform positioning.
+
+Preferred use cases:
+
+- Core Strength Areas
+- Staff / Principal Engineering Positioning
+- Selected Architecture Patterns when short and curated
+- Role-specific product, platform, leadership, reliability, or architecture themes
+
+Bullets in these sections should communicate capability and seniority, not behave like exhaustive keyword dumps.
+
+### Technical Skills Inventory
+
+Use comma-separated category lines for dense technical inventories.
+
+Preferred pattern:
+
+```markdown
+## Technical Skills Inventory
+
+**Languages:** C#, TypeScript, JavaScript, Python, SQL, T-SQL, Ruby, VB.NET, VBA, HTML, CSS, SCSS, Razor, JSX/TSX
+
+**Backend & Application Platforms:** FastAPI, Express.js, Node.js, ASP.NET Core, Ruby on Rails, SQLAlchemy, Alembic, Prisma, Entity Framework, Pydantic
+
+**Databases & Data Tools:** PostgreSQL, SQL Server, MySQL, SQLite, DB2, DynamoDB, Athena, SSRS, SSIS, XML data processing
+
+**Cloud & Infrastructure:** AWS, AWS GovCloud, Azure, GCP, ECS, EKS, Fargate, Lambda, API Gateway, RDS, S3, CloudWatch, CloudTrail, Terraform, Docker, Kubernetes
+
+**Frontend:** React, Vite, Next.js, Angular, Vue, Mantine UI, Redux, Bootstrap
+
+**Testing & Delivery:** Jest, NUnit, Jasmine, RSpec, MSTest, TDD, BDD, API testing, GitLab CI/CD, Jenkins, CircleCI, GitHub Enterprise
+```
+
+This format keeps important keywords visible to ATS systems while reducing vertical bloat and improving recruiter readability.
+
+### Pipe-Separated Values
+
+Avoid pipe-separated lists as the default technical inventory format.
+
+Pipes may be used sparingly for very short top-line summaries, such as a compact selected-technology line, but should not replace categorized comma-separated inventory sections.
+
+Acceptable limited example:
+
+```markdown
+Platform Engineering | Backend Systems | PostgreSQL | Terraform | React | AWS | Distributed Systems
+```
+
+Do not use long pipe-separated lists that read as keyword stuffing or become visually noisy.
+
+### Formatting Anti-Patterns
+
+Avoid:
+
+- One bullet per skill in long technical inventory sections
+- Dense paragraph-style keyword blocks
+- Tables or multi-column skill layouts for ATS-first resumes
+- Overly long pipe-separated lists
+- Nonstandard symbols, icons, rating bars, or visual skill meters
+- Unsupported keywords included only because the job description mentions them
+
 ## Keyword Alignment
 
 Use the job description's terminology when truthful. Do not stuff keywords. Each major keyword should connect to real experience.
