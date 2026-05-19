@@ -70,6 +70,10 @@ STRIDE-tailored resumes should be application artifacts, not reproduced master C
 
 Default resume generation should stay length-bounded for the target use case: generally 3–4 pages for cold applications, 4–5 pages for Staff / Principal / Platform / Cloud / Federal / Architect roles when depth is justified, and unlimited only for explicitly requested master CV, full archive, federal-style, proposal, bid-support, or interview-dossier artifacts.
 
+Balanced remains the default resume density mode unless the user explicitly requests another mode.
+
+Sharp Apply is an opt-in 2-page resume mode for narrow cold applications, recruiter qualification screens, tightly matched roles, or user-directed resume-length experiments. Do not use Sharp Apply automatically for broad Staff, Principal, Platform, Cloud, Federal, or Architect roles unless the user explicitly requests it.
+
 Do not include a master CV link by default. Prefer LinkedIn, portfolio, project links, or "additional detail available upon request" language when supplemental detail is useful.
 
 ### Narrative Cohesion
