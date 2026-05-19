@@ -2,6 +2,16 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-05 — Resume Skills Formatting Refinement
+
+Updated resume-generation behavior to improve ATS parseability and human readability:
+
+- Core Strength Areas should use synthesized staff-level bullets instead of long one-keyword-per-line inventories.
+- Core Strength subsections should generally target 3–6 synthesized bullets and consolidate when they exceed 5–7 bullets.
+- Technical Skills Inventory should use comma-separated category lines for dense tool and technology coverage.
+- Pipe-separated lists should be limited to short top-line summaries only.
+- Resume prompt templates were updated to reference the skills formatting standard.
+
 ## vNext 2026-05 — Initial Repository Baseline
 
 Initialized the STRIDE framework repository with:
