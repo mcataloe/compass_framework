@@ -2,6 +2,17 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-05 — Sharp Apply Resume Mode
+
+Added Sharp Apply as an explicit opt-in resume density mode:
+
+- Balanced remains the default STRIDE resume mode and generally targets 3–4 pages.
+- Sharp Apply targets a tight 2-page application resume.
+- Sharp Apply should be used only when the user explicitly requests "Sharp Apply," "2-page resume," or equivalent language indicating a deliberately compressed artifact.
+- Sharp Apply is intended for narrow cold applications, recruiter qualification screens, tightly matched roles, and user-directed resume-length experiments.
+- Sharp Apply must preserve Staff-level signal through selected proof rather than breadth.
+- STRIDE should not automatically use Sharp Apply for broad Staff, Principal, Platform, Cloud, Federal, or Architect roles unless the user explicitly requests it.
+
 ## vNext 2026-05 — Resume Length Discipline
 
 Added framework-level resume length discipline to prevent application resumes from becoming reproduced master CVs:
