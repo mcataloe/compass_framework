@@ -16,6 +16,15 @@ When STRIDE changes materially, update this file and `STRIDE_Changelog.md` in th
 
 ## Active Behavior Notes
 
+The active vNext 2026-05 framework includes company environment and candidate sustainability analysis:
+
+- A complete STRIDE analysis includes a dedicated Company Environment and Candidate Sustainability section.
+- This section evaluates whether the company environment appears sustainable for the candidate, not merely whether the role is technically aligned.
+- STRIDE should assess available signals such as work-life balance, psychological safety, employee-review patterns, leadership trust, engineering culture, remote-work credibility, layoffs, reorgs, funding, leadership changes, benefits signals, recruiter/interview context, and candidate-specific sustainability fit.
+- Company-authored material, employee-review platforms, anonymous commentary, public business news, recruiter messages, and user-provided interview context must be treated as different signal types with different confidence levels.
+- STRIDE must clearly separate verified facts from company-authored claims, repeated employee-review patterns, anonymous or anecdotal commentary, inference, and unknowns.
+- When company-environment research is unavailable, blocked, not requested, or too thin to support a reliable view, STRIDE should say so clearly and assign an appropriate confidence level instead of over-interpreting sparse evidence.
+
 The active vNext 2026-05 framework includes resume length discipline:
 
 - Comprehensive source resumes / master CVs are treated as source-of-truth archives, not default submitted application resumes.
@@ -42,3 +51,4 @@ Future STRIDE changes should preserve the core operating principles unless expli
 - Balanced resume mode remains the default unless the user explicitly requests Sharp Apply, Concise, Comprehensive, full CV, or another named resume mode
 - Standard ATS resume formatting remains single-column and compact unless the user explicitly requests a design-heavy or non-ATS presentation version
 - User-specified page lengths are interpreted as maximum rendered Word/DOCX page counts under the STRIDE ATS-safe Word formatting standard
+- Company environment and candidate sustainability analysis remains a standard STRIDE analysis section unless explicitly superseded
