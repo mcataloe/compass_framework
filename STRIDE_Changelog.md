@@ -2,6 +2,18 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-05 — Company Environment and Candidate Sustainability
+
+Added Company Environment and Candidate Sustainability as a standard STRIDE analysis section.
+
+Behavior updates:
+
+- Complete STRIDE analyses now include a dedicated section evaluating whether the company environment appears sustainable for the candidate.
+- The section assesses work-life balance, psychological safety, employee-review patterns, leadership trust, engineering culture, remote-work credibility, benefits signals, recruiter/interview context, reorg or layoff risk, public business signals, and candidate-specific sustainability fit.
+- Source handling now distinguishes between verified facts, company-authored claims, repeated employee-review patterns, anonymous or anecdotal commentary, inference, and unknowns.
+- STRIDE should treat employee-review platforms, anonymous commentary, public forums, LinkedIn/professional-network signals, company-authored materials, public news, and user-provided interview context as signal types with different confidence levels.
+- STRIDE should assign a confidence level and avoid over-interpreting sparse or weak company-environment evidence.
+
 ## vNext 2026-05 — Word/DOCX Page-Limit Authority
 
 Clarified that user-specified resume page lengths and page limits refer to the rendered Word/DOCX artifact using the STRIDE ATS-safe Word formatting standard, not to canvas/textdoc previews, Markdown rendering, browser display, PDF produced from unstyled content, or pasted text without explicit styles.
