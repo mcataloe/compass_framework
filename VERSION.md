@@ -1,6 +1,6 @@
 # COMPASS Version
 
-Current COMPASS Version: vNext 2026-05.1
+Current COMPASS Version: vNext 2026-05.2
 
 Former Name: STRIDE
 
@@ -28,13 +28,16 @@ If a prompt references STRIDE after this migration, interpret it as COMPASS unle
 
 ## Active Behavior Notes
 
-The active vNext 2026-05.1 framework includes the STRIDE-to-COMPASS rename and generalization:
+The active vNext 2026-05.2 framework includes the STRIDE-to-COMPASS rename, generalization, and Layer 0 checkpoint artifact behavior:
 
 - COMPASS is a field-agnostic, source-grounded framework for turning messy inputs into verified, defensible outputs.
 - STRIDE is now the legacy name and may be treated as the career/job-search domain profile of COMPASS during migration.
 - COMPASS preserves the Layer 0 verified source-of-truth onboarding workflow added under STRIDE.
 - COMPASS may support multiple domain profiles, including careers, software/product planning, consulting deliverables, business strategy, research planning, grants, policy documents, and personal knowledge systems.
 - Core behavior remains truth-first, source-grounded, checkpointed, and claim-ledger-driven.
+- Layer 0 now requires checkpoint artifact generation at every committed round.
+- Layer 0 setup must disclose whether direct datastore writes are available before asking setup questions.
+- If direct writes are unavailable, Layer 0 must generate downloadable or copy-ready files and clearly instruct the user where to upload them.
 
 ## Compatibility Rule
 
