@@ -49,9 +49,11 @@ Layer 0 must support pause/resume behavior. Users may say `I need a break`, `pau
 
 Layer 0 storage behavior must be honest:
 
+- Before asking setup questions, disclose whether direct write/update access to the requested datastore is available.
 - If direct Google Drive write/update access is available, save or update the Layer 0 source-of-truth files in the user's selected folder.
-- If direct write/update access is not available, produce copy-ready files and clearly tell the user what to save where.
-- Never claim that files were saved when they were only generated in chat.
+- If direct write/update access is unavailable or uncertain, produce downloadable or copy-ready checkpoint files and clearly tell the user what to save where.
+- When practical, package changed checkpoint files into a downloadable ZIP bundle for upload to the target datastore.
+- Never claim that files were saved when they were only generated in chat, generated locally, or offered for download.
 
 ## Career Profile
 
