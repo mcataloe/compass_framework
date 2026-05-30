@@ -1,14 +1,14 @@
 # COMPASS Framework
 
-COMPASS is a general-purpose, source-grounded framework for turning messy inputs into verified, defensible outputs.
+COMPASS is a career-focused, source-grounded framework for turning messy career inputs into verified, defensible job-search outputs.
 
 COMPASS stands for:
 
 > Capture, Organize, Map, Probe, Approve, Synthesize, Store
 
-The framework is designed to answer a reusable question across domains:
+The framework is designed to answer a reusable career question:
 
-> Can a reviewer quickly understand the value, evidence, risks, assumptions, and defensible next action?
+> Can a recruiter or hiring team quickly understand the candidate's value, evidence, risks, assumptions, and defensible next action?
 
 COMPASS is the canonical framework. New work should use COMPASS terminology and canonical files.
 
@@ -31,9 +31,9 @@ Compatibility shims for earlier naming have been removed. Prompt templates and r
 
 Layer 0 is COMPASS's verified source-of-truth onboarding workflow.
 
-Use Layer 0 when a new person, project, product idea, research initiative, career record, consulting deliverable, grant proposal, strategy document, or other knowledge domain needs a durable source of truth.
+Use Layer 0 when a career record, job-search profile, resume source set, recruiter positioning file, interview-prep record, or other career source needs a durable source of truth.
 
-Layer 0 accepts source documents such as prior drafts, notes, resumes, cover letters, LinkedIn exports, product briefs, project notes, research material, performance reviews, certification records, meeting notes, architecture documents, strategy memos, or other reference material. These sources are treated as evidence leads, not automatic truth.
+Layer 0 accepts source documents such as prior resumes, cover letters, LinkedIn exports, performance reviews, certification records, portfolio notes, recruiter notes, interview notes, job descriptions, achievement lists, project summaries, or other career reference material. These sources are treated as evidence leads, not automatic truth.
 
 Default setup for non-technical users:
 
@@ -53,13 +53,9 @@ Layer 0 storage behavior must be honest:
 - If direct write/update access is not available, produce copy-ready files and clearly tell the user what to save where.
 - Never claim that files were saved when they were only generated in chat.
 
-## Domain Profiles
+## Career Profile
 
-COMPASS is field-agnostic. Domain profiles may specialize the core workflow for particular use cases.
-
-Initial domain profile:
-
-- Careers / job-search profile: role evaluation, hiring-manager scan optimization, ATS and semantic alignment, master CV claim-ledger construction, truth-preserving resume tailoring, cover letters, recruiter-specific positioning, compensation and remote-work risk analysis, interview objection prediction, and evidence mapping from source records to job descriptions.
+COMPASS is career-focused. The active profile is the careers / job-search profile: role evaluation, hiring-manager scan optimization, ATS and semantic alignment, master CV claim-ledger construction, truth-preserving resume tailoring, cover letters, recruiter-specific positioning, compensation and remote-work risk analysis, interview objection prediction, and evidence mapping from source records to job descriptions.
 
 ## Branch Policy
 
@@ -77,4 +73,4 @@ If repository access fails, the assistant should say so clearly and should not r
 
 COMPASS outputs must use the latest approved source-of-truth record, verified Layer 0 claim ledger when available, do-not-claim list when available, or user-provided source material for the session.
 
-COMPASS must not invent technologies, ownership, certifications, credentials, metrics, employers, responsibilities, project history, product claims, research findings, business outcomes, or other domain claims.
+COMPASS must not invent technologies, ownership, certifications, credentials, metrics, employers, responsibilities, project history, career achievements, or other career claims.

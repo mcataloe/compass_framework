@@ -2,6 +2,17 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-05.4 - Career-Focused Scope Correction
+
+Corrected active COMPASS scope back to careers / job-search.
+
+Behavior updates:
+
+- COMPASS is a career-focused framework, not a field-agnostic framework.
+- Product, strategy, research, consulting, grant, policy, and personal knowledge workflows are out of scope unless the project owner explicitly reopens scope.
+- Updated active docs and rules to describe career source records, job-search analysis, career artifacts, and recruiter / hiring-team review.
+- Preserved TruthGuard, source-grounding, phase separation, Layer 0 checkpointing, and COMPASS-only terminology.
+
 ## vNext 2026-05.3 - COMPASS-Only Repository Canonicalization
 
 Removed predecessor-name compatibility from active repository files.
@@ -12,7 +23,7 @@ Behavior updates:
 - Removed legacy redirect prompt files.
 - Removed legacy compatibility cleanup helper files.
 - Updated repository guidance so future work uses COMPASS terminology only.
-- Preserved the active field-agnostic, source-grounded, TruthGuard-centered behavior.
+- Preserved the active source-grounded, TruthGuard-centered behavior.
 
 ## vNext 2026-05.2 — Layer 0 Checkpoint Artifact Generation and Storage Disclosure
 
@@ -29,7 +40,7 @@ Behavior updates:
 - Layer 0 must not claim files were saved unless they were actually written and verified in the datastore.
 - Expanded the Layer 0 checkpoint example to include storage status, generated artifacts, direct-write availability, and next safe action.
 
-## vNext 2026-05.1 - Generalize Framework
+## vNext 2026-05.1 - Generalize Framework (Superseded by vNext 2026-05.4)
 
 COMPASS stands for:
 
@@ -45,11 +56,13 @@ Behavior updates:
 - Updated Layer 0 from career-only source-of-truth onboarding to general verified source-of-truth onboarding.
 - Preserved career-specific resume, cover letter, recruiter, ATS, compensation, remote-work, and interview-prep rules as the initial careers profile.
 
+Note: The field-agnostic scope from this entry was superseded by `vNext 2026-05.4`; active COMPASS scope is careers / job-search.
+
 ## vNext 2026-05 — Layer 0 Verified Career Source-of-Truth Onboarding
 
 Added Layer 0 as the truth-first onboarding workflow for building a verified career source of truth and master CV from user-provided documents and cross-examination.
 
-This behavior is now generalized under COMPASS Layer 0.
+This behavior was later generalized in `vNext 2026-05.1`, then superseded by the `vNext 2026-05.4` career-focused scope correction.
 
 ## vNext 2026-05 — Prompt Authority Governance
 

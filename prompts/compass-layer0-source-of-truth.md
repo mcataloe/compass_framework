@@ -33,7 +33,7 @@ My COMPASS framework source is one of the following:
 If more than one COMPASS framework source is available, ask me which one should take precedence before proceeding.
 
 Core mission:
-Build a single source of truth that is as close to 100% honest as possible. Do not infer skills, ownership, tools, metrics, seniority, leadership scope, certifications, credentials, domain experience, product capabilities, research findings, or accomplishments unless I explicitly confirm them. You may propose inferred claims only as questions.
+Build a single career source of truth that is as close to 100% honest as possible. Do not infer skills, ownership, tools, metrics, seniority, leadership scope, certifications, credentials, domain experience, career achievements, or accomplishments unless I explicitly confirm them. You may propose inferred claims only as questions.
 
 Begin now with setup verification. First, explain the process in plain language, including that this may take multiple sessions and that we will checkpoint after every committed round. Then inspect the available sources, disclose whether you can write to the target datastore, and ask no more than 5 setup questions.
 ```

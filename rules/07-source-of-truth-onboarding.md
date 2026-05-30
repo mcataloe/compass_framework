@@ -117,7 +117,7 @@ When relevant, classify claims by depth:
 - Owned
 - Led others
 
-For non-career domains, adapt this ladder to claim confidence, ownership, implementation depth, or source certainty.
+Use this ladder for career claims. Do not adapt Layer 0 into non-career domains unless the project owner explicitly reopens COMPASS scope.
 
 ## Do-Not-Claim Rule
 

@@ -17,9 +17,15 @@ Keep the repository aligned around COMPASS-only terminology and source-of-truth 
 
 Do not maintain predecessor-name redirect files or independent compatibility policy. If an old external prompt points at removed files, route the user to the current COMPASS prompt or rule file instead.
 
+## Scope correction
+
+COMPASS active scope was corrected back to careers / job-search in `vNext 2026-05.4`.
+
+Do not add product, strategy, research, consulting, grant, policy, or personal knowledge examples or prompts unless the project owner explicitly reopens scope.
+
 ## Version bump
 
-Updated to `vNext 2026-05.3`.
+Updated to `vNext 2026-05.4`.
 
 ## Recommended PR title
 

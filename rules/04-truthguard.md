@@ -18,7 +18,7 @@ Before producing an artifact, check for:
 - Unsupported ownership claims
 - Unsupported leadership scope
 - Timeline inconsistencies
-- Employer, client, project, product, or source-name misuse
+- Employer, client, project, role, or source-name misuse
 - Confusion between exposure, contribution, leadership, and ownership
 - Claims introduced only because a target document asked for them
 

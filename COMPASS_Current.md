@@ -1,12 +1,12 @@
 # COMPASS Current Framework
 
-COMPASS is a phased, source-grounded framework for turning messy inputs into verified, defensible outputs.
+COMPASS is a phased, source-grounded career framework for turning messy career inputs into verified, defensible job-search outputs.
 
-COMPASS focuses on whether a reviewer, stakeholder, hiring team, evaluator, decision-maker, or future user can quickly understand the value, evidence, assumptions, risks, and recommended next action.
+COMPASS focuses on whether a recruiter, hiring manager, hiring team, or career stakeholder can quickly understand the candidate's value, evidence, assumptions, risks, and recommended next action.
 
 ## Core Question
 
-Can the intended reviewer quickly understand the value, evidence, risks, assumptions, and defensible next action?
+Can the intended career reviewer quickly understand the candidate's value, evidence, risks, assumptions, and defensible next action?
 
 ## Default Workflow
 
@@ -24,7 +24,7 @@ If a Layer 0 claim ledger or do-not-claim list exists, use it as the strongest s
 
 ## Standard COMPASS Analysis Sections
 
-A complete COMPASS analysis should include the sections relevant to the domain:
+A complete COMPASS career analysis should include the sections relevant to the role, recruiter request, or career target:
 
 1. Fit or value summary
 2. Fast reviewer scan
@@ -40,15 +40,7 @@ A complete COMPASS analysis should include the sections relevant to the domain:
 
 ## Recommendation Values
 
-Use one of the following general recommendation values unless a domain profile defines a more specific set:
-
-- Pass
-- Proceed
-- Proceed cautiously
-- Relationship-only / information-only
-- Top choice
-
-Career-domain compatibility values:
+Use one of the following recommendation values for career workflows:
 
 - Pass
 - Apply
@@ -81,7 +73,7 @@ Layer 0 must support pause/resume checkpoints and must be honest about whether i
 
 ### Truth First
 
-Never invent technologies, metrics, credentials, responsibilities, ownership, employers, timelines, project names, product capabilities, research findings, business outcomes, or other material claims.
+Never invent technologies, metrics, credentials, responsibilities, ownership, employers, timelines, project names, career achievements, business outcomes, or other material claims.
 
 ### Evidence Mapping
 
@@ -89,11 +81,11 @@ Every strong claim in an artifact should be traceable to source material, a user
 
 Target documents or requirements may identify useful terminology and needed capabilities, but they do not create source experience or facts. If a target asks for something not present in the verified source material, flag the gap or use truthful adjacent phrasing instead of adding the claim.
 
-### Domain Profiles
+### Career Profile
 
-COMPASS is field-agnostic. Domain profiles may specialize the framework for a particular use case, but they may not weaken source-grounding, TruthGuard, artifact cleanliness, or claim-verification rules.
+COMPASS is career-focused. Product, strategy, research, consulting, grant, policy, and personal knowledge workflows are out of scope unless the project owner explicitly reopens scope.
 
-The initial career-domain profile covers role evaluation, resumes, cover letters, recruiter responses, ATS alignment, compensation and remote-work risk, and interview preparation.
+The active career profile covers role evaluation, resumes, cover letters, recruiter responses, ATS alignment, compensation and remote-work risk, and interview preparation.
 
 ### Reviewer Readability
 
@@ -105,7 +97,7 @@ Generated artifacts should be purpose-built deliverables, not reproduced source 
 
 ### Objection Prediction
 
-COMPASS should identify likely reviewer, stakeholder, evaluator, recruiter, funder, customer, or decision-maker objections before materials are generated.
+COMPASS should identify likely recruiter, hiring-manager, interviewer, or career-stakeholder objections before materials are generated.
 
 ### Artifact Separation
 

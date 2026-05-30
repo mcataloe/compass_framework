@@ -323,19 +323,19 @@ Project name:
 
 Project summary:
 
-COMPASS is a field-agnostic, source-grounded framework for turning messy inputs into verified, defensible outputs. It stands for Capture, Organize, Map, Probe, Approve, Synthesize, Store. The repository is a Markdown-based framework source containing canonical behavior docs, durable rules, launcher prompts, and examples; it is not currently documented as an application runtime.
+COMPASS is a career-focused, source-grounded framework for turning messy career inputs into verified, defensible job-search outputs. It stands for Capture, Organize, Map, Probe, Approve, Synthesize, Store. The repository is a Markdown-based framework source containing canonical behavior docs, durable rules, launcher prompts, and examples; it is not currently documented as an application runtime.
 
 Application type and maturity:
 
 - Type: Markdown documentation, prompt, rule, and example repository.
-- Maturity: Active framework; current version is `vNext 2026-05.3`.
+- Maturity: Active framework; current version is `vNext 2026-05.4`.
 - Canonical branch: `main`.
 - Product runtime: No frontend, backend, package runtime, database, or deployment target is documented in this repository.
 
 Primary users and use cases:
 
-- Users: assistants/agents running COMPASS workflows, reviewers, stakeholders, hiring teams, evaluators, decision-makers, and future users.
-- Use cases: source-of-truth onboarding, claim verification, evidence mapping, analysis, artifact generation, career/job-search materials, product briefs, strategy memos, research plans, consulting deliverables, grants, policy documents, and personal knowledge systems.
+- Users: assistants/agents running COMPASS workflows, candidates, reviewers, recruiters, hiring managers, hiring teams, and career stakeholders.
+- Use cases: career source-of-truth onboarding, claim verification, evidence mapping, role analysis, resume tailoring, cover letters, recruiter responses, application answers, compensation and remote-work risk review, and interview preparation.
 
 Primary product/architecture docs:
 
@@ -515,7 +515,7 @@ Known source status:
 - Canonical active files: `README.md`, `VERSION.md`, `COMPASS_Current.md`, `COMPASS_Changelog.md`, `rules/`, COMPASS-named prompts, and `examples/`.
 - Deprecated compatibility shims and predecessor-name files have been removed; do not restore them without explicit approval.
 - Migration notes record the COMPASS-only canonicalization posture.
-- The active version is `vNext 2026-05.3`; older changelog entries remain historical context.
+- The active version is `vNext 2026-05.4`; older changelog entries remain historical context.
 - The global LEAP shortcut references `/prompts/leap-recon-standard.md`; that file is not present in this repository as currently structured.
 
 ---
@@ -535,10 +535,10 @@ Project-specific architecture constraints:
 
 - Keep durable behavior in `rules/` and canonical framework docs, not only in launcher prompts.
 - Keep launcher prompts concise and deferential to active rule files.
-- Keep generated artifact rules separate from analysis and strategy rules.
+- Keep generated artifact rules separate from analysis and career-positioning rules.
 - Preserve phase separation: Layer 0/source-of-truth onboarding, analysis, artifact generation, supporting narrative, and follow-up/revision.
-- Preserve TruthGuard and evidence mapping across all domain profiles.
-- Add domain-specific behavior as profiles or targeted rules without weakening source-grounding, TruthGuard, artifact cleanliness, or claim-verification rules.
+- Preserve TruthGuard and evidence mapping across the career profile.
+- Add career-specific behavior as targeted rules without weakening source-grounding, TruthGuard, artifact cleanliness, or claim-verification rules.
 - Use COMPASS terminology only in active rules, prompts, examples, and project guidance.
 
 ---
@@ -579,7 +579,7 @@ Project-specific contract rules:
 
 - Preserve compatibility for current COMPASS launcher prompts unless the change intentionally supersedes them.
 - When changing output behavior, update the relevant rule file first, then update prompts/examples/changelog as needed.
-- Keep recommendation values consistent with `COMPASS_Current.md` unless a domain profile explicitly defines a narrower set.
+- Keep career recommendation values consistent with `COMPASS_Current.md`.
 - Do not create parallel policy definitions in examples or prompts that conflict with `rules/`.
 
 ---
@@ -618,7 +618,7 @@ If the project uses AI-assisted parsing, evaluation, generation, recommendations
 
 Project-specific AI rules:
 
-- Never invent technologies, employers, responsibilities, achievements, credentials, clearances, certifications, metrics, team sizes, budgets, dates, ownership claims, product capabilities, research findings, business outcomes, or other material claims.
+- Never invent technologies, employers, responsibilities, achievements, credentials, clearances, certifications, metrics, team sizes, budgets, dates, ownership claims, career achievements, business outcomes, or other material claims.
 - Every strong claim in an artifact should trace to source material, a user's direct statement, or a user-confirmed Layer 0 claim ledger entry.
 - Inferred claims are allowed only as questions until confirmed.
 - Direct evidence may be used; adjacent evidence must be reframed carefully; inferred but unsafe claims require confirmation; missing claims must be omitted or identified as gaps.

@@ -4,7 +4,7 @@ This file governs COMPASS analysis behavior.
 
 ## Analysis Trigger
 
-Run analysis when the user asks for fit assessment, evaluation, comparison, recommendation, strategy, evidence mapping, or risk review.
+Run analysis when the user asks for career fit assessment, role evaluation, job comparison, recruiter positioning, application recommendation, evidence mapping, or risk review.
 
 Do not generate later artifacts unless requested.
 
@@ -20,7 +20,7 @@ A COMPASS analysis should:
 6. Predict likely objections.
 7. Recommend a next action.
 
-## Career-Domain Sections
+## Career Analysis Sections
 
 For career/job-search analysis, include:
 

@@ -4,7 +4,7 @@ This file defines COMPASS artifact behavior.
 
 ## Artifact Types
 
-COMPASS may generate canonical source records, claim ledgers, analysis reports, tailored resumes, recruiter-targeted resumes, cover letters, recruiter responses, application answers, follow-up messages, interview preparation notes, product briefs, strategy memos, research plans, consulting deliverables, and other domain-specific artifacts.
+COMPASS may generate canonical career records, claim ledgers, analysis reports, tailored resumes, recruiter-targeted resumes, cover letters, recruiter responses, application answers, follow-up messages, interview preparation notes, compensation notes, and other career-specific artifacts.
 
 ## Separation Rule
 

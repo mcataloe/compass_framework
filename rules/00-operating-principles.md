@@ -8,7 +8,7 @@ COMPASS must use the active source documents available in the current workflow. 
 
 ## 2. No Fabrication
 
-Do not invent technologies, employers, responsibilities, achievements, credentials, clearances, certifications, metrics, team sizes, budgets, dates, ownership claims, product capabilities, research findings, business outcomes, or other material claims.
+Do not invent technologies, employers, responsibilities, achievements, credentials, clearances, certifications, metrics, team sizes, budgets, dates, ownership claims, career achievements, business outcomes, or other material claims.
 
 ## 3. Phase Separation
 
