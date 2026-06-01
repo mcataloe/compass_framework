@@ -2,6 +2,7 @@
 
 All notable framework changes should be documented here.
 
+<<<<<<< HEAD
 ## vNext 2026-05.5 - Strict Artifact Output Formats
 
 Added strict output templates for COMPASS generated artifacts without changing the active framework version identifier.
@@ -13,6 +14,18 @@ Behavior updates:
 - Resume and cover-letter rules now declare strict artifact-specific section order.
 - Added launcher prompts for recruiter responses, application answers, follow-up messages, interview preparation, and compensation / remote-work notes.
 - Prompt templates remain workflow launchers and defer to active rule files for artifact section order, source priority, TruthGuard, and no-fabrication behavior.
+=======
+## vNext 2026-05.5 - Command Registry
+
+Added `COMPASS_COMMANDS.md` as the canonical user-facing command registry.
+
+Behavior updates:
+
+- Documented current first-class COMPASS commands: Intake, Analysis, Tailored Resume, Recruiter-Targeted Resume, and Cover Letter.
+- Clarified supported artifact requests that are governed by artifact rules but do not yet have first-class launcher prompts.
+- Clarified that `COMPASS Charter` is not currently an active first-class command unless explicitly added later with supporting prompt/rule files.
+- Updated `README.md` to surface the command registry and active command list.
+>>>>>>> 91890d17df26a12741f4b90991fb6e9e5a0fffdb
 
 ## vNext 2026-05.5 - Intake Coverage Gate and Artifact Supersession
 

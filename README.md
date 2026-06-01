@@ -18,6 +18,7 @@ Use these files as the active source of truth:
 
 - `VERSION.md` — current framework version and status
 - `COMPASS_Current.md` — canonical active framework definition
+- `COMPASS_COMMANDS.md` — canonical user-facing command registry
 - `COMPASS_Changelog.md` — framework change history
 - `rules/` — durable behavior rules
 - `rules/07-compass-intake.md` — COMPASS Intake source-of-truth onboarding and claim verification rules
@@ -35,6 +36,20 @@ Use these files as the active source of truth:
 - `examples/` — example output patterns
 
 Compatibility shims for earlier naming have been removed. Prompt templates and rule files should use COMPASS terminology only.
+
+## COMPASS Commands
+
+The active user-facing command surface is defined in `COMPASS_COMMANDS.md`.
+
+Current first-class commands:
+
+- COMPASS Intake
+- COMPASS Analysis
+- COMPASS Tailored Resume
+- COMPASS Recruiter-Targeted Resume
+- COMPASS Cover Letter
+
+Additional supported artifact requests are governed by `rules/06-artifact-rules.md` and the relevant framework rules.
 
 ## COMPASS Intake
 
