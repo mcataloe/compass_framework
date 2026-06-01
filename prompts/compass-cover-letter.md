@@ -10,6 +10,7 @@ Required framework files:
 - rules/03-cover-letter-generation.md
 - rules/04-truthguard.md
 - rules/06-artifact-rules.md
+- rules/08-human-authenticity.md
 
 Treat this prompt as a workflow launcher, not as an independent source of cover-letter, artifact, TruthGuard, source-priority, or no-fabrication rules.
 

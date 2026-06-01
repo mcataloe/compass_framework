@@ -2,6 +2,18 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-05.5 - Human Authenticity Artifact Rules
+
+Added Human Authenticity behavior for external career artifacts without changing the active framework version identifier.
+
+Behavior updates:
+
+- Added `rules/08-human-authenticity.md` as the durable rule for truthful, specific, natural, reviewer-readable, ATS-safe, and interview-defensible external artifacts.
+- Integrated Human Authenticity with operating principles, resume generation, cover letter generation, artifact rules, and TruthGuard.
+- Updated external artifact prompt launchers and command required-file lists to load the new rule.
+- Clarified that AI-assisted drafting is allowed only for clarity, organization, role alignment, concision, reviewer readability, and truthful presentation of verified or source-backed experience.
+- Prohibited fake humanization, hidden formatting tricks, unsupported claim smoothing, and AI-detector evasion tactics.
+
 ## vNext 2026-05.5 - Intake Artifact Templates
 
 Made COMPASS Intake checkpoint artifact output more concrete without changing the active framework version identifier.

@@ -22,6 +22,7 @@ Use these files as the active source of truth:
 - `COMPASS_Changelog.md` — framework change history
 - `rules/` — durable behavior rules
 - `rules/07-compass-intake.md` — COMPASS Intake source-of-truth onboarding and claim verification rules
+- `rules/08-human-authenticity.md` - truthful human-authenticity and reviewer-signal rules for external artifacts
 - `prompts/` — reusable prompt templates
 - `prompts/compass-intake.md` — reusable COMPASS Intake launcher prompt
 - `prompts/compass-analysis.md` — reusable COMPASS analysis launcher prompt
@@ -91,6 +92,8 @@ Intake storage behavior must be honest:
 COMPASS is career-focused. The active profile is the careers / job-search profile: role evaluation, hiring-manager scan optimization, ATS and semantic alignment, master CV claim-ledger construction, truth-preserving resume tailoring, cover letters, recruiter-specific positioning, compensation and remote-work risk analysis, interview objection prediction, and evidence mapping from source records to job descriptions.
 
 Generated artifacts must follow the strict output templates in `rules/06-artifact-rules.md` unless the user explicitly requests a different format. Prompt templates are launchers and must defer to the active rule files for artifact section order, source priority, TruthGuard, and clean-deliverable requirements.
+
+External career artifacts should also follow `rules/08-human-authenticity.md` so resumes, cover letters, recruiter responses, application answers, follow-up messages, and similar deliverables remain specific, source-grounded, natural, reviewer-readable, and interview-defensible without using fake humanization or AI-detector evasion tactics.
 
 ## Branch Policy
 

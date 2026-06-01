@@ -119,6 +119,7 @@ Build a COMPASS resume for this job description.
 - `rules/02-resume-generation.md`
 - `rules/04-truthguard.md`
 - `rules/06-artifact-rules.md`
+- `rules/08-human-authenticity.md`
 - `prompts/compass-tailored-resume.md`
 
 **Output discipline:** The resume artifact must not include COMPASS analysis, scoring, risk notes, ATS matrix commentary, compensation strategy, recruiter objection notes, private tactical notes, or framework commentary.
@@ -153,6 +154,7 @@ Build a Staff Engineer recruiter resume with COMPASS.
 - `rules/02-resume-generation.md`
 - `rules/04-truthguard.md`
 - `rules/06-artifact-rules.md`
+- `rules/08-human-authenticity.md`
 - `prompts/recruiter-targeted-resume.md`
 
 **Output discipline:** Preserve broad recruiter positioning while respecting TruthGuard, source-grounding, user-specific style rules, and do-not-claim constraints.
@@ -187,6 +189,7 @@ Write the COMPASS cover letter for the job we analyzed.
 - `rules/03-cover-letter-generation.md`
 - `rules/04-truthguard.md`
 - `rules/06-artifact-rules.md`
+- `rules/08-human-authenticity.md`
 - `prompts/compass-cover-letter.md`
 
 **Output discipline:** Use a calm, professional, forward-looking tone. Do not include internal COMPASS analysis, ATS tables, compensation strategy, objection notes, or private tactical notes inside the cover letter artifact.

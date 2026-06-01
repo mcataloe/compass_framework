@@ -9,6 +9,7 @@ Required framework files:
 - rules/00-operating-principles.md
 - rules/04-truthguard.md
 - rules/06-artifact-rules.md
+- rules/08-human-authenticity.md
 
 Treat this prompt as a workflow launcher, not as an independent source of follow-up-message, artifact, TruthGuard, source-priority, or no-fabrication rules.
 

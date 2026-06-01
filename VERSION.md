@@ -32,6 +32,7 @@ The active vNext 2026-05.5 framework includes COMPASS-only terminology, career-f
 - After verified ingestion, the canonical source-of-truth record, approved claim ledger, and do-not-claim register supersede imported artifacts for downstream use.
 - Generated artifacts are downstream outputs, not factual authorities, unless separately imported and verified through Intake.
 - Generated artifact types use strict output templates from `rules/06-artifact-rules.md` unless the user explicitly requests a different format.
+- External career artifacts use `rules/08-human-authenticity.md` to preserve truthful specificity, reviewer readability, candidate-specific voice, ATS-safe structure, and interview-defensible claims without fake humanization or AI-detector evasion tactics.
 - Intake setup must disclose whether direct datastore writes are available before asking setup questions.
 - If direct writes are unavailable, Intake must generate downloadable or copy-ready files and clearly instruct the user where to upload them.
 

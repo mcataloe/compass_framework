@@ -97,6 +97,10 @@ The active career profile covers role evaluation, resumes, cover letters, recrui
 
 Favor clear evidence and narrative signal over dense keyword packing.
 
+### Human Authenticity
+
+External career artifacts should follow `rules/08-human-authenticity.md` and sound truthful, candidate-specific, natural, reviewer-readable, and interview-defensible. This improves reviewer trust and artifact quality; it does not permit fake humanization, hidden formatting tricks, unsupported claims, or AI-detector evasion tactics.
+
 ### Artifact Discipline
 
 Generated artifacts should be purpose-built deliverables, not reproduced source archives.

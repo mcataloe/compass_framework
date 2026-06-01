@@ -10,6 +10,7 @@ Required framework files:
 - rules/02-resume-generation.md
 - rules/04-truthguard.md
 - rules/06-artifact-rules.md
+- rules/08-human-authenticity.md
 
 Treat this prompt as a workflow launcher, not as an independent source of resume, formatting, artifact, TruthGuard, page-length, source-priority, or no-fabrication rules.
 

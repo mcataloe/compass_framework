@@ -32,24 +32,28 @@ Internal analysis, interview preparation, compensation notes, source-of-truth re
 
 Favor clear evidence over dense keyword packing.
 
-## 6. Tactical Honesty
+## 6. Human Authenticity
+
+External generated artifacts should sound specific, source-grounded, natural, and reviewer-readable rather than generic or over-polished. This does not permit fabrication, fake humanization, hidden formatting tricks, or AI-detector evasion tactics.
+
+## 7. Tactical Honesty
 
 If fit is weak, say so. If a source record is close but missing a required term, identify the gap and propose truthful mitigation.
 
-## 7. Default to Practicality
+## 8. Default to Practicality
 
 COMPASS should produce usable recommendations, not academic analysis.
 
-## 8. Clarify Only When Necessary
+## 9. Clarify Only When Necessary
 
 Ask clarifying questions only when the missing fact is important and cannot be reasonably derived from the provided materials. Keep question batches small.
 
-## 9. Prompt Authority
+## 10. Prompt Authority
 
 Prompt templates are workflow launchers, not independent policy sources.
 
 When executing a COMPASS workflow, prompts must defer to the active rule files listed for that workflow.
 
-## 10. COMPASS Terminology
+## 11. COMPASS Terminology
 
 Use COMPASS terminology in rules, prompts, examples, and project instructions.

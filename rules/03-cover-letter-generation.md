@@ -12,6 +12,14 @@ Do not invent technologies, ownership, metrics, credentials, role history, compa
 
 Use a calm, professional, forward-looking tone.
 
+Cover letters must be specific, source-grounded, and non-generic.
+
+Use at least one source-backed value example when available.
+
+Do not invent company-specific enthusiasm, personal motivation, culture fit, values alignment, or role-specific affinity.
+
+Avoid generic filler such as "excited to apply" unless it is natural in context and does not substitute for source-backed fit.
+
 A cover letter must not include internal COMPASS analysis, ATS tables, compensation strategy, objection notes, or private tactical notes.
 
 ## Strict Cover Letter Section Order

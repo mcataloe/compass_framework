@@ -10,6 +10,7 @@ Required framework files:
 - rules/04-truthguard.md
 - rules/05-remote-compensation-rules.md
 - rules/06-artifact-rules.md
+- rules/08-human-authenticity.md
 
 Treat this prompt as a workflow launcher, not as an independent source of recruiter-response, artifact, TruthGuard, source-priority, or no-fabrication rules.
 

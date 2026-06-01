@@ -27,6 +27,25 @@ Analysis reports, interview preparation notes, compensation notes, source-of-tru
 
 Generated artifacts are downstream outputs, not factual authorities. Do not use an old resume, cover letter, recruiter message, LinkedIn draft, application answer, or portfolio draft as source truth unless it has been separately imported, extracted, reconciled, and verified through COMPASS Intake.
 
+## Human Authenticity Pass
+
+Clean external deliverables must pass a Human Authenticity review before final output.
+
+This applies to tailored resumes, recruiter-targeted resumes, cover letters, recruiter responses, application answers, follow-up messages, LinkedIn or about summaries, and similar external career artifacts.
+
+The pass requires:
+
+- Source-backed specificity
+- No generic AI-coded filler
+- No invented motivation, personality, values, or company affinity
+- No unsupported claims
+- No private analysis, scoring, risk notes, ATS notes, or framework commentary in clean artifacts
+- Natural but professional language
+- Claims the candidate can defend in an interview
+- ATS-safe structure where relevant
+
+Human Authenticity cannot override source priority, TruthGuard, or the strict template for the artifact type.
+
 ## Canonical Career Record Template
 
 Use this section order:

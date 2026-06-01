@@ -41,6 +41,20 @@ Default target length by use case:
 
 A resume artifact must not include COMPASS scoring, ATS matrix commentary, compensation strategy, risk notes, recruiter objection notes, framework explanations, or private tactical notes.
 
+## Human Authenticity
+
+Resumes should be evidence-led and candidate-specific.
+
+Professional summaries should identify the candidate's actual positioning rather than using generic branding language.
+
+Bullets should preserve actual scope, technology, role, contribution level, and outcome when those details are source-backed.
+
+Use target terminology only when supported by source evidence, verified claim ledgers, or the user's direct confirmation. Do not use target keywords as experience when source evidence is missing.
+
+Avoid unnatural bullet symmetry, buzzword stacking, inflated executive language, and repeated formulaic phrasing.
+
+Keep ATS-safe formatting intact. Human Authenticity must not add hidden text, parser tricks, fake imperfections, or AI-detector evasion tactics.
+
 ## Strict Resume Section Order
 
 Tailored resumes must use this section order:

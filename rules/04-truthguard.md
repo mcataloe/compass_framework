@@ -36,6 +36,8 @@ Before producing an artifact, check for:
 - Inferred but unsafe claims require confirmation.
 - Missing claims must be omitted or identified as a gap.
 
+Human-sounding phrasing must not soften, obscure, or imply unsupported claims. If Human Authenticity would make a claim read better but less truthful, TruthGuard controls.
+
 ## COMPASS Intake Integration
 
 When a COMPASS Intake claim ledger exists, it is the strongest claim-safety source.
