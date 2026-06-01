@@ -79,11 +79,13 @@ Committed Intake rounds should use stable artifact templates for checkpoint reco
 
 COMPASS Source Rebase is the safe scaffold-alignment workflow for existing COMPASS source-of-truth repositories.
 
-Source Rebase defaults to `dry-run` mode and reports existing paths, missing scaffold paths, skipped files, refused destructive actions, write verification status, and the next safe action.
+Source Rebase defaults to `dry-run` mode and reports existing paths, missing scaffold paths, drift, legacy or historical paths preserved, skipped files, refused destructive actions, write verification status, and the next safe action.
 
 The first permitted write mode is `create-missing-only`, and it requires explicit user approval for the exact target. Existing user-owned source-of-truth files always win over framework scaffold templates.
 
 Source Rebase must not overwrite, delete, rename, move, edit, or otherwise modify existing user-owned records. It is not COMPASS Intake and must not verify, extract, reconcile, approve, reject, or modify career claims.
+
+Historical checkpoint files, including older `COMPASS_Layer0_*` files, must be preserved and reported as historical paths rather than renamed or normalized.
 
 ## Operating Principles
 

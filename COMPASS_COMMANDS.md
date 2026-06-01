@@ -64,7 +64,7 @@ Update my COMPASS Source of Truth.
 - run COMPASS Source Rebase
 - rebase a COMPASS source-of-truth repository scaffold
 - align an existing COMPASS source repository after a framework upgrade
-- reinitialize source-of-truth structure safely without overwriting current files
+- add missing source-of-truth scaffold structure safely without overwriting current files
 - identify missing scaffold directories or placeholder files
 
 **Example trigger phrases:**
@@ -80,13 +80,15 @@ Dry-run the source repo scaffold update.
 
 - `VERSION.md`
 - `COMPASS_Current.md`
+- `COMPASS_COMMANDS.md`
 - `rules/00-operating-principles.md`
 - `rules/09-source-rebase.md`
-- `templates/compass-source-of-truth-scaffold.md`
-- `templates/compass-source-rebase-report.md`
+- `templates/source-of-truth-scaffold/README.md`
+- `templates/source-of-truth-scaffold/COMPASS_Source_Manifest.md`
+- `templates/source-of-truth-scaffold/migration/COMPASS_Source_Rebase_Report_TEMPLATE.md`
 - `prompts/compass-source-rebase.md`
 
-**Output discipline:** Source Rebase defaults to dry-run mode. Existing user-owned source records always win. Do not overwrite, delete, rename, move, edit, verify claims, or perform COMPASS Intake during Source Rebase. Create missing scaffold paths only after explicit approval for `create-missing-only`.
+**Output discipline:** Source Rebase defaults to dry-run mode. Existing user-owned source records always win. Report existing files, missing scaffold files, drift, and legacy or historical paths. Do not overwrite, delete, rename, move, edit, verify claims, or perform COMPASS Intake during Source Rebase. Create missing scaffold paths only after explicit approval for `create-missing-only`.
 
 ---
 

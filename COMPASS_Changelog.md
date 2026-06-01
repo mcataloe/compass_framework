@@ -2,17 +2,19 @@
 
 All notable framework changes should be documented here.
 
-## vNext 2026-05.5 - COMPASS Source Rebase
+## vNext 2026-05.6 - COMPASS Source Rebase
 
-Added `COMPASS Source Rebase` as a first-class safe scaffold-alignment command without changing the active framework version identifier.
+Added `COMPASS Source Rebase` as a first-class safe scaffold-alignment command.
 
 Behavior updates:
 
 - Added `rules/09-source-rebase.md` as the durable rule for dry-run and create-missing-only source-of-truth scaffold alignment.
 - Added `prompts/compass-source-rebase.md` as the launcher prompt.
-- Added framework-owned scaffold and report templates under `templates/`.
+- Added framework-owned source-of-truth scaffold templates under `templates/source-of-truth-scaffold/`.
 - Added a generic Source Rebase report example.
+- Bumped the active framework version from `vNext 2026-05.5` to `vNext 2026-05.6` because the new command materially changes framework behavior.
 - Clarified that existing user-owned source-of-truth files always win over framework scaffold templates.
+- Clarified that historical checkpoints, including `COMPASS_Layer0_*` paths, are preserved and not renamed.
 - Clarified that Source Rebase is not COMPASS Intake and must not verify, extract, reconcile, approve, reject, overwrite, delete, rename, move, or modify source records.
 
 ## vNext 2026-05.5 - Human Authenticity Artifact Rules

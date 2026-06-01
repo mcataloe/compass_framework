@@ -38,7 +38,7 @@ Use these files as the active source of truth:
 - `prompts/compass-compensation-note.md` — reusable compensation and remote-work note launcher prompt
 - `examples/` — example output patterns
 - `examples/compass-intake-artifact-templates.md` - copy-ready COMPASS Intake artifact skeletons
-- `templates/` - framework-owned scaffold and report templates
+- `templates/source-of-truth-scaffold/` - framework-owned source-of-truth scaffold and report templates
 
 Compatibility shims for earlier naming have been removed. Prompt templates and rule files should use COMPASS terminology only.
 
@@ -100,6 +100,8 @@ Use Source Rebase when a framework upgrade changes the recommended source-of-tru
 Source Rebase defaults to dry-run mode. It may inspect structure and produce a report, but it must not overwrite, delete, rename, move, edit, or otherwise modify existing user-owned files.
 
 The first permitted write mode is `create-missing-only`, and it requires explicit user approval for the exact target. In that mode, COMPASS may create only absent scaffold directories or absent framework placeholder files. Existing paths are always skipped and reported.
+
+Historical checkpoint files, including older `COMPASS_Layer0_*` files, must be preserved and reported as historical paths. Source Rebase must not rename or normalize them for terminology cleanliness.
 
 Source Rebase is not COMPASS Intake. It does not verify, extract, reconcile, approve, reject, or modify career claims.
 
