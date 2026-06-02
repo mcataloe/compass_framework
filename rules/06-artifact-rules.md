@@ -6,6 +6,26 @@ This file defines COMPASS artifact behavior.
 
 COMPASS may generate canonical career records, claim ledgers, analysis reports, tailored resumes, recruiter-targeted resumes, cover letters, recruiter responses, application answers, follow-up messages, interview preparation notes, compensation notes, and other career-specific artifacts.
 
+## Default Download Formats
+
+When COMPASS generates downloadable resume artifacts and no user-specific source-of-truth override or explicit user instruction says otherwise, the default downloadable formats are:
+
+1. Word/DOCX
+2. PDF
+3. Markdown
+
+Use the same human-readable base artifact name across formats. Word/DOCX and PDF filenames should use normal spaces, not underscores and not URL-encoded spaces. Markdown filenames may use underscores in place of spaces when useful for repository or plain-text workflows.
+
+Default naming examples:
+
+```text
+Candidate Name - Company Role Title - YYYY-MM.docx
+Candidate Name - Company Role Title - YYYY-MM.pdf
+Candidate_Name_Company_Role_Title_YYYY_MM.md
+```
+
+A user's source-of-truth style guide may narrow or override the default downloadable formats for that user. User-specific file naming rules supersede these framework defaults when present.
+
 ## Strict Template Rule
 
 Generated artifacts must use the strict output template for their artifact type unless the user explicitly requests a different format.
@@ -223,13 +243,20 @@ If DOCX generation or page validation is unavailable, say so clearly and do not 
 
 Use names that are clear and sortable.
 
-Recommended patterns:
+Recommended base-name patterns:
 
-- `Candidate Name - Company - Role Title - YYYY-MM`
+- `Candidate Name - Company Role Title - YYYY-MM`
 - `Candidate Name - Staff Engineer - Tailored for Recruiter Name - MM-YYYY`
 - `Project Name - Artifact Type - YYYY-MM`
 - `Organization - Strategy Memo - YYYY-MM`
 - `Topic - Research Plan - YYYY-MM`
+
+Filename rules for downloadable generated artifacts:
+
+- Word/DOCX filenames should use normal human-readable spaces, not underscores.
+- PDF filenames should use normal human-readable spaces, not underscores.
+- Markdown filenames may use underscores in place of spaces when useful for repository or plain-text workflows.
+- Do not URL-encode spaces in final user-facing filenames.
 
 ## Reviewability
 
