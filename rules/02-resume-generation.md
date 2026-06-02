@@ -26,6 +26,18 @@ Do not add unverified technologies, ownership, metrics, credentials, team sizes,
 
 An imported master CV may be comprehensive by design. Treat it as an evidence archive until material claims are verified through Intake. After verified ingestion, use the canonical source-of-truth record and approved ledgers as the downstream authority.
 
+## Resume Download Formats
+
+Unless a user-specific source-of-truth style guide or explicit user instruction says otherwise, generated downloadable resume artifacts should default to:
+
+1. Word/DOCX
+2. PDF
+3. Markdown
+
+Use the same human-readable base artifact name across formats. Word/DOCX and PDF filenames should use normal spaces. Markdown filenames may use underscores when useful for repository or plain-text workflows. Do not URL-encode spaces in final user-facing filenames.
+
+User-specific source-of-truth rules override these default resume download formats and file-naming rules when present.
+
 ## Resume Length Policy
 
 Default target length by use case:
