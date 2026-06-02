@@ -17,11 +17,13 @@ Required framework files:
 - rules/09-source-rebase.md
 - templates/source-of-truth-scaffold/README.md
 - templates/source-of-truth-scaffold/COMPASS_Source_Manifest.md
+- templates/source-of-truth-scaffold/sources/seed/README.md
+- templates/source-of-truth-scaffold/sources/seed/SEED_ARTIFACTS_MANIFEST.md
 - templates/source-of-truth-scaffold/migration/COMPASS_Source_Rebase_Report_TEMPLATE.md
 
 Treat this prompt as a workflow launcher, not as an independent source of Source Rebase, storage, scaffold, migration, Intake, or data-safety rules.
 
-Run dry-run first. Do not overwrite, delete, rename, move, or edit existing files. Existing source-of-truth files are user-owned records. Missing scaffold files may be proposed for creation, but not created until I explicitly approve create-missing-only mode.
+Run dry-run first. Do not overwrite, delete, rename, move, or edit existing files. Existing source-of-truth files are user-owned records. Missing scaffold files, including `/sources/seed/` seed artifact scaffold paths, may be proposed for creation, but not created until I explicitly approve create-missing-only mode.
 
 My COMPASS framework source is:
 [PASTE FRAMEWORK REPO / BRANCH / TAG]
@@ -51,6 +53,7 @@ First:
 10. Never claim files were saved unless actually written and verified.
 11. Keep claim verification out of scope.
 12. Keep source repo writes out of scope unless explicitly approved by the user after a dry-run report for this exact target.
+13. Do not move existing resumes, CVs, or other source files into `/sources/seed/`.
 
 If more than one COMPASS framework source is available, ask which one should govern before proceeding.
 

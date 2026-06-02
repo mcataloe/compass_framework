@@ -38,7 +38,9 @@ Use these files as the active source of truth:
 - `prompts/compass-compensation-note.md` — reusable compensation and remote-work note launcher prompt
 - `examples/` — example output patterns
 - `examples/compass-intake-artifact-templates.md` - copy-ready COMPASS Intake artifact skeletons
+- `examples/seed-artifacts/SEED_ARTIFACTS_MANIFEST_EXAMPLE.md` - fictional seed artifact manifest example
 - `templates/source-of-truth-scaffold/` - framework-owned source-of-truth scaffold and report templates
+- `templates/source-of-truth-scaffold/sources/seed/` - recommended scaffold location for Initial Seed Artifacts
 
 Compatibility shims for earlier naming have been removed. Prompt templates and rule files should use COMPASS terminology only.
 
@@ -64,6 +66,8 @@ COMPASS Intake is the verified source-of-truth onboarding workflow for creating 
 Use Intake when a career record, job-search profile, resume source set, recruiter positioning file, interview-prep record, or other career source needs a durable source of truth.
 
 Intake accepts source documents such as prior resumes, cover letters, LinkedIn exports, performance reviews, certification records, portfolio notes, recruiter notes, interview notes, job descriptions, achievement lists, project summaries, or other career reference material. These sources are treated as evidence leads, not automatic truth. After their material claims are ingested, reconciled, and verified, the canonical source-of-truth record and approved ledgers supersede the imported artifacts for downstream use.
+
+Initial Seed Artifacts are user-provided source materials stored under `/sources/seed/` when the scaffold is available. Seed artifacts may include existing resumes, shortened resumes, comprehensive resumes, master CVs, LinkedIn exports, cover letters, portfolio summaries, achievement lists, or similar career evidence. They are seed, provisional, evidence, and not canonical. They may support Provisional Resume / CV Mode while Intake is incomplete, but verified Intake records, approved claim ledgers, and do-not-claim ledgers supersede them when available.
 
 Intake asks generally 3-5 questions per response or batch. That limit is a pacing rule, not a scope limit; Intake should continue in small batches until material imported claims are covered, intentionally paused, deferred, rejected, excluded as not material, or marked as needing evidence, metrics, or scope clarification.
 
@@ -99,7 +103,7 @@ Use Source Rebase when a framework upgrade changes the recommended source-of-tru
 
 Source Rebase defaults to dry-run mode. It may inspect structure and produce a report, but it must not overwrite, delete, rename, move, edit, or otherwise modify existing user-owned files.
 
-The first permitted write mode is `create-missing-only`, and it requires explicit user approval for the exact target. In that mode, COMPASS may create only absent scaffold directories or absent framework placeholder files. Existing paths are always skipped and reported.
+The first permitted write mode is `create-missing-only`, and it requires explicit user approval for the exact target. In that mode, COMPASS may create only absent scaffold directories or absent framework placeholder files, including missing `/sources/seed/` seed artifact scaffold paths. Existing paths are always skipped and reported.
 
 Historical checkpoint files, including older `COMPASS_Layer0_*` files, must be preserved and reported as historical paths. Source Rebase must not rename or normalize them for terminology cleanliness.
 
@@ -127,6 +131,6 @@ If repository access fails, the assistant should say so clearly and should not r
 
 ## Source-of-Truth Policy
 
-COMPASS outputs must use the user's current direct instruction, verified Intake claim ledger, do-not-claim list, and latest approved source-of-truth record before relying on imported artifacts as evidence. Target job descriptions and recruiter requests provide terminology and context only; they do not create experience the user does not have. Generated artifacts are downstream outputs, not factual authorities, unless separately imported and verified through Intake.
+COMPASS outputs must use the user's current direct instruction, verified Intake claim ledger, do-not-claim list, and latest approved source-of-truth record before relying on imported artifacts, including Initial Seed Artifacts, as evidence. Target job descriptions and recruiter requests provide terminology and context only; they do not create experience the user does not have. Generated artifacts are downstream outputs, not factual authorities, unless separately imported and verified through Intake.
 
 COMPASS must not invent technologies, ownership, certifications, credentials, metrics, employers, responsibilities, project history, career achievements, or other career claims.
