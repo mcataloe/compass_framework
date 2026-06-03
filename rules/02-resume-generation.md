@@ -94,17 +94,163 @@ Recruiter-targeted resumes must use this section order:
 
 If a section has no verified source-backed content, omit it rather than filling it with unsupported claims. Do not mark gaps inside the resume artifact.
 
-## ATS-Safe Word Formatting Standard
+## Resume Typography Contract
 
-Required formatting for Word/DOCX exports:
+This section defines the generic COMPASS typography schema for generated resume artifacts. User-specific source-of-truth style guides may override any value using the same named section, field, or rule.
 
-- Name: 16 pt
-- Target title line: 14 pt
-- Section headers: 13 pt, bold or accent color
-- Company / role subheaders: 12 pt, bold
-- Body text: 11 pt
-- Skills inventory: 11 pt
-- Margins: 0.75 inches
-- Line spacing: single
-- Paragraph spacing: 3-6 pt, reducible to 0-3 pt near page target
-- Layout: single-column ATS version
+### Authority and Fallback
+
+- `rules/02-resume-generation.md` defines the generic COMPASS resume typography default.
+- A user-specific source-of-truth style guide may override any value using the same named section and field.
+- User-specific values control over framework defaults.
+- Missing user-specific values fall back to the framework defaults in this section.
+- Target job descriptions may influence wording, emphasis, and role terminology, but they do not alter typography unless the user explicitly requests a special layout.
+- Do not infer missing typography values from prior generated resumes unless the source-of-truth style file or current user instruction confirms them.
+- Preserve source priority, TruthGuard, and artifact cleanliness regardless of typography choices.
+
+### Global Typography Defaults
+
+- Font family: Arial or similarly clean ATS-safe sans-serif.
+- Accent color: use a restrained blue or neutral accent when a color is used; otherwise use black for maximum compatibility.
+- Body text: 11 pt.
+- Margins: 0.75 inches.
+- Line spacing: single.
+- Paragraph spacing: 3-6 pt, reducible to 0-3 pt near a page target.
+- Layout: single-column ATS-safe layout.
+- Bullets: native Word bullets/list formatting, not typed bullet characters when DOCX generation supports list formatting.
+- Wrapped bullet lines should align under the bullet text rather than under the bullet marker.
+
+### Candidate Name and Contact Block
+
+#### Name / Title-Name Line
+
+- Text source: candidate legal or preferred resume name.
+- Font size: 16 pt.
+- Color: accent color or black.
+- Weight: regular, medium, or bold according to the active style guide.
+- Character spacing: normal unless a user-specific style guide specifies expanded or condensed character spacing.
+- Alignment: centered.
+- Paragraph spacing before: 0 pt.
+- Paragraph spacing after: 0 pt.
+- Line spacing: single.
+- Rule: this must be the largest text in the resume header.
+
+#### Target Role Descriptor / Target Title Line
+
+- Text source: tailored target title and descriptor.
+- Font size: 13-14 pt by default.
+- Color: black or accent color according to the active style guide.
+- Alignment: centered.
+- Wrapping: keep to one line when reasonable; shrink slightly before wrapping only if readability and ATS safety are preserved.
+- Paragraph spacing before: 0 pt.
+- Paragraph spacing after: 0 pt.
+- Line spacing: single.
+- Rule: this line should be smaller than the name and larger than the contact text.
+
+#### Contact and Links
+
+- Text source: location, remote status when relevant, clearance when relevant, phone, email, LinkedIn, GitHub, portfolio, or other approved links.
+- Font size: 9-10 pt by default.
+- Alignment: centered.
+- Paragraph spacing before: 0 pt.
+- Paragraph spacing after: 0 pt.
+- Line spacing: single.
+- Hyperlinks: preserve readable URL text and avoid decorative icons.
+- Do not add unapproved websites, portfolios, handles, credentials, or social links.
+
+### Section Headers
+
+Applies to:
+
+- `PROFESSIONAL SUMMARY`
+- `CORE SKILLS`
+- `PROFESSIONAL EXPERIENCE`
+- `SELECTED PROJECTS` or `SELECTED PROJECTS OR DELIVERY HIGHLIGHTS`
+- `EDUCATION`
+- `CERTIFICATIONS, CLEARANCES & CREDENTIALS`
+
+Defaults:
+
+- Font size: 13 pt.
+- Color: accent color or black.
+- Weight: bold.
+- Case: uppercase.
+- Paragraph spacing before: compact but visible.
+- Paragraph spacing after: compact.
+- Line spacing: single.
+
+### Professional Summary
+
+- Structure: single paragraph unless a user explicitly requests otherwise.
+- Font size: body text size.
+- Alignment: left.
+- Paragraph spacing before: compact.
+- Paragraph spacing after: compact.
+- Rule: do not use bullets in the professional summary.
+- Rule: keep the summary source-grounded and tailored without adding unsupported claims.
+
+### Core Skills
+
+- Structure: grouped skill lines or bullets.
+- Category labels: bold.
+- Skill text: comma-separated skills.
+- Font size: body text size.
+- Bullet type: native Word bullet/list formatting when bullets are used.
+- Bullet indentation: compact.
+- Hanging indent: wrapped lines align under the bullet text.
+- Rule: include only skills supported by the source record, approved ledgers, or the user's direct confirmation.
+
+### Professional Experience
+
+#### Company Heading
+
+- Font size: 12 pt by default.
+- Weight: bold.
+- Color: black unless the active style guide specifies otherwise.
+- Paragraph spacing before: modest, especially between roles.
+- Paragraph spacing after: compact.
+
+#### Role / Metadata Line
+
+- Content pattern: `Role Title | Date Range | Location / Remote | Clearance or credential context where relevant`.
+- Font size: body text size.
+- Style: italic or regular according to the active style guide.
+- Paragraph spacing before: 0 pt.
+- Paragraph spacing after: compact.
+
+#### Experience Bullets
+
+- Font size: body text size.
+- Bullet type: native Word bullet/list formatting.
+- Bullet indentation: compact.
+- Hanging indent: wrapped lines align under the bullet text.
+- Paragraph spacing: compact.
+- Rule: preserve actual scope, technology, contribution depth, and outcome when source-backed.
+
+#### Role-to-Role Spacing
+
+- Add a modest visual gap between the final bullet of one role and the next company heading.
+- Do not add a large gap before the first role immediately under the `Professional Experience` section header.
+
+### Selected Projects or Delivery Highlights
+
+- Use only when source-backed and useful.
+- Section header follows section-header typography.
+- Project heading follows company/project subheading typography.
+- Body text follows body text typography.
+- Bullets follow standard bullet typography.
+- Omit this section if it would duplicate the Professional Experience section without adding scanability.
+
+### Education
+
+- Section header follows section-header typography.
+- Entries use body text typography.
+- Keep concise.
+- May use bullets or compact lines.
+
+### Certifications, Clearances, or Credentials
+
+- Section header follows section-header typography.
+- Entries use body text typography.
+- Include only verified credentials, certifications, clearances, or licenses.
+- Do not imply active status unless verified.
