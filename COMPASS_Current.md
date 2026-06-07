@@ -71,6 +71,8 @@ Intake should ask a few questions per response or batch, generally 3-5, and shou
 
 The small-batch limit is a user-experience throttle, not a scope limit. Intake must continue batching until material imported claims are covered, intentionally paused, deferred, rejected, excluded as not material, or marked as needing evidence, metrics, or scope clarification. A checkpoint is a progress commit; it is not proof that the relevant source set is fully ingested.
 
+Before asking Intake questions, COMPASS must run a Materiality Gate. Intake should inspect available approved claim ledgers, do-not-claim records, coverage registers, checkpoint records, canonical source records, and relevant source artifacts first. It should ask only unresolved material questions whose answers would change source-of-truth construction, claim approval, claim-depth boundary, evidence requirements, metrics, scope, contradictions, or downstream-safe wording. If context is sufficient, Intake may proceed without questions while stating the source basis and safe assumptions.
+
 Intake must support pause/resume checkpoints and must be honest about whether it can actually save/update Google Drive files or only produce copy-ready checkpoint content.
 
 Committed Intake rounds should use stable artifact templates for checkpoint records, claim-ledger entries, do-not-claim entries, coverage-register entries, storage-status blocks, and optional ZIP bundle manifests.

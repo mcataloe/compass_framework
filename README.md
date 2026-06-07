@@ -67,6 +67,8 @@ Intake accepts source documents such as prior resumes, cover letters, LinkedIn e
 
 Intake asks generally 3-5 questions per response or batch. That limit is a pacing rule, not a scope limit; Intake should continue in small batches until material imported claims are covered, intentionally paused, deferred, rejected, excluded as not material, or marked as needing evidence, metrics, or scope clarification.
 
+Before asking Intake questions, Intake runs a Materiality Gate: inspect available approved ledgers, do-not-claim records, coverage registers, checkpoint records, canonical source records, and relevant source artifacts first. Ask only unresolved material questions whose answers would change source-of-truth construction, claim approval, claim depth, evidence requirements, or downstream-safe wording. If context is sufficient, proceed with the source basis and safe assumptions instead of asking redundant questions.
+
 Default setup for non-technical users:
 
 1. Create a Google Drive folder named `COMPASS Source of Truth`.

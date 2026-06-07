@@ -46,6 +46,48 @@ Imported artifacts should remain traceable as provenance and history. Downstream
 
 Generated resumes, cover letters, recruiter messages, application answers, LinkedIn drafts, interview notes, and portfolio drafts are downstream outputs. They are not factual authorities unless they are separately imported, extracted, reconciled, and verified through Intake.
 
+## Materiality Gate
+
+Before asking Intake questions, COMPASS must run a Materiality Gate.
+
+The Materiality Gate prevents redundant questioning. Intake should inspect discoverable approved claim ledgers, do-not-claim records, coverage registers, checkpoint records, canonical source-of-truth records, and relevant source artifacts before deciding whether to ask the user anything.
+
+Do not ask a question merely because a source artifact contains a claim. Source artifacts are evidence leads, not automatic truth, and questions are justified only when the user's answer would materially change at least one of the following:
+
+- Source-of-truth construction
+- Claim approval, rejection, narrowing, or do-not-claim handling
+- Claim-depth boundary
+- Evidence, metric, or scope requirements
+- Downstream-safe wording
+- Resolution of a contradiction or source conflict
+
+Classify each potential question or claim group before asking it:
+
+- Already resolved by approved source
+- Answerable from source artifact but unconfirmed
+- Material unresolved question
+- Non-material detail
+- Discoverable from repository, docs, ledgers, checkpoints, or artifacts
+- Safe assumption
+- Deferred
+- Contradiction / conflict
+- Needs evidence
+- Needs metric
+- Needs scope clarification
+
+Use this decision sequence:
+
+1. Inspect approved claim ledgers, do-not-claim records, coverage registers, checkpoint records, canonical source-of-truth records, and relevant source artifacts first.
+2. Do not ask questions already answered by approved ledger entries, do-not-claim records, checkpoint records, or coverage metadata unless a new contradiction or downstream boundary issue exists.
+3. Do not ask non-material questions during Intake unless the user requests deeper refinement.
+4. Proceed with a stated safe assumption when the missing detail does not change truthfulness, claim depth, evidence requirements, or downstream-safe wording.
+5. Ask only unresolved material questions.
+6. Keep normal question batches to 3-5 questions unless the user requests more.
+7. If more material questions exist than fit in one batch, ask the highest-impact 3-5 first and record the rest as deferred or next-batch questions.
+8. When a source artifact reintroduces a do-not-claim item, do not ask it as a new open-ended question. Apply the do-not-claim boundary, or surface the conflict only if the user explicitly needs to revisit that boundary.
+
+When Intake proceeds without asking a question, state the source basis and any safe assumptions. When Intake asks, does not ask, or defers a question, record the reason in the checkpoint or equivalent metadata.
+
 ## Small-Batch Questioning
 
 Ask 3-5 questions at a time unless the user asks for more.
@@ -126,9 +168,10 @@ Each checkpoint Markdown record should include:
 1. Checkpoint status: workflow, checkpoint ID, round ID, date, current stage, source set covered, and whether the current source set is partial or complete.
 2. Storage status: one approved storage-status label, direct-write availability, target datastore, generated or updated artifacts, and next save or verification action.
 3. Round summary: confirmed facts, source-extracted claims reviewed, inferred claims asked as questions, contradictions resolved or still open, and unresolved questions.
-4. Ledger changes: approved claims, narrowed claims, claim-depth boundaries, rejected or do-not-claim items, and claims needing evidence, metrics, scope clarification, deferral, or exclusion.
-5. Coverage changes: each material imported claim reviewed in the round with source/provenance, current status, and next action.
-6. Resume point: where Intake should continue next, including the next uncovered source section, role, project, or claim group.
+4. Materiality Gate decisions: questions asked, not asked, resolved from approved sources, resolved from source artifacts but still unconfirmed, handled through safe assumptions, deferred, or escalated as contradictions, evidence gaps, metric gaps, or scope gaps.
+5. Ledger changes: approved claims, narrowed claims, claim-depth boundaries, rejected or do-not-claim items, and claims needing evidence, metrics, scope clarification, deferral, or exclusion.
+6. Coverage changes: each material imported claim reviewed in the round with source/provenance, current status, and next action.
+7. Resume point: where Intake should continue next, including the next uncovered source section, role, project, or claim group.
 
 ### Claim Ledger Entries
 

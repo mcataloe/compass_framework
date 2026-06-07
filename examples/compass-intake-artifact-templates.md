@@ -47,6 +47,26 @@ The durable behavior source is `rules/07-compass-intake.md`. If a template must 
 - Unresolved questions:
   - [question or none]
 
+## Materiality Gate Decisions
+
+- Questions asked:
+  - Question: [question or none]
+  - Materiality reason: [source-of-truth construction / claim approval / claim-depth boundary / evidence requirement / metric requirement / scope clarification / downstream-safe wording / contradiction]
+  - Source basis: [approved ledger / do-not-claim register / coverage register / checkpoint / canonical source record / source artifact / user statement / none]
+- Questions not asked:
+  - Potential question: [question or none]
+  - Decision: [already resolved by approved source / non-material detail / discoverable from sources / safe assumption]
+  - Source basis or assumption: [source or assumption]
+- Resolved from sources:
+  - [claim or question resolved from approved ledger, checkpoint, coverage register, canonical source record, or source artifact]
+  - Status: [approved / source-extracted unconfirmed / user-confirmed / narrowed / do-not-claim boundary / other coverage status]
+- Deferred or next-batch questions:
+  - [question or none]
+  - Deferral reason: [lower priority than current material batch / awaiting evidence / awaiting metric / awaiting scope clarification / user pause]
+- Contradictions or conflicts:
+  - [conflict or none]
+  - Handling: [blocked by do-not-claim / ask targeted question / defer / needs evidence / needs metric / needs scope clarification]
+
 ## Ledger Changes
 
 - Approved claims:

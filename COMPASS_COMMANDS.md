@@ -24,7 +24,7 @@ Target job descriptions, recruiter requests, and opportunity records provide tar
 
 **Launcher:** `prompts/compass-intake.md`
 
-**Purpose:** Build or update a verified career source of truth through evidence capture, claim verification, small-batch questioning, coverage tracking, and checkpoint artifacts.
+**Purpose:** Build or update a verified career source of truth through evidence capture, claim verification, Materiality Gate questioning, coverage tracking, and checkpoint artifacts.
 
 **Use when the user asks to:**
 

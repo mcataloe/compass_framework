@@ -17,6 +17,8 @@ Important source rule: treat source documents as evidence leads, not automatic t
 
 Coverage rule: build and maintain an imported-claim backlog or coverage register. Continue Intake in small batches until all material claims from the relevant imported source set are approved, narrowed, rejected, deferred, excluded as not material, or marked as needing evidence, metrics, or scope clarification. Do not treat a partial checkpoint as complete source-of-truth coverage.
 
+Materiality Gate rule: before asking setup or Intake questions, inspect available approved ledgers, do-not-claim records, coverage registers, checkpoint records, canonical source records, and relevant source artifacts. Ask only unresolved material questions whose answers would change source-of-truth construction, claim approval, claim depth, evidence requirements, or downstream-safe wording. Do not ask questions merely because an imported artifact contains a claim. If context is sufficient, proceed with a stated source basis and safe assumptions. Record why questions were asked, not asked, or deferred in checkpoint metadata.
+
 Question batching rule: ask 3-5 questions per response or batch unless I request more. This is a pacing rule, not a limit per role, per artifact, or for the whole Intake.
 
 Important storage transparency rule: during setup verification, inspect whether you can directly write or update files in my target datastore. If you cannot write to Google Drive, GitHub, or another requested store, say that clearly up front before asking setup questions. Do not imply anything has been saved unless you have actually written it and verified it is visible.
@@ -45,5 +47,5 @@ Build a single career source of truth that is as close to 100% honest as possibl
 
 At the end of each committed round, tell me whether the source of truth is partial or complete for the current source set, and identify the next uncovered source section, role, project, or claim group.
 
-Begin now with setup verification. First, explain the process in plain language, including that this may take multiple sessions and that we will checkpoint after every committed round. Then inspect the available sources, disclose whether you can write to the target datastore, and ask no more than 5 setup questions.
+Begin now with setup verification. First, explain the process in plain language, including that this may take multiple sessions and that we will checkpoint after every committed round. Then inspect the available sources and available Intake records, disclose whether you can write to the target datastore, run the Materiality Gate, and ask no more than 5 setup questions only if the answers are materially needed.
 ```

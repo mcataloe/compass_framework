@@ -2,6 +2,19 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-05.6 - Intake Materiality Gate
+
+Added a durable Materiality Gate to COMPASS Intake without changing the active framework version identifier.
+
+Behavior updates:
+
+- Added a Materiality Gate to `rules/07-compass-intake.md` so Intake inspects approved ledgers, do-not-claim records, coverage registers, checkpoint records, canonical source records, and relevant source artifacts before asking questions.
+- Clarified that Intake should ask only unresolved material questions whose answers would change source-of-truth construction, claim approval, claim depth, evidence requirements, metrics, scope, contradictions, or downstream-safe wording.
+- Preserved the 3-5 question rule as a pacing throttle, not a logic gate or total question limit.
+- Clarified that Intake may proceed without questions when context is sufficient, while stating the source basis and safe assumptions.
+- Updated the Intake launcher and checkpoint templates to record why questions were asked, not asked, resolved from sources, deferred, or escalated as conflicts or gaps.
+- Preserved imported artifacts as evidence leads, not automatic truth, and preserved approved claim ledger, do-not-claim, coverage register, checkpoint, and storage-honesty behavior.
+
 ## vNext 2026-05.6 - COMPASS Source Rebase
 
 Added `COMPASS Source Rebase` as a first-class safe scaffold-alignment command.

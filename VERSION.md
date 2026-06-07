@@ -28,6 +28,7 @@ The active vNext 2026-05.6 framework includes COMPASS-only terminology, career-f
 - COMPASS Intake requires checkpoint artifact generation at every committed round.
 - COMPASS Intake uses stable artifact templates for checkpoint records, claim-ledger entries, do-not-claim entries, coverage-register entries, storage-status blocks, and optional ZIP bundle manifests.
 - COMPASS Intake requires coverage tracking for material imported claims; checkpoints are progress commits, not proof of full source ingestion.
+- COMPASS Intake runs a Materiality Gate before asking questions: it inspects available approved ledgers, do-not-claim records, coverage registers, checkpoint records, canonical source records, and relevant source artifacts, then asks only unresolved material questions.
 - COMPASS Source Rebase supports safe dry-run and explicitly approved create-missing-only scaffold alignment for source-of-truth repositories without overwriting, deleting, renaming, moving, or modifying existing user-owned records.
 - COMPASS Source Rebase preserves historical checkpoint files such as older `COMPASS_Layer0_*` paths as historical records rather than normalizing names.
 - Imported resumes, CVs, LinkedIn profiles, cover letters, portfolio examples, recruiter resumes, and prior generated artifacts are evidence inputs until their material claims are verified into the canonical source of truth.
