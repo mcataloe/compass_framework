@@ -26,6 +26,20 @@ Do not add unverified technologies, ownership, metrics, credentials, team sizes,
 
 An imported master CV may be comprehensive by design. Treat it as an evidence archive until material claims are verified through Intake. After verified ingestion, use the canonical source-of-truth record and approved ledgers as the downstream authority.
 
+## Provisional Resume / CV Mode
+
+If canonical Intake records are incomplete, COMPASS may use Provisional Resume / CV Mode to generate a provisional resume from seed resumes, comprehensive resumes, master CVs, LinkedIn exports, and similar seed artifacts under `/sources/seed/` or another user-provided seed location.
+
+This mode applies to both resumes and CVs, including comprehensive resumes and master CVs. A comprehensive resume or master CV is usually a stronger provisional baseline than a shortened or tailored resume because it is more likely to preserve career breadth. A shortened or tailored resume is useful seed evidence, but it is usually incomplete and should be treated more cautiously because it may omit material history or reflect one target role.
+
+Seed artifacts remain seed, provisional, evidence, and not canonical. They may act as practical pro tempore source material while the verified source of truth is being built, but they do not become permanent canonical truth merely by being stored under `/sources/seed/`.
+
+Verified Intake claim ledgers, do-not-claim ledgers, and canonical career records override seed artifacts when available. If a seed artifact conflicts with a verified ledger or do-not-claim entry, the verified ledger or do-not-claim entry wins.
+
+If a seed artifact contains a claim not yet verified, use it only when the user directly confirms it or when current COMPASS rules allow provisional use with clear source limitations. Do not fabricate technologies, ownership, metrics, credentials, employers, dates, responsibilities, achievements, team sizes, budgets, customer names, project names, or scope from seed artifacts.
+
+The clean resume artifact itself must not include COMPASS sourcing notes, scoring, framework warnings, risk notes, or tactical commentary unless the user explicitly requests an annotated artifact. If the user asks about sourcing or verification status, disclose in completion notes that Provisional Resume / CV Mode used provisional seed material.
+
 ## Resume Download Formats
 
 Unless a user-specific source-of-truth style guide or explicit user instruction says otherwise, generated downloadable resume artifacts should default to:

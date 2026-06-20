@@ -1,7 +1,7 @@
 # COMPASS Career Profile: Recruiter-Targeted Resume Prompt
 
 ```text
-Generate a COMPASS recruiter-targeted resume using the user's current instruction, verified Intake claim ledger and do-not-claim list, and latest approved canonical career record first. Use imported resumes, master CVs, LinkedIn profiles, and similar artifacts only as evidence and provenance unless their material claims have been verified through Intake.
+Generate a COMPASS recruiter-targeted resume using the user's current instruction, verified Intake claim ledger and do-not-claim list, and latest approved canonical career record first. Use imported resumes, comprehensive resumes, master CVs, Initial Seed Artifacts under `/sources/seed/`, LinkedIn profiles, and similar artifacts only as evidence and provenance unless their material claims have been verified through Intake. If verified Intake records are incomplete and seed material must be used, follow Provisional Resume / CV Mode from the active resume-generation rule.
 
 Required framework files:
 - VERSION.md

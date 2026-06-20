@@ -104,6 +104,21 @@ ledgers/02_Do_Not_Claim_Register.md
 ledgers/03_Approved_Claim_Ledger.md
 sources/
 sources/00_Source_Register.md
+sources/seed/
+sources/seed/README.md
+sources/seed/SEED_ARTIFACTS_MANIFEST.md
+sources/seed/resumes/
+sources/seed/resumes/.gitkeep
+sources/seed/cvs/
+sources/seed/cvs/.gitkeep
+sources/seed/linkedin/
+sources/seed/linkedin/.gitkeep
+sources/seed/cover-letters/
+sources/seed/cover-letters/.gitkeep
+sources/seed/portfolio/
+sources/seed/portfolio/.gitkeep
+sources/seed/other/
+sources/seed/other/.gitkeep
 exports/
 exports/.gitkeep
 style/
@@ -116,6 +131,16 @@ migration/COMPASS_Source_Rebase_Report_TEMPLATE.md
 ```
 
 These files are scaffold defaults only. Existing user-owned files override template defaults once created.
+
+## Initial Seed Artifact Scaffold
+
+Source Rebase recognizes `/sources/seed/` as the recommended scaffold location for Initial Seed Artifacts.
+
+In `dry-run`, Source Rebase may report missing seed scaffold directories and missing seed placeholder/template files.
+
+In approved `create-missing-only` mode, Source Rebase may create only missing seed scaffold directories and absent framework placeholder/template files. It must not overwrite, delete, rename, move, normalize, or modify existing user-owned files.
+
+Source Rebase must not automatically move existing resumes, CVs, LinkedIn exports, cover letters, portfolio files, or other source documents into `/sources/seed/`. Existing nonstandard source folders must be preserved and reported as existing user structure, not renamed or normalized.
 
 ## Drift Classification
 
