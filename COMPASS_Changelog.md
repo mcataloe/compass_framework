@@ -2,6 +2,23 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-05.7 - Staff / Principal Positioning and Claim-Depth-Aware Resume Language
+
+Added explicit downstream resume rules for senior individual-contributor positioning without changing Source of Truth authority or claim-depth boundaries.
+
+Behavior updates:
+
+- Added Staff / Principal evidence-prioritization rules so verified architecture ownership, technical direction, cross-team influence, organizational leverage, operational accountability, mentoring or enablement, and hands-on implementation are surfaced before lower-signal detail.
+- Clarified that official employment titles must remain intact and operating level must be communicated through verified evidence rather than title inflation.
+- Added a non-exhaustive claim-depth-aware wording map for Awareness, Exposure, Supported, Implemented, Owned, and Led others.
+- Clarified that the wording map is not a mechanical verb-replacement system and that mixed-depth claims must preserve separate architecture, implementation, ownership, leadership, and formal-management boundaries.
+- Added TruthGuard checks preventing Supported from becoming Owned or Led, Implemented from implying architecture ownership, Owned from implying people leadership, and Led others from implying sole contribution.
+- Added explicit handling for shared ownership, initial leadership followed by transition, Technical Product Owner and primary-technical-contact context, mentoring without formal management, and formal management outside conventional engineering titles.
+- Recognized evidence-grounded qualitative consequences as valid impact while preserving the prohibition on invented numerical metrics and unsupported realized outcomes.
+- Added bullet-construction guidance around problem, action or decision, technical mechanism, scope or stakeholders, and consequence without forcing every bullet into a rigid formula.
+- Added a technical-density and architecture-taxonomy review to preserve useful technical depth while consolidating repeated pattern inventories that obscure the candidate's actual contribution.
+- Updated `COMPASS_Current.md` and `VERSION.md` to surface the active behavior.
+
 ## vNext 2026-05.6 - COMPASS Source Rebase
 
 Added `COMPASS Source Rebase` as a first-class safe scaffold-alignment command.
