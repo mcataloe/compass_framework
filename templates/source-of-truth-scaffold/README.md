@@ -10,10 +10,17 @@ Existing source repository files are user-owned records and must not be overwrit
 checkpoints/
 ledgers/
 sources/
+sources/seed/
 exports/
 style/
 migration/
 ```
+
+## Initial Seed Artifacts
+
+Use `sources/seed/` for Initial Seed Artifacts such as existing resumes, comprehensive resumes, master CVs, LinkedIn exports, prior cover letters, portfolio summaries, achievement lists, and similar career evidence.
+
+Seed artifacts are seed, provisional, evidence, and not canonical. Verified COMPASS Intake records and ledgers supersede them for downstream authority when available.
 
 ## Safety
 

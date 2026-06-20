@@ -46,6 +46,29 @@ Imported artifacts should remain traceable as provenance and history. Downstream
 
 Generated resumes, cover letters, recruiter messages, application answers, LinkedIn drafts, interview notes, and portfolio drafts are downstream outputs. They are not factual authorities unless they are separately imported, extracted, reconciled, and verified through Intake.
 
+## Initial Seed Artifacts
+
+Initial Seed Artifacts are user-provided source materials available before or during COMPASS Intake. They should live under `/sources/seed/` in the user's source-of-truth repository when that scaffold is available.
+
+Seed artifacts may include existing resumes, shortened or tailored resumes, comprehensive resumes, master CVs, LinkedIn exports, cover letters, portfolio summaries, achievement lists, or similar career evidence.
+
+Seed artifacts are not COMPASS Intake-generated artifacts. They are seed, provisional, evidence, and not canonical. They may serve as practical pro tempore source material while the verified source of truth is still being built, but they must be labeled honestly and tracked as provenance.
+
+Once relevant claims are extracted, reconciled, and verified into canonical source-of-truth records, approved claim ledgers, and do-not-claim ledgers, those verified Intake outputs supersede seed artifacts for downstream authority. Superseded seed artifacts should remain traceable as provenance and may be marked `archived-provenance`; COMPASS should not recommend deleting them unless the user explicitly chooses to remove them.
+
+COMPASS must not limit the type of resume or CV a user uploads as a seed artifact. A comprehensive resume or master CV may reasonably remain useful for a longer provisional period because it is more likely to preserve career breadth. A shortened or tailored resume is useful evidence, but it is usually incomplete and should be treated more cautiously because it may omit material history or reflect one target role.
+
+Allowed seed artifact status labels:
+
+- `available-provisional`
+- `partially-ingested`
+- `fully-ingested`
+- `superseded`
+- `do-not-use`
+- `archived-provenance`
+
+Seed artifacts must not override verified claim ledgers, do-not-claim ledgers, canonical source-of-truth records, or the user's current direct instruction.
+
 ## Materiality Gate
 
 Before asking Intake questions, COMPASS must run a Materiality Gate.
@@ -262,6 +285,7 @@ For folder-based storage, use a simple structure:
 /checkpoints/
 /ledgers/
 /sources/
+/sources/seed/
 /exports/
 ```
 

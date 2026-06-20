@@ -2,6 +2,38 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-05.7 - Staff / Principal Positioning and Claim-Depth-Aware Resume Language
+
+Added explicit downstream resume rules for senior individual-contributor positioning without changing Source of Truth authority or claim-depth boundaries.
+
+Behavior updates:
+
+- Added Staff / Principal evidence-prioritization rules so verified architecture ownership, technical direction, cross-team influence, organizational leverage, operational accountability, mentoring or enablement, and hands-on implementation are surfaced before lower-signal detail.
+- Clarified that official employment titles must remain intact and operating level must be communicated through verified evidence rather than title inflation.
+- Added a non-exhaustive claim-depth-aware wording map for Awareness, Exposure, Supported, Implemented, Owned, and Led others.
+- Clarified that the wording map is not a mechanical verb-replacement system and that mixed-depth claims must preserve separate architecture, implementation, ownership, leadership, and formal-management boundaries.
+- Added TruthGuard checks preventing Supported from becoming Owned or Led, Implemented from implying architecture ownership, Owned from implying people leadership, and Led others from implying sole contribution.
+- Added explicit handling for shared ownership, initial leadership followed by transition, Technical Product Owner and primary-technical-contact context, mentoring without formal management, and formal management outside conventional engineering titles.
+- Recognized evidence-grounded qualitative consequences as valid impact while preserving the prohibition on invented numerical metrics and unsupported realized outcomes.
+- Added bullet-construction guidance around problem, action or decision, technical mechanism, scope or stakeholders, and consequence without forcing every bullet into a rigid formula.
+- Added a technical-density and architecture-taxonomy review to preserve useful technical depth while consolidating repeated pattern inventories that obscure the candidate's actual contribution.
+- Updated `COMPASS_Current.md` and `VERSION.md` to surface the active behavior.
+
+## vNext 2026-05.7 - Initial Seed Artifacts
+
+Added first-class Initial Seed Artifact support for provisional career source materials under `/sources/seed/`.
+
+Behavior updates:
+
+- Added `/sources/seed/` as the recommended source-of-truth scaffold location for seed resumes, comprehensive resumes, master CVs, LinkedIn exports, cover letters, portfolio summaries, achievement lists, and similar career evidence.
+- Added Provisional Resume / CV Mode for using seed resumes and CVs while verified COMPASS Intake records are incomplete.
+- Clarified that seed artifacts are seed, provisional, evidence, and not canonical.
+- Clarified that verified Intake claim ledgers, do-not-claim ledgers, and canonical career records supersede seed artifacts for downstream authority.
+- Distinguished shortened or tailored resumes from comprehensive resumes and master CVs as provisional baselines.
+- Updated Source Rebase so missing seed scaffold paths may be created only in approved `create-missing-only` mode, without moving, renaming, overwriting, or normalizing existing user-owned source files.
+- Added seed scaffold templates and a fictional seed artifact manifest example.
+- Recorded seed artifact handling as active `vNext 2026-05.7` behavior because it materially changes source-priority and scaffold behavior.
+
 ## vNext 2026-05.6 - Intake Materiality Gate
 
 Added a durable Materiality Gate to COMPASS Intake without changing the active framework version identifier.

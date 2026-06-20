@@ -12,7 +12,7 @@ When resolving a COMPASS command, use this priority order:
 2. The user's verified COMPASS Intake claim ledger and do-not-claim list, when available
 3. The user's latest approved canonical career source-of-truth record
 4. The active COMPASS framework files on the canonical branch
-5. Imported artifacts as evidence and provenance only
+5. Imported artifacts, including Initial Seed Artifacts under `/sources/seed/`, as evidence and provenance only
 6. Generated artifacts as historical outputs only
 7. ChatGPT memory only when not contradicted by stronger sources
 
@@ -31,6 +31,7 @@ Target job descriptions, recruiter requests, and opportunity records provide tar
 - create a COMPASS Source of Truth
 - update an existing COMPASS Source of Truth
 - ingest career documents
+- stage Initial Seed Artifacts before or during Intake
 - verify claims from resumes, CVs, LinkedIn exports, recruiter notes, interview notes, performance reviews, certifications, portfolio notes, or project summaries
 - reconcile gaps or contradictions across career source material
 
@@ -66,6 +67,7 @@ Update my COMPASS Source of Truth.
 - align an existing COMPASS source repository after a framework upgrade
 - add missing source-of-truth scaffold structure safely without overwriting current files
 - identify missing scaffold directories or placeholder files
+- add the missing `/sources/seed/` scaffold safely
 
 **Example trigger phrases:**
 
@@ -85,10 +87,12 @@ Dry-run the source repo scaffold update.
 - `rules/09-source-rebase.md`
 - `templates/source-of-truth-scaffold/README.md`
 - `templates/source-of-truth-scaffold/COMPASS_Source_Manifest.md`
+- `templates/source-of-truth-scaffold/sources/seed/README.md`
+- `templates/source-of-truth-scaffold/sources/seed/SEED_ARTIFACTS_MANIFEST.md`
 - `templates/source-of-truth-scaffold/migration/COMPASS_Source_Rebase_Report_TEMPLATE.md`
 - `prompts/compass-source-rebase.md`
 
-**Output discipline:** Source Rebase defaults to dry-run mode. Existing user-owned source records always win. Report existing files, missing scaffold files, drift, and legacy or historical paths. Do not overwrite, delete, rename, move, edit, verify claims, or perform COMPASS Intake during Source Rebase. Create missing scaffold paths only after explicit approval for `create-missing-only`.
+**Output discipline:** Source Rebase defaults to dry-run mode. Existing user-owned source records always win. Report existing files, missing scaffold files, drift, and legacy or historical paths. Do not overwrite, delete, rename, move, edit, verify claims, perform COMPASS Intake, or move existing resumes/CVs into `/sources/seed/` during Source Rebase. Create missing scaffold paths only after explicit approval for `create-missing-only`.
 
 ---
 

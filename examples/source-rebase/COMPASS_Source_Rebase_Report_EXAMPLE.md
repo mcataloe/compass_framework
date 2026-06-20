@@ -42,6 +42,9 @@ This generic example shows a safe dry-run report. It does not describe an actual
 - `checkpoints/`
 - `ledgers/`
 - `sources/`
+- `sources/seed/`
+- `sources/seed/README.md`
+- `sources/seed/SEED_ARTIFACTS_MANIFEST.md`
 - `exports/`
 - `style/`
 - `migration/`
@@ -58,11 +61,15 @@ This generic example shows a safe dry-run report. It does not describe an actual
 - `/style/`
 - `/migration/`
 - `/COMPASS_Source_Manifest.md`
+- `/sources/seed/`
+- `/sources/seed/README.md`
+- `/sources/seed/SEED_ARTIFACTS_MANIFEST.md`
 
 ## 9. Drift Detected
 
 - Missing expected directory: `/checkpoints/`
 - Missing expected directory: `/exports/`
+- Missing expected directory: `/sources/seed/`
 - Existing user-owned file at expected path: `/ledgers/03_Approved_Claim_Ledger.md`
 
 ## 10. Legacy / Historical Paths Preserved
@@ -76,6 +83,9 @@ This generic example shows a safe dry-run report. It does not describe an actual
 - Create `/style/`
 - Create `/migration/`
 - Create `/COMPASS_Source_Manifest.md`
+- Create `/sources/seed/`
+- Create `/sources/seed/README.md`
+- Create `/sources/seed/SEED_ARTIFACTS_MANIFEST.md`
 
 ## 12. Forbidden Changes Not Performed
 
@@ -86,6 +96,7 @@ This generic example shows a safe dry-run report. It does not describe an actual
 - No checkpoint rewrites
 - No claim-ledger edits
 - No do-not-claim edits
+- No automatic movement of existing resumes, CVs, or source files into `/sources/seed/`
 
 ## 13. Manual Decisions Required
 

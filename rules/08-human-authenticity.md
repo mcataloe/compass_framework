@@ -92,6 +92,41 @@ Avoid:
 - Empty claims about passion, motivation, or culture fit
 - Repetitive bullet formulas
 
+## Technical Density and Architecture-Taxonomy Check
+
+Technical specificity is valuable when it explains the actual work. It becomes a readability problem when terminology replaces the candidate's contribution.
+
+Revise or consolidate a bullet when:
+
+- It primarily lists related architecture patterns, frameworks, services, or reliability concepts without identifying an action, decision, or implementation.
+- The same pattern inventory appears across multiple roles or bullets without materially different context.
+- Several adjacent bullets describe the same underlying technical behavior using different terminology.
+- The reader must decode a jargon stack before understanding what the candidate did.
+- Target keywords dominate the sentence while the problem, scope, decision, or consequence remains unclear.
+- Removing most of the terminology would leave no substantive career claim.
+
+Preserve technical detail when it:
+
+- Explains a real architecture, implementation, reliability, security, data, or delivery decision.
+- Differentiates verified depth or hands-on credibility.
+- Clarifies the target-role match.
+- Connects a mechanism to an operational, business, governance, or stakeholder consequence.
+- Is source-backed and interview-defensible.
+
+Prefer bullets that make some useful combination of the following clear:
+
+1. The problem or constraint
+2. The candidate's action or decision
+3. The relevant technical mechanism
+4. The scope, collaborators, or stakeholders
+5. The outcome, consequence, or operational value
+
+Not every bullet needs all five elements. Do not force a rigid formula or remove technical depth solely for brevity.
+
+Useful review question:
+
+> Can a reviewer identify what the candidate actually did without first decoding the architecture vocabulary?
+
 ## Relationship to ATS
 
 COMPASS should remain ATS-safe by using:

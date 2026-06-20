@@ -34,7 +34,7 @@ List directories/files detected.
 
 ## 6. Expected Scaffold
 
-List expected directories/files from the current framework scaffold.
+List expected directories/files from the current framework scaffold, including `/sources/seed/` Initial Seed Artifact paths when applicable.
 
 ## 7. Files Already Present
 
@@ -64,7 +64,7 @@ State that they were preserved and not renamed.
 
 ## 11. Proposed Create-Only Changes
 
-List changes that may be created in `create-missing-only` mode after approval.
+List changes that may be created in `create-missing-only` mode after approval. Missing seed scaffold directories and seed placeholder/template files may be proposed, but existing resumes, CVs, or source files must not be moved into `/sources/seed/`.
 
 ## 12. Forbidden Changes Not Performed
 
@@ -77,6 +77,7 @@ Confirm:
 - No checkpoint rewrites
 - No claim-ledger edits
 - No do-not-claim edits
+- No automatic movement of existing resumes, CVs, or source files into `/sources/seed/`
 
 ## 13. Manual Decisions Required
 

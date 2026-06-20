@@ -56,6 +56,12 @@ Intake must treat source documents as evidence, not automatic truth. Prior docum
 
 Imported resumes, CVs, LinkedIn profiles, cover letters, portfolio examples, recruiter resumes, and prior generated artifacts are not permanent factual authorities. Once their material claims have been ingested, reconciled, and verified, the canonical source-of-truth record and approved ledgers become the authority. Generated artifacts remain downstream outputs unless separately imported and verified.
 
+Initial Seed Artifacts are user-provided source materials stored under `/sources/seed/` when the scaffold is available. Seed artifacts may include existing resumes, shortened or tailored resumes, comprehensive resumes, master CVs, LinkedIn exports, cover letters, portfolio summaries, achievement lists, or similar career evidence.
+
+Seed artifacts are seed, provisional, evidence, and not canonical. They may act as practical pro tempore source material while the verified source of truth is being built, including through Provisional Resume / CV Mode. Verified Intake records, approved claim ledgers, do-not-claim ledgers, and canonical career records supersede seed artifacts when available.
+
+A comprehensive resume or master CV may be usable for a longer provisional period because it is more likely to preserve career breadth. A shortened or tailored resume is useful seed evidence, but it is usually incomplete and should be treated more cautiously.
+
 Intake may extract candidate claims and identify likely facts, skills, assumptions, or themes, but inferred claims must be phrased as questions until the user confirms them. Inferred claims are allowed only as questions, never as claims.
 
 Intake should ask a few questions per response or batch, generally 3-5, and should separate:
@@ -85,6 +91,8 @@ Source Rebase defaults to `dry-run` mode and reports existing paths, missing sca
 
 The first permitted write mode is `create-missing-only`, and it requires explicit user approval for the exact target. Existing user-owned source-of-truth files always win over framework scaffold templates.
 
+Source Rebase may create missing `/sources/seed/` scaffold directories and placeholder/template files only in approved `create-missing-only` mode. It must not automatically move existing resumes, CVs, or other source documents into seed paths.
+
 Source Rebase must not overwrite, delete, rename, move, edit, or otherwise modify existing user-owned records. It is not COMPASS Intake and must not verify, extract, reconcile, approve, reject, or modify career claims.
 
 Historical checkpoint files, including older `COMPASS_Layer0_*` files, must be preserved and reported as historical paths rather than renamed or normalized.
@@ -110,6 +118,14 @@ The active career profile covers role evaluation, resumes, cover letters, recrui
 ### Reviewer Readability
 
 Favor clear evidence and narrative signal over dense keyword packing.
+
+For Staff, Principal, Architect, and comparable senior individual-contributor resumes, preserve official employment titles while communicating operating level through verified architecture ownership, technical direction, cross-team influence, organizational leverage, operational accountability, and hands-on implementation.
+
+Use approved claim depth to constrain verbs and leadership language. Do not mechanically convert cautious wording into ownership or leadership claims.
+
+Treat source-backed qualitative consequences as valid impact evidence. Do not force numerical metrics or convert intended benefits into realized outcomes.
+
+Revise repeated architecture-taxonomy lists when they obscure the candidate's actual action, decision, scope, or consequence, while preserving technical depth that is relevant and defensible.
 
 ### Human Authenticity
 
@@ -153,7 +169,7 @@ When sources conflict, use this priority order:
 1. User's direct current instruction
 2. User-confirmed Intake claim ledger and do-not-claim list, when available
 3. Latest approved canonical source-of-truth record
-4. Imported artifacts as evidence and provenance only
+4. Imported artifacts, including Initial Seed Artifacts, as evidence and provenance only
 5. Current target document, job description, recruiter request, or opportunity record for target context and terminology only
 6. Generated artifacts as historical outputs only
 7. COMPASS repository rules and framework defaults

@@ -26,6 +26,20 @@ Do not add unverified technologies, ownership, metrics, credentials, team sizes,
 
 An imported master CV may be comprehensive by design. Treat it as an evidence archive until material claims are verified through Intake. After verified ingestion, use the canonical source-of-truth record and approved ledgers as the downstream authority.
 
+## Provisional Resume / CV Mode
+
+If canonical Intake records are incomplete, COMPASS may use Provisional Resume / CV Mode to generate a provisional resume from seed resumes, comprehensive resumes, master CVs, LinkedIn exports, and similar seed artifacts under `/sources/seed/` or another user-provided seed location.
+
+This mode applies to both resumes and CVs, including comprehensive resumes and master CVs. A comprehensive resume or master CV is usually a stronger provisional baseline than a shortened or tailored resume because it is more likely to preserve career breadth. A shortened or tailored resume is useful seed evidence, but it is usually incomplete and should be treated more cautiously because it may omit material history or reflect one target role.
+
+Seed artifacts remain seed, provisional, evidence, and not canonical. They may act as practical pro tempore source material while the verified source of truth is being built, but they do not become permanent canonical truth merely by being stored under `/sources/seed/`.
+
+Verified Intake claim ledgers, do-not-claim ledgers, and canonical career records override seed artifacts when available. If a seed artifact conflicts with a verified ledger or do-not-claim entry, the verified ledger or do-not-claim entry wins.
+
+If a seed artifact contains a claim not yet verified, use it only when the user directly confirms it or when current COMPASS rules allow provisional use with clear source limitations. Do not fabricate technologies, ownership, metrics, credentials, employers, dates, responsibilities, achievements, team sizes, budgets, customer names, project names, or scope from seed artifacts.
+
+The clean resume artifact itself must not include COMPASS sourcing notes, scoring, framework warnings, risk notes, or tactical commentary unless the user explicitly requests an annotated artifact. If the user asks about sourcing or verification status, disclose in completion notes that Provisional Resume / CV Mode used provisional seed material.
+
 ## Resume Download Formats
 
 Unless a user-specific source-of-truth style guide or explicit user instruction says otherwise, generated downloadable resume artifacts should default to:
@@ -66,6 +80,72 @@ Use target terminology only when supported by source evidence, verified claim le
 Avoid unnatural bullet symmetry, buzzword stacking, inflated executive language, and repeated formulaic phrasing.
 
 Keep ATS-safe formatting intact. Human Authenticity must not add hidden text, parser tricks, fake imperfections, or AI-detector evasion tactics.
+
+## Staff and Principal Evidence Prioritization
+
+For Staff Engineer, Principal Engineer, Architect, senior platform, and comparable senior individual-contributor resumes:
+
+- Preserve the candidate's official employment titles. Communicate operating level through verified scope, decisions, influence, and accountability rather than title inflation.
+- Prioritize verified evidence of architecture ownership, technical direction, cross-team influence, organizational leverage, mentoring or enablement, operational accountability, and hands-on implementation.
+- Place the strongest target-relevant evidence in the professional summary and the early bullets of recent relevant roles.
+- Order bullets primarily by target relevance, contribution depth, decision consequence, and reviewer value rather than merely by chronology.
+- Do not bury approved `Owned` or `Led others` evidence beneath long technology inventories or lower-signal task descriptions.
+- Preserve contributor-level work when it is the strongest truthful evidence. Senior positioning must not erase collaboration or imply authority the candidate did not have.
+- Keep broad recruiter resumes sufficiently versatile, but still lead with the candidate's strongest verified senior-level signals.
+
+## Claim-Depth-Aware Wording
+
+Use the approved claim depth to constrain wording. The following is non-exhaustive semantic guidance, not a word-substitution engine:
+
+| Claim depth | Generally safe wording when context supports it |
+|---|---|
+| Awareness | familiar with, researched, developed awareness of |
+| Exposure | encountered, worked around, participated in discussions involving |
+| Supported | supported, contributed to, collaborated on, assisted with |
+| Implemented | built, developed, configured, integrated, migrated, implemented |
+| Owned | owned, established, drove within a defined scope, was responsible for |
+| Led others | led, guided, directed, served as technical lead, shaped direction across contributors |
+
+Safeguards:
+
+- Select wording from the actual work context, not from the table alone.
+- Mixed-depth claims must preserve each boundary. Architecture leadership, implementation, operational ownership, and people leadership may have different approved depths.
+- `Owned` does not automatically mean `Led others`.
+- `Led others` does not imply sole contribution, sole authorship, or personal implementation of every component.
+- Initial leadership followed by transition must preserve sequence and later ownership boundaries.
+- Technical Product Owner, primary technical contact, architect, and similar role-context claims do not automatically imply formal people management.
+- Mentoring, onboarding, interviewing, or technical enablement do not imply formal management unless formal management is separately verified.
+- Formal management remains valid evidence even when it occurred outside a conventional software-engineering title.
+- Vague verbs such as `supported`, `helped`, `participated`, and `worked with` should be replaced with a more specific verified action when the source record supports one; they must not be mechanically upgraded to leadership or ownership language.
+
+## Evidence-Grounded Outcomes
+
+- Numerical metrics are useful only when verified by source evidence, an approved claim ledger, or direct user confirmation.
+- Qualitative consequences are valid when source-backed and material to the work.
+- Qualitative outcomes may include reduced delivery risk, preserved service or architecture continuity, clarified ownership, enabled a technical or business decision, improved maintainability, reduced duplication, improved operational visibility, or made a material tradeoff explicit.
+- Distinguish an intended benefit, evaluated tradeoff, recommendation, implementation result, and realized outcome.
+- Do not convert a plausible consequence into a claimed realized result without evidence.
+- Do not force a metric into every bullet. Specific scope, decision authority, technical consequence, and stakeholder value may communicate impact without a percentage or dollar figure.
+
+## Bullet Construction and Prioritization
+
+Prefer a useful combination of:
+
+1. Problem, constraint, or operating context
+2. Candidate action or decision
+3. Relevant technical mechanism
+4. Scope, collaborators, or stakeholders
+5. Outcome, consequence, or operational value
+
+Not every bullet must contain all five components. Use the minimum structure needed to make the candidate's contribution and its significance clear.
+
+Additional rules:
+
+- Lead with the candidate's verified action or decision when that is clearer than leading with the technology.
+- Keep technical detail subordinate to the work it explains.
+- Consolidate overlapping bullets when they describe the same underlying contribution.
+- Use project or initiative subheadings when they improve scanability, not merely to reproduce a master-CV project log.
+- Preserve enough technical specificity to establish credibility and target-role alignment.
 
 ## Strict Resume Section Order
 
@@ -217,6 +297,8 @@ Defaults:
 - Style: italic or regular according to the active style guide.
 - Paragraph spacing before: 0 pt.
 - Paragraph spacing after: compact.
+- Preserve the official employment title unless the source record explicitly approves a normalized or dual-title presentation.
+- Communicate senior operating level through verified evidence in the summary and bullets, not by silently rewriting the official title.
 
 #### Experience Bullets
 
@@ -226,6 +308,7 @@ Defaults:
 - Hanging indent: wrapped lines align under the bullet text.
 - Paragraph spacing: compact.
 - Rule: preserve actual scope, technology, contribution depth, and outcome when source-backed.
+- For senior-IC target roles, apply the Staff and Principal Evidence Prioritization, Claim-Depth-Aware Wording, Evidence-Grounded Outcomes, and Bullet Construction rules above.
 
 #### Role-to-Role Spacing
 
