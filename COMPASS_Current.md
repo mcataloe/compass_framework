@@ -109,6 +109,14 @@ The active career profile covers role evaluation, resumes, cover letters, recrui
 
 Favor clear evidence and narrative signal over dense keyword packing.
 
+For Staff, Principal, Architect, and comparable senior individual-contributor resumes, preserve official employment titles while communicating operating level through verified architecture ownership, technical direction, cross-team influence, organizational leverage, operational accountability, and hands-on implementation.
+
+Use approved claim depth to constrain verbs and leadership language. Do not mechanically convert cautious wording into ownership or leadership claims.
+
+Treat source-backed qualitative consequences as valid impact evidence. Do not force numerical metrics or convert intended benefits into realized outcomes.
+
+Revise repeated architecture-taxonomy lists when they obscure the candidate's actual action, decision, scope, or consequence, while preserving technical depth that is relevant and defensible.
+
 ### Human Authenticity
 
 External career artifacts should follow `rules/08-human-authenticity.md` and sound truthful, candidate-specific, natural, reviewer-readable, and interview-defensible. This improves reviewer trust and artifact quality; it does not permit fake humanization, hidden formatting tricks, unsupported claims, or AI-detector evasion tactics.
