@@ -2,6 +2,21 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-05.8 - Initial Seed Artifacts and Release Hygiene
+
+Added first-class Initial Seed Artifact support for provisional career source materials under `/sources/seed/` and normalized the active release identifier so distinct material behavior changes no longer share the same version heading.
+
+Behavior updates:
+
+- Added `/sources/seed/` as the recommended source-of-truth scaffold location for seed resumes, comprehensive resumes, master CVs, LinkedIn exports, cover letters, portfolio summaries, achievement lists, and similar career evidence.
+- Added Provisional Resume / CV Mode for using seed resumes and CVs while verified COMPASS Intake records are incomplete.
+- Clarified that seed artifacts are seed, provisional, evidence, and not canonical.
+- Clarified that verified Intake claim ledgers, do-not-claim ledgers, and canonical career records supersede seed artifacts for downstream authority.
+- Distinguished shortened or tailored resumes from comprehensive resumes and master CVs as provisional baselines.
+- Updated Source Rebase so missing seed scaffold paths may be created only in approved `create-missing-only` mode, without moving, renaming, overwriting, or normalizing existing user-owned source files.
+- Added seed scaffold templates and a fictional seed artifact manifest example.
+- Advanced the active framework identifier to `vNext 2026-05.8` to distinguish Initial Seed Artifact behavior from the Staff / Principal positioning release.
+
 ## vNext 2026-05.7 - Staff / Principal Positioning and Claim-Depth-Aware Resume Language
 
 Added explicit downstream resume rules for senior individual-contributor positioning without changing Source of Truth authority or claim-depth boundaries.
@@ -18,21 +33,6 @@ Behavior updates:
 - Added bullet-construction guidance around problem, action or decision, technical mechanism, scope or stakeholders, and consequence without forcing every bullet into a rigid formula.
 - Added a technical-density and architecture-taxonomy review to preserve useful technical depth while consolidating repeated pattern inventories that obscure the candidate's actual contribution.
 - Updated `COMPASS_Current.md` and `VERSION.md` to surface the active behavior.
-
-## vNext 2026-05.7 - Initial Seed Artifacts
-
-Added first-class Initial Seed Artifact support for provisional career source materials under `/sources/seed/`.
-
-Behavior updates:
-
-- Added `/sources/seed/` as the recommended source-of-truth scaffold location for seed resumes, comprehensive resumes, master CVs, LinkedIn exports, cover letters, portfolio summaries, achievement lists, and similar career evidence.
-- Added Provisional Resume / CV Mode for using seed resumes and CVs while verified COMPASS Intake records are incomplete.
-- Clarified that seed artifacts are seed, provisional, evidence, and not canonical.
-- Clarified that verified Intake claim ledgers, do-not-claim ledgers, and canonical career records supersede seed artifacts for downstream authority.
-- Distinguished shortened or tailored resumes from comprehensive resumes and master CVs as provisional baselines.
-- Updated Source Rebase so missing seed scaffold paths may be created only in approved `create-missing-only` mode, without moving, renaming, overwriting, or normalizing existing user-owned source files.
-- Added seed scaffold templates and a fictional seed artifact manifest example.
-- Recorded seed artifact handling as active `vNext 2026-05.7` behavior because it materially changes source-priority and scaffold behavior.
 
 ## vNext 2026-05.6 - Intake Materiality Gate
 
