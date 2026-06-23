@@ -8,7 +8,7 @@ COMPASS stands for:
 
 The framework is designed to answer a reusable career question:
 
-> Can a recruiter or hiring team quickly understand the candidate's value, evidence, risks, assumptions, and defensible next action?
+> Can a recruiter or hiring team quickly understand the candidate's value, evidence, risks, assumptions, opportunity reality, and defensible next action?
 
 COMPASS is the canonical framework. New work should use COMPASS terminology and canonical files.
 
@@ -24,6 +24,7 @@ Use these files as the active source of truth:
 - `rules/07-compass-intake.md` — COMPASS Intake source-of-truth onboarding and claim verification rules
 - `rules/08-human-authenticity.md` - truthful human-authenticity and reviewer-signal rules for external artifacts
 - `rules/09-source-rebase.md` - safe source-of-truth scaffold alignment rules
+- `rules/10-opportunity-recon.md` - Purple Squirrel Factor, company and interview reality, external-evidence handling, and pursuit economics
 - `prompts/` — reusable prompt templates
 - `prompts/compass-intake.md` — reusable COMPASS Intake launcher prompt
 - `prompts/compass-source-rebase.md` - reusable COMPASS Source Rebase launcher prompt
@@ -58,6 +59,27 @@ Current first-class commands:
 - COMPASS Cover Letter
 
 Additional supported artifact requests are governed by `rules/06-artifact-rules.md` and the relevant framework rules.
+
+## COMPASS Analysis and Opportunity Reality
+
+COMPASS Analysis evaluates candidate fit and opportunity reality as related but separate questions.
+
+For identifiable-company role analysis, the strict analysis report includes:
+
+- candidate evidence and material gaps;
+- the Purple Squirrel Factor and requirement-market realism;
+- company background and employee-sentiment research when current external access is available;
+- recent comparable technical interview reports and interview-realism assessment;
+- risk, constraints, and sustainability;
+- recommendation and pursuit economics.
+
+The Purple Squirrel Factor evaluates how rare, compressed, or historically implausible the employer's requested profile is. It does not make the candidate more qualified and does not automatically justify applying.
+
+Company and interview research must preserve entity identity, source type, recency, role relevance, sample limitations, and confidence. Anonymous reviews are reported sentiment, not verified facts. Sparse or inaccessible evidence should be reported as `Insufficient` rather than guessed.
+
+Pursuit economics evaluates whether the opportunity merits the candidate's application and preparation time based on evidence, gaps, access path, posting signals, compensation, level, remote-work alignment, strategic value, effort, opportunity cost, and stronger alternatives.
+
+Durable behavior is defined in `rules/01-analysis-workflow.md`, `rules/04-truthguard.md`, `rules/06-artifact-rules.md`, and `rules/10-opportunity-recon.md`.
 
 ## COMPASS Intake
 
@@ -113,9 +135,9 @@ Source Rebase is not COMPASS Intake. It does not verify, extract, reconcile, app
 
 ## Career Profile
 
-COMPASS is career-focused. The active profile is the careers / job-search profile: role evaluation, hiring-manager scan optimization, ATS and semantic alignment, master CV claim-ledger construction, truth-preserving resume tailoring, cover letters, recruiter-specific positioning, compensation and remote-work risk analysis, interview objection prediction, and evidence mapping from source records to job descriptions.
+COMPASS is career-focused. The active profile is the careers / job-search profile: role evaluation, hiring-manager scan optimization, ATS and semantic alignment, requirement-market realism, company and interview research, pursuit economics, master CV claim-ledger construction, truth-preserving resume tailoring, cover letters, recruiter-specific positioning, compensation and remote-work risk analysis, interview objection prediction, and evidence mapping from source records to job descriptions.
 
-Generated artifacts must follow the strict output templates in `rules/06-artifact-rules.md` unless the user explicitly requests a different format. Prompt templates are launchers and must defer to the active rule files for artifact section order, source priority, TruthGuard, and clean-deliverable requirements.
+Generated artifacts must follow the strict output templates in `rules/06-artifact-rules.md` unless the user explicitly requests a different format. Prompt templates are launchers and must defer to the active rule files for artifact section order, source priority, TruthGuard, Opportunity Reality Layer behavior, and clean-deliverable requirements.
 
 External career artifacts should also follow `rules/08-human-authenticity.md` so resumes, cover letters, recruiter responses, application answers, follow-up messages, and similar deliverables remain specific, source-grounded, natural, reviewer-readable, and interview-defensible without using fake humanization or AI-detector evasion tactics.
 
@@ -135,4 +157,4 @@ If repository access fails, the assistant should say so clearly and should not r
 
 COMPASS outputs must use the user's current direct instruction, verified Intake claim ledger, do-not-claim list, and latest approved source-of-truth record before relying on imported artifacts, including Initial Seed Artifacts, as evidence. Target job descriptions and recruiter requests provide terminology and context only; they do not create experience the user does not have. Generated artifacts are downstream outputs, not factual authorities, unless separately imported and verified through Intake.
 
-COMPASS must not invent technologies, ownership, certifications, credentials, metrics, employers, responsibilities, project history, career achievements, or other career claims.
+COMPASS must not invent technologies, ownership, certifications, credentials, metrics, employers, responsibilities, project history, career achievements, market statistics, company facts, or other material claims.
