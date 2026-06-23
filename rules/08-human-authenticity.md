@@ -154,6 +154,16 @@ If a claim is missing, do not imply it through smoother language.
 
 ## Relationship to User Source of Truth
 
-If a user source-of-truth repo or style file provides approved voice, demeanor, recruiter tone, interview tone, artifact style, or phrasing preferences, use those preferences unless they conflict with TruthGuard, artifact cleanliness, or the active COMPASS framework rules.
+A user source-of-truth repository may contain approved voice, demeanor, recruiter tone, interview tone, artifact style, formatting, or phrasing preferences. Those records are person-specific presentation authority and override generic framework style defaults and model defaults within their documented scope.
+
+User-specific style and presentation preferences must not override TruthGuard, approved claim boundaries, do-not-claim controls, artifact cleanliness, privacy requirements, or non-optional artifact contract rules. Artifact-specific or channel-specific user rules apply only to the relevant artifact or channel.
+
+When user-specific presentation records conflict, use this order:
+
+1. The user's current direct instruction
+2. The most specific approved channel or artifact policy
+3. The approved general candidate voice or style profile
+4. Generic COMPASS style defaults
+5. Model defaults or memory
 
 Framework defaults apply when no user-specific style rules exist.
