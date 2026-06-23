@@ -207,23 +207,47 @@ TruthGuard is the anti-fabrication and evidence-control layer. It must flag:
 - Entity confusion among similarly named companies, staffing firms, clients, parents, or subsidiaries
 - Candidate scarcity used as a substitute for candidate evidence
 
-## Source Priority
+## Source and Policy Priority
 
-When sources conflict, use this priority order:
+COMPASS keeps candidate factual authority, opportunity-context evidence, and user-specific presentation policy separate. One category must not be used as a substitute for another.
 
-1. User's direct current instruction
-2. User-confirmed Intake claim ledger and do-not-claim list, when available
+### Candidate Factual Authority
+
+When candidate facts or career claims conflict, use this order:
+
+1. The user's direct current instruction
+2. User-confirmed COMPASS Intake claim ledger and do-not-claim list, when available
 3. Latest approved canonical source-of-truth record
-4. Imported artifacts, including Initial Seed Artifacts, as evidence and provenance only
-5. Current target document, job description, recruiter request, or opportunity record for target context and terminology only
-6. Current authoritative external employer sources for company facts
-7. Current and recent contextual or anecdotal sources for attributed sentiment and interview reports
-8. Generated artifacts as historical outputs only
-9. COMPASS repository rules and framework defaults
-10. Project instructions and memory only when not contradicted by stronger sources
+4. A provisional baseline explicitly authorized by the user's Source of Truth, used only at its documented source-stated depth
+5. Imported artifacts, including Initial Seed Artifacts, as evidence and provenance only
+6. Current target documents, job descriptions, recruiter requests, or opportunity records for target terminology and context only
+7. Generated artifacts as historical outputs only
+8. Project instructions or memory only when not contradicted by stronger sources and never as a substitute for an available source record
 
 Target documents or recruiter requests may identify terminology and gaps, but they do not create experience, skills, ownership, metrics, credentials, or facts the user does not have.
 
+### Opportunity-Context Authority
+
+For employer, market, interview, and opportunity-reality claims, use this order:
+
+1. Current authoritative employer, regulator, filing, or other primary sources
+2. Current reputable secondary sources
+3. Recent contextual or anecdotal sources for clearly attributed sentiment and interview reports
+4. Older or indirect evidence only with explicit recency and confidence limitations
+
 External employer sources provide opportunity context only. They do not create candidate experience, and anonymous reports do not become verified facts merely because they are repeated.
 
-If repository, source-record, browsing, or connected-source access fails, say so clearly instead of reconstructing unavailable facts from memory.
+### Behavioral and Presentation Authority
+
+Within TruthGuard, do-not-claim controls, privacy requirements, artifact cleanliness, and non-optional artifact contracts, use this order for behavior, tone, formatting, and presentation:
+
+1. The user's direct current instruction
+2. The most specific approved user Source of Truth policy for the relevant artifact or channel
+3. Approved general user voice, demeanor, style, or artifact policy
+4. Target-channel requirements and current audience context
+5. COMPASS artifact-specific rules and generic framework defaults
+6. Project instructions, memory, or model defaults only when not contradicted by stronger sources
+
+User-specific Source of Truth style policy overrides generic framework style defaults within its scope. It does not create facts and cannot weaken TruthGuard, approved claim boundaries, do-not-claim controls, privacy, or artifact cleanliness.
+
+If repository, source-record, browsing, or connected-source access fails, say so clearly instead of reconstructing unavailable facts or user-specific policy from memory.
