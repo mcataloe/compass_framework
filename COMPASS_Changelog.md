@@ -2,6 +2,27 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-05.9 - Opportunity Reality Layer
+
+Added an Opportunity Reality Layer to COMPASS Analysis so role evaluation covers not only candidate fit, but also requested-candidate scarcity, employer and interview reality, and whether pursuing the opportunity is worth the candidate's limited time.
+
+Behavior updates:
+
+- Added `rules/10-opportunity-recon.md` as the durable rule for Purple Squirrel Factor scoring, role-compression analysis, company background research, employee sentiment, technical interview research, interview realism, external-evidence handling, and pursuit economics.
+- Added Purple Squirrel scoring across individual requirement rarity, intersection rarity, technology-maturity plausibility, role compression, level and compensation realism, and constraint stacking.
+- Clarified that a coherent niche specialist role is different from an incoherently compressed role and that candidate scarcity does not create candidate evidence.
+- Added pursuit-economics analysis covering load-bearing evidence, material gaps, bridgeability, access path, posting signals, compensation, level, remote-work alignment, strategic value, effort, opportunity cost, and stronger alternatives.
+- Required current company and interview research for identifiable employers when browsing or connected-source access is available.
+- Added entity-disambiguation rules for similarly named companies and for staffing company, employer of record, direct client, and end customer relationships.
+- Added employee-sentiment handling with engineering-specific analysis, repeated-theme detection, recency, sample limitations, and High / Medium / Low / Insufficient confidence.
+- Added technical-interview research priorities for recent, comparable, role-relevant reports and separated interview difficulty from interview realism.
+- Added interview-realism classifications ranging from role-aligned through potentially exploitative, with an Insufficient evidence option.
+- Extended TruthGuard so anonymous reviews remain attributed accounts, isolated allegations are not generalized, historical evidence is not presented as current without corroboration, and missing evidence remains unknown.
+- Expanded the strict COMPASS Analysis report from 11 to 13 sections, adding Purple Squirrel Factor and requirement-market realism, company and interview reality, and recommendation and pursuit economics.
+- Updated the analysis launcher and command registry to require `rules/06-artifact-rules.md` and `rules/10-opportunity-recon.md`.
+- Preserved analysis / artifact separation so company research, employee sentiment, opportunity scoring, interview-risk findings, and pursuit economics do not leak into clean resumes, cover letters, recruiter responses, application answers, or follow-up messages.
+- Advanced the active framework identifier from `vNext 2026-05.8` to `vNext 2026-05.9`.
+
 ## vNext 2026-05.8 - Initial Seed Artifacts and Release Hygiene
 
 Added first-class Initial Seed Artifact support for provisional career source materials under `/sources/seed/` and normalized the active release identifier so distinct material behavior changes no longer share the same version heading.
