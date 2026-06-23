@@ -100,7 +100,7 @@ Dry-run the source repo scaffold update.
 
 **Launcher:** `prompts/compass-analysis.md`
 
-**Purpose:** Evaluate a role, job description, recruiter request, opportunity, or career target using source-grounded COMPASS analysis.
+**Purpose:** Evaluate a role, job description, recruiter request, opportunity, or career target using source-grounded candidate-fit analysis plus the Opportunity Reality Layer.
 
 **Use when the user asks to:**
 
@@ -111,6 +111,9 @@ Dry-run the source repo scaffold update.
 - decide whether to apply
 - map source evidence to target requirements
 - identify risks, gaps, or objections
+- assess how rare or compressed the requested candidate profile is
+- research the employer, employee sentiment, or technical interview process
+- determine whether the opportunity is worth the candidate's time
 
 **Example trigger phrases:**
 
@@ -128,9 +131,11 @@ Run a COMPASS fit analysis.
 - `rules/00-operating-principles.md`
 - `rules/01-analysis-workflow.md`
 - `rules/04-truthguard.md`
+- `rules/06-artifact-rules.md`
+- `rules/10-opportunity-recon.md`
 - `prompts/compass-analysis.md`
 
-**Output discipline:** Analysis is separate from generated artifacts. Do not generate resumes, cover letters, recruiter messages, or other downstream artifacts unless the user explicitly asks.
+**Output discipline:** Analysis is separate from generated artifacts. For identifiable-company role analysis, include Purple Squirrel Factor and requirement-market realism, company and interview reality, and recommendation and pursuit economics under the strict 13-section analysis report template. Report insufficient external evidence rather than speculating. Do not generate resumes, cover letters, recruiter messages, or other downstream artifacts unless the user explicitly asks.
 
 ---
 
@@ -165,7 +170,7 @@ Build a COMPASS resume for this job description.
 - `rules/08-human-authenticity.md`
 - `prompts/compass-tailored-resume.md`
 
-**Output discipline:** The resume artifact must not include COMPASS analysis, scoring, risk notes, ATS matrix commentary, compensation strategy, recruiter objection notes, private tactical notes, or framework commentary.
+**Output discipline:** The resume artifact must not include COMPASS analysis, scoring, risk notes, ATS matrix commentary, compensation strategy, recruiter objection notes, company research, interview findings, pursuit economics, private tactical notes, or framework commentary.
 
 ---
 
@@ -235,7 +240,7 @@ Write the COMPASS cover letter for the job we analyzed.
 - `rules/08-human-authenticity.md`
 - `prompts/compass-cover-letter.md`
 
-**Output discipline:** Use a calm, professional, forward-looking tone. Do not include internal COMPASS analysis, ATS tables, compensation strategy, objection notes, or private tactical notes inside the cover letter artifact.
+**Output discipline:** Use a calm, professional, forward-looking tone. Do not include internal COMPASS analysis, ATS tables, compensation strategy, company-review findings, interview-risk notes, pursuit economics, objection notes, or private tactical notes inside the cover letter artifact.
 
 ## Supported Artifact Requests
 
@@ -281,4 +286,4 @@ When adding, renaming, or retiring a COMPASS command:
 4. Update `README.md` if the command should be visible to new users.
 5. Update `COMPASS_Changelog.md` with the change.
 6. Update `VERSION.md` only when command behavior materially changes framework behavior.
-7. Preserve source-grounding, phase separation, TruthGuard, and artifact cleanliness.
+7. Preserve source-grounding, phase separation, TruthGuard, opportunity-recon evidence discipline, and artifact cleanliness.

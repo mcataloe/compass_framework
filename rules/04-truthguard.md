@@ -4,9 +4,9 @@ TruthGuard is the COMPASS anti-fabrication and evidence-control layer.
 
 ## Purpose
 
-TruthGuard prevents COMPASS outputs from overstating fit, adding unsupported terms, inventing experience, or blurring adjacent evidence into direct evidence.
+TruthGuard prevents COMPASS outputs from overstating fit, adding unsupported terms, inventing experience, blurring adjacent evidence into direct evidence, or presenting weak external employer evidence as verified fact.
 
-## Required Checks
+## Required Candidate Checks
 
 Before producing an artifact, check for:
 
@@ -63,6 +63,41 @@ Required validations:
 - Do not convert an intended benefit, architectural rationale, recommendation, risk reduction goal, or expected effect into a realized outcome unless the source supports realization.
 - Do not infer percentages, dollar savings, deployment improvements, reliability gains, organizational adoption, or customer impact from technical plausibility alone.
 - Qualitative consequences may be used when the source supports them, including preserved continuity, clarified ownership, enabled decisions, reduced duplication, improved maintainability, or reduced operational risk.
+
+## External Employer and Interview Evidence
+
+Opportunity recon under `rules/10-opportunity-recon.md` must preserve the difference between verified company facts, reasonable inference, reported sentiment, anecdote, allegation, and unknowns.
+
+Required validations:
+
+- Anonymous employee or candidate reviews are reported accounts, not verified facts.
+- Isolated allegations must not be generalized to the company, engineering organization, leadership team, or every employee.
+- Repeated themes may be described as pattern signals only when recency, relevance, sample limitations, and source consistency are stated.
+- Historical or stale evidence must not be represented as current conditions without corroboration.
+- Review-site ratings must not be treated as precise measurements of company quality, culture, management, or interview fairness.
+- Allegations of illegal, discriminatory, unethical, abusive, retaliatory, fraudulent, or otherwise serious conduct require careful attribution. They must not be stated as established fact without authoritative corroboration.
+- Similarly named companies, brands, parents, subsidiaries, staffing firms, employers of record, clients, and end customers must be disambiguated before their evidence is combined.
+- Missing company, employee, or interview evidence must remain unknown. Absence of reviews is not positive or negative evidence.
+- A job description does not prove that every listed qualification is an actual hard screen.
+- Lack of proof that a requirement is a hard screen does not make the requirement optional.
+- Candidate-market scarcity, role compression, or a high Purple Squirrel Factor must not substitute for candidate evidence or erase load-bearing gaps.
+- Application saturation, low visibility, conversion likelihood, hiring flexibility, and compensation ceiling must not be asserted without evidence. Use observable signals and clearly labeled inference.
+- Interview realism must be assessed independently from whether the reporting candidate passed, failed, withdrew, or received an offer.
+- `Potentially exploitative` interview classification requires specific evidence; ordinary difficulty, multiple rounds, or a failed outcome is not enough.
+
+## Source Recency and Confidence
+
+When external employer or interview evidence is material:
+
+- label recency according to `rules/10-opportunity-recon.md`;
+- prioritize current authoritative sources and recent comparable technical-role reports;
+- triangulate across source types where practical;
+- report confidence as High, Medium, Low, or Insufficient;
+- state material limitations directly.
+
+## Artifact Separation
+
+External employer research, anonymous sentiment, Purple Squirrel scoring, pursuit economics, conversion judgments, and private interview-risk notes belong in internal analysis or preparation artifacts. Keep them out of clean resumes, cover letters, recruiter responses, application answers, and follow-up messages unless the user explicitly requests an internal dossier or appropriate sendable language.
 
 ## COMPASS Intake Integration
 

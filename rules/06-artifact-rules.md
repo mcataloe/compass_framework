@@ -43,7 +43,9 @@ Missing or unsupported material must be handled according to artifact type:
 
 External generated artifacts must be clean deliverables. Do not include internal COMPASS analysis in an external artifact unless the user explicitly requests an internal dossier.
 
-Analysis reports, interview preparation notes, compensation notes, source-of-truth records, and ledgers may include internal context, gaps, or risk notes when those sections are part of the strict template.
+Analysis reports, interview preparation notes, compensation notes, source-of-truth records, and ledgers may include internal context, gaps, risk notes, Purple Squirrel scoring, company research, interview-reality findings, and pursuit economics when those sections are part of the strict template.
+
+Company research, employee sentiment, interview reports, opportunity scoring, conversion-likelihood judgments, and private pursuit strategy must remain outside clean resumes, cover letters, recruiter responses, application answers, and follow-up messages unless the user explicitly requests an internal dossier or appropriate sendable language.
 
 Generated artifacts are downstream outputs, not factual authorities. Do not use an old resume, cover letter, recruiter message, LinkedIn draft, application answer, or portfolio draft as source truth unless it has been separately imported, extracted, reconciled, and verified through COMPASS Intake.
 
@@ -113,12 +115,27 @@ Use this section order:
 5. Source-to-output evidence mapping
 6. Missing high-priority terms, facts, or capabilities
 7. Stakeholder objection prediction
-8. Risk and constraint analysis
-9. Environment or sustainability analysis when relevant
-10. TruthGuard notes
-11. Recommendation
+8. Purple Squirrel Factor and requirement-market realism
+9. Company and interview reality check
+10. Risk and constraint analysis
+11. Environment or sustainability analysis when relevant
+12. TruthGuard notes
+13. Recommendation and pursuit economics
 
-Analysis reports may include gaps, risks, objections, and internal COMPASS reasoning because those are part of the report's purpose.
+Analysis reports may include gaps, risks, objections, external-research limitations, and internal COMPASS reasoning because those are part of the report's purpose.
+
+For identifiable-company role analysis, sections 8 and 9 are required. When external company or interview evidence is unavailable or insufficient, preserve the section and report the limitation and confidence rather than omitting it or speculating.
+
+The final recommendation and pursuit-economics section should include, when relevant:
+
+- the standard COMPASS recommendation value;
+- best application channel;
+- expected conversion likelihood as Low, Moderate, or High;
+- required effort;
+- opportunity cost;
+- conditions that would change the recommendation.
+
+Do not express conversion likelihood as a statistically measured probability unless reliable evidence supports that precision. Follow `rules/10-opportunity-recon.md` for opportunity-reality behavior and `rules/04-truthguard.md` for candidate and employer evidence boundaries.
 
 ## Tailored Resume Template
 
@@ -133,7 +150,7 @@ Use this section order:
 7. Education
 8. Certifications, clearances, or credentials, only when verified
 
-Tailored resumes must be clean deliverables. Do not include gaps, TruthGuard notes, analysis, scoring, compensation strategy, or recruiter objections inside the resume.
+Tailored resumes must be clean deliverables. Do not include gaps, TruthGuard notes, analysis, scoring, compensation strategy, recruiter objections, company sentiment, interview research, Purple Squirrel scoring, or pursuit economics inside the resume.
 
 ## Recruiter-Targeted Resume Template
 
@@ -163,7 +180,7 @@ Use this section order:
 6. Closing paragraph
 7. Signature
 
-Cover letters must be clean deliverables. Do not include gaps, ATS notes, compensation strategy, internal analysis, or unsupported motivation.
+Cover letters must be clean deliverables. Do not include gaps, ATS notes, compensation strategy, internal analysis, company-review findings, interview-risk notes, or unsupported motivation.
 
 ## Recruiter Response Template
 
@@ -176,7 +193,7 @@ Use this section order:
 5. Clarifying question or next step
 6. Signoff
 
-Recruiter responses must be concise, truthful, and ready to send. Do not include private strategy, risk notes, or unsupported claims.
+Recruiter responses must be concise, truthful, and ready to send. Do not include private strategy, Purple Squirrel scoring, company sentiment, interview research, risk notes, or unsupported claims.
 
 ## Application Answer Template
 
@@ -188,7 +205,7 @@ Use this section order:
 4. Constraint or caveat, only when required for honesty
 5. Closing sentence
 
-Application answers must answer the prompt directly and must not introduce unsupported experience to satisfy target keywords.
+Application answers must answer the prompt directly and must not introduce unsupported experience to satisfy target keywords. Do not include private opportunity-recon analysis.
 
 ## Follow-Up Message Template
 
@@ -201,7 +218,7 @@ Use this section order:
 5. Clear ask or close
 6. Signoff
 
-Follow-up messages must be clean deliverables. Do not include private analysis, pressure tactics, or unsupported claims.
+Follow-up messages must be clean deliverables. Do not include private analysis, company-review findings, pursuit economics, pressure tactics, or unsupported claims.
 
 ## Interview Preparation Notes Template
 
@@ -216,7 +233,7 @@ Use this section order:
 7. TruthGuard cautions
 8. Final prep checklist
 
-Interview preparation notes may include strategy, gaps, objections, and cautions because they are internal preparation artifacts.
+Interview preparation notes may include strategy, gaps, objections, opportunity-recon findings, and cautions because they are internal preparation artifacts.
 
 ## Compensation and Remote-Work Note Template
 

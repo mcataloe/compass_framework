@@ -2,11 +2,11 @@
 
 COMPASS is a phased, source-grounded career framework for turning messy career inputs into verified, defensible job-search outputs.
 
-COMPASS focuses on whether a recruiter, hiring manager, hiring team, or career stakeholder can quickly understand the candidate's value, evidence, assumptions, risks, and recommended next action.
+COMPASS focuses on whether a recruiter, hiring manager, hiring team, or career stakeholder can quickly understand the candidate's value, evidence, assumptions, risks, opportunity reality, and recommended next action.
 
 ## Core Question
 
-Can the intended career reviewer quickly understand the candidate's value, evidence, risks, assumptions, and defensible next action?
+Can the intended career reviewer quickly understand the candidate's value, evidence, risks, assumptions, opportunity reality, and defensible next action?
 
 ## Default Workflow
 
@@ -33,10 +33,14 @@ A complete COMPASS career analysis should include the sections relevant to the r
 5. Source-to-output evidence mapping
 6. Missing high-priority terms, facts, or capabilities
 7. Stakeholder objection prediction
-8. Risk and constraint analysis
-9. Environment or sustainability analysis when relevant
-10. TruthGuard notes
-11. Recommendation
+8. Purple Squirrel Factor and requirement-market realism
+9. Company and interview reality check
+10. Risk and constraint analysis
+11. Environment or sustainability analysis when relevant
+12. TruthGuard notes
+13. Recommendation and pursuit economics
+
+For identifiable-company job analysis, the Purple Squirrel Factor and company/interview reality sections are required. When current external evidence is unavailable or insufficient, preserve the sections and report the limitation and confidence rather than speculating.
 
 ## Recommendation Values
 
@@ -47,6 +51,39 @@ Use one of the following recommendation values for career workflows:
 - Apply cautiously
 - Recruiter-only
 - Top choice
+
+## Opportunity Reality Layer
+
+COMPASS analysis includes an Opportunity Reality Layer governed by `rules/10-opportunity-recon.md`.
+
+The layer keeps four questions separate:
+
+1. Candidate fit: what the candidate can support with direct or carefully framed adjacent evidence.
+2. Requirement-market realism: how scarce, compressed, or historically plausible the requested candidate profile is.
+3. Company and interview reality: what current external evidence suggests about the employer and hiring process.
+4. Pursuit economics: whether the opportunity merits the candidate's limited application and preparation time.
+
+### Purple Squirrel Factor
+
+The Purple Squirrel Factor evaluates the employer's requested profile independently from candidate fit. It scores individual requirement rarity, intersection rarity, technology-maturity plausibility, role compression, level and compensation realism, and constraint stacking.
+
+A high score does not create candidate evidence and does not automatically justify applying. COMPASS must distinguish a coherent niche specialist role from an incoherently compressed role combining several professions or accountability domains.
+
+### Company and Interview Reality
+
+For identifiable employers, COMPASS should perform current external research when browsing or connected-source access is available. Research may include company background, ownership or funding, leadership changes, layoffs or restructuring, product and market signals, engineering-organization signals, remote-work posture, employee sentiment, and recent comparable technical interview reports.
+
+Company identity must be disambiguated before evidence is combined. Staffing company, employer of record, direct client, and end customer must remain distinct when applicable.
+
+Anonymous reviews are reported sentiment or candidate accounts, not verified facts. Evidence must include recency, role relevance, sample limitations, and confidence. Sparse, old, indirect, conflicting, or inaccessible evidence should be reported as `Insufficient` rather than interpreted positively or negatively.
+
+Interview realism must be evaluated independently from whether the reporting candidate passed, failed, withdrew, or received an offer.
+
+### Pursuit Economics
+
+Pursuit economics evaluates candidate evidence for load-bearing requirements, material gaps, bridgeability, access path, posting visibility and saturation signals, compensation, level, remote-work alignment, strategic value, preparation effort, opportunity cost, and stronger available alternatives.
+
+The final recommendation should include, when relevant, the best application channel, qualitative expected conversion likelihood, required effort, opportunity cost, and conditions that would change the recommendation.
 
 ## COMPASS Intake — Verified Source-of-Truth Onboarding
 
@@ -113,7 +150,7 @@ Target documents or requirements may identify useful terminology and needed capa
 
 COMPASS is career-focused. Product, strategy, research, consulting, grant, policy, and personal knowledge workflows are out of scope unless the project owner explicitly reopens scope.
 
-The active career profile covers role evaluation, resumes, cover letters, recruiter responses, ATS alignment, compensation and remote-work risk, and interview preparation.
+The active career profile covers role evaluation, opportunity reality, resumes, cover letters, recruiter responses, ATS alignment, compensation and remote-work risk, company and interview research, pursuit economics, and interview preparation.
 
 ### Reviewer Readability
 
@@ -141,15 +178,19 @@ Generated artifacts must follow the strict output template for their artifact ty
 
 COMPASS should identify likely recruiter, hiring-manager, interviewer, or career-stakeholder objections before materials are generated.
 
+### External Evidence Discipline
+
+Company facts, reported sentiment, interview accounts, market-rarity judgments, and pursuit recommendations must preserve source type, recency, confidence, and uncertainty. Anonymous or historical evidence must not be promoted into verified current fact.
+
 ### Artifact Separation
 
-External generated artifacts must not contain internal COMPASS analysis, scoring, risk commentary, compensation strategy, or private tactical notes unless the user explicitly asks for an internal dossier.
+External generated artifacts must not contain internal COMPASS analysis, scoring, company research, interview-risk commentary, pursuit economics, compensation strategy, or private tactical notes unless the user explicitly asks for an internal dossier.
 
-Internal analysis, interview preparation, compensation notes, source-of-truth records, and ledgers may include gaps, risks, or strategy when those sections are part of the active artifact template.
+Internal analysis, interview preparation, compensation notes, source-of-truth records, and ledgers may include gaps, risks, external research, or strategy when those sections are part of the active artifact template.
 
 ## TruthGuard Summary
 
-TruthGuard is the anti-fabrication layer. It must flag:
+TruthGuard is the anti-fabrication and evidence-control layer. It must flag:
 
 - Missing required experience, facts, or capabilities
 - Unverified technologies or domain claims
@@ -161,6 +202,10 @@ TruthGuard is the anti-fabrication layer. It must flag:
 - Timeline inconsistencies
 - Role or project scope that may be overstated
 - Terms that should be included only if user confirms them
+- Anonymous or anecdotal employer evidence presented as verified fact
+- Historical employer evidence presented as current without corroboration
+- Entity confusion among similarly named companies, staffing firms, clients, parents, or subsidiaries
+- Candidate scarcity used as a substitute for candidate evidence
 
 ## Source Priority
 
@@ -171,10 +216,14 @@ When sources conflict, use this priority order:
 3. Latest approved canonical source-of-truth record
 4. Imported artifacts, including Initial Seed Artifacts, as evidence and provenance only
 5. Current target document, job description, recruiter request, or opportunity record for target context and terminology only
-6. Generated artifacts as historical outputs only
-7. COMPASS repository rules and framework defaults
-8. Project instructions and memory only when not contradicted by stronger sources
+6. Current authoritative external employer sources for company facts
+7. Current and recent contextual or anecdotal sources for attributed sentiment and interview reports
+8. Generated artifacts as historical outputs only
+9. COMPASS repository rules and framework defaults
+10. Project instructions and memory only when not contradicted by stronger sources
 
 Target documents or recruiter requests may identify terminology and gaps, but they do not create experience, skills, ownership, metrics, credentials, or facts the user does not have.
 
-If repository or source-record access fails, say so clearly instead of reconstructing unavailable facts from memory.
+External employer sources provide opportunity context only. They do not create candidate experience, and anonymous reports do not become verified facts merely because they are repeated.
+
+If repository, source-record, browsing, or connected-source access fails, say so clearly instead of reconstructing unavailable facts from memory.
