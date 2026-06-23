@@ -4,19 +4,43 @@ This file defines the current user-facing COMPASS command surface.
 
 Prompt templates remain workflow launchers, not independent policy sources. When a command is executed, use the active framework files, rule files, and the user's verified source-of-truth records to govern behavior.
 
-## Command Source Priority
+## Command Authority
 
-When resolving a COMPASS command, use this priority order:
+COMPASS commands must keep candidate facts, opportunity-context evidence, and user-specific presentation policy separate.
+
+### Candidate facts and career claims
+
+Use this order:
 
 1. The user's direct instruction in the current conversation
 2. The user's verified COMPASS Intake claim ledger and do-not-claim list, when available
 3. The user's latest approved canonical career source-of-truth record
-4. The active COMPASS framework files on the canonical branch
+4. A provisional baseline explicitly authorized by the user's Source of Truth, used only at its documented source-stated depth
 5. Imported artifacts, including Initial Seed Artifacts under `/sources/seed/`, as evidence and provenance only
-6. Generated artifacts as historical outputs only
-7. ChatGPT memory only when not contradicted by stronger sources
+6. Target job descriptions, recruiter requests, and opportunity records for terminology and context only
+7. Generated artifacts as historical outputs only
+8. Project instructions or memory only when not contradicted by stronger sources and never as a substitute for an available source record
 
-Target job descriptions, recruiter requests, and opportunity records provide target terminology and context only. They do not create experience, skills, ownership, metrics, credentials, achievements, or facts.
+Target job descriptions, recruiter requests, and opportunity records do not create experience, skills, ownership, metrics, credentials, achievements, or facts.
+
+### Opportunity context
+
+For employer, market, interview, and opportunity-reality claims, prefer current authoritative primary sources, then reputable current secondary sources, then clearly attributed recent anecdotal evidence. Preserve recency, source type, and confidence.
+
+Opportunity evidence does not create candidate experience.
+
+### Behavior, tone, formatting, and presentation
+
+Within TruthGuard, do-not-claim controls, privacy requirements, artifact cleanliness, and non-optional artifact contracts, use this order:
+
+1. The user's direct current instruction
+2. The most specific approved Source of Truth policy for the relevant artifact or channel
+3. Approved general user voice, demeanor, style, or artifact policy
+4. Target-channel requirements and current audience context
+5. COMPASS artifact-specific rules and generic framework defaults
+6. Project instructions, memory, or model defaults only when not contradicted by stronger sources
+
+User-specific Source of Truth style policy overrides generic framework style defaults within its scope. It does not create candidate facts and cannot weaken TruthGuard or approved claim boundaries.
 
 ## Current First-Class Commands
 
