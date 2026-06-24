@@ -120,6 +120,56 @@ Dry-run the source repo scaffold update.
 
 ---
 
+### COMPASS Experience Sync
+
+**Launcher:** `prompts/compass-experience-sync.md`
+
+**Purpose:** Reconcile an approved COMPASS Source of Truth into a separate public or externally shareable experience repository through a one-way, source-grounded publication workflow.
+
+**Use when the user asks to:**
+
+- run COMPASS Experience Sync
+- reconcile a Source of Truth with a public experience repository
+- publish approved Intake changes to an experience repository
+- identify public claims that must be added, narrowed, replaced, removed, or marked provisional
+- audit a public experience repository for Source of Truth drift
+- create a review branch and pull request for approved public-projection changes
+
+**Example trigger phrases:**
+
+```text
+Run COMPASS Experience Sync.
+Run COMPASS Experience Sync in dry-run mode.
+Run COMPASS Experience Sync --full-audit.
+Reconcile my Source of Truth with my experience repo.
+Apply the approved COMPASS Experience Sync.
+```
+
+**Required framework files:**
+
+- `VERSION.md`
+- `COMPASS_Current.md`
+- `COMPASS_COMMANDS.md`
+- `rules/00-operating-principles.md`
+- `rules/04-truthguard.md`
+- `rules/06-artifact-rules.md`
+- `rules/07-compass-intake.md`
+- `rules/11-experience-sync.md`
+- `templates/experience-sync/COMPASS_Experience_Manifest_TEMPLATE.yaml`
+- `templates/experience-sync/COMPASS_Experience_Sync_Report_TEMPLATE.md`
+- `templates/experience-sync/COMPASS_Public_Claim_TEMPLATE.yaml`
+- `prompts/compass-experience-sync.md`
+
+**Modes:**
+
+- `dry-run` — default, incremental read-only reconciliation when reliable prior sync metadata exists
+- `full-audit` — read-only reconciliation of the complete target public projection
+- `apply-approved` — explicitly approved writes to a non-default target branch followed by a pull request
+
+**Output discipline:** Experience Sync never modifies the Source of Truth, verifies or approves new career claims, publishes unresolved material, writes directly to the target default branch, or merges a pull request without explicit instruction. Truth approval and public suitability are separate gates. Apply-approved requires a current matching report for the exact source and target commits, explicit approval, verified target write capability, and no unresolved material decisions.
+
+---
+
 ### COMPASS Analysis
 
 **Launcher:** `prompts/compass-analysis.md`
@@ -276,6 +326,7 @@ Supported artifact requests include:
 - claim ledgers
 - do-not-claim registers
 - coverage registers
+- Experience Sync reports and public claim indexes
 - analysis reports
 - recruiter responses
 - application answers
