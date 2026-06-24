@@ -72,11 +72,13 @@ Allowed reconciliation classifications:
 - `update-wording`
 - `narrow-claim`
 - `strengthen-with-approved-evidence`
-- `remove-do-not-claim`
+- `remove-public-claim`
 - `mark-provisional`
 - `replace-provisional`
 - `withhold-from-publication`
 - `requires-human-decision`
+
+`remove-public-claim` removes or corrects public wording that conflicts with stronger source authority or an approved do-not-claim boundary. It does not remove the do-not-claim control.
 
 ## 8. Proposed Public Additions
 
