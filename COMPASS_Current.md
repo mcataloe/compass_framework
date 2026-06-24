@@ -2,31 +2,38 @@
 
 COMPASS is a phased, source-grounded career framework for turning messy career inputs into verified, defensible job-search outputs.
 
-COMPASS focuses on whether a recruiter, hiring manager, hiring team, or career stakeholder can quickly understand the candidate's value, evidence, assumptions, risks, opportunity reality, and recommended next action.
+Its core question is:
 
-## Core Question
-
-Can the intended career reviewer quickly understand the candidate's value, evidence, risks, assumptions, opportunity reality, and defensible next action?
+> Can the intended career reviewer quickly understand the candidate's value, evidence, risks, assumptions, opportunity reality, and defensible next action?
 
 ## Default Workflow
 
-COMPASS runs in phases.
+1. Run COMPASS Intake when verified source records are needed.
+2. Run analysis separately from artifact generation.
+3. Generate a targeted artifact only when requested.
+4. Generate supporting responses or preparation material only when requested.
+5. Revise or defend the result using the same source authority and TruthGuard boundaries.
 
-1. COMPASS Intake when a verified source of truth is needed
-2. Analysis only
-3. Targeted artifact generation only when requested
-4. Supporting narrative or response generation only when requested
-5. Follow-up, revision, or defense preparation only when requested
+COMPASS Source Rebase and COMPASS Experience Sync are repository-maintenance workflows outside the opportunity-analysis sequence.
 
-Strategic analysis and generated artifacts must remain separate.
+## Source Authority
 
-COMPASS Source Rebase and COMPASS Experience Sync are repository-maintenance workflows outside the opportunity-analysis sequence. Source Rebase aligns Source of Truth scaffold structure. Experience Sync maintains a one-way downstream public experience projection.
+For candidate facts and career claims, use this order:
 
-If a COMPASS Intake claim ledger or do-not-claim list exists, use it as the strongest source for claim safety. The canonical record is a human-readable source archive; the claim ledger is the evidence-control layer beneath it. Imported artifacts are evidence inputs and provenance records; after verified ingestion, the canonical source-of-truth record and approved ledgers supersede them for downstream use.
+1. The user's direct current instruction.
+2. User-confirmed Intake claim ledgers and do-not-claim records.
+3. The latest approved canonical Source of Truth records.
+4. A provisional baseline explicitly authorized by the Source of Truth, at its documented depth.
+5. Imported artifacts as evidence and provenance only.
+6. Target job descriptions and recruiter requests for terminology and context only.
+7. Generated artifacts as historical outputs only.
+8. Project memory only when stronger sources are unavailable and not contradicted.
 
-## Standard COMPASS Analysis Sections
+Target documents do not create experience, ownership, metrics, qualifications, or accomplishments.
 
-A complete COMPASS career analysis should include the sections relevant to the role, recruiter request, or career target:
+## Standard COMPASS Analysis
+
+A complete role analysis uses these sections when relevant:
 
 1. Fit or value summary
 2. Fast reviewer scan
@@ -38,15 +45,11 @@ A complete COMPASS career analysis should include the sections relevant to the r
 8. Purple Squirrel Factor and requirement-market realism
 9. Company and interview reality check
 10. Risk and constraint analysis
-11. Environment or sustainability analysis when relevant
+11. Environment or sustainability analysis
 12. TruthGuard notes
 13. Recommendation and pursuit economics
 
-For identifiable-company job analysis, the Purple Squirrel Factor and company/interview reality sections are required. When current external evidence is unavailable or insufficient, preserve the sections and report the limitation and confidence rather than speculating.
-
-## Recommendation Values
-
-Use one of the following recommendation values for career workflows:
+Recommendation values are:
 
 - Pass
 - Apply
@@ -56,229 +59,144 @@ Use one of the following recommendation values for career workflows:
 
 ## Opportunity Reality Layer
 
-COMPASS analysis includes an Opportunity Reality Layer governed by `rules/10-opportunity-recon.md`.
+The Opportunity Reality Layer keeps four questions separate:
 
-The layer keeps four questions separate:
+1. Candidate fit
+2. Requirement-market realism
+3. Company and interview reality
+4. Pursuit economics
 
-1. Candidate fit: what the candidate can support with direct or carefully framed adjacent evidence.
-2. Requirement-market realism: how scarce, compressed, or historically plausible the requested candidate profile is.
-3. Company and interview reality: what current external evidence suggests about the employer and hiring process.
-4. Pursuit economics: whether the opportunity merits the candidate's limited application and preparation time.
+The Purple Squirrel Factor evaluates scarcity, requirement intersection, technology maturity, role compression, level and compensation realism, and constraint stacking. It never creates candidate evidence.
 
-### Purple Squirrel Factor
+For identifiable employers, use current external research when available. Preserve company identity, source type, recency, role relevance, sample limits, and confidence. Anonymous reviews remain attributed reports rather than verified company facts.
 
-The Purple Squirrel Factor evaluates the employer's requested profile independently from candidate fit. It scores individual requirement rarity, intersection rarity, technology-maturity plausibility, role compression, level and compensation realism, and constraint stacking.
+Pursuit economics considers evidence, gaps, bridgeability, access path, posting signals, compensation, level, remote alignment, strategic value, preparation effort, opportunity cost, and stronger alternatives.
 
-A high score does not create candidate evidence and does not automatically justify applying. COMPASS must distinguish a coherent niche specialist role from an incoherently compressed role combining several professions or accountability domains.
+## COMPASS Intake
 
-### Company and Interview Reality
+COMPASS Intake builds or updates the verified career Source of Truth.
 
-For identifiable employers, COMPASS should perform current external research when browsing or connected-source access is available. Research may include company background, ownership or funding, leadership changes, layoffs or restructuring, product and market signals, engineering-organization signals, remote-work posture, employee sentiment, and recent comparable technical interview reports.
+Imported resumes, CVs, LinkedIn profiles, cover letters, portfolio material, recruiter resumes, and prior generated artifacts are evidence inputs. Once material claims are reconciled and approved, canonical source records and ledgers supersede those imported artifacts.
 
-Company identity must be disambiguated before evidence is combined. Staffing company, employer of record, direct client, and end customer must remain distinct when applicable.
+Initial Seed Artifacts belong under `/sources/seed/` when the scaffold is available. They are provisional evidence, not canonical truth. A comprehensive master CV may serve as a stronger temporary baseline than a shortened resume, but verified Intake records still supersede it.
 
-Anonymous reviews are reported sentiment or candidate accounts, not verified facts. Evidence must include recency, role relevance, sample limitations, and confidence. Sparse, old, indirect, conflicting, or inaccessible evidence should be reported as `Insufficient` rather than interpreted positively or negatively.
+Before asking questions, Intake runs a Materiality Gate across available ledgers, coverage registers, checkpoints, canonical records, and source artifacts. It asks only unresolved questions that could change claim approval, depth, evidence needs, scope, contradictions, or downstream-safe wording.
 
-Interview realism must be evaluated independently from whether the reporting candidate passed, failed, withdrew, or received an offer.
+Small question batches are a pacing rule, not a scope limit. Intake continues until material claims are approved, narrowed, rejected, deferred, excluded, or marked as needing evidence, metrics, or scope clarification.
 
-### Pursuit Economics
-
-Pursuit economics evaluates candidate evidence for load-bearing requirements, material gaps, bridgeability, access path, posting visibility and saturation signals, compensation, level, remote-work alignment, strategic value, preparation effort, opportunity cost, and stronger available alternatives.
-
-The final recommendation should include, when relevant, the best application channel, qualitative expected conversion likelihood, required effort, opportunity cost, and conditions that would change the recommendation.
-
-## COMPASS Intake — Verified Source-of-Truth Onboarding
-
-COMPASS Intake is the truth-first onboarding workflow for creating a canonical source of truth.
-
-Intake must treat source documents as evidence, not automatic truth. Prior documents may be outdated, incomplete, inflated, aspirational, contradictory, or context-specific.
-
-Imported resumes, CVs, LinkedIn profiles, cover letters, portfolio examples, recruiter resumes, and prior generated artifacts are not permanent factual authorities. Once their material claims have been ingested, reconciled, and verified, the canonical source-of-truth record and approved ledgers become the authority. Generated artifacts remain downstream outputs unless separately imported and verified.
-
-Initial Seed Artifacts are user-provided source materials stored under `/sources/seed/` when the scaffold is available. Seed artifacts may include existing resumes, shortened or tailored resumes, comprehensive resumes, master CVs, LinkedIn exports, cover letters, portfolio summaries, achievement lists, or similar career evidence.
-
-Seed artifacts are seed, provisional, evidence, and not canonical. They may act as practical pro tempore source material while the verified source of truth is being built, including through Provisional Resume / CV Mode. Verified Intake records, approved claim ledgers, do-not-claim ledgers, and canonical career records supersede seed artifacts when available.
-
-A comprehensive resume or master CV may be usable for a longer provisional period because it is more likely to preserve career breadth. A shortened or tailored resume is useful seed evidence, but it is usually incomplete and should be treated more cautiously.
-
-Intake may extract candidate claims and identify likely facts, skills, assumptions, or themes, but inferred claims must be phrased as questions until the user confirms them. Inferred claims are allowed only as questions, never as claims.
-
-Intake should ask a few questions per response or batch, generally 3-5, and should separate:
-
-- Confirmed facts
-- Source-extracted claims
-- Candidate inferred claims
-- Contradictions or inconsistencies
-- Clarifying questions
-- Approved claims
-- Rejected or do-not-claim items
-- Claims needing evidence, metrics, or scope
-
-The small-batch limit is a user-experience throttle, not a scope limit. Intake must continue batching until material imported claims are covered, intentionally paused, deferred, rejected, excluded as not material, or marked as needing evidence, metrics, or scope clarification. A checkpoint is a progress commit; it is not proof that the relevant source set is fully ingested.
-
-Before asking Intake questions, COMPASS must run a Materiality Gate. Intake should inspect available approved claim ledgers, do-not-claim records, coverage registers, checkpoint records, canonical source records, and relevant source artifacts first. It should ask only unresolved material questions whose answers would change source-of-truth construction, claim approval, claim-depth boundary, evidence requirements, metrics, scope, contradictions, or downstream-safe wording. If context is sufficient, Intake may proceed without questions while stating the source basis and safe assumptions.
-
-Intake must support pause/resume checkpoints and must be honest about whether it can actually save/update Google Drive files or only produce copy-ready checkpoint content.
-
-Committed Intake rounds should use stable artifact templates for checkpoint records, claim-ledger entries, do-not-claim entries, coverage-register entries, storage-status blocks, and optional ZIP bundle manifests.
+Intake supports pause and resume checkpoints and must report storage reality honestly.
 
 ## COMPASS Source Rebase
 
-COMPASS Source Rebase is the safe scaffold-alignment workflow for existing COMPASS source-of-truth repositories.
+Source Rebase aligns an existing Source of Truth repository with the current framework scaffold.
 
-Source Rebase defaults to `dry-run` mode and reports existing paths, missing scaffold paths, drift, legacy or historical paths preserved, skipped files, refused destructive actions, write verification status, and the next safe action.
+It defaults to `dry-run`. The first writable mode is `create-missing-only`, which requires explicit approval for the exact target.
 
-The first permitted write mode is `create-missing-only`, and it requires explicit user approval for the exact target. Existing user-owned source-of-truth files always win over framework scaffold templates.
+Existing user-owned files always win. Source Rebase must not overwrite, delete, rename, move, edit, normalize, or reinterpret them.
 
-Source Rebase may create missing `/sources/seed/` scaffold directories and placeholder/template files only in approved `create-missing-only` mode. It must not automatically move existing resumes, CVs, or other source documents into seed paths.
+The scaffold includes:
 
-Source Rebase must not overwrite, delete, rename, move, edit, or otherwise modify existing user-owned records. It is not COMPASS Intake and must not verify, extract, reconcile, approve, reject, or modify career claims.
+- `/sources/seed/` for provisional source artifacts;
+- `/sync/` for optional private Experience Sync routing configuration;
+- ledgers, checkpoints, style guidance, exports, and migration/report paths.
 
-Historical checkpoint files, including older `COMPASS_Layer0_*` files, must be preserved and reported as historical paths rather than renamed or normalized.
+Source Rebase may create a missing generic `sync/COMPASS_Experience_Targets.yaml` placeholder after approval. It must not infer or populate real repository links without a separate explicit configuration instruction.
+
+Source Rebase is not Intake or Experience Sync. It does not verify claims or publish downstream content.
 
 ## COMPASS Experience Sync
 
-COMPASS Experience Sync reconciles an approved career Source of Truth into a separate public or externally shareable experience repository.
+Experience Sync reconciles approved Source of Truth records into a separate public or externally shareable experience repository.
 
-Experience Sync is a one-way downstream projection. The Source of Truth remains the factual authority. The experience repository remains a generated publication artifact and must not update, override, or become factual authority for the Source of Truth.
+The workflow is one-way. The Source of Truth remains authoritative; the experience repository remains a downstream publication artifact.
 
-Experience Sync consumes approved Intake claim ledgers, do-not-claim records, coverage metadata, canonical role and project records, and explicitly authorized provisional baselines. It does not verify, approve, or infer new career claims. Unresolved material claim questions must return to COMPASS Intake.
+### Private source-side routing
 
-Experience Sync applies two separate gates:
+The Source of Truth should maintain the authoritative target map at:
 
-1. Truth Gate: whether wording is approved, narrowed, claim-depth-bounded, or explicitly authorized for provisional use.
-2. Publication Gate: whether the approved fact is useful and appropriate for the intended public or external audience.
+```text
+sync/COMPASS_Experience_Targets.yaml
+```
 
-Canonical facts may be withheld or abstracted when they contain personal information, private strategy, colleague names, customer-sensitive details, security-sensitive details, raw Intake material, or unnecessary operational specifics. Abstraction must not broaden or strengthen the claim.
+The map may contain:
 
-Experience Sync supports three modes:
+- a stable source ID;
+- actual source repository and branch;
+- one or more stable target IDs;
+- actual target repositories and branches;
+- audience and publication defaults;
+- protected paths;
+- write policy;
+- enabled or disabled target state.
 
-- `dry-run`: incremental, read-only reconciliation using reliable prior sync metadata when available;
-- `full-audit`: read-only reconciliation of the complete target projection;
-- `apply-approved`: explicitly approved writes to a non-default target branch followed by a pull request.
+Experience Sync reads but never modifies this file.
 
-Dry-run is the default. Apply-approved requires a current report for the exact source and target commits, explicit user approval, verified target write access, and no unresolved decisions affecting the requested changes.
+### Public target manifest
 
-Experience Sync must never write directly to the target default branch, modify the Source of Truth, merge a pull request without explicit instruction, publish do-not-claim material, or claim persistence without verification.
+A public experience repository should use a sanitized `COMPASS_Experience_Manifest.yaml` containing:
 
-The target experience repository should use a `COMPASS_Experience_Manifest.yaml` or compatible repository-specific manifest to record source and target mapping, prior reconciled commits, publication defaults, protected paths, claim-index location, write policy, and report history.
+- a stable source identifier;
+- target-local repository identity;
+- last reconciled source and target commits;
+- framework version and reconciliation date;
+- publication defaults;
+- public claim-index and report metadata.
 
-Durable behavior is defined in `rules/11-experience-sync.md`. Generic templates are stored under `templates/experience-sync/`.
+The public manifest should not expose the private Source of Truth repository location by default.
 
-## Operating Principles
+### Target resolution
 
-### Truth First
+Resolve a target by:
 
-Never invent technologies, metrics, credentials, responsibilities, ownership, employers, timelines, project names, career achievements, business outcomes, or other material claims.
+1. the user's direct target ID or explicit override;
+2. the matching enabled target in the source-side map;
+3. an explicitly supplied repository for a read-only run when no map exists;
+4. stopping when the target remains ambiguous.
 
-### Evidence Mapping
+An override that conflicts with an existing mapping requires human review.
 
-Every strong claim in an artifact should be traceable to source material, a user's direct statement, or a user-confirmed Intake claim ledger entry.
+### Publication gates
 
-Target documents or requirements may identify useful terminology and needed capabilities, but they do not create source experience or facts. If a target asks for something not present in the verified source material, flag the gap or use truthful adjacent phrasing instead of adding the claim.
+Experience Sync applies two independent gates:
 
-### Career Profile
+1. Truth Gate: the claim is approved, narrowed, depth-bounded, or explicitly authorized as provisional.
+2. Publication Gate: the approved fact is appropriate for the intended external audience.
 
-COMPASS is career-focused. Product, strategy, research, consulting, grant, policy, and personal knowledge workflows are out of scope unless the project owner explicitly reopens scope.
+Approved facts may still be withheld or abstracted to remove personal information, private strategy, colleague names, customer-sensitive detail, internal process material, or unnecessary operational specifics. Abstraction must not broaden the claim.
 
-The active career profile covers role evaluation, opportunity reality, resumes, cover letters, recruiter responses, ATS alignment, compensation and remote-work risk, company and interview research, pursuit economics, and interview preparation.
+### Modes
 
-### Reviewer Readability
+- `dry-run`: incremental, read-only reconciliation when reliable prior metadata exists.
+- `full-audit`: read-only review of the complete target projection.
+- `apply-approved`: approved changes on a non-default target branch followed by a pull request.
 
-Favor clear evidence and narrative signal over dense keyword packing.
+Apply-approved requires a current report for the exact source commit, selected target ID, target repository, and target commit. Experience Sync must not write directly to the target default branch, modify the Source of Truth or routing map, publish do-not-claim material, or merge without explicit instruction.
 
-For Staff, Principal, Architect, and comparable senior individual-contributor resumes, preserve official employment titles while communicating operating level through verified architecture ownership, technical direction, cross-team influence, organizational leverage, operational accountability, and hands-on implementation.
+## Artifact Discipline
 
-Use approved claim depth to constrain verbs and leadership language. Do not mechanically convert cautious wording into ownership or leadership claims.
+Generated artifacts are purpose-built downstream outputs, not factual authorities.
 
-Treat source-backed qualitative consequences as valid impact evidence. Do not force numerical metrics or convert intended benefits into realized outcomes.
+External artifacts must remain clean and reviewer-ready. Internal analysis, Intake records, ledgers, preparation notes, compensation notes, and Experience Sync reports may include gaps, provenance, risks, and strategy when required by their artifact contract.
 
-Revise repeated architecture-taxonomy lists when they obscure the candidate's actual action, decision, scope, or consequence, while preserving technical depth that is relevant and defensible.
+All external artifacts must pass TruthGuard and Human Authenticity review. Do not invent facts, inflate contribution depth, or convert planned benefits into realized outcomes.
 
-### Human Authenticity
+## External Evidence Discipline
 
-External career artifacts should follow `rules/08-human-authenticity.md` and sound truthful, candidate-specific, natural, reviewer-readable, and interview-defensible. This improves reviewer trust and artifact quality; it does not permit fake humanization, hidden formatting tricks, unsupported claims, or AI-detector evasion tactics.
+Employer facts, reported sentiment, interview accounts, market-rarity judgments, and pursuit recommendations must preserve source type, recency, confidence, and uncertainty.
 
-### Artifact Discipline
+External opportunity evidence does not create candidate experience.
 
-Generated artifacts should be purpose-built deliverables, not reproduced source archives.
+## Behavioral and Presentation Authority
 
-Generated artifacts must follow the strict output template for their artifact type in `rules/06-artifact-rules.md` unless the user explicitly requests a different format.
+Within TruthGuard and artifact-cleanliness requirements, use this order:
 
-### Objection Prediction
+1. The user's direct current instruction.
+2. The most specific approved Source of Truth policy for the artifact or channel.
+3. Approved general user voice and style policy.
+4. Target-channel and audience requirements.
+5. COMPASS artifact rules and framework defaults.
+6. Project memory or model defaults only when not contradicted by stronger sources.
 
-COMPASS should identify likely recruiter, hiring-manager, interviewer, or career-stakeholder objections before materials are generated.
+User-specific presentation policy cannot weaken TruthGuard, approved claim boundaries, privacy, or do-not-claim controls.
 
-### External Evidence Discipline
-
-Company facts, reported sentiment, interview accounts, market-rarity judgments, and pursuit recommendations must preserve source type, recency, confidence, and uncertainty. Anonymous or historical evidence must not be promoted into verified current fact.
-
-### Artifact Separation
-
-External generated artifacts must not contain internal COMPASS analysis, scoring, company research, interview-risk commentary, pursuit economics, compensation strategy, or private tactical notes unless the user explicitly asks for an internal dossier.
-
-Internal analysis, interview preparation, compensation notes, source-of-truth records, ledgers, and Experience Sync reports may include gaps, risks, provenance, publication decisions, or strategy when those sections are part of the active artifact template.
-
-## TruthGuard Summary
-
-TruthGuard is the anti-fabrication and evidence-control layer. It must flag:
-
-- Missing required experience, facts, or capabilities
-- Unverified technologies or domain claims
-- Unsupported credentials or certifications
-- Unsupported security, compliance, regulatory, or legal claims
-- Unsupported metrics
-- Unsupported ownership claims
-- Unsupported leadership scope
-- Timeline inconsistencies
-- Role or project scope that may be overstated
-- Terms that should be included only if user confirms them
-- Anonymous or anecdotal employer evidence presented as verified fact
-- Historical employer evidence presented as current without corroboration
-- Entity confusion among similarly named companies, staffing firms, clients, parents, or subsidiaries
-- Candidate scarcity used as a substitute for candidate evidence
-
-## Source and Policy Priority
-
-COMPASS keeps candidate factual authority, opportunity-context evidence, and user-specific presentation policy separate. One category must not be used as a substitute for another.
-
-### Candidate Factual Authority
-
-When candidate facts or career claims conflict, use this order:
-
-1. The user's direct current instruction
-2. User-confirmed COMPASS Intake claim ledger and do-not-claim list, when available
-3. Latest approved canonical source-of-truth record
-4. A provisional baseline explicitly authorized by the user's Source of Truth, used only at its documented source-stated depth
-5. Imported artifacts, including Initial Seed Artifacts, as evidence and provenance only
-6. Current target documents, job descriptions, recruiter requests, or opportunity records for target terminology and context only
-7. Generated artifacts as historical outputs only
-8. Project instructions or memory only when not contradicted by stronger sources and never as a substitute for an available source record
-
-Target documents or recruiter requests may identify terminology and gaps, but they do not create experience, skills, ownership, metrics, credentials, or facts the user does not have.
-
-### Opportunity-Context Authority
-
-For employer, market, interview, and opportunity-reality claims, use this order:
-
-1. Current authoritative employer, regulator, filing, or other primary sources
-2. Current reputable secondary sources
-3. Recent contextual or anecdotal sources for clearly attributed sentiment and interview reports
-4. Older or indirect evidence only with explicit recency and confidence limitations
-
-External employer sources provide opportunity context only. They do not create candidate experience, and anonymous reports do not become verified facts merely because they are repeated.
-
-### Behavioral and Presentation Authority
-
-Within TruthGuard, do-not-claim controls, privacy requirements, artifact cleanliness, and non-optional artifact contracts, use this order for behavior, tone, formatting, and presentation:
-
-1. The user's direct current instruction
-2. The most specific approved user Source of Truth policy for the relevant artifact or channel
-3. Approved general user voice, demeanor, style, or artifact policy
-4. Target-channel requirements and current audience context
-5. COMPASS artifact-specific rules and generic framework defaults
-6. Project instructions, memory, or model defaults only when not contradicted by stronger sources
-
-User-specific Source of Truth style policy overrides generic framework style defaults within its scope. It does not create facts and cannot weaken TruthGuard, approved claim boundaries, do-not-claim controls, privacy, or artifact cleanliness.
-
-If repository, source-record, browsing, or connected-source access fails, say so clearly instead of reconstructing unavailable facts or user-specific policy from memory.
+If required repository or source access fails, state that clearly rather than reconstructing unavailable records from memory.
