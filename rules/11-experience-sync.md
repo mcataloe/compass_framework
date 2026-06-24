@@ -374,24 +374,23 @@ Every report must include:
 
 1. mode and date;
 2. framework version;
-3. source repository, branch, and commit;
-4. selected target ID and target-resolution basis;
-5. target repository, branch, and commit;
-6. access and write-capability disclosure;
-7. previous reconciliation state;
-8. source scope examined;
-9. authority and coverage findings;
-10. proposed additions;
-11. proposed wording updates and narrowings;
-12. proposed removals and do-not-claim corrections;
-13. provisional claims retained or replaced;
-14. disclosure abstractions and withheld content;
-15. conflicts and manual decisions;
-16. files that would change;
-17. forbidden actions not performed;
-18. validation performed;
-19. storage status;
-20. next safe action.
+3. source repository, routing-map status, selected target ID, and target-resolution basis;
+4. target repository, branch, and commit;
+5. previous reconciliation state;
+6. source scope examined;
+7. authority and coverage findings;
+8. proposed additions;
+9. proposed wording updates and narrowings;
+10. proposed removals and do-not-claim corrections;
+11. provisional claims retained or replaced;
+12. disclosure abstractions and withheld content;
+13. conflicts and manual decisions;
+14. files that would change;
+15. forbidden actions not performed;
+16. validation performed;
+17. storage status;
+18. applied change metadata when applicable;
+19. next safe action.
 
 ## Validation
 
