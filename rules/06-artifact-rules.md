@@ -4,7 +4,7 @@ This file defines COMPASS artifact behavior.
 
 ## Artifact Types
 
-COMPASS may generate canonical career records, claim ledgers, analysis reports, tailored resumes, recruiter-targeted resumes, cover letters, recruiter responses, application answers, follow-up messages, interview preparation notes, compensation notes, and other career-specific artifacts.
+COMPASS may generate canonical career records, claim ledgers, do-not-claim registers, coverage registers, Experience Sync reports, public claim indexes, analysis reports, tailored resumes, recruiter-targeted resumes, cover letters, recruiter responses, application answers, follow-up messages, interview preparation notes, compensation notes, and other career-specific artifacts.
 
 ## Default Download Formats
 
@@ -35,7 +35,7 @@ If a requested artifact does not match a named template, use the closest templat
 Missing or unsupported material must be handled according to artifact type:
 
 - Clean deliverables such as resumes, cover letters, recruiter responses, application answers, and follow-up messages must omit unsupported claims.
-- Analysis, interview preparation, compensation notes, source-of-truth records, and ledgers may identify gaps when those gaps are part of the artifact's purpose.
+- Analysis, interview preparation, compensation notes, source-of-truth records, ledgers, and Experience Sync reports may identify gaps when those gaps are part of the artifact's purpose.
 - Target documents, job descriptions, recruiter requests, and opportunity records may supply terminology and context only. They must not create experience, skills, ownership, metrics, credentials, or facts the user does not have.
 - Compensation and remote-work content must stay out of clean resumes and cover letters unless the user explicitly asks for negotiation language.
 
@@ -43,17 +43,17 @@ Missing or unsupported material must be handled according to artifact type:
 
 External generated artifacts must be clean deliverables. Do not include internal COMPASS analysis in an external artifact unless the user explicitly requests an internal dossier.
 
-Analysis reports, interview preparation notes, compensation notes, source-of-truth records, and ledgers may include internal context, gaps, risk notes, Purple Squirrel scoring, company research, interview-reality findings, and pursuit economics when those sections are part of the strict template.
+Analysis reports, interview preparation notes, compensation notes, source-of-truth records, ledgers, and Experience Sync reports may include internal context, gaps, risk notes, provenance, publication decisions, Purple Squirrel scoring, company research, interview-reality findings, and pursuit economics when those sections are part of the strict template.
 
 Company research, employee sentiment, interview reports, opportunity scoring, conversion-likelihood judgments, and private pursuit strategy must remain outside clean resumes, cover letters, recruiter responses, application answers, and follow-up messages unless the user explicitly requests an internal dossier or appropriate sendable language.
 
-Generated artifacts are downstream outputs, not factual authorities. Do not use an old resume, cover letter, recruiter message, LinkedIn draft, application answer, or portfolio draft as source truth unless it has been separately imported, extracted, reconciled, and verified through COMPASS Intake.
+Generated artifacts are downstream outputs, not factual authorities. Do not use an old resume, cover letter, recruiter message, LinkedIn draft, application answer, portfolio draft, or public experience repository as source truth unless it has been separately imported, extracted, reconciled, and verified through COMPASS Intake.
 
 ## Human Authenticity Pass
 
 Clean external deliverables must pass a Human Authenticity review before final output.
 
-This applies to tailored resumes, recruiter-targeted resumes, cover letters, recruiter responses, application answers, follow-up messages, LinkedIn or about summaries, and similar external career artifacts.
+This applies to tailored resumes, recruiter-targeted resumes, cover letters, recruiter responses, application answers, follow-up messages, LinkedIn or about summaries, public experience narratives, and similar external career artifacts.
 
 The pass requires:
 
@@ -66,7 +66,7 @@ The pass requires:
 - Claims the candidate can defend in an interview
 - ATS-safe structure where relevant
 
-Human Authenticity cannot override source priority, TruthGuard, or the strict template for the artifact type.
+Human Authenticity cannot override source priority, TruthGuard, public-disclosure controls, or the strict template for the artifact type.
 
 ## Canonical Career Record Template
 
@@ -103,6 +103,53 @@ Use this section order:
 11. Rejected / do-not-claim
 
 Each ledger entry should include the claim, source or provenance, status, approved wording when applicable, and any boundary or exclusion note.
+
+## Experience Sync Report Template
+
+Use `templates/experience-sync/COMPASS_Experience_Sync_Report_TEMPLATE.md` and preserve this section order:
+
+1. Mode and date
+2. Framework version
+3. Source repository, branch, and commit
+4. Target repository, branch, and commit
+5. Previous reconciliation state
+6. Source scope examined
+7. Authority and coverage findings
+8. Proposed public additions
+9. Proposed wording updates and narrowings
+10. Proposed removals and do-not-claim corrections
+11. Provisional claims retained, replaced, or withheld
+12. Disclosure abstractions and withheld content
+13. Conflicts and manual decisions
+14. Target files that would change
+15. Forbidden actions not performed
+16. Validation performed
+17. Storage status
+18. Applied change metadata, when applicable
+19. Next safe action
+
+Experience Sync reports are internal reconciliation artifacts. They may contain private source paths, do-not-claim references, gaps, publication decisions, and disclosure rationale. Do not copy the report into a public experience narrative unless the user explicitly approves a sanitized version.
+
+## Public Claim Index Template
+
+Use `templates/experience-sync/COMPASS_Public_Claim_TEMPLATE.yaml` as the default shape when a target experience repository maintains structured public claims.
+
+Each public claim should include, when practical:
+
+1. Stable public claim ID
+2. Approved public wording
+3. Source status
+4. Source references
+5. Source commit
+6. Coverage status
+7. Claim-depth or contribution boundary
+8. Public-projection status
+9. Publication abstraction note
+10. Limitations
+11. Tags
+12. Last reconciled date
+
+Public claim indexes are downstream publication metadata, not factual authority. Do not copy private evidence or do-not-claim rationale into the public index merely to strengthen provenance.
 
 ## Analysis Report Template
 
@@ -267,6 +314,7 @@ Recommended base-name patterns:
 - `Project Name - Artifact Type - YYYY-MM`
 - `Organization - Strategy Memo - YYYY-MM`
 - `Topic - Research Plan - YYYY-MM`
+- `COMPASS Experience Sync Report - YYYY-MM-DD`
 
 Filename rules for downloadable generated artifacts:
 
