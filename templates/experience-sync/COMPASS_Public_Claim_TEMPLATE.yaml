@@ -1,0 +1,22 @@
+id: stable-public-claim-id
+claim: Approved public wording for the claim.
+
+source_status: compass-reconciled
+source_refs:
+  - ledgers/approved-claim-ledger.md#claim-id
+  - sources/projects/verified-project-record.md
+source_commit: null
+
+coverage_status: approved
+claim_depth: null
+contribution_level: null
+
+public_projection_status: approved
+publication_audience: public
+publication_abstraction: null
+
+limitations: []
+
+tags: []
+
+last_reconciled: null
