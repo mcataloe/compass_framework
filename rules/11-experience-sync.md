@@ -76,7 +76,7 @@ Unless the user explicitly approves otherwise, exclude or abstract:
 - compensation targets, negotiation strategy, and private job-search constraints;
 - recruiter communications, interview notes, and private tactical analysis;
 - raw Intake questions, checkpoints, internal deliberation, and evidence inventories;
-- credentials, secrets, tokens, private URLs, customer data, and internal source code;
+- private access material, private URLs, customer data, and internal source code;
 - names of individual colleagues or private stakeholders;
 - non-public customer names, project names, implementation topology, endpoints, account identifiers, and security configurations;
 - do-not-claim rationale whose publication would reveal private or sensitive context;
@@ -112,11 +112,13 @@ Classify each affected claim or content block as one of:
 - `update-wording`
 - `narrow-claim`
 - `strengthen-with-approved-evidence`
-- `remove-do-not-claim`
+- `remove-public-claim`
 - `mark-provisional`
 - `replace-provisional`
 - `withhold-from-publication`
 - `requires-human-decision`
+
+`remove-public-claim` means removing or correcting a public claim because it conflicts with an approved do-not-claim boundary or stronger source authority. It never means removing the do-not-claim guardrail itself.
 
 Strengthening is permitted only when stronger wording is explicitly approved by the Source of Truth and passes the publication gate.
 
@@ -174,7 +176,7 @@ In apply-approved mode, COMPASS may:
 - create, update, or remove approved public-projection files on that branch;
 - update the target Experience Manifest and public claim provenance;
 - create a reconciliation report in the target repository when approved;
-- open a pull request against the target branch configured by the manifest or current instruction.
+- open a pull request from the sync branch into the target base branch configured by the manifest or current instruction.
 
 Experience Sync must not write directly to the target default branch.
 
