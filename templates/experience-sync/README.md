@@ -4,9 +4,11 @@ These templates support `COMPASS Experience Sync`, the one-way reconciliation wo
 
 ## Templates
 
-- `COMPASS_Experience_Manifest_TEMPLATE.yaml` — declares source and target repository mapping, prior reconciliation state, publication defaults, protected paths, and write policy.
+- `COMPASS_Experience_Manifest_TEMPLATE.yaml` — declares sanitized target-local identity, source ID, prior reconciliation state, publication defaults, protected paths, and write policy.
 - `COMPASS_Experience_Sync_Report_TEMPLATE.md` — records dry-run, full-audit, or apply-approved reconciliation findings and validation.
 - `COMPASS_Public_Claim_TEMPLATE.yaml` — provides a generic provenance shape for structured public claims.
+
+The authoritative source-to-target routing map belongs in the private Source of Truth at `sync/COMPASS_Experience_Targets.yaml`, using the scaffold template under `templates/source-of-truth-scaffold/sync/`.
 
 ## Ownership boundary
 
@@ -21,3 +23,7 @@ These are framework defaults. A target experience repository may adapt paths and
 - the prohibition on Source of Truth modification.
 
 The experience repository is a downstream publication artifact. It is not a canonical factual source.
+
+## Public manifest privacy
+
+A public Experience Manifest should not expose the private Source of Truth repository name or URL. It should use a stable source identifier plus reconciliation metadata. The private source-side target map resolves that identifier to the actual repository and target configuration.
