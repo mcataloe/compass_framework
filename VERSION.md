@@ -1,6 +1,6 @@
 # COMPASS Version
 
-Current COMPASS Version: vNext 2026-05.9
+Current COMPASS Version: vNext 2026-05.10
 
 Canonical Branch: main
 
@@ -20,7 +20,7 @@ COMPASS is the only canonical framework name. New rules, prompts, examples, and 
 
 ## Active Behavior Notes
 
-The active vNext 2026-05.9 framework includes COMPASS-only terminology, career-focused scope, COMPASS Intake checkpoint artifact behavior, COMPASS Source Rebase scaffold alignment, Initial Seed Artifact support, claim-depth-aware Staff / Principal resume positioning, and the Opportunity Reality Layer:
+The active vNext 2026-05.10 framework includes COMPASS-only terminology, career-focused scope, COMPASS Intake checkpoint artifact behavior, COMPASS Source Rebase scaffold alignment, COMPASS Experience Sync public-projection reconciliation, Initial Seed Artifact support, claim-depth-aware Staff / Principal resume positioning, and the Opportunity Reality Layer:
 
 - COMPASS is a career-focused, source-grounded framework for turning messy career inputs into verified, defensible job-search outputs.
 - COMPASS supports the careers / job-search profile. Product, strategy, research, consulting, grant, policy, and personal knowledge workflows are out of scope unless the project owner explicitly reopens scope.
@@ -39,6 +39,9 @@ The active vNext 2026-05.9 framework includes COMPASS-only terminology, career-f
 - COMPASS Source Rebase supports safe dry-run and explicitly approved create-missing-only scaffold alignment for source-of-truth repositories without overwriting, deleting, renaming, moving, or modifying existing user-owned records.
 - COMPASS Source Rebase recognizes `/sources/seed/` as the recommended scaffold path for Initial Seed Artifacts and may create missing seed scaffold paths only in approved `create-missing-only` mode.
 - COMPASS Source Rebase preserves historical checkpoint files such as older `COMPASS_Layer0_*` paths as historical records rather than normalizing names.
+- COMPASS Experience Sync reconciles an approved Source of Truth into a separate public or externally shareable experience repository as a one-way downstream projection.
+- COMPASS Experience Sync defaults to dry-run, supports full-audit, and permits writes only in explicitly approved `apply-approved` mode through a non-default target branch and pull request.
+- COMPASS Experience Sync applies factual approval and public-disclosure suitability as separate gates, preserves claim-depth and do-not-claim boundaries, and never modifies the Source of Truth.
 - Imported resumes, CVs, LinkedIn profiles, cover letters, portfolio examples, recruiter resumes, and prior generated artifacts are evidence inputs until their material claims are verified into the canonical source of truth.
 - Initial Seed Artifacts under `/sources/seed/` are seed, provisional, evidence, and not canonical. They may support Provisional Resume / CV Mode while Intake is incomplete.
 - Comprehensive resumes and master CVs may be stronger provisional baselines than shortened or tailored resumes, but neither becomes permanent canonical truth merely by being stored as a seed artifact.
@@ -65,4 +68,5 @@ Future COMPASS changes should preserve the core operating principles unless expl
 - External employer and interview evidence must preserve attribution, recency, confidence, and uncertainty
 - COMPASS Intake remains the default process for building a canonical source record from unverified documents or a new user's history
 - COMPASS Source Rebase remains scaffold alignment only and must not perform Intake, claim verification, or destructive source-record migration
+- COMPASS Experience Sync remains a one-way downstream public projection and must not modify or supersede Source of Truth records
 - Initial Seed Artifacts remain provisional evidence and provenance until superseded by verified source-of-truth records and ledgers
