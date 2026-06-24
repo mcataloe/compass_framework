@@ -2,6 +2,23 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-05.11 - Private Experience Sync Routing
+
+Moved actual Source of Truth and downstream target repository mapping into private Source of Truth configuration.
+
+Behavior updates:
+
+- Added `templates/source-of-truth-scaffold/sync/COMPASS_Experience_Targets.yaml` as the generic private routing-map template.
+- Added `templates/source-of-truth-scaffold/sync/README.md` to define the source-side privacy and ownership boundary.
+- Updated Source Rebase to recognize `/sync/` as an optional scaffold path and to create only generic missing placeholders after explicit approval.
+- Required actual source and target links, target IDs, branches, publication defaults, protected paths, and write policy to live in the Source of Truth routing map rather than the public target manifest.
+- Sanitized the target `COMPASS_Experience_Manifest.yaml` template so it contains a stable source ID and reconciliation metadata without exposing the private Source of Truth repository location.
+- Added deterministic target resolution, override-conflict handling, enabled-target checks, and missing-routing-map behavior.
+- Updated Experience Sync dry-run and full-audit behavior to detect public source-location exposure.
+- Updated the reconciliation report to record routing-map access, selected target ID, target-resolution basis, and public-manifest sanitization.
+- Preserved the one-way projection boundary: Experience Sync reads but never modifies the Source of Truth or routing map.
+- Advanced the active framework identifier from `vNext 2026-05.10` to `vNext 2026-05.11`.
+
 ## vNext 2026-05.10 - COMPASS Experience Sync
 
 Added `COMPASS Experience Sync` as a first-class command for reconciling an approved career Source of Truth into a separate public or externally shareable experience repository.
@@ -15,7 +32,7 @@ Behavior updates:
 - Prohibited Source of Truth writes, direct target-default-branch writes, implicit pull-request merges, and use of the public experience repository as factual authority.
 - Separated factual approval from public suitability through independent Truth and Publication gates.
 - Added coverage-status handling for approved, narrowed, claim-depth-bounded, rejected, unresolved, deferred, and provisionally authorized claims.
-- Added reconciliation classifications for additions, wording updates, narrowing, approved strengthening, do-not-claim removal, provisional replacement, withholding, and human-decision conflicts.
+- Added reconciliation classifications for additions, wording updates, narrowing, approved strengthening, public-claim removal, provisional replacement, withholding, and human-decision conflicts.
 - Added generic Experience Manifest, Experience Sync Report, and public claim provenance templates under `templates/experience-sync/`.
 - Added Experience Sync report and public claim index contracts to `rules/06-artifact-rules.md`.
 - Updated `COMPASS_Current.md`, `COMPASS_COMMANDS.md`, and `README.md` to expose the command and its relationship to Intake and Source Rebase.

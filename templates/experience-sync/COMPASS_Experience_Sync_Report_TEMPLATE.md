@@ -15,13 +15,21 @@
 - COMPASS version:
 - Experience Sync rule version, if tracked:
 
-## 3. Source Repository
+## 3. Source Repository and Target Resolution
 
 - Source repository:
 - Source branch:
 - Source commit inspected:
 - Source read access:
 - Source records inspected:
+- Routing map path:
+- Routing map access:
+- Requested target ID or override:
+- Selected target ID:
+- Resolution basis: direct instruction / source-side map / explicit unmapped override
+- Target enabled status:
+- Mapping conflict detected: yes/no
+- Public source-location exposure detected: yes/no
 
 ## 4. Target Repository
 
@@ -37,6 +45,7 @@
 ## 5. Previous Reconciliation State
 
 - Experience Manifest path:
+- Public manifest uses stable source ID: yes/no
 - Previous source commit:
 - Previous target commit:
 - Previous reconciliation date:
@@ -133,7 +142,8 @@ Record publication-gate actions such as:
 - security-sensitive details reduced;
 - evidence inventories withheld;
 - private job-search strategy excluded;
-- internal Intake detail excluded.
+- internal Intake detail excluded;
+- private Source of Truth repository location removed from public target metadata.
 
 State whether each abstraction preserves the approved claim meaning and depth.
 
@@ -147,6 +157,7 @@ Include:
 - unsafe or meaning-changing abstraction;
 - unsupported manual target wording;
 - unclear removal authority;
+- target override conflicting with the source-side map;
 - protected-path conflict;
 - publication-audience ambiguity;
 - source or target commit drift.
@@ -162,6 +173,7 @@ Include:
 Confirm:
 
 - No Source of Truth files modified
+- No source-side routing map modified
 - No Intake checkpoints modified
 - No claim ledgers modified
 - No do-not-claim records modified
@@ -171,17 +183,22 @@ Confirm:
 - No direct target default-branch writes
 - No pull request merged
 - No private source archive copied into the target
+- No private Source of Truth repository location added to public target metadata
 
 ## 16. Validation Performed
 
 Record results for:
 
-- manifest syntax;
+- routing-map syntax;
+- unique and enabled target ID;
+- target manifest syntax;
+- sanitized source identifier;
 - structured claim syntax;
 - unique public claim IDs;
 - relative links;
 - source references;
 - PII and private-content scan;
+- private source-location scan;
 - claim-depth comparison;
 - do-not-claim scan;
 - branch-policy check;
@@ -205,11 +222,13 @@ Use one status:
 Complete only for `apply-approved`:
 
 - Approved report path or ID:
+- Selected target ID:
 - Target sync branch:
 - Target branch base commit:
 - Resulting head commit:
 - Pull request URL or number:
 - Files changed:
+- Public manifest sanitized: yes/no
 - Manifest updated: yes/no
 - Post-write verification result:
 
@@ -219,9 +238,10 @@ Recommend one:
 
 - remain in dry-run;
 - run full-audit;
+- add or repair the source-side target map through an approved Source of Truth configuration change;
 - resolve Intake questions first;
 - resolve publication decisions first;
 - approve apply-approved for the exact report and target;
 - review the opened pull request;
 - merge only after explicit user review and instruction;
-- repair manifest or provenance metadata first.
+- repair target manifest or provenance metadata first.

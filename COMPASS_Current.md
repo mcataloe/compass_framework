@@ -20,7 +20,7 @@ COMPASS runs in phases.
 
 Strategic analysis and generated artifacts must remain separate.
 
-COMPASS Source Rebase and COMPASS Experience Sync are repository-maintenance workflows outside the opportunity-analysis sequence. Source Rebase aligns Source of Truth scaffold structure. Experience Sync maintains a one-way downstream public experience projection.
+COMPASS Source Rebase and COMPASS Experience Sync are repository-maintenance workflows outside the opportunity-analysis sequence. Source Rebase aligns Source of Truth scaffold structure. Experience Sync maintains a one-way downstream public experience projection using private source-side target routing when configured.
 
 If a COMPASS Intake claim ledger or do-not-claim list exists, use it as the strongest source for claim safety. The canonical record is a human-readable source archive; the claim ledger is the evidence-control layer beneath it. Imported artifacts are evidence inputs and provenance records; after verified ingestion, the canonical source-of-truth record and approved ledgers supersede them for downstream use.
 
@@ -130,9 +130,11 @@ Source Rebase defaults to `dry-run` mode and reports existing paths, missing sca
 
 The first permitted write mode is `create-missing-only`, and it requires explicit user approval for the exact target. Existing user-owned source-of-truth files always win over framework scaffold templates.
 
-Source Rebase may create missing `/sources/seed/` scaffold directories and placeholder/template files only in approved `create-missing-only` mode. It must not automatically move existing resumes, CVs, or other source documents into seed paths.
+Source Rebase may create missing `/sources/seed/` and `/sync/` scaffold directories and placeholder/template files only in approved `create-missing-only` mode. It must not automatically move existing resumes, CVs, or other source documents into seed paths, and it must not infer actual repository mappings.
 
-Source Rebase must not overwrite, delete, rename, move, edit, or otherwise modify existing user-owned records. It is not COMPASS Intake and must not verify, extract, reconcile, approve, reject, or modify career claims.
+The optional private routing file `sync/COMPASS_Experience_Targets.yaml` may identify downstream experience targets, but populating or changing real links requires a separate explicit Source of Truth configuration instruction.
+
+Source Rebase must not overwrite, delete, rename, move, edit, or otherwise modify existing user-owned records. It is not COMPASS Intake or Experience Sync and must not verify, extract, reconcile, approve, reject, publish, or modify career claims.
 
 Historical checkpoint files, including older `COMPASS_Layer0_*` files, must be preserved and reported as historical paths rather than renamed or normalized.
 
@@ -143,6 +145,12 @@ COMPASS Experience Sync reconciles an approved career Source of Truth into a sep
 Experience Sync is a one-way downstream projection. The Source of Truth remains the factual authority. The experience repository remains a generated publication artifact and must not update, override, or become factual authority for the Source of Truth.
 
 Experience Sync consumes approved Intake claim ledgers, do-not-claim records, coverage metadata, canonical role and project records, and explicitly authorized provisional baselines. It does not verify, approve, or infer new career claims. Unresolved material claim questions must return to COMPASS Intake.
+
+The private Source of Truth should maintain the authoritative repository-routing map at `sync/COMPASS_Experience_Targets.yaml`. The map may identify a stable source ID, one or more stable target IDs, actual repository locations, branches, publication defaults, protected paths, and write policy.
+
+Experience Sync resolves the requested target from that private map when available. An explicit target override that conflicts with an existing mapped target requires human review. Experience Sync reads but never modifies the routing map.
+
+The public target should use a sanitized `COMPASS_Experience_Manifest.yaml` containing a stable source identifier, target-local identity, reconciliation commits, framework version, publication metadata, and report history. It should not expose the private Source of Truth repository name or URL by default.
 
 Experience Sync applies two separate gates:
 
@@ -157,13 +165,11 @@ Experience Sync supports three modes:
 - `full-audit`: read-only reconciliation of the complete target projection;
 - `apply-approved`: explicitly approved writes to a non-default target branch followed by a pull request.
 
-Dry-run is the default. Apply-approved requires a current report for the exact source and target commits, explicit user approval, verified target write access, and no unresolved decisions affecting the requested changes.
+Dry-run is the default. Apply-approved requires a current report for the exact source commit, selected target ID, target repository, and target commit, explicit user approval, verified target write access, and no unresolved decisions affecting the requested changes.
 
-Experience Sync must never write directly to the target default branch, modify the Source of Truth, merge a pull request without explicit instruction, publish do-not-claim material, or claim persistence without verification.
+Experience Sync must never write directly to the target default branch, modify the Source of Truth or routing map, merge a pull request without explicit instruction, publish do-not-claim material, expose private source routing in public metadata by default, or claim persistence without verification.
 
-The target experience repository should use a `COMPASS_Experience_Manifest.yaml` or compatible repository-specific manifest to record source and target mapping, prior reconciled commits, publication defaults, protected paths, claim-index location, write policy, and report history.
-
-Durable behavior is defined in `rules/11-experience-sync.md`. Generic templates are stored under `templates/experience-sync/`.
+Durable behavior is defined in `rules/11-experience-sync.md`. Private source-routing templates are stored under `templates/source-of-truth-scaffold/sync/`. Sanitized target templates are stored under `templates/experience-sync/`.
 
 ## Operating Principles
 

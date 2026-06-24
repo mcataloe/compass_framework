@@ -19,11 +19,13 @@ Required framework files:
 - templates/source-of-truth-scaffold/COMPASS_Source_Manifest.md
 - templates/source-of-truth-scaffold/sources/seed/README.md
 - templates/source-of-truth-scaffold/sources/seed/SEED_ARTIFACTS_MANIFEST.md
+- templates/source-of-truth-scaffold/sync/README.md
+- templates/source-of-truth-scaffold/sync/COMPASS_Experience_Targets.yaml
 - templates/source-of-truth-scaffold/migration/COMPASS_Source_Rebase_Report_TEMPLATE.md
 
-Treat this prompt as a workflow launcher, not as an independent source of Source Rebase, storage, scaffold, migration, Intake, or data-safety rules.
+Treat this prompt as a workflow launcher, not as an independent source of Source Rebase, storage, scaffold, migration, Intake, Experience Sync, routing, or data-safety rules.
 
-Run dry-run first. Do not overwrite, delete, rename, move, or edit existing files. Existing source-of-truth files are user-owned records. Missing scaffold files, including `/sources/seed/` seed artifact scaffold paths, may be proposed for creation, but not created until I explicitly approve create-missing-only mode.
+Run dry-run first. Do not overwrite, delete, rename, move, or edit existing files. Existing source-of-truth files are user-owned records. Missing scaffold files, including `/sources/seed/` and `/sync/` scaffold paths, may be proposed for creation, but not created until I explicitly approve create-missing-only mode.
 
 My COMPASS framework source is:
 [PASTE FRAMEWORK REPO / BRANCH / TAG]
@@ -45,15 +47,17 @@ First:
 2. Inspect the target source-of-truth repo layout if available.
 3. Disclose write capability honestly.
 4. Run a dry-run comparison first.
-5. Produce a Source Rebase Report.
-6. Ask before create-missing-only application.
-7. Skip existing files.
-8. Preserve legacy and historical files.
-9. Stop on conflicts.
-10. Never claim files were saved unless actually written and verified.
-11. Keep claim verification out of scope.
-12. Keep source repo writes out of scope unless explicitly approved by the user after a dry-run report for this exact target.
-13. Do not move existing resumes, CVs, or other source files into `/sources/seed/`.
+5. Include `/sync/COMPASS_Experience_Targets.yaml` in the expected scaffold.
+6. Produce a Source Rebase Report.
+7. Ask before create-missing-only application.
+8. Skip existing files.
+9. Preserve legacy and historical files.
+10. Stop on conflicts.
+11. Never claim files were saved unless actually written and verified.
+12. Keep claim verification out of scope.
+13. Keep source repo writes out of scope unless explicitly approved by the user after a dry-run report for this exact target.
+14. Do not move existing resumes, CVs, or other source files into `/sources/seed/`.
+15. Do not populate actual source or target repository mappings unless the user explicitly requests that separate configuration change.
 
 If more than one COMPASS framework source is available, ask which one should govern before proceeding.
 
@@ -63,5 +67,5 @@ The report must identify existing scaffold paths, missing scaffold paths, drift,
 
 Do not create, overwrite, delete, rename, move, or modify any file or directory unless I explicitly approve create-missing-only mode for this exact target.
 
-Do not perform COMPASS Intake or claim verification during Source Rebase.
+Do not perform COMPASS Intake, Experience Sync, claim verification, or target synchronization during Source Rebase.
 ```

@@ -44,7 +44,8 @@ Use these files as the active source of truth:
 - `examples/seed-artifacts/SEED_ARTIFACTS_MANIFEST_EXAMPLE.md` - fictional seed artifact manifest example
 - `templates/source-of-truth-scaffold/` - framework-owned source-of-truth scaffold and report templates
 - `templates/source-of-truth-scaffold/sources/seed/` - recommended scaffold location for Initial Seed Artifacts
-- `templates/experience-sync/` - Experience Manifest, reconciliation report, and public claim provenance templates
+- `templates/source-of-truth-scaffold/sync/` - private Source of Truth routing templates for downstream experience targets
+- `templates/experience-sync/` - sanitized target manifest, reconciliation report, and public claim provenance templates
 
 Compatibility shims for earlier naming have been removed. Prompt templates and rule files should use COMPASS terminology only.
 
@@ -131,11 +132,13 @@ Use Source Rebase when a framework upgrade changes the recommended source-of-tru
 
 Source Rebase defaults to dry-run mode. It may inspect structure and produce a report, but it must not overwrite, delete, rename, move, edit, or otherwise modify existing user-owned files.
 
-The first permitted write mode is `create-missing-only`, and it requires explicit user approval for the exact target. In that mode, COMPASS may create only absent scaffold directories or absent framework placeholder files, including missing `/sources/seed/` seed artifact scaffold paths. Existing paths are always skipped and reported.
+The first permitted write mode is `create-missing-only`, and it requires explicit user approval for the exact target. In that mode, COMPASS may create only absent scaffold directories or absent framework placeholder files, including missing `/sources/seed/` and `/sync/` scaffold paths. Existing paths are always skipped and reported.
+
+The optional `/sync/COMPASS_Experience_Targets.yaml` file belongs in the private Source of Truth and stores actual downstream target locations and publication defaults. Source Rebase may create only the generic missing scaffold; populating real repository mappings requires a separate explicit configuration instruction.
 
 Historical checkpoint files, including older `COMPASS_Layer0_*` files, must be preserved and reported as historical paths. Source Rebase must not rename or normalize them for terminology cleanliness.
 
-Source Rebase is not COMPASS Intake. It does not verify, extract, reconcile, approve, reject, or modify career claims.
+Source Rebase is not COMPASS Intake or Experience Sync. It does not verify, extract, reconcile, approve, reject, publish, or modify career claims.
 
 ## COMPASS Experience Sync
 
@@ -143,15 +146,19 @@ COMPASS Experience Sync reconciles an approved COMPASS Source of Truth into a se
 
 The workflow is one-way: the Source of Truth remains authoritative, while the experience repository is a downstream publication artifact. Experience Sync never modifies the Source of Truth and never uses the public repository as factual authority.
 
-Experience Sync defaults to `dry-run`. It may compare source records, claim ledgers, do-not-claim controls, coverage status, public files, structured claims, and prior reconciliation metadata, but it performs no writes.
+The private Source of Truth should maintain the authoritative routing map at `sync/COMPASS_Experience_Targets.yaml`. That file may contain actual source and target repository locations, stable target IDs, branches, publication defaults, protected paths, and write policy.
 
-`full-audit` rechecks the entire public projection and is appropriate for first-time setup, suspected drift, manual target edits, missing manifest history, publication-policy changes, or major framework changes.
+The public experience repository should use a sanitized `COMPASS_Experience_Manifest.yaml` containing a stable source identifier and reconciliation metadata rather than the private Source of Truth repository name or URL.
 
-`apply-approved` requires a current matching dry-run or full-audit report and explicit user approval. It writes only to a non-default target branch, updates reconciliation metadata, opens a pull request, and does not merge unless explicitly instructed.
+Experience Sync defaults to `dry-run`. It may compare source records, claim ledgers, do-not-claim controls, coverage status, source-side routing, public files, structured claims, and prior reconciliation metadata, but it performs no writes.
+
+`full-audit` rechecks the entire public projection and is appropriate for first-time setup, suspected drift, manual target edits, missing manifest history, publication-policy changes, major framework changes, or migration away from a public manifest that exposed private source routing.
+
+`apply-approved` requires a current matching dry-run or full-audit report and explicit user approval. It writes only to a non-default target branch, updates sanitized reconciliation metadata, opens a pull request, and does not merge unless explicitly instructed.
 
 Truth approval and public suitability are separate gates. Approved facts may still be withheld or abstracted when they contain personal information, private strategy, colleague names, customer-sensitive details, security-sensitive details, raw Intake material, or unnecessary operational specifics.
 
-Durable behavior is defined in `rules/11-experience-sync.md`. The launcher is `prompts/compass-experience-sync.md`, and generic target-repository templates are under `templates/experience-sync/`.
+Durable behavior is defined in `rules/11-experience-sync.md`. The launcher is `prompts/compass-experience-sync.md`. Private routing templates are under `templates/source-of-truth-scaffold/sync/`, and sanitized target-repository templates are under `templates/experience-sync/`.
 
 ## Career Profile
 

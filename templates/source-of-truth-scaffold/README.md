@@ -13,6 +13,7 @@ sources/
 sources/seed/
 exports/
 style/
+sync/
 migration/
 ```
 
@@ -21,6 +22,14 @@ migration/
 Use `sources/seed/` for Initial Seed Artifacts such as existing resumes, comprehensive resumes, master CVs, LinkedIn exports, prior cover letters, portfolio summaries, achievement lists, and similar career evidence.
 
 Seed artifacts are seed, provisional, evidence, and not canonical. Verified COMPASS Intake records and ledgers supersede them for downstream authority when available.
+
+## Experience Sync Configuration
+
+Use `sync/COMPASS_Experience_Targets.yaml` for the private source-to-target routing map used by COMPASS Experience Sync.
+
+This source-side file may contain actual Source of Truth and target repository locations, target IDs, branches, publication defaults, protected paths, and write policy. It must not be copied into a public experience repository.
+
+The public target manifest should use a stable source identifier and reconciliation metadata rather than exposing the private Source of Truth repository location.
 
 ## Safety
 

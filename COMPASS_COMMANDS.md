@@ -92,6 +92,7 @@ Update my COMPASS Source of Truth.
 - add missing source-of-truth scaffold structure safely without overwriting current files
 - identify missing scaffold directories or placeholder files
 - add the missing `/sources/seed/` scaffold safely
+- add the missing private `/sync/` Experience Sync routing scaffold safely
 
 **Example trigger phrases:**
 
@@ -113,10 +114,12 @@ Dry-run the source repo scaffold update.
 - `templates/source-of-truth-scaffold/COMPASS_Source_Manifest.md`
 - `templates/source-of-truth-scaffold/sources/seed/README.md`
 - `templates/source-of-truth-scaffold/sources/seed/SEED_ARTIFACTS_MANIFEST.md`
+- `templates/source-of-truth-scaffold/sync/README.md`
+- `templates/source-of-truth-scaffold/sync/COMPASS_Experience_Targets.yaml`
 - `templates/source-of-truth-scaffold/migration/COMPASS_Source_Rebase_Report_TEMPLATE.md`
 - `prompts/compass-source-rebase.md`
 
-**Output discipline:** Source Rebase defaults to dry-run mode. Existing user-owned source records always win. Report existing files, missing scaffold files, drift, and legacy or historical paths. Do not overwrite, delete, rename, move, edit, verify claims, perform COMPASS Intake, or move existing resumes/CVs into `/sources/seed/` during Source Rebase. Create missing scaffold paths only after explicit approval for `create-missing-only`.
+**Output discipline:** Source Rebase defaults to dry-run mode. Existing user-owned source records always win. Report existing files, missing scaffold files, drift, and legacy or historical paths. Do not overwrite, delete, rename, move, edit, verify claims, perform COMPASS Intake or Experience Sync, move existing resumes/CVs into `/sources/seed/`, or populate actual source/target repository mappings without explicit instruction. Create missing scaffold paths only after explicit approval for `create-missing-only`.
 
 ---
 
@@ -138,7 +141,7 @@ Dry-run the source repo scaffold update.
 **Example trigger phrases:**
 
 ```text
-Run COMPASS Experience Sync.
+Run COMPASS Experience Sync for public-experience.
 Run COMPASS Experience Sync in dry-run mode.
 Run COMPASS Experience Sync --full-audit.
 Reconcile my Source of Truth with my experience repo.
@@ -155,6 +158,7 @@ Apply the approved COMPASS Experience Sync.
 - `rules/06-artifact-rules.md`
 - `rules/07-compass-intake.md`
 - `rules/11-experience-sync.md`
+- `templates/source-of-truth-scaffold/sync/COMPASS_Experience_Targets.yaml`
 - `templates/experience-sync/COMPASS_Experience_Manifest_TEMPLATE.yaml`
 - `templates/experience-sync/COMPASS_Experience_Sync_Report_TEMPLATE.md`
 - `templates/experience-sync/COMPASS_Public_Claim_TEMPLATE.yaml`
@@ -166,7 +170,9 @@ Apply the approved COMPASS Experience Sync.
 - `full-audit` — read-only reconciliation of the complete target public projection
 - `apply-approved` — explicitly approved writes to a non-default target branch followed by a pull request
 
-**Output discipline:** Experience Sync never modifies the Source of Truth, verifies or approves new career claims, publishes unresolved material, writes directly to the target default branch, or merges a pull request without explicit instruction. Truth approval and public suitability are separate gates. Apply-approved requires a current matching report for the exact source and target commits, explicit approval, verified target write capability, and no unresolved material decisions.
+**Routing discipline:** Resolve downstream targets from the private Source of Truth map at `sync/COMPASS_Experience_Targets.yaml` when available. A public target manifest should use a stable source ID and reconciliation metadata instead of exposing the private Source of Truth repository location. An explicit target override that conflicts with the map requires human review.
+
+**Output discipline:** Experience Sync never modifies the Source of Truth or routing map, verifies or approves new career claims, publishes unresolved material, writes directly to the target default branch, or merges a pull request without explicit instruction. Truth approval and public suitability are separate gates. Apply-approved requires a current matching report for the exact source commit, selected target ID, target repository, and target commit, explicit approval, verified target write capability, and no unresolved material decisions.
 
 ---
 
