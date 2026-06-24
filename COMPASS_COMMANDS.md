@@ -1,47 +1,162 @@
 # COMPASS Command Registry
 
-This registry summarizes the active COMPASS command surface. Detailed behavior remains in the referenced rule and prompt files.
+This file defines the current user-facing COMPASS command surface.
 
-## Shared Source Priority
+Prompt templates remain workflow launchers, not independent policy sources. When a command is executed, use the active framework files, rule files, and the user's verified source-of-truth records to govern behavior.
 
-Candidate facts are resolved from current user instruction, verified Intake ledgers, approved canonical Source of Truth records, explicitly authorized provisional baselines, and then imported evidence. Target job descriptions and generated artifacts are contextual inputs rather than factual authorities.
+## Command Authority
 
-## COMPASS Intake
+COMPASS commands must keep candidate facts, opportunity-context evidence, and user-specific presentation policy separate.
+
+### Candidate facts and career claims
+
+Use this order:
+
+1. The user's direct instruction in the current conversation
+2. The user's verified COMPASS Intake claim ledger and do-not-claim list, when available
+3. The user's latest approved canonical career source-of-truth record
+4. A provisional baseline explicitly authorized by the user's Source of Truth, used only at its documented source-stated depth
+5. Imported artifacts, including Initial Seed Artifacts under `/sources/seed/`, as evidence and provenance only
+6. Target job descriptions, recruiter requests, and opportunity records for terminology and context only
+7. Generated artifacts as historical outputs only
+8. Project instructions or memory only when not contradicted by stronger sources and never as a substitute for an available source record
+
+Target job descriptions, recruiter requests, and opportunity records do not create experience, skills, ownership, metrics, credentials, achievements, or facts.
+
+### Opportunity context
+
+For employer, market, interview, and opportunity-reality claims, prefer current authoritative primary sources, then reputable current secondary sources, then clearly attributed recent anecdotal evidence. Preserve recency, source type, and confidence.
+
+Opportunity evidence does not create candidate experience.
+
+### Behavior, tone, formatting, and presentation
+
+Within TruthGuard, do-not-claim controls, privacy requirements, artifact cleanliness, and non-optional artifact contracts, use this order:
+
+1. The user's direct current instruction
+2. The most specific approved Source of Truth policy for the relevant artifact or channel
+3. Approved general user voice, demeanor, style, or artifact policy
+4. Target-channel requirements and current audience context
+5. COMPASS artifact-specific rules and generic framework defaults
+6. Project instructions, memory, or model defaults only when not contradicted by stronger sources
+
+User-specific Source of Truth style policy overrides generic framework style defaults within its scope. It does not create candidate facts and cannot weaken TruthGuard or approved claim boundaries.
+
+## Current First-Class Commands
+
+### COMPASS Intake
 
 **Launcher:** `prompts/compass-intake.md`
 
-Creates or updates verified career Source of Truth records through evidence capture, Materiality Gate review, coverage tracking, claim decisions, and checkpoints.
+**Purpose:** Build or update a verified career source of truth through evidence capture, claim verification, Materiality Gate questioning, coverage tracking, and checkpoint artifacts.
 
-Key files:
+**Use when the user asks to:**
 
+- create a COMPASS Source of Truth
+- update an existing COMPASS Source of Truth
+- ingest career documents
+- stage Initial Seed Artifacts before or during Intake
+- verify claims from resumes, CVs, LinkedIn exports, recruiter notes, interview notes, performance reviews, certifications, portfolio notes, or project summaries
+- reconcile gaps or contradictions across career source material
+
+**Example trigger phrases:**
+
+```text
+Run COMPASS Intake.
+Start COMPASS Intake for my career source of truth.
+Ingest these source documents with COMPASS.
+Update my COMPASS Source of Truth.
+```
+
+**Required framework files:**
+
+- `VERSION.md`
+- `COMPASS_Current.md`
+- `rules/00-operating-principles.md`
 - `rules/07-compass-intake.md`
 - `prompts/compass-intake.md`
 
-## COMPASS Source Rebase
+---
+
+### COMPASS Source Rebase
 
 **Launcher:** `prompts/compass-source-rebase.md`
 
-Compares an existing Source of Truth repository with the framework scaffold. It supports read-only dry-run and approved create-missing-only modes.
+**Purpose:** Safely align an existing COMPASS source-of-truth repository with the current framework-owned scaffold without overwriting, deleting, renaming, moving, or modifying existing user-owned source records.
 
-Key files:
+**Use when the user asks to:**
 
+- run COMPASS Source Rebase
+- rebase a COMPASS source-of-truth repository scaffold
+- align an existing COMPASS source repository after a framework upgrade
+- add missing source-of-truth scaffold structure safely without overwriting current files
+- identify missing scaffold directories or placeholder files
+- add the missing `/sources/seed/` scaffold safely
+- add the missing private `/sync/` Experience Sync routing scaffold safely
+
+**Example trigger phrases:**
+
+```text
+Run COMPASS Source Rebase.
+Rebase my COMPASS source-of-truth repo.
+Align my COMPASS Source of Truth with the current scaffold.
+Dry-run the source repo scaffold update.
+```
+
+**Required framework files:**
+
+- `VERSION.md`
+- `COMPASS_Current.md`
+- `COMPASS_COMMANDS.md`
+- `rules/00-operating-principles.md`
 - `rules/09-source-rebase.md`
 - `templates/source-of-truth-scaffold/README.md`
-- `templates/source-of-truth-scaffold/sources/seed/`
-- `templates/source-of-truth-scaffold/sync/`
+- `templates/source-of-truth-scaffold/COMPASS_Source_Manifest.md`
+- `templates/source-of-truth-scaffold/sources/seed/README.md`
+- `templates/source-of-truth-scaffold/sources/seed/SEED_ARTIFACTS_MANIFEST.md`
+- `templates/source-of-truth-scaffold/sync/README.md`
+- `templates/source-of-truth-scaffold/sync/COMPASS_Experience_Targets.yaml`
 - `templates/source-of-truth-scaffold/migration/COMPASS_Source_Rebase_Report_TEMPLATE.md`
 - `prompts/compass-source-rebase.md`
 
-The `/sync/` scaffold contains the Source of Truth target-routing template used by Experience Sync.
+**Output discipline:** Source Rebase defaults to dry-run mode. Existing user-owned source records always win. Report existing files, missing scaffold files, drift, and legacy or historical paths. Do not overwrite, delete, rename, move, edit, verify claims, perform COMPASS Intake or Experience Sync, move existing resumes/CVs into `/sources/seed/`, or populate actual source/target repository mappings without explicit instruction. Create missing scaffold paths only after explicit approval for `create-missing-only`.
 
-## COMPASS Experience Sync
+---
+
+### COMPASS Experience Sync
 
 **Launcher:** `prompts/compass-experience-sync.md`
 
-Reconciles approved Source of Truth records into a separate public or externally shareable experience repository.
+**Purpose:** Reconcile an approved COMPASS Source of Truth into a separate public or externally shareable experience repository through a one-way, source-grounded publication workflow.
 
-Key files:
+**Use when the user asks to:**
 
+- run COMPASS Experience Sync
+- reconcile a Source of Truth with a public experience repository
+- publish approved Intake changes to an experience repository
+- identify public claims that must be added, narrowed, replaced, removed, or marked provisional
+- audit a public experience repository for Source of Truth drift
+- create a review branch and pull request for approved public-projection changes
+
+**Example trigger phrases:**
+
+```text
+Run COMPASS Experience Sync for public-experience.
+Run COMPASS Experience Sync in dry-run mode.
+Run COMPASS Experience Sync --full-audit.
+Reconcile my Source of Truth with my experience repo.
+Apply the approved COMPASS Experience Sync.
+```
+
+**Required framework files:**
+
+- `VERSION.md`
+- `COMPASS_Current.md`
+- `COMPASS_COMMANDS.md`
+- `rules/00-operating-principles.md`
+- `rules/04-truthguard.md`
+- `rules/06-artifact-rules.md`
+- `rules/07-compass-intake.md`
 - `rules/11-experience-sync.md`
 - `templates/source-of-truth-scaffold/sync/COMPASS_Experience_Targets.yaml`
 - `templates/experience-sync/COMPASS_Experience_Manifest_TEMPLATE.yaml`
@@ -49,65 +164,207 @@ Key files:
 - `templates/experience-sync/COMPASS_Public_Claim_TEMPLATE.yaml`
 - `prompts/compass-experience-sync.md`
 
-Modes:
+**Modes:**
 
-- `dry-run` — incremental read-only reconciliation
-- `full-audit` — complete read-only projection review
-- `apply-approved` — approved target-branch changes followed by a pull request
+- `dry-run` — default, incremental read-only reconciliation when reliable prior sync metadata exists
+- `full-audit` — read-only reconciliation of the complete target public projection
+- `apply-approved` — explicitly approved writes to a non-default target branch followed by a pull request
 
-Source-side routing maps stable target IDs to repository locations. Public target manifests use a stable source ID and sanitized reconciliation metadata.
+**Routing discipline:** Resolve downstream targets from the private Source of Truth map at `sync/COMPASS_Experience_Targets.yaml` when available. A public target manifest should use a stable source ID and reconciliation metadata instead of exposing the private Source of Truth repository location. An explicit target override that conflicts with the map requires human review.
 
-Example triggers:
+**Output discipline:** Experience Sync never modifies the Source of Truth or routing map, verifies or approves new career claims, publishes unresolved material, writes directly to the target default branch, or merges a pull request without explicit instruction. Truth approval and public suitability are separate gates. Apply-approved requires a current matching report for the exact source commit, selected target ID, target repository, and target commit, explicit approval, verified target write capability, and no unresolved material decisions.
 
-```text
-Run COMPASS Experience Sync for public-experience.
-Run COMPASS Experience Sync --full-audit.
-Apply the approved COMPASS Experience Sync.
-```
+---
 
-## COMPASS Analysis
+### COMPASS Analysis
 
 **Launcher:** `prompts/compass-analysis.md`
 
-Evaluates candidate fit, requirement-market realism, company and interview reality, risk, and pursuit economics.
+**Purpose:** Evaluate a role, job description, recruiter request, opportunity, or career target using source-grounded candidate-fit analysis plus the Opportunity Reality Layer.
 
-Key files:
+**Use when the user asks to:**
 
+- evaluate role fit
+- analyze a job description
+- compare jobs or opportunities
+- assess recruiter positioning
+- decide whether to apply
+- map source evidence to target requirements
+- identify risks, gaps, or objections
+- assess how rare or compressed the requested candidate profile is
+- research the employer, employee sentiment, or technical interview process
+- determine whether the opportunity is worth the candidate's time
+
+**Example trigger phrases:**
+
+```text
+Run COMPASS Analysis on this role.
+Use COMPASS on this job description.
+Evaluate this opportunity with COMPASS.
+Run a COMPASS fit analysis.
+```
+
+**Required framework files:**
+
+- `VERSION.md`
+- `COMPASS_Current.md`
+- `rules/00-operating-principles.md`
 - `rules/01-analysis-workflow.md`
 - `rules/04-truthguard.md`
 - `rules/06-artifact-rules.md`
 - `rules/10-opportunity-recon.md`
 - `prompts/compass-analysis.md`
 
-## COMPASS Tailored Resume
+**Output discipline:** Analysis is separate from generated artifacts. For identifiable-company role analysis, include Purple Squirrel Factor and requirement-market realism, company and interview reality, and recommendation and pursuit economics under the strict 13-section analysis report template. Report insufficient external evidence rather than speculating. Do not generate resumes, cover letters, recruiter messages, or other downstream artifacts unless the user explicitly asks.
+
+---
+
+### COMPASS Tailored Resume
 
 **Launcher:** `prompts/compass-tailored-resume.md`
 
-Generates a role-specific resume from verified source records.
+**Purpose:** Generate a role-specific resume for the most recently analyzed role or a user-provided target role, using verified source records and TruthGuard.
 
-Key files:
+**Use when the user asks to:**
 
+- generate a resume for a specific role
+- tailor a resume to a job description
+- create an application resume after COMPASS Analysis
+
+**Example trigger phrases:**
+
+```text
+Generate the COMPASS Tailored Resume.
+Create the tailored resume for the role we just analyzed.
+Build a COMPASS resume for this job description.
+```
+
+**Required framework files:**
+
+- `VERSION.md`
+- `COMPASS_Current.md`
+- `rules/00-operating-principles.md`
 - `rules/02-resume-generation.md`
 - `rules/04-truthguard.md`
 - `rules/06-artifact-rules.md`
 - `rules/08-human-authenticity.md`
+- `prompts/compass-tailored-resume.md`
 
-## COMPASS Recruiter-Targeted Resume
+**Output discipline:** The resume artifact must not include COMPASS analysis, scoring, risk notes, ATS matrix commentary, compensation strategy, recruiter objection notes, company research, interview findings, pursuit economics, private tactical notes, or framework commentary.
+
+---
+
+### COMPASS Recruiter-Targeted Resume
 
 **Launcher:** `prompts/recruiter-targeted-resume.md`
 
-Generates a broader recruiter-facing resume for related senior opportunities using the same resume, TruthGuard, artifact, and Human Authenticity rules.
+**Purpose:** Generate a broader recruiter-facing resume when the recruiter may have multiple opportunities or when the user needs general Staff/Principal-level positioning rather than a single-role application resume.
 
-## COMPASS Cover Letter
+**Use when the user asks to:**
+
+- generate a recruiter-targeted resume
+- create a broad Staff Engineer resume for a recruiter
+- prepare a resume for a recruiter who may represent multiple roles
+
+**Example trigger phrases:**
+
+```text
+Generate a COMPASS Recruiter-Targeted Resume.
+Create a broad recruiter resume for this recruiter.
+Build a Staff Engineer recruiter resume with COMPASS.
+```
+
+**Required framework files:**
+
+- `VERSION.md`
+- `COMPASS_Current.md`
+- `rules/00-operating-principles.md`
+- `rules/02-resume-generation.md`
+- `rules/04-truthguard.md`
+- `rules/06-artifact-rules.md`
+- `rules/08-human-authenticity.md`
+- `prompts/recruiter-targeted-resume.md`
+
+**Output discipline:** Preserve broad recruiter positioning while respecting TruthGuard, source-grounding, user-specific style rules, and do-not-claim constraints.
+
+---
+
+### COMPASS Cover Letter
 
 **Launcher:** `prompts/compass-cover-letter.md`
 
-Generates a source-grounded cover letter using cover-letter rules, TruthGuard, artifact rules, and Human Authenticity rules.
+**Purpose:** Generate a clean, source-grounded cover letter for a specific target role or opportunity.
 
-## Additional Supported Artifacts
+**Use when the user asks to:**
 
-Supported outputs also include canonical records, claim ledgers, coverage registers, Experience Sync reports, public claim indexes, recruiter responses, application answers, follow-up messages, interview preparation, and compensation notes.
+- generate a cover letter
+- write a cover letter for a role previously analyzed by COMPASS
+- produce a cover letter from a job description and verified source record
 
-## Maintenance
+**Example trigger phrases:**
 
-Command changes should update this registry, the corresponding launcher and durable rules, the framework README, changelog, and version when behavior changes materially.
+```text
+Generate the COMPASS Cover Letter.
+Create a cover letter for this role.
+Write the COMPASS cover letter for the job we analyzed.
+```
+
+**Required framework files:**
+
+- `VERSION.md`
+- `COMPASS_Current.md`
+- `rules/00-operating-principles.md`
+- `rules/03-cover-letter-generation.md`
+- `rules/04-truthguard.md`
+- `rules/06-artifact-rules.md`
+- `rules/08-human-authenticity.md`
+- `prompts/compass-cover-letter.md`
+
+**Output discipline:** Use a calm, professional, forward-looking tone. Do not include internal COMPASS analysis, ATS tables, compensation strategy, company-review findings, interview-risk notes, pursuit economics, objection notes, or private tactical notes inside the cover letter artifact.
+
+## Supported Artifact Requests
+
+The active artifact rules support additional career-specific artifacts even when they do not yet have separate first-class launcher files.
+
+Supported artifact requests include:
+
+- canonical career records
+- claim ledgers
+- do-not-claim registers
+- coverage registers
+- Experience Sync reports and public claim indexes
+- analysis reports
+- recruiter responses
+- application answers
+- follow-up messages
+- interview preparation notes
+- compensation notes
+- other career-specific artifacts
+
+When generating these artifacts, use the active framework files and rules rather than inventing an independent command behavior.
+
+## Not Currently Active as First-Class Commands
+
+### COMPASS Charter
+
+`COMPASS Charter` is not currently a confirmed first-class COMPASS command in this framework.
+
+If a user asks for a COMPASS Charter, first determine whether they mean one of the current COMPASS workflows:
+
+- COMPASS Intake for source-of-truth onboarding
+- COMPASS Analysis for role or opportunity evaluation
+- a clean generated artifact such as a resume, cover letter, recruiter response, or interview-prep note
+
+Do not silently import LEAP Charter behavior into COMPASS unless the project owner explicitly adds a COMPASS Charter command to this registry and creates the supporting prompt/rule files.
+
+## Command Maintenance Rules
+
+When adding, renaming, or retiring a COMPASS command:
+
+1. Update this file.
+2. Add or update the launcher prompt under `prompts/` when the command is first-class.
+3. Add or update durable behavior rules under `rules/` when behavior changes materially.
+4. Update `README.md` if the command should be visible to new users.
+5. Update `COMPASS_Changelog.md` with the change.
+6. Update `VERSION.md` only when command behavior materially changes framework behavior.
+7. Preserve source-grounding, phase separation, TruthGuard, opportunity-recon evidence discipline, and artifact cleanliness.
