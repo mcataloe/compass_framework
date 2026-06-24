@@ -17,6 +17,7 @@ Use COMPASS Source Rebase when the user wants to:
 - Inspect source repository structure drift after a framework upgrade.
 - Create missing scaffold directories or placeholder files safely.
 - Update source-of-truth repository layout after framework structure changes.
+- Add the optional private Experience Sync routing scaffold.
 
 ## Relationship to COMPASS Intake
 
@@ -62,7 +63,7 @@ The first permitted writable mode is `create-missing-only`.
 
 COMPASS may use `create-missing-only` only after explicit user approval for that mode and target repository or path.
 
-In `create-missing-only`, COMPASS may create only absent scaffold directories, absent scaffold placeholder files, an absent manifest file, an absent migration/report directory, or an approved Source Rebase report file.
+In `create-missing-only`, COMPASS may create only absent scaffold directories, absent scaffold placeholder files, an absent manifest file, an absent migration/report directory, an absent Experience Sync routing placeholder, or an approved Source Rebase report file.
 
 If a path already exists, COMPASS must skip it and report it. COMPASS must verify created paths before reporting them as created.
 
@@ -85,6 +86,7 @@ COMPASS Source Rebase must not:
 - Silently resolve conflicts
 - Claim files were saved without write and visibility verification
 - Use destructive migration behavior to satisfy a framework upgrade
+- Populate user-specific repository mappings without explicit user instruction
 
 ## Expected Source-of-Truth Scaffold
 
@@ -125,6 +127,9 @@ style/
 style/candidate_voice.md
 style/resume_style.md
 style/artifact_generation_policy.md
+sync/
+sync/README.md
+sync/COMPASS_Experience_Targets.yaml
 migration/
 migration/README.md
 migration/COMPASS_Source_Rebase_Report_TEMPLATE.md
@@ -141,6 +146,25 @@ In `dry-run`, Source Rebase may report missing seed scaffold directories and mis
 In approved `create-missing-only` mode, Source Rebase may create only missing seed scaffold directories and absent framework placeholder/template files. It must not overwrite, delete, rename, move, normalize, or modify existing user-owned files.
 
 Source Rebase must not automatically move existing resumes, CVs, LinkedIn exports, cover letters, portfolio files, or other source documents into `/sources/seed/`. Existing nonstandard source folders must be preserved and reported as existing user structure, not renamed or normalized.
+
+## Experience Sync Routing Scaffold
+
+Source Rebase recognizes `/sync/` as the recommended location for private Experience Sync routing configuration.
+
+The framework-owned scaffold includes:
+
+```text
+sync/README.md
+sync/COMPASS_Experience_Targets.yaml
+```
+
+The routing file may contain actual Source of Truth and downstream target repository locations. It belongs in the private Source of Truth and must not be copied into a public experience repository.
+
+In `dry-run`, Source Rebase may report the routing scaffold as missing.
+
+In approved `create-missing-only` mode, Source Rebase may create only the absent scaffold file with generic placeholder values. It must not overwrite an existing routing file or infer user-specific repository mappings.
+
+Populating or changing actual source and target links is a separate explicitly approved Source of Truth configuration change. Experience Sync itself may read but must never modify this file.
 
 ## Drift Classification
 
@@ -163,6 +187,8 @@ The scaffold includes `COMPASS_Source_Manifest.md` as an optional source reposit
 If the manifest already exists, skip it and report it. If it is missing, propose it as a create-missing-only candidate.
 
 The manifest may record framework version, scaffold version, source repository branch, storage location, protected paths, framework-managed scaffold paths, historical paths preserved, manual decisions, and Source Rebase report history. It must not record private career claims unless the user separately approves that content in the source-of-truth repository.
+
+The actual source-to-target Experience Sync routing map belongs in `sync/COMPASS_Experience_Targets.yaml`, not in the public experience repository.
 
 ## Historical File Preservation
 
