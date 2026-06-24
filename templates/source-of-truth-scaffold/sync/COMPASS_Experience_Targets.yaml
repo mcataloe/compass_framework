@@ -1,0 +1,31 @@
+schema_version: 1
+
+source:
+  id: compass-career-source
+  repository: owner/compass-source-of-truth
+  branch: main
+
+targets:
+  - id: public-experience
+    repository: owner/candidate-experience
+    branch: main
+    manifest_path: COMPASS_Experience_Manifest.yaml
+    audience: public
+    enabled: true
+
+    publication:
+      exclude_direct_pii: true
+      exclude_private_strategy: true
+      exclude_raw_intake: true
+      exclude_colleague_names: true
+      abstract_customer_details: true
+      abstract_security_sensitive_details: true
+      require_disclosure_review: true
+      allow_provisional_claims: false
+
+    write_policy:
+      branch_and_pull_request_only: true
+      direct_default_branch_writes: false
+      merge_requires_explicit_instruction: true
+
+    protected_paths: []
