@@ -15,7 +15,7 @@
 - COMPASS version:
 - Experience Sync rule version, if tracked:
 
-## 3. Source Repository
+## 3. Source Repository and Target Resolution
 
 - Source repository:
 - Source branch:
@@ -24,9 +24,6 @@
 - Source records inspected:
 - Routing map path:
 - Routing map access:
-
-## 4. Target Resolution
-
 - Requested target ID or override:
 - Selected target ID:
 - Resolution basis: direct instruction / source-side map / explicit unmapped override
@@ -34,7 +31,7 @@
 - Mapping conflict detected: yes/no
 - Public source-location exposure detected: yes/no
 
-## 5. Target Repository
+## 4. Target Repository
 
 - Target repository:
 - Target branch:
@@ -45,7 +42,7 @@
 - Pull-request capability:
 - Visibility-verification capability:
 
-## 6. Previous Reconciliation State
+## 5. Previous Reconciliation State
 
 - Experience Manifest path:
 - Public manifest uses stable source ID: yes/no
@@ -56,7 +53,7 @@
 - Previous report path:
 - Manifest reliability:
 
-## 7. Source Scope Examined
+## 6. Source Scope Examined
 
 List changed source records for incremental dry-run, or the complete source scope for full-audit.
 
@@ -69,7 +66,7 @@ Include:
 - authorized provisional baselines;
 - user instructions that affect publication.
 
-## 8. Authority and Coverage Findings
+## 7. Authority and Coverage Findings
 
 For each affected claim or content block, record:
 
@@ -92,7 +89,7 @@ Allowed reconciliation classifications:
 
 `remove-public-claim` removes or corrects public wording that conflicts with stronger source authority or an approved do-not-claim boundary. It does not remove the do-not-claim control.
 
-## 9. Proposed Public Additions
+## 8. Proposed Public Additions
 
 List new claims, pages, sections, or provenance records eligible for publication.
 
@@ -105,7 +102,7 @@ For each addition, include:
 - target file;
 - limitations.
 
-## 10. Proposed Wording Updates and Narrowings
+## 9. Proposed Wording Updates and Narrowings
 
 List stale, inaccurate, overly broad, or newly supportable target wording.
 
@@ -117,11 +114,11 @@ Separate:
 - collaborator or transition corrections;
 - outcome or metric corrections.
 
-## 11. Proposed Removals and Do-Not-Claim Corrections
+## 10. Proposed Removals and Do-Not-Claim Corrections
 
 List public claims or wording that must be removed, blocked, or corrected because they are rejected, superseded, unsupported, or inconsistent with approved claim depth.
 
-## 12. Provisional Claims
+## 11. Provisional Claims
 
 ### Retained
 
@@ -135,7 +132,7 @@ List provisional claims now superseded by approved canonical records.
 
 List unreviewed or unconfirmed material that must not be published.
 
-## 13. Disclosure Abstractions and Withheld Content
+## 12. Disclosure Abstractions and Withheld Content
 
 Record publication-gate actions such as:
 
@@ -150,7 +147,7 @@ Record publication-gate actions such as:
 
 State whether each abstraction preserves the approved claim meaning and depth.
 
-## 14. Conflicts and Manual Decisions
+## 13. Conflicts and Manual Decisions
 
 List every `requires-human-decision` item.
 
@@ -165,13 +162,13 @@ Include:
 - publication-audience ambiguity;
 - source or target commit drift.
 
-## 15. Target Files That Would Change
+## 14. Target Files That Would Change
 
 | Target path | Change type | Claims/content affected | Protected-path status |
 |---|---|---|---|
 | | | | |
 
-## 16. Forbidden Actions Not Performed
+## 15. Forbidden Actions Not Performed
 
 Confirm:
 
@@ -188,7 +185,7 @@ Confirm:
 - No private source archive copied into the target
 - No private Source of Truth repository location added to public target metadata
 
-## 17. Validation Performed
+## 16. Validation Performed
 
 Record results for:
 
@@ -209,7 +206,7 @@ Record results for:
 
 List checks not run and why.
 
-## 18. Storage Status
+## 17. Storage Status
 
 Use one status:
 
@@ -220,7 +217,7 @@ Use one status:
 - Storage status: pull request opened / visibility verified
 - Storage status: write unavailable / manual application required
 
-## 19. Applied Change Metadata
+## 18. Applied Change Metadata
 
 Complete only for `apply-approved`:
 
@@ -235,7 +232,7 @@ Complete only for `apply-approved`:
 - Manifest updated: yes/no
 - Post-write verification result:
 
-## 20. Next Safe Action
+## 19. Next Safe Action
 
 Recommend one:
 
