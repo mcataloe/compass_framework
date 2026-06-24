@@ -22,8 +22,19 @@
 - Source commit inspected:
 - Source read access:
 - Source records inspected:
+- Routing map path:
+- Routing map access:
 
-## 4. Target Repository
+## 4. Target Resolution
+
+- Requested target ID or override:
+- Selected target ID:
+- Resolution basis: direct instruction / source-side map / explicit unmapped override
+- Target enabled status:
+- Mapping conflict detected: yes/no
+- Public source-location exposure detected: yes/no
+
+## 5. Target Repository
 
 - Target repository:
 - Target branch:
@@ -34,9 +45,10 @@
 - Pull-request capability:
 - Visibility-verification capability:
 
-## 5. Previous Reconciliation State
+## 6. Previous Reconciliation State
 
 - Experience Manifest path:
+- Public manifest uses stable source ID: yes/no
 - Previous source commit:
 - Previous target commit:
 - Previous reconciliation date:
@@ -44,7 +56,7 @@
 - Previous report path:
 - Manifest reliability:
 
-## 6. Source Scope Examined
+## 7. Source Scope Examined
 
 List changed source records for incremental dry-run, or the complete source scope for full-audit.
 
@@ -57,7 +69,7 @@ Include:
 - authorized provisional baselines;
 - user instructions that affect publication.
 
-## 7. Authority and Coverage Findings
+## 8. Authority and Coverage Findings
 
 For each affected claim or content block, record:
 
@@ -80,7 +92,7 @@ Allowed reconciliation classifications:
 
 `remove-public-claim` removes or corrects public wording that conflicts with stronger source authority or an approved do-not-claim boundary. It does not remove the do-not-claim control.
 
-## 8. Proposed Public Additions
+## 9. Proposed Public Additions
 
 List new claims, pages, sections, or provenance records eligible for publication.
 
@@ -93,7 +105,7 @@ For each addition, include:
 - target file;
 - limitations.
 
-## 9. Proposed Wording Updates and Narrowings
+## 10. Proposed Wording Updates and Narrowings
 
 List stale, inaccurate, overly broad, or newly supportable target wording.
 
@@ -105,11 +117,11 @@ Separate:
 - collaborator or transition corrections;
 - outcome or metric corrections.
 
-## 10. Proposed Removals and Do-Not-Claim Corrections
+## 11. Proposed Removals and Do-Not-Claim Corrections
 
 List public claims or wording that must be removed, blocked, or corrected because they are rejected, superseded, unsupported, or inconsistent with approved claim depth.
 
-## 11. Provisional Claims
+## 12. Provisional Claims
 
 ### Retained
 
@@ -123,7 +135,7 @@ List provisional claims now superseded by approved canonical records.
 
 List unreviewed or unconfirmed material that must not be published.
 
-## 12. Disclosure Abstractions and Withheld Content
+## 13. Disclosure Abstractions and Withheld Content
 
 Record publication-gate actions such as:
 
@@ -133,11 +145,12 @@ Record publication-gate actions such as:
 - security-sensitive details reduced;
 - evidence inventories withheld;
 - private job-search strategy excluded;
-- internal Intake detail excluded.
+- internal Intake detail excluded;
+- private Source of Truth repository location removed from public target metadata.
 
 State whether each abstraction preserves the approved claim meaning and depth.
 
-## 13. Conflicts and Manual Decisions
+## 14. Conflicts and Manual Decisions
 
 List every `requires-human-decision` item.
 
@@ -147,21 +160,23 @@ Include:
 - unsafe or meaning-changing abstraction;
 - unsupported manual target wording;
 - unclear removal authority;
+- target override conflicting with the source-side map;
 - protected-path conflict;
 - publication-audience ambiguity;
 - source or target commit drift.
 
-## 14. Target Files That Would Change
+## 15. Target Files That Would Change
 
 | Target path | Change type | Claims/content affected | Protected-path status |
 |---|---|---|---|
 | | | | |
 
-## 15. Forbidden Actions Not Performed
+## 16. Forbidden Actions Not Performed
 
 Confirm:
 
 - No Source of Truth files modified
+- No source-side routing map modified
 - No Intake checkpoints modified
 - No claim ledgers modified
 - No do-not-claim records modified
@@ -171,17 +186,22 @@ Confirm:
 - No direct target default-branch writes
 - No pull request merged
 - No private source archive copied into the target
+- No private Source of Truth repository location added to public target metadata
 
-## 16. Validation Performed
+## 17. Validation Performed
 
 Record results for:
 
-- manifest syntax;
+- routing-map syntax;
+- unique and enabled target ID;
+- target manifest syntax;
+- sanitized source identifier;
 - structured claim syntax;
 - unique public claim IDs;
 - relative links;
 - source references;
 - PII and private-content scan;
+- private source-location scan;
 - claim-depth comparison;
 - do-not-claim scan;
 - branch-policy check;
@@ -189,7 +209,7 @@ Record results for:
 
 List checks not run and why.
 
-## 17. Storage Status
+## 18. Storage Status
 
 Use one status:
 
@@ -200,28 +220,31 @@ Use one status:
 - Storage status: pull request opened / visibility verified
 - Storage status: write unavailable / manual application required
 
-## 18. Applied Change Metadata
+## 19. Applied Change Metadata
 
 Complete only for `apply-approved`:
 
 - Approved report path or ID:
+- Selected target ID:
 - Target sync branch:
 - Target branch base commit:
 - Resulting head commit:
 - Pull request URL or number:
 - Files changed:
+- Public manifest sanitized: yes/no
 - Manifest updated: yes/no
 - Post-write verification result:
 
-## 19. Next Safe Action
+## 20. Next Safe Action
 
 Recommend one:
 
 - remain in dry-run;
 - run full-audit;
+- add or repair the source-side target map through an approved Source of Truth configuration change;
 - resolve Intake questions first;
 - resolve publication decisions first;
 - approve apply-approved for the exact report and target;
 - review the opened pull request;
 - merge only after explicit user review and instruction;
-- repair manifest or provenance metadata first.
+- repair target manifest or provenance metadata first.
