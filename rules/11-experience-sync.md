@@ -37,7 +37,7 @@ If the Source of Truth contains unresolved material conflicts, missing claim-dep
 
 ### COMPASS Source Rebase
 
-Source Rebase aligns Source of Truth scaffold structure. Experience Sync reconciles approved source records into a downstream experience repository. Do not combine the two workflows.
+Source Rebase aligns Source of Truth scaffold structure, including the optional private Experience Sync routing scaffold. Experience Sync reads that configuration but must not create or modify it during a sync run.
 
 ### COMPASS Analysis and Artifact Generation
 
@@ -56,6 +56,46 @@ Use the active COMPASS candidate-factual-authority order:
 7. Project memory only when not contradicted by stronger sources and never as a substitute for available records.
 
 Do-not-claim entries override all downstream publication pressure.
+
+## Repository Routing Model
+
+The private Source of Truth should contain the authoritative source-to-target routing map at:
+
+```text
+sync/COMPASS_Experience_Targets.yaml
+```
+
+Use `templates/source-of-truth-scaffold/sync/COMPASS_Experience_Targets.yaml` as the default scaffold shape.
+
+The routing map may contain:
+
+- stable source ID;
+- actual Source of Truth repository and branch;
+- one or more target IDs;
+- actual target repository and branch;
+- target manifest path;
+- intended audience;
+- publication defaults;
+- protected target paths;
+- write policy;
+- enabled or disabled target status.
+
+This file is private Source of Truth configuration. Do not copy it into a public experience repository.
+
+### Target resolution order
+
+Resolve the target in this order:
+
+1. A direct current user instruction naming a target ID or explicit target repository.
+2. A matching enabled target ID in `sync/COMPASS_Experience_Targets.yaml`.
+3. An explicit target repository supplied for the current dry-run when no source-side map exists.
+4. A stop condition when the target remains ambiguous.
+
+A direct repository override must not silently replace an existing mapped target. If the override conflicts with the source-side map, report the conflict and require a human decision.
+
+When a source-side map is absent but the user explicitly supplies both repositories, Experience Sync may perform a dry-run or full audit. The report must identify the missing routing configuration and recommend adding it through Source Rebase or a separately approved Source of Truth configuration change.
+
+Experience Sync must not write the source-side routing map because Experience Sync never modifies the Source of Truth.
 
 ## Public-Projection Gate
 
@@ -80,7 +120,8 @@ Unless the user explicitly approves otherwise, exclude or abstract:
 - names of individual colleagues or private stakeholders;
 - non-public customer names, project names, implementation topology, endpoints, account identifiers, and security configurations;
 - do-not-claim rationale whose publication would reveal private or sensitive context;
-- claims needing evidence, metrics, scope clarification, or material conflict resolution.
+- claims needing evidence, metrics, scope clarification, or material conflict resolution;
+- the actual private Source of Truth repository name or URL in a public target manifest.
 
 Abstraction must preserve the approved claim's meaning and depth. It must not make the claim broader, stronger, or more impressive.
 
@@ -128,23 +169,24 @@ Strengthening is permitted only when stronger wording is explicitly approved by 
 
 `dry-run` is the default mode.
 
-In dry-run, Experience Sync may inspect the framework, Source of Truth repository, experience repository, manifests, commit history, ledgers, records, and target files. It may produce a reconciliation report. It must perform no writes.
+In dry-run, Experience Sync may inspect the framework, Source of Truth repository, source-side routing map, experience repository, target manifest, commit history, ledgers, records, and target files. It may produce a reconciliation report. It must perform no writes.
 
 Dry-run must report:
 
 1. framework version and governing files;
 2. source repository, branch, and inspected commit;
-3. target repository, branch, and inspected commit;
-4. previous reconciliation state, if available;
-5. source changes or full-audit scope examined;
-6. claim authority and coverage classifications;
-7. proposed public additions, updates, narrowings, removals, and provisional markers;
-8. disclosure abstractions and withheld content;
-9. conflicts or decisions requiring human review;
-10. target files that would change;
-11. write and visibility-verification capability;
-12. forbidden actions not performed;
-13. next safe action.
+3. selected target ID and target-resolution basis;
+4. target repository, branch, and inspected commit;
+5. previous reconciliation state, if available;
+6. source changes or full-audit scope examined;
+7. claim authority and coverage classifications;
+8. proposed public additions, updates, narrowings, removals, and provisional markers;
+9. disclosure abstractions and withheld content;
+10. conflicts or decisions requiring human review;
+11. target files that would change;
+12. write and visibility-verification capability;
+13. forbidden actions not performed;
+14. next safe action.
 
 ### Full Audit
 
@@ -157,7 +199,8 @@ Use full audit for:
 - manual edits to the experience repository;
 - changes to publication policy;
 - major framework or claim-depth changes;
-- missing or unreliable sync-manifest history.
+- missing or unreliable sync-manifest history;
+- migration from a target manifest that exposed the private source repository location.
 
 ### Apply Approved
 
@@ -165,7 +208,7 @@ Use full audit for:
 
 It requires:
 
-- a current dry-run or full-audit report for the exact source and target repositories;
+- a current dry-run or full-audit report for the exact source commit, selected target ID, target repository, and target commit;
 - explicit user approval to apply that report;
 - verified write access to the target repository;
 - no unresolved `requires-human-decision` items affecting the requested changes.
@@ -174,11 +217,11 @@ In apply-approved mode, COMPASS may:
 
 - create a target branch;
 - create, update, or remove approved public-projection files on that branch;
-- update the target Experience Manifest and public claim provenance;
+- update the sanitized target Experience Manifest and public claim provenance;
 - create a reconciliation report in the target repository when approved;
-- open a pull request from the sync branch into the target base branch configured by the manifest or current instruction.
+- open a pull request from the sync branch into the target base branch configured by the source-side map or current instruction.
 
-Experience Sync must not write directly to the target default branch.
+Experience Sync must not write directly to the target default branch or modify the source-side routing map.
 
 ## Branch and Pull-Request Policy
 
@@ -195,31 +238,48 @@ Every apply-approved run must:
 1. create or use an explicitly approved non-default target branch;
 2. apply only changes covered by the approved report;
 3. verify changed files when the connector supports verification;
-4. update reconciliation metadata;
+4. update target-local reconciliation metadata;
 5. open a pull request;
-6. summarize source commit, target base commit, changed claims, disclosure actions, and unresolved follow-ups.
+6. summarize source commit, selected target ID, target base commit, changed claims, disclosure actions, and unresolved follow-ups.
 
 Do not merge the pull request unless the user explicitly asks.
 
-## Experience Manifest
+## Source-Side Target Map
+
+The authoritative routing file is private and belongs in the Source of Truth:
+
+```text
+sync/COMPASS_Experience_Targets.yaml
+```
+
+A Source of Truth may define multiple downstream targets, including a public experience repository, personal website, recruiter-facing evidence repository, internal portfolio, or future retrieval service.
+
+Each target must have a stable `id`. Target IDs should remain stable even when repository names or hosting locations change.
+
+Experience Sync reads this map. Source Rebase may create the missing scaffold placeholder after explicit approval. Neither workflow may overwrite an existing user-owned map.
+
+## Public Experience Manifest
 
 Use `templates/experience-sync/COMPASS_Experience_Manifest_TEMPLATE.yaml` as the default target-repository manifest shape.
 
-The target manifest should record:
+The public target manifest should record:
 
 - schema version;
 - repository role;
-- source repository and branch;
+- stable source ID, but not the private source repository location;
 - target repository and branch;
 - last reconciled source and target commits;
 - last reconciliation date and mode;
+- framework version;
 - publication defaults;
 - write policy;
 - protected paths;
 - public claim index path, if used;
 - report history or latest report path.
 
-Repository-specific manifests may extend the template, but they must not weaken TruthGuard, source priority, public-disclosure controls, or branch-and-PR-only writes.
+The target manifest must not expose the private Source of Truth repository name or URL unless the user explicitly approves publication and the source repository is itself intended to be public.
+
+Repository-specific manifests may extend the template, but they must not weaken TruthGuard, source priority, public-disclosure controls, source-location privacy, or branch-and-PR-only writes.
 
 ## Public Claim Provenance
 
@@ -228,7 +288,7 @@ Public structured claims should record, when practical:
 - stable public claim ID;
 - approved public wording;
 - source status such as `compass-reconciled` or `provisional-baseline`;
-- source record or ledger references;
+- stable source record or ledger references that do not reveal private repository location;
 - source commit;
 - claim-depth or contribution boundary;
 - public-projection status;
@@ -236,7 +296,7 @@ Public structured claims should record, when practical:
 - limitations;
 - last reconciled date.
 
-Do not expose private Source of Truth content merely to provide provenance. Repository paths and stable record IDs are preferable to copying private evidence.
+Do not expose private Source of Truth content or repository location merely to provide provenance. Stable record IDs and repository-relative source paths are preferable to public URLs.
 
 ## Drift Detection
 
@@ -251,7 +311,9 @@ Experience Sync should detect:
 - broken or stale source references;
 - public files manually edited after the last reconciliation;
 - publication-policy drift;
-- missing or stale manifest metadata.
+- missing or stale manifest metadata;
+- target manifests that expose a private Source of Truth repository location;
+- source-side target mappings that disagree with target-local identity or branch metadata.
 
 Manual target edits are not automatically wrong. Classify them and reconcile them against source authority rather than overwriting them blindly.
 
@@ -263,23 +325,26 @@ Stop and require human review when:
 - a public claim cannot be safely abstracted without changing its meaning;
 - target edits introduce useful wording not clearly supported by source records;
 - removal would materially change public positioning and the governing do-not-claim or approval status is unclear;
-- repository ownership, target branch, protected paths, or publication audience is unclear;
+- a direct target override conflicts with the source-side routing map;
+- repository ownership, target branch, protected paths, target ID, or publication audience is unclear;
 - the current dry-run report no longer matches the inspected source or target commits;
 - apply-approved would require changes outside the approved report.
 
-Do not silently choose the more favorable wording.
+Do not silently choose the more favorable wording or repository target.
 
 ## Forbidden Operations
 
 COMPASS Experience Sync must not:
 
 - modify the Source of Truth repository;
+- create or edit `sync/COMPASS_Experience_Targets.yaml` during a sync run;
 - modify Intake checkpoints, claim ledgers, do-not-claim records, source registers, or canonical career records;
 - treat the experience repository as factual authority;
 - infer or approve new career claims;
 - publish unresolved or rejected claims;
 - weaken privacy, confidentiality, security, or disclosure boundaries;
 - copy the complete Source of Truth into the public repository;
+- expose the private Source of Truth repository location in a public manifest by default;
 - expose raw evidence merely to make a public claim appear stronger;
 - overwrite protected target paths;
 - write directly to the target default branch;
@@ -291,6 +356,8 @@ COMPASS Experience Sync must not:
 Before any write-capable action, disclose:
 
 - source read access;
+- source-side routing-map access;
+- selected target ID and resolution basis;
 - target read access;
 - target write access;
 - branch-creation capability;
@@ -308,32 +375,36 @@ Every report must include:
 1. mode and date;
 2. framework version;
 3. source repository, branch, and commit;
-4. target repository, branch, and commit;
-5. access and write-capability disclosure;
-6. previous reconciliation state;
-7. source scope examined;
-8. authority and coverage findings;
-9. proposed additions;
-10. proposed wording updates and narrowings;
-11. proposed removals and do-not-claim corrections;
-12. provisional claims retained or replaced;
-13. disclosure abstractions and withheld content;
-14. conflicts and manual decisions;
-15. files that would change;
-16. forbidden actions not performed;
-17. validation performed;
-18. storage status;
-19. next safe action.
+4. selected target ID and target-resolution basis;
+5. target repository, branch, and commit;
+6. access and write-capability disclosure;
+7. previous reconciliation state;
+8. source scope examined;
+9. authority and coverage findings;
+10. proposed additions;
+11. proposed wording updates and narrowings;
+12. proposed removals and do-not-claim corrections;
+13. provisional claims retained or replaced;
+14. disclosure abstractions and withheld content;
+15. conflicts and manual decisions;
+16. files that would change;
+17. forbidden actions not performed;
+18. validation performed;
+19. storage status;
+20. next safe action.
 
 ## Validation
 
 Before completing dry-run or apply-approved, validate as applicable:
 
-- manifest syntax;
+- source-side routing-map syntax;
+- selected target ID uniqueness and enabled status;
+- target manifest syntax;
 - structured claim syntax and unique IDs;
 - relative links and referenced target files;
 - source references and commit metadata;
 - no direct PII or prohibited private content in changed public files;
+- no private Source of Truth repository location in public target files unless explicitly approved;
 - no target wording exceeds approved claim depth;
 - no do-not-claim item is reintroduced;
 - target branch differs from the default branch;
@@ -349,7 +420,9 @@ Stop and report if:
 - the Source of Truth cannot be inspected;
 - the target repository cannot be inspected;
 - source authority cannot be determined;
-- the target manifest is missing and repository mapping is ambiguous;
+- target selection is ambiguous;
+- a target override conflicts with the source-side map;
+- the selected target is disabled;
 - unresolved claims materially affect publication;
 - protected paths would need modification;
 - apply-approved lacks a current matching report;
