@@ -2,8 +2,7 @@ schema_version: 1
 repository_role: public-experience-projection
 
 source:
-  repository: owner/compass-source-of-truth
-  branch: main
+  id: compass-career-source
   last_reconciled_commit: null
 
 target:
