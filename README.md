@@ -25,9 +25,11 @@ Use these files as the active source of truth:
 - `rules/08-human-authenticity.md` - truthful human-authenticity and reviewer-signal rules for external artifacts
 - `rules/09-source-rebase.md` - safe source-of-truth scaffold alignment rules
 - `rules/10-opportunity-recon.md` - Purple Squirrel Factor, company and interview reality, external-evidence handling, and pursuit economics
+- `rules/11-experience-sync.md` - one-way Source of Truth reconciliation into a public or externally shareable experience repository
 - `prompts/` — reusable prompt templates
 - `prompts/compass-intake.md` — reusable COMPASS Intake launcher prompt
 - `prompts/compass-source-rebase.md` - reusable COMPASS Source Rebase launcher prompt
+- `prompts/compass-experience-sync.md` - reusable COMPASS Experience Sync launcher prompt
 - `prompts/compass-analysis.md` — reusable COMPASS analysis launcher prompt
 - `prompts/compass-tailored-resume.md` — reusable tailored resume launcher prompt
 - `prompts/recruiter-targeted-resume.md` — reusable recruiter-targeted resume launcher prompt
@@ -42,6 +44,7 @@ Use these files as the active source of truth:
 - `examples/seed-artifacts/SEED_ARTIFACTS_MANIFEST_EXAMPLE.md` - fictional seed artifact manifest example
 - `templates/source-of-truth-scaffold/` - framework-owned source-of-truth scaffold and report templates
 - `templates/source-of-truth-scaffold/sources/seed/` - recommended scaffold location for Initial Seed Artifacts
+- `templates/experience-sync/` - Experience Manifest, reconciliation report, and public claim provenance templates
 
 Compatibility shims for earlier naming have been removed. Prompt templates and rule files should use COMPASS terminology only.
 
@@ -53,6 +56,7 @@ Current first-class commands:
 
 - COMPASS Intake
 - COMPASS Source Rebase
+- COMPASS Experience Sync
 - COMPASS Analysis
 - COMPASS Tailored Resume
 - COMPASS Recruiter-Targeted Resume
@@ -132,6 +136,22 @@ The first permitted write mode is `create-missing-only`, and it requires explici
 Historical checkpoint files, including older `COMPASS_Layer0_*` files, must be preserved and reported as historical paths. Source Rebase must not rename or normalize them for terminology cleanliness.
 
 Source Rebase is not COMPASS Intake. It does not verify, extract, reconcile, approve, reject, or modify career claims.
+
+## COMPASS Experience Sync
+
+COMPASS Experience Sync reconciles an approved COMPASS Source of Truth into a separate public or externally shareable experience repository.
+
+The workflow is one-way: the Source of Truth remains authoritative, while the experience repository is a downstream publication artifact. Experience Sync never modifies the Source of Truth and never uses the public repository as factual authority.
+
+Experience Sync defaults to `dry-run`. It may compare source records, claim ledgers, do-not-claim controls, coverage status, public files, structured claims, and prior reconciliation metadata, but it performs no writes.
+
+`full-audit` rechecks the entire public projection and is appropriate for first-time setup, suspected drift, manual target edits, missing manifest history, publication-policy changes, or major framework changes.
+
+`apply-approved` requires a current matching dry-run or full-audit report and explicit user approval. It writes only to a non-default target branch, updates reconciliation metadata, opens a pull request, and does not merge unless explicitly instructed.
+
+Truth approval and public suitability are separate gates. Approved facts may still be withheld or abstracted when they contain personal information, private strategy, colleague names, customer-sensitive details, security-sensitive details, raw Intake material, or unnecessary operational specifics.
+
+Durable behavior is defined in `rules/11-experience-sync.md`. The launcher is `prompts/compass-experience-sync.md`, and generic target-repository templates are under `templates/experience-sync/`.
 
 ## Career Profile
 

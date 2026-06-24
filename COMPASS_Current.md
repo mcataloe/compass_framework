@@ -20,6 +20,8 @@ COMPASS runs in phases.
 
 Strategic analysis and generated artifacts must remain separate.
 
+COMPASS Source Rebase and COMPASS Experience Sync are repository-maintenance workflows outside the opportunity-analysis sequence. Source Rebase aligns Source of Truth scaffold structure. Experience Sync maintains a one-way downstream public experience projection.
+
 If a COMPASS Intake claim ledger or do-not-claim list exists, use it as the strongest source for claim safety. The canonical record is a human-readable source archive; the claim ledger is the evidence-control layer beneath it. Imported artifacts are evidence inputs and provenance records; after verified ingestion, the canonical source-of-truth record and approved ledgers supersede them for downstream use.
 
 ## Standard COMPASS Analysis Sections
@@ -134,6 +136,35 @@ Source Rebase must not overwrite, delete, rename, move, edit, or otherwise modif
 
 Historical checkpoint files, including older `COMPASS_Layer0_*` files, must be preserved and reported as historical paths rather than renamed or normalized.
 
+## COMPASS Experience Sync
+
+COMPASS Experience Sync reconciles an approved career Source of Truth into a separate public or externally shareable experience repository.
+
+Experience Sync is a one-way downstream projection. The Source of Truth remains the factual authority. The experience repository remains a generated publication artifact and must not update, override, or become factual authority for the Source of Truth.
+
+Experience Sync consumes approved Intake claim ledgers, do-not-claim records, coverage metadata, canonical role and project records, and explicitly authorized provisional baselines. It does not verify, approve, or infer new career claims. Unresolved material claim questions must return to COMPASS Intake.
+
+Experience Sync applies two separate gates:
+
+1. Truth Gate: whether wording is approved, narrowed, claim-depth-bounded, or explicitly authorized for provisional use.
+2. Publication Gate: whether the approved fact is useful and appropriate for the intended public or external audience.
+
+Canonical facts may be withheld or abstracted when they contain personal information, private strategy, colleague names, customer-sensitive details, security-sensitive details, raw Intake material, or unnecessary operational specifics. Abstraction must not broaden or strengthen the claim.
+
+Experience Sync supports three modes:
+
+- `dry-run`: incremental, read-only reconciliation using reliable prior sync metadata when available;
+- `full-audit`: read-only reconciliation of the complete target projection;
+- `apply-approved`: explicitly approved writes to a non-default target branch followed by a pull request.
+
+Dry-run is the default. Apply-approved requires a current report for the exact source and target commits, explicit user approval, verified target write access, and no unresolved decisions affecting the requested changes.
+
+Experience Sync must never write directly to the target default branch, modify the Source of Truth, merge a pull request without explicit instruction, publish do-not-claim material, or claim persistence without verification.
+
+The target experience repository should use a `COMPASS_Experience_Manifest.yaml` or compatible repository-specific manifest to record source and target mapping, prior reconciled commits, publication defaults, protected paths, claim-index location, write policy, and report history.
+
+Durable behavior is defined in `rules/11-experience-sync.md`. Generic templates are stored under `templates/experience-sync/`.
+
 ## Operating Principles
 
 ### Truth First
@@ -186,7 +217,7 @@ Company facts, reported sentiment, interview accounts, market-rarity judgments, 
 
 External generated artifacts must not contain internal COMPASS analysis, scoring, company research, interview-risk commentary, pursuit economics, compensation strategy, or private tactical notes unless the user explicitly asks for an internal dossier.
 
-Internal analysis, interview preparation, compensation notes, source-of-truth records, and ledgers may include gaps, risks, external research, or strategy when those sections are part of the active artifact template.
+Internal analysis, interview preparation, compensation notes, source-of-truth records, ledgers, and Experience Sync reports may include gaps, risks, provenance, publication decisions, or strategy when those sections are part of the active artifact template.
 
 ## TruthGuard Summary
 

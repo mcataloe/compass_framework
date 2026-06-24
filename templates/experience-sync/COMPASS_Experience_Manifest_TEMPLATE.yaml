@@ -1,0 +1,46 @@
+schema_version: 1
+repository_role: public-experience-projection
+
+source:
+  repository: owner/compass-source-of-truth
+  branch: main
+  last_reconciled_commit: null
+
+target:
+  repository: owner/candidate-experience
+  branch: main
+  last_reconciled_commit: null
+
+reconciliation:
+  last_reconciled_at: null
+  last_mode: null
+  latest_report_path: null
+  framework_version: null
+
+publication:
+  audience: public
+  exclude_direct_pii: true
+  exclude_private_strategy: true
+  exclude_raw_intake: true
+  exclude_colleague_names: true
+  abstract_customer_details: true
+  abstract_security_sensitive_details: true
+  require_disclosure_review: true
+  allow_provisional_claims: false
+
+claims:
+  public_claim_index_path: evidence/claims.yaml
+  allowed_source_statuses:
+    - compass-reconciled
+    - provisional-baseline
+
+write_policy:
+  dry_run_default: true
+  branch_and_pull_request_only: true
+  direct_default_branch_writes: false
+  source_repository_writes: false
+  merge_requires_explicit_instruction: true
+
+protected_paths: []
+
+report_history: []
