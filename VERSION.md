@@ -1,6 +1,6 @@
 # COMPASS Version
 
-Current COMPASS Version: vNext 2026-05.11
+Current COMPASS Version: vNext 2026-06.1
 
 Canonical Branch: main
 
@@ -20,7 +20,7 @@ COMPASS is the only canonical framework name. New rules, prompts, examples, and 
 
 ## Active Behavior Notes
 
-The active vNext 2026-05.11 framework includes COMPASS-only terminology, career-focused scope, COMPASS Intake checkpoint artifact behavior, COMPASS Source Rebase scaffold alignment, COMPASS Experience Sync public-projection reconciliation with private source-side target routing, Initial Seed Artifact support, claim-depth-aware Staff / Principal resume positioning, and the Opportunity Reality Layer:
+The active vNext 2026-06.1 framework includes COMPASS-only terminology, career-focused scope, COMPASS Intake checkpoint artifact behavior, COMPASS Source Rebase scaffold alignment, COMPASS Experience Sync public-projection reconciliation with private source-side target routing, Initial Seed Artifact support, claim-depth-aware Staff / Principal resume positioning, the Opportunity Reality Layer, and the Conversational Handoff Gate:
 
 - COMPASS is a career-focused, source-grounded framework for turning messy career inputs into verified, defensible job-search outputs.
 - COMPASS supports the careers / job-search profile. Product, strategy, research, consulting, grant, policy, and personal knowledge workflows are out of scope unless the project owner explicitly reopens scope.
@@ -51,6 +51,7 @@ The active vNext 2026-05.11 framework includes COMPASS-only terminology, career-
 - Generated artifacts are downstream outputs, not factual authorities, unless separately imported and verified through Intake.
 - Generated artifact types use strict output templates from `rules/06-artifact-rules.md` unless the user explicitly requests a different format.
 - External career artifacts use `rules/08-human-authenticity.md` to preserve truthful specificity, reviewer readability, candidate-specific voice, ATS-safe structure, and interview-defensible claims without fake humanization or AI-detector evasion tactics.
+- Short-form external messages use the Conversational Handoff Gate in `rules/08-human-authenticity.md` to continue from shared context, preserve information gain, ask only the minimum useful questions, keep internal analysis out of the message, state each point once, and move toward one clear next action.
 - Senior-IC resumes use claim-depth-aware wording, preserve official employment titles, prioritize verified Staff / Principal evidence, and distinguish intended benefits from realized outcomes.
 - Resume review should preserve useful technical depth while revising repeated architecture-taxonomy lists that obscure the candidate's action, decision, or consequence.
 - Intake setup must disclose whether direct datastore writes are available before asking setup questions.
@@ -64,6 +65,7 @@ Future COMPASS changes should preserve the core operating principles unless expl
 - Phased workflow
 - No fabricated technologies, metrics, credentials, employment history, project ownership, career achievements, business outcomes, market statistics, or company facts
 - Separate strategic analysis from clean external generated artifacts
+- Short-form conversational outputs continue the established exchange instead of restating shared context or leaking internal analysis
 - Strict artifact output templates preserved unless the user explicitly requests a different format
 - Career-profile rules may add specialized output rules without weakening source-grounding or TruthGuard
 - Prompt templates remain workflow launchers and must defer to active rule files for workflow behavior
