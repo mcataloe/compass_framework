@@ -2,6 +2,19 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-06.1 - Conversational Handoff Gate
+
+Added a reusable conversational-output gate so short-form external messages continue an existing exchange rather than reproducing analysis or behaving like standalone career artifacts.
+
+Behavior updates:
+
+- Extended `rules/08-human-authenticity.md` with a required Conversational Handoff Gate for recruiter replies, networking responses, application follow-ups, scheduling notes, and negotiation messages.
+- Required short-form messages to continue from shared context, preserve information gain, ask only the minimum useful questions, state each point once, and move toward one clear next action.
+- Prohibited analysis leakage, requirement recitals, compressed-resume phrasing, known-answer questions, generic interest-signaling filler, and unnecessary information requests.
+- Added a natural-turn test that evaluates whether the message plausibly belongs at that point in the conversation.
+- Preserved user-specific Source of Truth authority so channel-specific voice, sequence, and deletion rules override generic framework defaults within their documented scope.
+- Advanced the active framework identifier from `vNext 2026-05.11` to `vNext 2026-06.1`.
+
 ## vNext 2026-05.11 - Private Experience Sync Routing
 
 Moved actual Source of Truth and downstream target repository mapping into private Source of Truth configuration.
