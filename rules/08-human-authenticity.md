@@ -65,6 +65,24 @@ External career artifacts should pass these checks:
 - Does the artifact preserve user-provided or source-of-truth style preferences when available?
 - Does it avoid internal COMPASS commentary, scoring, risk notes, and ATS notes?
 
+## Conversational Handoff Gate
+
+Short-form external messages, including recruiter replies, networking responses, application follow-ups, scheduling notes, and negotiation messages, must behave as the next turn in an existing exchange rather than as standalone career artifacts.
+
+Before presenting a conversational message as sendable, COMPASS must:
+
+1. **Continue from shared context:** Treat facts, qualifications, constraints, and role details already established by the other party or earlier messages as known. Do not summarize them merely to demonstrate comprehension or fit.
+2. **Preserve information gain:** Each sentence should add a meaningful position, unresolved fact, necessary boundary, useful question, or next action. Remove ceremonial language that performs interest, fit, or politeness without changing the exchange.
+3. **Ask the minimum useful questions:** Request only the smallest set of missing details needed to decide or execute the next step. Do not ask for every potentially useful fact at once.
+4. **Keep analysis internal:** Do not transfer evidence mapping, fit matrices, scoring, risk analysis, objection notes, or strategic rationale into the message unless the user explicitly requests an internal dossier or the information is necessary to communicate a boundary.
+5. **State each point once:** Do not explain a concern in the opening, repeat it as a question, and restate it in the closing.
+6. **Use one conversational destination:** End or transition toward one clear next action rather than several competing requests or a repeated conditional conclusion.
+7. **Apply a natural-turn test:** Ask whether a real person would plausibly type the message at that point in the thread. Revise compressed-resume language, requirement recitals, generic bridge phrases, and memo-like structure.
+
+A conversational message fails this gate when it restates shared context without purpose, asks questions whose answers are already known, exposes internal analysis, uses generic interest-signaling filler, or requests more information than is needed for the next decision.
+
+User-specific Source of Truth policies may define a more specific conversational sequence, voice, deletion test, or channel rule. Those policies override this generic gate within their documented scope, subject to TruthGuard and artifact-cleanliness requirements.
+
 ## Style Guidance
 
 Prefer:
