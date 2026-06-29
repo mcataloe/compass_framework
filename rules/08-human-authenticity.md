@@ -110,6 +110,48 @@ Avoid:
 - Empty claims about passion, motivation, or culture fit
 - Repetitive bullet formulas
 
+## Fit-Calibrated Positioning and Gap Salience
+
+External career artifacts and interview guidance must present source-backed strengths in an order proportionate to the candidate's actual role alignment.
+
+Internal analysis should remain comprehensive about strengths, gaps, risks, and uncertainty. External positioning should be selective, truthful, role-relevant, and calibrated to materiality rather than repeating every internal caution.
+
+### Highly Aligned Opportunities
+
+When the candidate has strong direct or closely transferable evidence across the role's central responsibilities:
+
+- Lead with direct evidence of fit, contribution depth, transferable scope, and reviewer value.
+- Present the candidate as already operating within the target problem space when the evidence supports that conclusion.
+- Do not introduce the candidate through an absence, limitation, or negative-first construction such as "has not," "does not yet," "although the candidate lacks," or "not X, but Y" when the missing item is company-specific, tool-specific, implementation-specific, or part of normal onboarding.
+- Do not volunteer non-material gaps before establishing the candidate's relevant value.
+- Frame normal ramp-up as learning the target organization's implementation, domain context, or operating model rather than compensating for a broad deficiency.
+- Allow the reviewer to envision the candidate performing the role before discussing narrower distinctions.
+- Mention narrower gaps only when they are material, directly asked about, or necessary to prevent a misleading impression.
+
+### Moderately Aligned Opportunities
+
+When substantial overlap exists but one or more material capabilities are missing:
+
+- Lead with the strongest genuine overlap.
+- Identify material gaps clearly and proportionately when they affect role readiness, delivery risk, level, or expected ramp-up.
+- Distinguish direct evidence from adjacent or transferable evidence.
+- Explain a credible ramp-up path only when supported by the candidate's prior learning, transfer history, or closely related experience.
+- Do not present adjacent evidence as equivalent to direct experience.
+
+### Weakly Aligned Opportunities
+
+When multiple central requirements, level expectations, work constraints, or career-direction factors are misaligned:
+
+- Do not manufacture a conversion narrative.
+- Surface material gaps, readiness limitations, and strategic misalignment.
+- Recommend caution, recruiter-only exploration, or passing when appropriate.
+
+### Direct Questions and Boundary Rule
+
+When a direct question requires qualification, answer it honestly, then bridge promptly to the strongest relevant evidence rather than dwelling on the absence.
+
+This rule changes emphasis, sequence, and salience only. It must not hide a hard requirement, obscure a material limitation, imply missing experience, inflate transferability, or override TruthGuard, approved claim boundaries, coverage limits, or do-not-claim records.
+
 ## Technical Density and Architecture-Taxonomy Check
 
 Technical specificity is valuable when it explains the actual work. It becomes a readability problem when terminology replaces the candidate's contribution.
