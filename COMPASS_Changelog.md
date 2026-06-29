@@ -2,6 +2,21 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-06.2 - Fit-Calibrated Positioning and Gap Salience
+
+Added alignment-aware positioning rules so external career materials lead with source-backed value in highly aligned opportunities while preserving proportionate gap disclosure and full internal diagnostic analysis.
+
+Behavior updates:
+
+- Extended `rules/08-human-authenticity.md` with a Fit-Calibrated Positioning and Gap Salience section governing external artifacts and interview guidance.
+- Required highly aligned opportunities to lead with direct fit, contribution depth, transferable scope, and reviewer value instead of opening with non-material absences or negative-first constructions.
+- Distinguished company-specific systems, exact internal implementations, tool-specific differences, and normal onboarding from material candidate deficiencies.
+- Required moderately aligned opportunities to distinguish direct from adjacent evidence, identify material gaps proportionately, and use credible source-backed ramp-up framing.
+- Required weakly aligned opportunities to surface material limitations rather than manufacture a conversion narrative.
+- Preserved comprehensive internal analysis while keeping external positioning selective, truthful, role-relevant, and calibrated to materiality.
+- Clarified that fit-calibrated positioning changes emphasis, sequence, and salience only and cannot hide hard requirements, obscure material limitations, imply missing experience, inflate transferability, or override TruthGuard.
+- Advanced the active framework identifier from `vNext 2026-06.1` to `vNext 2026-06.2`.
+
 ## vNext 2026-06.1 - Conversational Handoff Gate
 
 Added a reusable conversational-output gate so short-form external messages continue an existing exchange rather than reproducing analysis or behaving like standalone career artifacts.
@@ -61,7 +76,7 @@ Behavior updates:
 - Added `rules/10-opportunity-recon.md` as the durable rule for Purple Squirrel Factor scoring, role-compression analysis, company background research, employee sentiment, technical interview research, interview realism, external-evidence handling, and pursuit economics.
 - Added Purple Squirrel scoring across individual requirement rarity, intersection rarity, technology-maturity plausibility, role compression, level and compensation realism, and constraint stacking.
 - Clarified that a coherent niche specialist role is different from an incoherently compressed role and that candidate scarcity does not create candidate evidence.
-- Added pursuit-economics analysis covering load-bearing evidence, material gaps, bridgeability, access path, posting signals, compensation, level, remote-work alignment, strategic value, effort, opportunity cost, and stronger alternatives.
+- Added pursuit-economics analysis covering load-bearing evidence, material gaps, bridgeability, access path, posting visibility and saturation signals, compensation, level, remote-work alignment, strategic value, effort, opportunity cost, and stronger alternatives.
 - Required current company and interview research for identifiable employers when browsing or connected-source access is available.
 - Added entity-disambiguation rules for similarly named companies and for staffing company, employer of record, direct client, and end customer relationships.
 - Added employee-sentiment handling with engineering-specific analysis, repeated-theme detection, recency, sample limitations, and High / Medium / Low / Insufficient confidence.
@@ -178,100 +193,3 @@ Behavior updates:
 - Intake must treat 3-5 questions as a per-response or per-batch pacing rule, not a per-role, per-artifact, or total Intake limit.
 - A role, project, artifact, or source file is not Intake-complete until material imported claims are captured in coverage metadata and resolved into an approved, narrowed, rejected, evidence-needed, metric-needed, scope-needed, deferred, or excluded status.
 - Checkpoints are progress commits, not proof of full source coverage.
-- Generated artifacts are downstream outputs and historical records, not factual authorities, unless separately imported and verified through Intake.
-
-## vNext 2026-05.5 - COMPASS Intake Terminology Migration
-
-Renamed the active source-of-truth onboarding workflow from "Layer 0" to "COMPASS Intake" while preserving the same verified source-of-truth onboarding function.
-
-Behavior updates:
-
-- COMPASS Intake is now the canonical workflow name for verified source-of-truth onboarding.
-- The formal descriptor remains "Verified Source-of-Truth Onboarding."
-- Renamed the active Intake rule and launcher prompt files to `rules/07-compass-intake.md` and `prompts/compass-intake.md`.
-- Updated active checkpoint naming from `COMPASS_Layer0` to `COMPASS_Intake`.
-- Preserved truth-first onboarding, source-evidence handling, claim verification, do-not-claim behavior, pause/resume checkpointing, and storage honesty.
-
-## vNext 2026-05.4 - Career-Focused Scope Correction
-
-Corrected active COMPASS scope back to careers / job-search.
-
-Behavior updates:
-
-- COMPASS is a career-focused framework, not a field-agnostic framework.
-- Product, strategy, research, consulting, grant, policy, and personal knowledge workflows are out of scope unless the project owner explicitly reopens scope.
-- Updated active docs and rules to describe career source records, job-search analysis, career artifacts, and recruiter / hiring-team review.
-- Preserved TruthGuard, source-grounding, phase separation, COMPASS Intake checkpointing, and COMPASS-only terminology.
-
-## vNext 2026-05.3 - COMPASS-Only Repository Canonicalization
-
-Removed predecessor-name compatibility from active repository files.
-
-Behavior updates:
-
-- COMPASS is the only canonical framework name.
-- Removed legacy redirect prompt files.
-- Removed legacy compatibility cleanup helper files.
-- Updated repository guidance so future work uses COMPASS terminology only.
-- Preserved the active source-grounded, TruthGuard-centered behavior.
-
-## vNext 2026-05.2 — COMPASS Intake Checkpoint Artifact Generation and Storage Disclosure
-
-Updated COMPASS Intake, then named "Layer 0," to make checkpoint artifact generation explicit at every committed round.
-
-Behavior updates:
-
-- COMPASS Intake must produce checkpoint artifacts after each committed verification round.
-- Checkpoint artifacts should behave like small git commits: each one captures the verified state and creates a recoverable backup before proceeding.
-- At minimum, each committed round should produce a checkpoint Markdown file, updated claim-ledger entries, updated do-not-claim entries when applicable, and a storage-status statement.
-- When practical, COMPASS Intake should package changed checkpoint files into a downloadable ZIP bundle for upload to the target datastore.
-- Intake setup must disclose whether direct datastore write access is available before asking setup questions.
-- If direct write access to Google Drive, GitHub, or another requested datastore is unavailable or uncertain, Intake must say so up front and explain the fallback workflow.
-- Intake must not claim files were saved unless they were actually written and verified in the datastore.
-- Expanded the Intake checkpoint example to include storage status, generated artifacts, direct-write availability, and next safe action.
-
-## vNext 2026-05.1 - Generalize Framework (Superseded by vNext 2026-05.4)
-
-COMPASS stands for:
-
-> Capture, Organize, Map, Probe, Approve, Synthesize, Store
-
-Behavior updates:
-
-- Established COMPASS as the canonical framework name.
-- Reframed the framework as field-agnostic rather than career-only.
-- Added `COMPASS_Current.md` as the canonical active framework definition.
-- Added `COMPASS_Changelog.md` as the canonical changelog.
-- Updated core documentation, rule files, prompts, and examples to use COMPASS terminology.
-- Updated COMPASS Intake from career-only source-of-truth onboarding to general verified source-of-truth onboarding.
-- Preserved career-specific resume, cover letter, recruiter, ATS, compensation, remote-work, and interview-prep rules as the initial careers profile.
-
-Note: The field-agnostic scope from this entry was superseded by `vNext 2026-05.4`; active COMPASS scope is careers / job-search.
-
-## vNext 2026-05 — COMPASS Intake Verified Career Source-of-Truth Onboarding
-
-Added COMPASS Intake, then named "Layer 0," as the truth-first onboarding workflow for building a verified career source of truth and master CV from user-provided documents and cross-examination.
-
-This behavior was later generalized in `vNext 2026-05.1`, then superseded by the `vNext 2026-05.4` career-focused scope correction.
-
-## vNext 2026-05 — Prompt Authority Governance
-
-Clarified that prompt templates are workflow launchers rather than independent policy sources.
-
-## vNext 2026-05 — DOCX-First Resume Prompt Enforcement
-
-Updated tailored-resume and recruiter-targeted-resume prompt templates so resume generation requires DOCX-first artifact creation when document-generation tools are available.
-
-## vNext 2026-05 — Initial Repository Baseline
-
-Initialized the COMPASS framework repository.
-
-## Change Management Rules
-
-When changing COMPASS:
-
-1. Update the relevant framework or rules file.
-2. Update `VERSION.md` if the change materially affects framework behavior.
-3. Add a changelog entry explaining what changed and why.
-4. Preserve backward compatibility unless the change intentionally supersedes prior behavior.
-5. Avoid burying major behavior changes only inside prompt templates.
