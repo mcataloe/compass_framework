@@ -2,6 +2,26 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-06.3 - COMPASS Verified Opportunity Search
+
+Added a first-class multi-opportunity discovery and shortlist workflow centered on evidence-backed alignment rather than hiddenness alone.
+
+Behavior updates:
+
+- Added `rules/12-verified-opportunity-search.md` as the durable rule for current-opportunity discovery, live-posting verification, requisition reconciliation, ordered eligibility and hard-screen gates, alignment scoring, opportunity-quality review, conversion-condition ranking, application-stage inspection, and duplicate suppression.
+- Added `prompts/compass-verified-opportunity-search.md` as the reusable launcher prompt.
+- Added `COMPASS Verified Opportunity Search` to `COMPASS_COMMANDS.md` with required framework and user-specific source inputs.
+- Separated eligibility and hard screens, evidence-backed alignment, opportunity quality, and conversion conditions so one dimension cannot silently substitute for another.
+- Added a default alignment model weighted across load-bearing qualifications, central responsibilities, level and operating scope, evidence recognizability, transferability, and career-direction value.
+- Required alignment estimates to use decision bands and ordinary five-point increments rather than false precision or implied interview probability.
+- Clarified that a hard eligibility or application-screen failure overrides an otherwise high alignment score.
+- Reclassified freshness, access, visibility, saturation, and application friction as conversion conditions and ranking factors rather than universal fit gates.
+- Clarified that low visibility cannot qualify a weakly aligned role and that mainstream visibility does not automatically exclude an exceptionally aligned or access-advantaged role when user-specific policy permits it.
+- Added untrusted-external-content controls for job descriptions, ATS pages, application forms, recruiter posts, HTML, and metadata.
+- Required current employer-controlled job and application verification, conflict reconciliation, application-stage visibility disclosure, and an immediate final recheck for reported priority roles.
+- Updated `COMPASS_Current.md`, `README.md`, and `VERSION.md` to expose the active behavior.
+- Advanced the active framework identifier from `vNext 2026-06.2` to `vNext 2026-06.3`.
+
 ## vNext 2026-06.2 - Fit-Calibrated Positioning and Gap Salience
 
 Added alignment-aware positioning rules so external career materials lead with source-backed value in highly aligned opportunities while preserving proportionate gap disclosure and full internal diagnostic analysis.
