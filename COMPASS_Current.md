@@ -12,11 +12,12 @@ Can the intended career reviewer quickly understand the candidate's value, evide
 
 COMPASS runs in phases.
 
-1. COMPASS Intake when a verified source of truth is needed
-2. Analysis only
-3. Targeted artifact generation only when requested
-4. Supporting narrative or response generation only when requested
-5. Follow-up, revision, or defense preparation only when requested
+1. COMPASS Intake when a verified source of truth is needed.
+2. Verified Opportunity Search when the user wants current discovery and cross-opportunity ranking.
+3. Analysis only for an identified role or opportunity.
+4. Targeted artifact generation only when requested.
+5. Supporting narrative or response generation only when requested.
+6. Follow-up, revision, or defense preparation only when requested.
 
 Strategic analysis and generated artifacts must remain separate.
 
@@ -86,6 +87,43 @@ Interview realism must be evaluated independently from whether the reporting can
 Pursuit economics evaluates candidate evidence for load-bearing requirements, material gaps, bridgeability, access path, posting visibility and saturation signals, compensation, level, remote-work alignment, strategic value, preparation effort, opportunity cost, and stronger available alternatives.
 
 The final recommendation should include, when relevant, the best application channel, qualitative expected conversion likelihood, required effort, opportunity cost, and conditions that would change the recommendation.
+
+## COMPASS Verified Opportunity Search
+
+COMPASS Verified Opportunity Search is the multi-opportunity discovery and shortlist workflow governed by `rules/12-verified-opportunity-search.md`.
+
+It keeps four judgments separate:
+
+1. Eligibility and hard-screen compatibility.
+2. Evidence-backed alignment.
+3. Opportunity quality and career value.
+4. Conversion conditions, including freshness, access, visibility, saturation, and application friction.
+
+Alignment is reported as a structured decision estimate, normally in five-point increments. It is not a probability of receiving an interview, offer, or hire.
+
+The framework default weights are:
+
+- load-bearing required qualifications — 30%;
+- three to five central responsibilities — 30%;
+- level, scope, and operating model — 15%;
+- evidence strength and reviewer recognizability — 10%;
+- technical and domain transferability — 10%;
+- career-direction value — 5%.
+
+A user's Source of Truth may configure thresholds and weight overrides while preserving TruthGuard and a total weight of 100%.
+
+Default interpretation bands are:
+
+- `90–100%` — Exceptional alignment;
+- `80–89%` — Strong alignment;
+- `70–79%` — Credible or conditional alignment;
+- `Below 70%` — Exclude by default unless a documented strategic exception applies.
+
+Eligibility and hard-screen failures override the score. A role cannot score its way around a non-negotiable geographic, employment, credential, application, or required-experience gate.
+
+Visibility and saturation are independent conversion dimensions. Low visibility may improve pursuit economics but does not qualify a weakly aligned role. Competitive or saturated visibility may lower priority but does not automatically exclude an exceptionally aligned or verified access-advantaged role when user-specific policy permits it.
+
+The search must verify the official current posting and active employer-controlled application flow, reconcile conflicting requisition versions, inspect accessible hard screens, suppress configured duplicate or previously handled opportunities, and perform a final live recheck for reported priority roles.
 
 ## COMPASS Intake — Verified Source-of-Truth Onboarding
 
@@ -187,7 +225,7 @@ Target documents or requirements may identify useful terminology and needed capa
 
 COMPASS is career-focused. Product, strategy, research, consulting, grant, policy, and personal knowledge workflows are out of scope unless the project owner explicitly reopens scope.
 
-The active career profile covers role evaluation, opportunity reality, resumes, cover letters, recruiter responses, ATS alignment, compensation and remote-work risk, company and interview research, pursuit economics, and interview preparation.
+The active career profile covers opportunity discovery, role evaluation, opportunity reality, resumes, cover letters, recruiter responses, ATS alignment, compensation and remote-work risk, company and interview research, pursuit economics, and interview preparation.
 
 ### Reviewer Readability
 
@@ -217,13 +255,13 @@ COMPASS should identify likely recruiter, hiring-manager, interviewer, or career
 
 ### External Evidence Discipline
 
-Company facts, reported sentiment, interview accounts, market-rarity judgments, and pursuit recommendations must preserve source type, recency, confidence, and uncertainty. Anonymous or historical evidence must not be promoted into verified current fact.
+Company facts, reported sentiment, interview accounts, market-rarity judgments, opportunity-search findings, and pursuit recommendations must preserve source type, recency, confidence, and uncertainty. Anonymous or historical evidence must not be promoted into verified current fact.
 
 ### Artifact Separation
 
 External generated artifacts must not contain internal COMPASS analysis, scoring, company research, interview-risk commentary, pursuit economics, compensation strategy, or private tactical notes unless the user explicitly asks for an internal dossier.
 
-Internal analysis, interview preparation, compensation notes, source-of-truth records, ledgers, and Experience Sync reports may include gaps, risks, provenance, publication decisions, or strategy when those sections are part of the active artifact template.
+Internal analysis, opportunity-search reports, interview preparation, compensation notes, source-of-truth records, ledgers, and Experience Sync reports may include gaps, risks, provenance, publication decisions, or strategy when those sections are part of the active artifact template.
 
 ## TruthGuard Summary
 
@@ -243,6 +281,8 @@ TruthGuard is the anti-fabrication and evidence-control layer. It must flag:
 - Historical employer evidence presented as current without corroboration
 - Entity confusion among similarly named companies, staffing firms, clients, parents, or subsidiaries
 - Candidate scarcity used as a substitute for candidate evidence
+- Alignment estimates presented as measured hiring probabilities
+- Low visibility or low saturation presented without current observable evidence
 
 ## Source and Policy Priority
 
