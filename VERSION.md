@@ -1,6 +1,6 @@
 # COMPASS Version
 
-Current COMPASS Version: vNext 2026-06.2
+Current COMPASS Version: vNext 2026-06.3
 
 Canonical Branch: main
 
@@ -20,12 +20,17 @@ COMPASS is the only canonical framework name. New rules, prompts, examples, and 
 
 ## Active Behavior Notes
 
-The active vNext 2026-06.2 framework includes COMPASS-only terminology, career-focused scope, COMPASS Intake checkpoint artifact behavior, COMPASS Source Rebase scaffold alignment, COMPASS Experience Sync public-projection reconciliation with private source-side target routing, Initial Seed Artifact support, claim-depth-aware Staff / Principal resume positioning, the Opportunity Reality Layer, the Conversational Handoff Gate, and fit-calibrated positioning and gap salience:
+The active vNext 2026-06.3 framework includes COMPASS-only terminology, career-focused scope, COMPASS Intake checkpoint artifact behavior, COMPASS Source Rebase scaffold alignment, COMPASS Experience Sync public-projection reconciliation with private source-side target routing, Initial Seed Artifact support, claim-depth-aware Staff / Principal resume positioning, the Opportunity Reality Layer, the Conversational Handoff Gate, fit-calibrated positioning and gap salience, and COMPASS Verified Opportunity Search:
 
 - COMPASS is a career-focused, source-grounded framework for turning messy career inputs into verified, defensible job-search outputs.
 - COMPASS supports the careers / job-search profile. Product, strategy, research, consulting, grant, policy, and personal knowledge workflows are out of scope unless the project owner explicitly reopens scope.
 - Core behavior remains truth-first, source-grounded, checkpointed, and claim-ledger-driven.
 - COMPASS Analysis uses a strict 13-section report contract that separates candidate fit, requested-candidate rarity, company and interview reality, risk, TruthGuard, and pursuit economics.
+- COMPASS Verified Opportunity Search is a first-class discovery and shortlist workflow for finding active opportunities across multiple employers.
+- Verified Opportunity Search separates eligibility and hard screens, evidence-backed alignment, opportunity quality, and conversion conditions.
+- Alignment is a structured decision estimate rather than a probability of interview, offer, or hiring success.
+- Freshness, access, visibility, saturation, and application friction are conversion conditions and ranking factors; they do not substitute for fit.
+- Low visibility does not qualify a weakly aligned role, and mainstream visibility does not automatically exclude an exceptionally aligned or access-advantaged role when user-specific policy permits it.
 - The Opportunity Reality Layer evaluates the Purple Squirrel Factor independently from candidate fit.
 - Purple Squirrel scoring considers individual requirement rarity, intersection rarity, technology-maturity plausibility, role compression, level and compensation realism, and constraint stacking.
 - Candidate scarcity or role compression never substitutes for candidate evidence and does not automatically justify applying.
@@ -72,6 +77,7 @@ Future COMPASS changes should preserve the core operating principles unless expl
 - Career-profile rules may add specialized output rules without weakening source-grounding or TruthGuard
 - Prompt templates remain workflow launchers and must defer to active rule files for workflow behavior
 - External employer and interview evidence must preserve attribution, recency, confidence, and uncertainty
+- Verified Opportunity Search must preserve separate eligibility, alignment, opportunity-quality, and conversion-condition judgments
 - COMPASS Intake remains the default process for building a canonical source record from unverified documents or a new user's history
 - COMPASS Source Rebase remains scaffold alignment only and must not perform Intake, claim verification, or destructive source-record migration
 - COMPASS Experience Sync remains a one-way downstream public projection and must not modify or supersede Source of Truth records
