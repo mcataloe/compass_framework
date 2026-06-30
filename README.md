@@ -22,15 +22,17 @@ Use these files as the active source of truth:
 - `COMPASS_Changelog.md` — framework change history
 - `rules/` — durable behavior rules
 - `rules/07-compass-intake.md` — COMPASS Intake source-of-truth onboarding and claim verification rules
-- `rules/08-human-authenticity.md` - truthful human-authenticity and reviewer-signal rules for external artifacts
-- `rules/09-source-rebase.md` - safe source-of-truth scaffold alignment rules
-- `rules/10-opportunity-recon.md` - Purple Squirrel Factor, company and interview reality, external-evidence handling, and pursuit economics
-- `rules/11-experience-sync.md` - one-way Source of Truth reconciliation into a public or externally shareable experience repository
+- `rules/08-human-authenticity.md` — truthful human-authenticity and reviewer-signal rules for external artifacts
+- `rules/09-source-rebase.md` — safe source-of-truth scaffold alignment rules
+- `rules/10-opportunity-recon.md` — Purple Squirrel Factor, company and interview reality, external-evidence handling, and pursuit economics
+- `rules/11-experience-sync.md` — one-way Source of Truth reconciliation into a public or externally shareable experience repository
+- `rules/12-verified-opportunity-search.md` — current-opportunity discovery, live verification, alignment scoring, and conversion-condition ranking
 - `prompts/` — reusable prompt templates
 - `prompts/compass-intake.md` — reusable COMPASS Intake launcher prompt
-- `prompts/compass-source-rebase.md` - reusable COMPASS Source Rebase launcher prompt
-- `prompts/compass-experience-sync.md` - reusable COMPASS Experience Sync launcher prompt
+- `prompts/compass-source-rebase.md` — reusable COMPASS Source Rebase launcher prompt
+- `prompts/compass-experience-sync.md` — reusable COMPASS Experience Sync launcher prompt
 - `prompts/compass-analysis.md` — reusable COMPASS analysis launcher prompt
+- `prompts/compass-verified-opportunity-search.md` — reusable verified opportunity-search launcher prompt
 - `prompts/compass-tailored-resume.md` — reusable tailored resume launcher prompt
 - `prompts/recruiter-targeted-resume.md` — reusable recruiter-targeted resume launcher prompt
 - `prompts/compass-cover-letter.md` — reusable cover letter launcher prompt
@@ -40,12 +42,12 @@ Use these files as the active source of truth:
 - `prompts/compass-interview-prep.md` — reusable interview preparation launcher prompt
 - `prompts/compass-compensation-note.md` — reusable compensation and remote-work note launcher prompt
 - `examples/` — example output patterns
-- `examples/compass-intake-artifact-templates.md` - copy-ready COMPASS Intake artifact skeletons
-- `examples/seed-artifacts/SEED_ARTIFACTS_MANIFEST_EXAMPLE.md` - fictional seed artifact manifest example
-- `templates/source-of-truth-scaffold/` - framework-owned source-of-truth scaffold and report templates
-- `templates/source-of-truth-scaffold/sources/seed/` - recommended scaffold location for Initial Seed Artifacts
-- `templates/source-of-truth-scaffold/sync/` - private Source of Truth routing templates for downstream experience targets
-- `templates/experience-sync/` - sanitized target manifest, reconciliation report, and public claim provenance templates
+- `examples/compass-intake-artifact-templates.md` — copy-ready COMPASS Intake artifact skeletons
+- `examples/seed-artifacts/SEED_ARTIFACTS_MANIFEST_EXAMPLE.md` — fictional seed artifact manifest example
+- `templates/source-of-truth-scaffold/` — framework-owned source-of-truth scaffold and report templates
+- `templates/source-of-truth-scaffold/sources/seed/` — recommended scaffold location for Initial Seed Artifacts
+- `templates/source-of-truth-scaffold/sync/` — private Source of Truth routing templates for downstream experience targets
+- `templates/experience-sync/` — sanitized target manifest, reconciliation report, and public claim provenance templates
 
 Compatibility shims for earlier naming have been removed. Prompt templates and rule files should use COMPASS terminology only.
 
@@ -59,6 +61,7 @@ Current first-class commands:
 - COMPASS Source Rebase
 - COMPASS Experience Sync
 - COMPASS Analysis
+- COMPASS Verified Opportunity Search
 - COMPASS Tailored Resume
 - COMPASS Recruiter-Targeted Resume
 - COMPASS Cover Letter
@@ -67,7 +70,7 @@ Additional supported artifact requests are governed by `rules/06-artifact-rules.
 
 ## COMPASS Analysis and Opportunity Reality
 
-COMPASS Analysis evaluates candidate fit and opportunity reality as related but separate questions.
+COMPASS Analysis evaluates candidate fit and opportunity reality as related but separate questions for an identified role.
 
 For identifiable-company role analysis, the strict analysis report includes:
 
@@ -85,6 +88,25 @@ Company and interview research must preserve entity identity, source type, recen
 Pursuit economics evaluates whether the opportunity merits the candidate's application and preparation time based on evidence, gaps, access path, posting signals, compensation, level, remote-work alignment, strategic value, effort, opportunity cost, and stronger alternatives.
 
 Durable behavior is defined in `rules/01-analysis-workflow.md`, `rules/04-truthguard.md`, `rules/06-artifact-rules.md`, and `rules/10-opportunity-recon.md`.
+
+## COMPASS Verified Opportunity Search
+
+COMPASS Verified Opportunity Search discovers and ranks multiple current opportunities.
+
+The workflow separates:
+
+1. eligibility and hard-screen compatibility;
+2. evidence-backed alignment;
+3. opportunity quality and career value;
+4. conversion conditions such as freshness, access, visibility, saturation, and application friction.
+
+Alignment is a structured decision estimate, not a probability of interview, offer, or hire. A failed location, employment, credential, or application hard screen overrides the score.
+
+Low visibility may improve pursuit economics, but it cannot qualify a weakly aligned role. Mainstream visibility may lower priority, but it does not automatically exclude an exceptionally aligned or verified access-advantaged role when the user's Source of Truth permits that exception.
+
+The workflow verifies the official current posting and employer-controlled application flow, reconciles conflicting requisition versions, inspects accessible screening questions, suppresses configured duplicate or previously handled opportunities, and rechecks priority roles before reporting them.
+
+Durable behavior is defined in `rules/12-verified-opportunity-search.md`. The launcher is `prompts/compass-verified-opportunity-search.md`.
 
 ## COMPASS Intake
 
@@ -162,9 +184,9 @@ Durable behavior is defined in `rules/11-experience-sync.md`. The launcher is `p
 
 ## Career Profile
 
-COMPASS is career-focused. The active profile is the careers / job-search profile: role evaluation, hiring-manager scan optimization, ATS and semantic alignment, requirement-market realism, company and interview research, pursuit economics, master CV claim-ledger construction, truth-preserving resume tailoring, cover letters, recruiter-specific positioning, compensation and remote-work risk analysis, interview objection prediction, and evidence mapping from source records to job descriptions.
+COMPASS is career-focused. The active profile is the careers / job-search profile: opportunity discovery, role evaluation, hiring-manager scan optimization, ATS and semantic alignment, requirement-market realism, company and interview research, pursuit economics, master CV claim-ledger construction, truth-preserving resume tailoring, cover letters, recruiter-specific positioning, compensation and remote-work risk analysis, interview objection prediction, and evidence mapping from source records to job descriptions.
 
-Generated artifacts must follow the strict output templates in `rules/06-artifact-rules.md` unless the user explicitly requests a different format. Prompt templates are launchers and must defer to the active rule files for artifact section order, source priority, TruthGuard, Opportunity Reality Layer behavior, and clean-deliverable requirements.
+Generated artifacts must follow the strict output templates in `rules/06-artifact-rules.md` unless the user explicitly requests a different format. Prompt templates are launchers and must defer to the active rule files for artifact section order, source priority, TruthGuard, Opportunity Reality Layer behavior, Verified Opportunity Search behavior, and clean-deliverable requirements.
 
 External career artifacts should also follow `rules/08-human-authenticity.md` so resumes, cover letters, recruiter responses, application answers, follow-up messages, and similar deliverables remain specific, source-grounded, natural, reviewer-readable, and interview-defensible without using fake humanization or AI-detector evasion tactics.
 
