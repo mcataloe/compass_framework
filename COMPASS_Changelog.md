@@ -2,6 +2,24 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-06.5 - Persistent Opportunity Registry
+
+Added optional durable cross-run opportunity history for COMPASS Verified Opportunity Search.
+
+Behavior updates:
+
+- Added `rules/13-opportunity-registry.md` as the durable contract for schema-versioned opportunity registries, append-only search-run records, revision-aware writes, partial-failure recovery, idempotency, and persistence reporting.
+- Added generic registry and search-run templates under `templates/opportunity-registry/`.
+- Separated opportunity identity, observation, reporting history, candidate-confirmed status, suppression, and provenance so search observations cannot silently become candidate actions or employer outcomes.
+- Authorized configured Verified Opportunity Search runs to persist observational opportunity facts without a second instruction when the user's Source of Truth defines the paths and write policy.
+- Preserved explicit user authority for candidate statuses including applied, interviewing, rejected, withdrawn, contacted, represented, accepted, and do-not-pursue.
+- Added exact-identifier precedence, conservative semantic duplicate handling, `possible_duplicate_of`, and `related_repost_of` behavior.
+- Added material-change rules for reopenings, new hiring cycles, compensation, eligibility, scope, hard screens, access, and contract terms.
+- Added persistence outcomes: `Persisted`, `Persistence degraded`, `Not persisted`, and `Persistence not configured`.
+- Added recovery behavior for malformed registries, concurrent revision conflicts, and run-log-success / registry-failure cases.
+- Updated the Verified Opportunity Search launcher and `VERSION.md` to load and expose the new contract.
+- Advanced the active framework identifier from `vNext 2026-06.4` to `vNext 2026-06.5`.
+
 ## vNext 2026-06.4 - Conversational Handoff Refinement
 
 Folded branch-only Conversational Handoff guidance into the active Human Authenticity rule.

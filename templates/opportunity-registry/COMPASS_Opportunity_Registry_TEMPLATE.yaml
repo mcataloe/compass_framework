@@ -1,0 +1,55 @@
+schema_version: 1
+registry_updated_at: null
+last_completed_run_id: null
+
+# This registry is the current materialized view. Per-run history belongs in
+# append-only search-run files.
+opportunities:
+  - opportunity_id: opp-example-company-example-role
+    employer: Example Company
+    accountable_entity: Example Company
+    title: Example Role
+    lane: primary
+    employment_type: full_time
+
+    identity:
+      ats_provider: null
+      provider_job_id: null
+      requisition_id: null
+      canonical_posting_url: null
+      application_url: null
+      alternate_urls: []
+      possible_duplicate_of: null
+      related_repost_of: null
+
+    observation:
+      first_seen_at: null
+      last_seen_at: null
+      last_verified_at: null
+      posting_state: unknown
+      verification_strength: unknown
+      location: null
+      remote_scope: null
+      material_signature: null
+      material_change_summary: null
+
+    reporting:
+      first_reported_at: null
+      last_reported_at: null
+      report_count: 0
+      last_reported_run_id: null
+
+    candidate_status:
+      status: unknown
+      source: null
+      confirmed_at: null
+      evidence_note: null
+
+    suppression:
+      suppress_by_default: false
+      reason: null
+      reconsideration_condition: null
+
+    provenance:
+      source_records: []
+      run_ids: []

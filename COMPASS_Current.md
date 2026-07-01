@@ -150,6 +150,18 @@ Default qualitative contract utility grades are:
 
 Contract economics, access, flexibility, or conversion possibility must not change the alignment estimate or cause secondary work to be presented as a primary direct-hire opportunity.
 
+### Persistent Opportunity Registry
+
+Optional durable cross-run history is governed by `rules/13-opportunity-registry.md`.
+
+When the user's Source of Truth configures registry and search-run paths and repository write capability is available, running COMPASS Verified Opportunity Search authorizes persistence of qualifying observational opportunity facts and an append-only run record. The workflow must report whether persistence was completed, degraded, not completed, or not configured.
+
+The registry keeps opportunity identity, observation, reporting history, candidate-confirmed status, suppression, and provenance separate. Search activity may update first-seen, last-seen, verification, posting-state, duplicate, repost, material-change, and reporting fields. It must not infer applied, interviewing, rejected, withdrawn, contacted, represented, accepted, or do-not-pursue status.
+
+Identity prioritizes ATS and requisition identifiers. URL variation alone does not create a new opportunity. Semantic similarity without sufficient evidence should produce a possible-duplicate relationship rather than a silent automatic merge.
+
+Completed run records are append-only. Registry writes must be revision-aware, preserve unknown user-owned fields, fail safely on malformed or incompatible state, and retain recovery evidence when a run log succeeds but the registry update fails.
+
 ## COMPASS Intake — Verified Source-of-Truth Onboarding
 
 COMPASS Intake is the truth-first onboarding workflow for creating a canonical source of truth.
@@ -312,6 +324,8 @@ TruthGuard is the anti-fabrication and evidence-control layer. It must flag:
 - Low visibility or low saturation presented without current observable evidence
 - Contract rates, hours, duration, client identity, conversion value, exclusivity, or concurrency compatibility inferred without evidence
 - Recruiter access presented as proof of an active client-controlled application or likely hire
+- Candidate application, contact, representation, interview, rejection, withdrawal, acceptance, or do-not-pursue status inferred from search or artifact-preparation activity
+- Opportunity-registry persistence presented as successful without verified writes
 
 ## Source and Policy Priority
 
