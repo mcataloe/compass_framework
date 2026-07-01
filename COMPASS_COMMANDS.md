@@ -25,7 +25,7 @@ Target job descriptions, recruiter requests, and opportunity records do not crea
 
 ### Opportunity context
 
-For employer, market, interview, and opportunity-reality claims, prefer current authoritative primary sources, then reputable current secondary sources, then clearly attributed recent anecdotal evidence. Preserve recency, source type, and confidence.
+For employer, staffing, client, market, interview, and opportunity-reality claims, prefer current authoritative primary sources, then reputable current secondary sources, then clearly attributed recent anecdotal evidence. Preserve entity identity, recency, source type, and confidence.
 
 Opportunity evidence does not create candidate experience.
 
@@ -40,7 +40,7 @@ Within TruthGuard, do-not-claim controls, privacy requirements, artifact cleanli
 5. COMPASS artifact-specific rules and generic framework defaults
 6. Project instructions, memory, or model defaults only when not contradicted by stronger sources
 
-User-specific Source of Truth policy may configure thresholds, weights, channels, or presentation within its scope. It does not create candidate facts and cannot weaken TruthGuard or approved claim boundaries.
+User-specific Source of Truth policy may configure thresholds, weights, channels, employment-structure modes, or presentation within its scope. It does not create candidate facts and cannot weaken TruthGuard or approved claim boundaries.
 
 ## Current First-Class Commands
 
@@ -207,7 +207,7 @@ Run a COMPASS fit analysis.
 
 **Launcher:** `prompts/compass-verified-opportunity-search.md`
 
-**Purpose:** Discover, verify, score, and rank multiple current opportunities using separate eligibility, evidence-backed alignment, opportunity-quality, and conversion-condition judgments.
+**Purpose:** Discover, verify, score, and rank multiple current opportunities using separate eligibility, evidence-backed alignment, opportunity-quality, conversion-condition, and optional secondary contract-utility judgments.
 
 **Use when the user asks to:**
 
@@ -215,8 +215,9 @@ Run a COMPASS fit analysis.
 - refresh or build a verified opportunity shortlist;
 - search official employer and ATS sources across multiple employers;
 - compare alignment, hard screens, career value, visibility, saturation, access, and application friction;
+- add a separately ranked bridge, backup, consulting, temporary, fractional, or contract lane when explicitly requested;
 - suppress already handled or duplicate roles using a configured opportunity-status ledger;
-- prepare a prioritized application queue without submitting applications.
+- prepare a prioritized application or qualification queue without submitting applications or contacting recruiters.
 
 **Example triggers:**
 
@@ -225,7 +226,17 @@ Run COMPASS Verified Opportunity Search.
 Find verified high-alignment opportunities with COMPASS.
 Refresh my COMPASS opportunity shortlist.
 Run COMPASS Verified Opportunity Search --max 5.
+Run COMPASS Verified Opportunity Search --include-contracts.
+Run COMPASS Verified Opportunity Search --contract-only.
+Run COMPASS Verified Opportunity Search --include-contracts --max-contracts 3.
 ```
+
+**Modes:**
+
+- default — use the user's configured primary opportunity strategy;
+- `--include-contracts` — preserve the primary lane and add a separately ranked secondary contract lane;
+- `--contract-only` — return only the secondary contract lane;
+- `--max-contracts N` — cap contract results without weakening gates.
 
 **Required framework files:**
 
@@ -244,11 +255,13 @@ Run COMPASS Verified Opportunity Search --max 5.
 - current verified career evidence;
 - target-role and career-strategy policy;
 - location, remote, travel, employment-structure, level, and compensation constraints;
+- direct-hire, contract, bridge, fractional, and C2H strategy when relevant;
 - alignment thresholds and any explicit scoring-weight overrides;
+- contract classifications, utility criteria, rate policy, and result limits when contract mode is active;
 - opportunity-status or duplicate ledger;
 - approved channel or result-format policy.
 
-**Output discipline:** Verify the live official posting and active employer-controlled application flow. Keep eligibility and hard screens, alignment estimate, opportunity quality, and conversion conditions separate. Alignment is not hiring probability. Visibility and saturation are ranking factors unless user-specific policy defines a stricter gate. Do not reward hiddenness when fit is weak. Do not submit applications, update ledgers, or generate downstream artifacts without explicit user instruction.
+**Output discipline:** Verify the live official posting and active employer-controlled application flow for direct-employer roles. When contract mode is active and user-specific policy permits it, a verified staffing-firm, employer-of-record, or identifiable recruiter-controlled requisition may support a secondary `Contact first` result without a public client application, but the accountable entity, current opportunity, and actionable path must be verified and the client must remain unverified when undisclosed. Keep eligibility and hard screens, alignment estimate, opportunity quality, conversion conditions, and contract utility separate. Alignment is not hiring probability. Visibility, saturation, recruiter access, temporary economics, and flexibility do not substitute for fit. Do not blend primary and secondary rankings. Do not submit applications, contact recruiters, accept terms, update ledgers, or generate downstream artifacts without explicit user instruction.
 
 ---
 
@@ -277,7 +290,7 @@ Build a COMPASS resume for this job description.
 - `rules/08-human-authenticity.md`
 - `prompts/compass-tailored-resume.md`
 
-**Output discipline:** The resume must not include COMPASS analysis, scoring, risk notes, company research, interview findings, pursuit economics, or private tactical notes.
+**Output discipline:** The resume must not include COMPASS analysis, scoring, risk notes, company research, interview findings, pursuit economics, contract utility, commercial-term analysis, or private tactical notes.
 
 ---
 
@@ -335,7 +348,7 @@ Write the COMPASS cover letter for the job we analyzed.
 - `rules/08-human-authenticity.md`
 - `prompts/compass-cover-letter.md`
 
-**Output discipline:** Use a calm, professional, forward-looking tone. Do not include internal analysis, ATS tables, compensation strategy, company-review findings, interview-risk notes, pursuit economics, or private tactical notes.
+**Output discipline:** Use a calm, professional, forward-looking tone. Do not include internal analysis, ATS tables, compensation strategy, company-review findings, interview-risk notes, pursuit economics, contract utility, commercial-term analysis, or private tactical notes.
 
 ## Supported Artifact Requests
 
@@ -376,4 +389,4 @@ When adding, renaming, or retiring a COMPASS command:
 4. Update `README.md` if the command should be visible to new users.
 5. Update `COMPASS_Changelog.md` with the change.
 6. Update `VERSION.md` when command behavior materially changes framework behavior.
-7. Preserve source-grounding, phase separation, TruthGuard, opportunity-recon evidence discipline, and artifact cleanliness.
+7. Preserve source-grounding, phase separation, TruthGuard, opportunity-recon evidence discipline, entity separation, action boundaries, and artifact cleanliness.
