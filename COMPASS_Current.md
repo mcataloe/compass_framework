@@ -268,6 +268,8 @@ Revise repeated architecture-taxonomy lists when they obscure the candidate's ac
 
 External career artifacts should follow `rules/08-human-authenticity.md` and sound truthful, candidate-specific, natural, reviewer-readable, and interview-defensible. This improves reviewer trust and artifact quality; it does not permit fake humanization, hidden formatting tricks, unsupported claims, or AI-detector evasion tactics.
 
+Short-form conversational artifacts must also pass the Conversational Handoff Gate: identify what context is already established, what answer or boundary remains necessary, what unresolved information changes the next decision, and what single next action should follow. Before a message is sendable, remove resume-summary phrasing, analysis leakage, repeated known context, generic interest signaling, and social filler that adds no answer, boundary, question, or action.
+
 ### Artifact Discipline
 
 Generated artifacts should be purpose-built deliverables, not reproduced source archives.

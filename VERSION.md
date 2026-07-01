@@ -1,6 +1,6 @@
 # COMPASS Version
 
-Current COMPASS Version: vNext 2026-06.3
+Current COMPASS Version: vNext 2026-06.4
 
 Canonical Branch: main
 
@@ -20,7 +20,7 @@ COMPASS is the only canonical framework name. New rules, prompts, examples, and 
 
 ## Active Behavior Notes
 
-The active vNext 2026-06.3 framework includes COMPASS-only terminology, career-focused scope, COMPASS Intake checkpoint artifact behavior, COMPASS Source Rebase scaffold alignment, COMPASS Experience Sync public-projection reconciliation with private source-side target routing, Initial Seed Artifact support, claim-depth-aware Staff / Principal resume positioning, the Opportunity Reality Layer, the Conversational Handoff Gate, fit-calibrated positioning and gap salience, and COMPASS Verified Opportunity Search:
+The active vNext 2026-06.4 framework includes COMPASS-only terminology, career-focused scope, COMPASS Intake checkpoint artifact behavior, COMPASS Source Rebase scaffold alignment, COMPASS Experience Sync public-projection reconciliation with private source-side target routing, Initial Seed Artifact support, claim-depth-aware Staff / Principal resume positioning, the Opportunity Reality Layer, the Conversational Handoff Gate, fit-calibrated positioning and gap salience, and COMPASS Verified Opportunity Search:
 
 - COMPASS is a career-focused, source-grounded framework for turning messy career inputs into verified, defensible job-search outputs.
 - COMPASS supports the careers / job-search profile. Product, strategy, research, consulting, grant, policy, and personal knowledge workflows are out of scope unless the project owner explicitly reopens scope.
@@ -62,6 +62,8 @@ The active vNext 2026-06.3 framework includes COMPASS-only terminology, career-f
 - External career artifacts use `rules/08-human-authenticity.md` to preserve truthful specificity, reviewer readability, candidate-specific voice, ATS-safe structure, and interview-defensible claims without fake humanization or AI-detector evasion tactics.
 - Fit-calibrated positioning preserves comprehensive internal gap analysis while ordering external evidence according to actual role alignment, leading with source-backed value in highly aligned opportunities and surfacing material gaps proportionately in moderate- or low-alignment opportunities.
 - Short-form external messages use the Conversational Handoff Gate in `rules/08-human-authenticity.md` to continue from shared context, preserve information gain, ask only the minimum useful questions, keep internal analysis out of the message, state each point once, and move toward one clear next action.
+- Conversational message drafting must identify established context, the remaining necessary answer or boundary, unresolved gating information, and the single next action before producing sendable text.
+- Conversational message revision must run a deletion pass that removes resume-summary phrasing, analysis leakage, repeated known context, generic interest signaling, and social filler that adds no answer, boundary, question, or action.
 - Senior-IC resumes use claim-depth-aware wording, preserve official employment titles, prioritize verified Staff / Principal evidence, and distinguish intended benefits from realized outcomes.
 - Resume review should preserve useful technical depth while revising repeated architecture-taxonomy lists that obscure the candidate's action, decision, or consequence.
 - Intake setup must disclose whether direct datastore writes are available before asking setup questions.

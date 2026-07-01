@@ -2,6 +2,18 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-06.4 - Conversational Handoff Refinement
+
+Folded branch-only Conversational Handoff guidance into the active Human Authenticity rule.
+
+Behavior updates:
+
+- Extended `rules/08-human-authenticity.md` with the required pre-draft handoff sequence: established context, remaining answer or boundary, unresolved gating information, and one next action.
+- Added conversation-specific evidence compression so candidate evidence appears only when it answers, corrects, distinguishes, repositions, supports negotiation, or resolves ambiguity.
+- Added explicit interest-signaling and deletion-pass controls for short-form sendable messages.
+- Updated `COMPASS_Current.md` and `VERSION.md` to expose the active behavior.
+- Advanced the active framework identifier from `vNext 2026-06.3` to `vNext 2026-06.4`.
+
 ## vNext 2026-06.3 - COMPASS Verified Opportunity Search
 
 Added a first-class multi-opportunity discovery and shortlist workflow centered on evidence-backed alignment rather than hiddenness alone, with explicitly activated secondary contract-search modes.

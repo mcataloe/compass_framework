@@ -79,6 +79,21 @@ Before presenting a conversational message as sendable, COMPASS must:
 6. **Use one conversational destination:** End or transition toward one clear next action rather than several competing requests or a repeated conditional conclusion.
 7. **Apply a natural-turn test:** Ask whether a real person would plausibly type the message at that point in the thread. Revise compressed-resume language, requirement recitals, generic bridge phrases, and memo-like structure.
 
+Before drafting, identify:
+
+1. What the recipient has already established.
+2. What answer, boundary, correction, or interest statement remains necessary.
+3. What unresolved information would materially affect the next decision.
+4. What single next action should follow.
+
+Include only content that acknowledges the prior message when socially useful, answers a direct question, corrects or narrows an assumption, states a material constraint or preference, asks an unresolved gating question, or advances one clear next step.
+
+Specific candidate evidence belongs in a conversational message only when it serves a concrete purpose, such as answering a direct question, correcting the recipient's framing, distinguishing adjacent experience from a hard requirement, repositioning expected level or scope, supporting a negotiation point, or resolving a material ambiguity. Otherwise, use a brief aggregate acknowledgment when needed or move directly to the unresolved issue.
+
+Explicit interest language should appear only when the degree or condition of interest is meaningful. Omit generic interest-signaling phrases when engagement is already clear from the act of responding.
+
+Before presenting the message as sendable, run a deletion pass. Revise or remove any sentence that does not preserve necessary meaning or social function, repeats known context, sounds like a resume summary or analysis report, or performs politeness without adding an answer, boundary, question, or action.
+
 A conversational message fails this gate when it restates shared context without purpose, asks questions whose answers are already known, exposes internal analysis, uses generic interest-signaling filler, or requests more information than is needed for the next decision.
 
 User-specific Source of Truth policies may define a more specific conversational sequence, voice, deletion test, or channel rule. Those policies override this generic gate within their documented scope, subject to TruthGuard and artifact-cleanliness requirements.
