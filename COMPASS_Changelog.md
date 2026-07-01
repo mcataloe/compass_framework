@@ -2,6 +2,36 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-06.3 - COMPASS Verified Opportunity Search
+
+Added a first-class multi-opportunity discovery and shortlist workflow centered on evidence-backed alignment rather than hiddenness alone, with explicitly activated secondary contract-search modes.
+
+Behavior updates:
+
+- Added `rules/12-verified-opportunity-search.md` as the durable rule for current-opportunity discovery, live-opportunity verification, requisition reconciliation, ordered eligibility and hard-screen gates, alignment scoring, opportunity-quality review, conversion-condition ranking, application-stage inspection, duplicate suppression, and optional contract-utility assessment.
+- Added `prompts/compass-verified-opportunity-search.md` as the reusable launcher prompt.
+- Added `COMPASS Verified Opportunity Search` to `COMPASS_COMMANDS.md` with required framework and user-specific source inputs.
+- Separated eligibility and hard screens, evidence-backed alignment, opportunity quality, conversion conditions, and optional contract utility so one dimension cannot silently substitute for another.
+- Added a default alignment model weighted across load-bearing qualifications, central responsibilities, level and operating scope, evidence recognizability, transferability, and career-direction value.
+- Required alignment estimates to use decision bands and ordinary five-point increments rather than false precision or implied interview probability.
+- Clarified that a hard eligibility or application-screen failure overrides an otherwise high alignment score.
+- Reclassified freshness, access, visibility, saturation, and application friction as conversion conditions and ranking factors rather than universal fit gates.
+- Clarified that low visibility cannot qualify a weakly aligned role and that mainstream visibility does not automatically exclude an exceptionally aligned or access-advantaged role when user-specific policy permits it.
+- Added `--include-contracts`, `--contract-only`, and `--max-contracts N` as canonical optional secondary-search modes.
+- Required primary direct-hire and secondary contract results to remain in separate lanes and rankings.
+- Added reusable bridge, fractional / side, contract-to-hire, and unspecified contract classifications.
+- Added qualitative contract-utility assessment across structure-aware economics, benefits treatment, hours, duration, continuity, flexibility, exclusivity, intellectual-property, conflict, notice, exit, interference, effort, technical relevance, and relationship value.
+- Added `A — Strong secondary opportunity`, `B — Qualify first`, and `C — Weak utility` as default contract-utility grades while preserving user-specific overrides.
+- Required missing rate, hours, duration, employment structure, client identity, exclusivity, conversion compensation, or other load-bearing terms to default to `Contact first` rather than `Apply now` unless a stricter Source of Truth policy applies.
+- Added controlled verification for staffing-firm, employer-of-record, and identifiable recruiter-controlled contract requisitions when a public client application does not exist.
+- Required staffing firm, employer of record, direct client, and end customer to remain distinct; undisclosed clients remain unverified.
+- Added agency duplicate reconciliation using known client, accountable entity, title, location, employment structure, duration, hours, rate, requisition identity, and materially identical description.
+- Prohibited inference of contract concurrency compatibility, client identity, rate, hours, duration, conversion value, exclusivity, representation rights, or commercial terms.
+- Added untrusted-external-content controls for job descriptions, ATS pages, application forms, recruiter posts, staffing pages, direct messages, HTML, and metadata.
+- Required current employer-controlled job and application verification for direct-employer roles, conflict reconciliation, application or qualification-stage visibility disclosure, and an immediate final recheck for reported priority roles or leads.
+- Updated `COMPASS_Current.md`, `README.md`, and `VERSION.md` to expose the active behavior.
+- Advanced the active framework identifier from `vNext 2026-06.2` to `vNext 2026-06.3`.
+
 ## vNext 2026-06.2 - Fit-Calibrated Positioning and Gap Salience
 
 Added alignment-aware positioning rules so external career materials lead with source-backed value in highly aligned opportunities while preserving proportionate gap disclosure and full internal diagnostic analysis.
