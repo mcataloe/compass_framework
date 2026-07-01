@@ -21,6 +21,8 @@ COMPASS runs in phases.
 
 Strategic analysis and generated artifacts must remain separate.
 
+Verified Opportunity Search follows the user's configured primary employment strategy by default. Optional secondary contract modes must be explicitly activated and must remain separately ranked from primary opportunities.
+
 COMPASS Source Rebase and COMPASS Experience Sync are repository-maintenance workflows outside the opportunity-analysis sequence. Source Rebase aligns Source of Truth scaffold structure. Experience Sync maintains a one-way downstream public experience projection using private source-side target routing when configured.
 
 If a COMPASS Intake claim ledger or do-not-claim list exists, use it as the strongest source for claim safety. The canonical record is a human-readable source archive; the claim ledger is the evidence-control layer beneath it. Imported artifacts are evidence inputs and provenance records; after verified ingestion, the canonical source-of-truth record and approved ledgers supersede them for downstream use.
@@ -54,6 +56,8 @@ Use one of the following recommendation values for career workflows:
 - Apply cautiously
 - Recruiter-only
 - Top choice
+
+Verified Opportunity Search may also use action labels such as `Apply now`, `Contact first`, `Watch`, or `Pass` when required by the active search rule and user-specific policy.
 
 ## Opportunity Reality Layer
 
@@ -92,12 +96,13 @@ The final recommendation should include, when relevant, the best application cha
 
 COMPASS Verified Opportunity Search is the multi-opportunity discovery and shortlist workflow governed by `rules/12-verified-opportunity-search.md`.
 
-It keeps four judgments separate:
+It keeps these judgments separate:
 
 1. Eligibility and hard-screen compatibility.
 2. Evidence-backed alignment.
 3. Opportunity quality and career value.
 4. Conversion conditions, including freshness, access, visibility, saturation, and application friction.
+5. Contract utility when an optional secondary contract lane is active.
 
 Alignment is reported as a structured decision estimate, normally in five-point increments. It is not a probability of receiving an interview, offer, or hire.
 
@@ -119,11 +124,31 @@ Default interpretation bands are:
 - `70–79%` — Credible or conditional alignment;
 - `Below 70%` — Exclude by default unless a documented strategic exception applies.
 
-Eligibility and hard-screen failures override the score. A role cannot score its way around a non-negotiable geographic, employment, credential, application, or required-experience gate.
+Eligibility and hard-screen failures override the score. A role cannot score its way around a non-negotiable geographic, employment, credential, application, contract, or required-experience gate.
 
 Visibility and saturation are independent conversion dimensions. Low visibility may improve pursuit economics but does not qualify a weakly aligned role. Competitive or saturated visibility may lower priority but does not automatically exclude an exceptionally aligned or verified access-advantaged role when user-specific policy permits it.
 
-The search must verify the official current posting and active employer-controlled application flow, reconcile conflicting requisition versions, inspect accessible hard screens, suppress configured duplicate or previously handled opportunities, and perform a final live recheck for reported priority roles.
+The search must verify the official current posting and active employer-controlled application flow for direct-employer roles, reconcile conflicting requisition versions, inspect accessible hard screens, suppress configured duplicate or previously handled opportunities, and perform a final live recheck for reported priority roles.
+
+When contract mode is active, a user-specific policy may permit a verified staffing-firm, employer-of-record, or identifiable recruiter-controlled requisition to appear as a separately ranked secondary `Contact first` result even when no public client application exists. The accountable entity, concrete current opportunity, and actionable path must be verified; staffing firm, employer of record, client, and end customer must remain distinct; undisclosed clients remain unverified.
+
+Canonical optional contract modes are:
+
+- `--include-contracts` — preserve the primary lane and add a separately ranked secondary contract lane;
+- `--contract-only` — return only the secondary contract lane;
+- `--max-contracts N` — cap contract results without weakening gates.
+
+Secondary engagements should be classified through the user's Source of Truth using bridge, fractional or side, contract-to-hire, or unspecified contract categories. Do not infer concurrent-employment compatibility from a contract or remote label.
+
+Contract utility must remain separate from alignment. Evaluate rate, benefits treatment, hours, duration, employment structure, renewal, exclusivity, intellectual-property, confidentiality, conflict, notice, exit, interference, effort, technical relevance, and relationship value when known. Missing rate, hours, duration, client identity, employment structure, exclusivity, conversion compensation, or another load-bearing term normally produces `Contact first` rather than `Apply now`.
+
+Default qualitative contract utility grades are:
+
+- `A — Strong secondary opportunity`;
+- `B — Qualify first`;
+- `C — Weak utility`.
+
+Contract economics, access, flexibility, or conversion possibility must not change the alignment estimate or cause secondary work to be presented as a primary direct-hire opportunity.
 
 ## COMPASS Intake — Verified Source-of-Truth Onboarding
 
@@ -225,7 +250,7 @@ Target documents or requirements may identify useful terminology and needed capa
 
 COMPASS is career-focused. Product, strategy, research, consulting, grant, policy, and personal knowledge workflows are out of scope unless the project owner explicitly reopens scope.
 
-The active career profile covers opportunity discovery, role evaluation, opportunity reality, resumes, cover letters, recruiter responses, ATS alignment, compensation and remote-work risk, company and interview research, pursuit economics, and interview preparation.
+The active career profile covers opportunity discovery, direct-hire and explicitly activated secondary contract search, role evaluation, opportunity reality, resumes, cover letters, recruiter responses, ATS alignment, compensation and remote-work risk, company and interview research, pursuit economics, and interview preparation.
 
 ### Reviewer Readability
 
@@ -255,11 +280,11 @@ COMPASS should identify likely recruiter, hiring-manager, interviewer, or career
 
 ### External Evidence Discipline
 
-Company facts, reported sentiment, interview accounts, market-rarity judgments, opportunity-search findings, and pursuit recommendations must preserve source type, recency, confidence, and uncertainty. Anonymous or historical evidence must not be promoted into verified current fact.
+Company facts, staffing and client identity, reported sentiment, interview accounts, market-rarity judgments, opportunity-search findings, contract terms, and pursuit recommendations must preserve source type, recency, confidence, entity identity, and uncertainty. Anonymous, undisclosed, or historical evidence must not be promoted into verified current fact.
 
 ### Artifact Separation
 
-External generated artifacts must not contain internal COMPASS analysis, scoring, company research, interview-risk commentary, pursuit economics, compensation strategy, or private tactical notes unless the user explicitly asks for an internal dossier.
+External generated artifacts must not contain internal COMPASS analysis, scoring, company research, interview-risk commentary, pursuit economics, compensation strategy, contract utility, commercial-term analysis, or private tactical notes unless the user explicitly asks for an internal dossier.
 
 Internal analysis, opportunity-search reports, interview preparation, compensation notes, source-of-truth records, ledgers, and Experience Sync reports may include gaps, risks, provenance, publication decisions, or strategy when those sections are part of the active artifact template.
 
@@ -279,10 +304,12 @@ TruthGuard is the anti-fabrication and evidence-control layer. It must flag:
 - Terms that should be included only if user confirms them
 - Anonymous or anecdotal employer evidence presented as verified fact
 - Historical employer evidence presented as current without corroboration
-- Entity confusion among similarly named companies, staffing firms, clients, parents, or subsidiaries
+- Entity confusion among similarly named companies, staffing firms, clients, employers of record, parents, subsidiaries, or end customers
 - Candidate scarcity used as a substitute for candidate evidence
 - Alignment estimates presented as measured hiring probabilities
 - Low visibility or low saturation presented without current observable evidence
+- Contract rates, hours, duration, client identity, conversion value, exclusivity, or concurrency compatibility inferred without evidence
+- Recruiter access presented as proof of an active client-controlled application or likely hire
 
 ## Source and Policy Priority
 
@@ -305,14 +332,15 @@ Target documents or recruiter requests may identify terminology and gaps, but th
 
 ### Opportunity-Context Authority
 
-For employer, market, interview, and opportunity-reality claims, use this order:
+For employer, staffing, client, market, interview, and opportunity-reality claims, use this order:
 
 1. Current authoritative employer, regulator, filing, or other primary sources
-2. Current reputable secondary sources
-3. Recent contextual or anecdotal sources for clearly attributed sentiment and interview reports
-4. Older or indirect evidence only with explicit recency and confidence limitations
+2. Current accountable staffing-firm, employer-of-record, or recruiter-controlled sources for the opportunity facts they directly support
+3. Current reputable secondary sources
+4. Recent contextual or anecdotal sources for clearly attributed sentiment and interview reports
+5. Older or indirect evidence only with explicit recency and confidence limitations
 
-External employer sources provide opportunity context only. They do not create candidate experience, and anonymous reports do not become verified facts merely because they are repeated.
+External opportunity sources provide context only. They do not create candidate experience. Staffing sources do not establish undisclosed client facts, and anonymous reports do not become verified facts merely because they are repeated.
 
 ### Behavioral and Presentation Authority
 
