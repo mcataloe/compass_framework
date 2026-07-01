@@ -1,0 +1,30 @@
+schema_version: 1
+run_id: vos-YYYYMMDD-HHMMSS-zone
+started_at: null
+completed_at: null
+command: Run COMPASS Verified Opportunity Search.
+mode: primary
+framework_version: null
+registry_revision_before: null
+registry_revision_after: null
+
+results:
+  considered: []
+  reported: []
+  excluded: []
+  suppressed_as_previously_handled: []
+  consolidated_as_duplicates: []
+  materially_changed: []
+
+# Store the intended registry delta so a failed registry update can be replayed.
+registry_delta:
+  added: []
+  updated: []
+  unchanged: []
+
+persistence:
+  run_log_created: false
+  registry_updated: false
+  verified_after_write: false
+  status: not_attempted
+  errors: []
