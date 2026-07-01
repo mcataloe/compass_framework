@@ -26,7 +26,7 @@ Use these files as the active source of truth:
 - `rules/09-source-rebase.md` — safe source-of-truth scaffold alignment rules
 - `rules/10-opportunity-recon.md` — Purple Squirrel Factor, company and interview reality, external-evidence handling, and pursuit economics
 - `rules/11-experience-sync.md` — one-way Source of Truth reconciliation into a public or externally shareable experience repository
-- `rules/12-verified-opportunity-search.md` — current-opportunity discovery, live verification, alignment scoring, and conversion-condition ranking
+- `rules/12-verified-opportunity-search.md` — current-opportunity discovery, live verification, alignment scoring, conversion-condition ranking, and optional secondary contract search
 - `prompts/` — reusable prompt templates
 - `prompts/compass-intake.md` — reusable COMPASS Intake launcher prompt
 - `prompts/compass-source-rebase.md` — reusable COMPASS Source Rebase launcher prompt
@@ -98,13 +98,34 @@ The workflow separates:
 1. eligibility and hard-screen compatibility;
 2. evidence-backed alignment;
 3. opportunity quality and career value;
-4. conversion conditions such as freshness, access, visibility, saturation, and application friction.
+4. conversion conditions such as freshness, access, visibility, saturation, and application friction;
+5. contract utility when an optional secondary contract lane is active.
 
-Alignment is a structured decision estimate, not a probability of interview, offer, or hire. A failed location, employment, credential, or application hard screen overrides the score.
+Alignment is a structured decision estimate, not a probability of interview, offer, or hire. A failed location, employment, credential, application, contract, or required-experience hard screen overrides the score.
 
 Low visibility may improve pursuit economics, but it cannot qualify a weakly aligned role. Mainstream visibility may lower priority, but it does not automatically exclude an exceptionally aligned or verified access-advantaged role when the user's Source of Truth permits that exception.
 
-The workflow verifies the official current posting and employer-controlled application flow, reconciles conflicting requisition versions, inspects accessible screening questions, suppresses configured duplicate or previously handled opportunities, and rechecks priority roles before reporting them.
+The workflow verifies the official current posting and employer-controlled application flow for direct-employer roles, reconciles conflicting requisition versions, inspects accessible screening questions, suppresses configured duplicate or previously handled opportunities, and rechecks priority roles before reporting them.
+
+Optional secondary contract modes are explicit:
+
+```text
+Run COMPASS Verified Opportunity Search --include-contracts.
+Run COMPASS Verified Opportunity Search --contract-only.
+Run COMPASS Verified Opportunity Search --include-contracts --max-contracts 3.
+```
+
+- `--include-contracts` preserves the user's configured primary search and adds a separately ranked secondary contract lane.
+- `--contract-only` returns only the secondary contract lane.
+- `--max-contracts N` caps contract results without weakening eligibility, alignment, verification, or utility gates.
+
+Contract results must not be blended into the primary shortlist. Candidate alignment remains the evidence-backed fit estimate; contract utility separately evaluates structure-aware economics, hours, duration, continuity, flexibility, exclusivity, intellectual-property, conflict, notice, exit, interference, effort, technical relevance, and relationship value.
+
+When user-specific policy permits it, a verified staffing-firm, employer-of-record, or identifiable recruiter-controlled requisition may support a secondary `Contact first` result even when no public client application exists. The accountable entity and current opportunity must be verified. Staffing firm, employer of record, direct client, and end customer remain distinct, and an undisclosed client remains unverified.
+
+The reusable contract classifications are bridge, fractional / side, contract-to-hire, and unspecified contract structure. The default utility grades are `A — Strong secondary opportunity`, `B — Qualify first`, and `C — Weak utility`.
+
+COMPASS does not infer contract rate, hours, duration, client identity, conversion value, exclusivity, or concurrent-employment compatibility. Missing load-bearing terms normally produce `Contact first` rather than `Apply now`.
 
 Durable behavior is defined in `rules/12-verified-opportunity-search.md`. The launcher is `prompts/compass-verified-opportunity-search.md`.
 
@@ -184,7 +205,7 @@ Durable behavior is defined in `rules/11-experience-sync.md`. The launcher is `p
 
 ## Career Profile
 
-COMPASS is career-focused. The active profile is the careers / job-search profile: opportunity discovery, role evaluation, hiring-manager scan optimization, ATS and semantic alignment, requirement-market realism, company and interview research, pursuit economics, master CV claim-ledger construction, truth-preserving resume tailoring, cover letters, recruiter-specific positioning, compensation and remote-work risk analysis, interview objection prediction, and evidence mapping from source records to job descriptions.
+COMPASS is career-focused. The active profile is the careers / job-search profile: opportunity discovery, explicitly activated secondary contract search, role evaluation, hiring-manager scan optimization, ATS and semantic alignment, requirement-market realism, company and interview research, pursuit economics, master CV claim-ledger construction, truth-preserving resume tailoring, cover letters, recruiter-specific positioning, compensation and remote-work risk analysis, interview objection prediction, and evidence mapping from source records to job descriptions.
 
 Generated artifacts must follow the strict output templates in `rules/06-artifact-rules.md` unless the user explicitly requests a different format. Prompt templates are launchers and must defer to the active rule files for artifact section order, source priority, TruthGuard, Opportunity Reality Layer behavior, Verified Opportunity Search behavior, and clean-deliverable requirements.
 
@@ -206,4 +227,4 @@ If repository access fails, the assistant should say so clearly and should not r
 
 COMPASS outputs must use the user's current direct instruction, verified Intake claim ledger, do-not-claim list, and latest approved source-of-truth record before relying on imported artifacts, including Initial Seed Artifacts, as evidence. Target job descriptions and recruiter requests provide terminology and context only; they do not create experience the user does not have. Generated artifacts are downstream outputs, not factual authorities, unless separately imported and verified through Intake.
 
-COMPASS must not invent technologies, ownership, certifications, credentials, metrics, employers, responsibilities, project history, career achievements, market statistics, company facts, or other material claims.
+COMPASS must not invent technologies, ownership, certifications, credentials, metrics, employers, responsibilities, project history, career achievements, market statistics, company facts, client identity, contract rates, hours, duration, conversion terms, commercial terms, or other material claims.
