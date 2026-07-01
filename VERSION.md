@@ -1,6 +1,6 @@
 # COMPASS Version
 
-Current COMPASS Version: vNext 2026-06.4
+Current COMPASS Version: vNext 2026-06.5
 
 Canonical Branch: main
 
@@ -20,7 +20,7 @@ COMPASS is the only canonical framework name. New rules, prompts, examples, and 
 
 ## Active Behavior Notes
 
-The active vNext 2026-06.4 framework includes COMPASS-only terminology, career-focused scope, COMPASS Intake checkpoint artifact behavior, COMPASS Source Rebase scaffold alignment, COMPASS Experience Sync public-projection reconciliation with private source-side target routing, Initial Seed Artifact support, claim-depth-aware Staff / Principal resume positioning, the Opportunity Reality Layer, the Conversational Handoff Gate, fit-calibrated positioning and gap salience, and COMPASS Verified Opportunity Search:
+The active vNext 2026-06.5 framework includes COMPASS-only terminology, career-focused scope, COMPASS Intake checkpoint artifact behavior, COMPASS Source Rebase scaffold alignment, COMPASS Experience Sync public-projection reconciliation with private source-side target routing, Initial Seed Artifact support, claim-depth-aware Staff / Principal resume positioning, the Opportunity Reality Layer, the Conversational Handoff Gate, fit-calibrated positioning and gap salience, COMPASS Verified Opportunity Search, and optional persistent opportunity-registry support:
 
 - COMPASS is a career-focused, source-grounded framework for turning messy career inputs into verified, defensible job-search outputs.
 - COMPASS supports the careers / job-search profile. Product, strategy, research, consulting, grant, policy, and personal knowledge workflows are out of scope unless the project owner explicitly reopens scope.
@@ -35,6 +35,11 @@ The active vNext 2026-06.4 framework includes COMPASS-only terminology, career-f
 - Contract utility evaluates structure-aware economics, hours, duration, flexibility, continuity, exclusivity, intellectual-property, conflict, exit, interference, effort, technical relevance, and relationship value without changing candidate alignment.
 - Verified staffing-firm, employer-of-record, or identifiable recruiter-controlled requisitions may support a secondary `Contact first` result when user-specific policy permits it, but accountable entities must remain distinct and undisclosed clients remain unverified.
 - The framework does not infer contract rates, hours, duration, client identity, conversion value, exclusivity, or concurrent-work compatibility.
+- `rules/13-opportunity-registry.md` defines optional durable cross-run opportunity history using a schema-versioned current registry and append-only search-run records.
+- A configured Source of Truth may authorize Verified Opportunity Search to persist observational opportunity facts, duplicate relationships, material changes, reporting history, and persistence outcomes without a second instruction.
+- Observational opportunity persistence remains separate from candidate-confirmed status. Applied, interviewing, rejected, withdrawn, contacted, represented, accepted, and do-not-pursue states must not be inferred from search, artifact preparation, or application inspection.
+- Opportunity identity prioritizes ATS and requisition identifiers, treats URL variation conservatively, distinguishes reposts from exact duplicates, and uses `possible_duplicate_of` when semantic evidence is insufficient for an automatic merge.
+- Search-run persistence must be revision-aware, append-only for completed run records, recoverable after partial failure, and explicitly reported as persisted, degraded, not persisted, or not configured.
 - The Opportunity Reality Layer evaluates the Purple Squirrel Factor independently from candidate fit.
 - Purple Squirrel scoring considers individual requirement rarity, intersection rarity, technology-maturity plausibility, role compression, level and compensation realism, and constraint stacking.
 - Candidate scarcity or role compression never substitutes for candidate evidence and does not automatically justify applying.
@@ -75,7 +80,7 @@ Future COMPASS changes should preserve the core operating principles unless expl
 
 - Truthful source-grounded output
 - Phased workflow
-- No fabricated technologies, metrics, credentials, employment history, project ownership, career achievements, business outcomes, market statistics, company facts, client identity, contract terms, or other material claims
+- No fabricated technologies, metrics, credentials, employment history, project ownership, career achievements, business outcomes, market statistics, company facts, client identity, contract terms, opportunity status, or other material claims
 - Separate strategic analysis from clean external generated artifacts
 - External positioning may calibrate emphasis and gap salience to actual alignment, but must not hide hard requirements, obscure material limitations, or imply unsupported experience
 - Short-form conversational outputs continue the established exchange instead of restating shared context or leaking internal analysis
@@ -84,10 +89,12 @@ Future COMPASS changes should preserve the core operating principles unless expl
 - Prompt templates remain workflow launchers and must defer to active rule files for workflow behavior
 - External employer, staffing, client, interview, and contract evidence must preserve attribution, entity identity, recency, confidence, and uncertainty
 - Verified Opportunity Search must preserve separate eligibility, alignment, opportunity-quality, conversion-condition, and optional contract-utility judgments
+- Persistent opportunity history must preserve separate identity, observation, reporting, candidate-status, suppression, and provenance state
+- Configured observational registry writes must not be treated as permission to infer candidate actions or employer outcomes
 - Primary and secondary opportunity rankings must remain separate
 - Staffing, employer-of-record, client, and end-customer identities must not be conflated
 - COMPASS Intake remains the default process for building a canonical source record from unverified documents or a new user's history
-- COMPASS Source Rebase remains scaffold alignment only and must not perform Intake, claim verification, or destructive source-record migration
+- COMPASS Source Rebase remains scaffold alignment only and must not perform Intake, claim verification, destructive source-record migration, or overwrite populated opportunity registries and run logs
 - COMPASS Experience Sync remains a one-way downstream public projection and must not modify or supersede Source of Truth records
 - Source-side Experience Sync routing remains private Source of Truth configuration and must not be copied into public target metadata
 - Initial Seed Artifacts remain provisional evidence and provenance until superseded by verified source-of-truth records and ledgers
