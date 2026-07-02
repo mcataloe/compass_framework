@@ -12,6 +12,8 @@ Required framework files:
 - rules/06-artifact-rules.md
 - rules/08-human-authenticity.md
 
+Load the user's current artifact-generation and recommended-opportunity-artifact policies when available.
+
 Treat this prompt as a workflow launcher, not as an independent source of resume, formatting, artifact, TruthGuard, page-length, source-priority, or no-fabrication rules.
 
 Use the strict tailored resume template in rules/06-artifact-rules.md unless I explicitly request a different format.
@@ -20,7 +22,7 @@ Use the previously analyzed target role, job description, recruiter requirement 
 
 If the previously analyzed role is not available in the current context or approved source records, stop and ask me to provide the target role, job description, or recruiter requirement set instead of generating a generic resume.
 
-If multiple previously analyzed roles are available, stop and ask me which role should control tailoring before generating the resume.
+If multiple roles are available and I have not identified the controlling role or bounded set, ask which role should control tailoring. If I explicitly request all recommended roles from a completed Verified Opportunity Search, or otherwise provide a bounded multi-role set, generate one independently tailored resume per eligible role under the user's recommended-opportunity-artifact policy; do not ask me to choose only one.
 
 Do not include COMPASS analysis, scoring, risk notes, ATS matrix commentary, compensation strategy, recruiter objection notes, or framework commentary inside the resume artifact.
 ```
