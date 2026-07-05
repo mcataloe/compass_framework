@@ -25,9 +25,9 @@ Target job descriptions, recruiter requests, and opportunity records do not crea
 
 ### Opportunity context
 
-For employer, staffing, client, market, interview, and opportunity-reality claims, prefer current authoritative primary sources, then reputable current secondary sources, then clearly attributed recent anecdotal evidence. Preserve entity identity, recency, source type, and confidence.
+For employer, staffing, client, market, interview, recruiter-legitimacy, application-path, and opportunity-reality claims, prefer current authoritative primary sources, then accountable current recruiter-controlled or staffing-firm sources for the facts they directly support, then reputable current secondary sources, then clearly attributed recent anecdotal evidence. Preserve entity identity, recency, source type, and confidence.
 
-Opportunity evidence does not create candidate experience.
+Opportunity evidence does not create candidate experience. A legitimate recruiter does not verify an undisclosed client. A real client name does not verify a suspicious recruiter identity. Absence of scam reports does not prove safety.
 
 ### Behavior, tone, formatting, and presentation
 
@@ -40,7 +40,7 @@ Within TruthGuard, do-not-claim controls, privacy requirements, artifact cleanli
 5. COMPASS artifact-specific rules and generic framework defaults
 6. Project instructions, memory, or model defaults only when not contradicted by stronger sources
 
-User-specific Source of Truth policy may configure thresholds, weights, channels, employment-structure modes, or presentation within its scope. It does not create candidate facts and cannot weaken TruthGuard or approved claim boundaries.
+User-specific Source of Truth policy may configure thresholds, weights, channels, employment-structure modes, safety thresholds, information-sharing boundaries, or presentation within its scope. It does not create candidate facts and cannot weaken TruthGuard or approved claim boundaries.
 
 ## Current First-Class Commands
 
@@ -167,7 +167,7 @@ Apply the approved COMPASS Experience Sync.
 
 **Launcher:** `prompts/compass-analysis.md`
 
-**Purpose:** Evaluate an identified role, job description, recruiter request, opportunity, or career target using source-grounded candidate-fit analysis plus the Opportunity Reality Layer.
+**Purpose:** Evaluate an identified role, job description, recruiter request, opportunity, or career target using source-grounded candidate-fit analysis plus the Opportunity Reality Layer and, when applicable, the Recruiter Legitimacy and Opportunity Fraud Risk Gate.
 
 **Use when the user asks to:**
 
@@ -177,7 +177,7 @@ Apply the approved COMPASS Experience Sync.
 - assess recruiter positioning;
 - decide whether to apply;
 - map source evidence to target requirements;
-- identify risks, gaps, objections, role compression, employer reality, or pursuit economics.
+- identify risks, gaps, objections, role compression, employer reality, recruiter legitimacy, unsafe process signals, sensitive-information boundaries, or pursuit economics.
 
 **Example triggers:**
 
@@ -186,6 +186,7 @@ Run COMPASS Analysis on this role.
 Use COMPASS on this job description.
 Evaluate this opportunity with COMPASS.
 Run a COMPASS fit analysis.
+Is this recruiter/company/job legitimate enough to continue?
 ```
 
 **Required framework files:**
@@ -197,9 +198,10 @@ Run a COMPASS fit analysis.
 - `rules/04-truthguard.md`
 - `rules/06-artifact-rules.md`
 - `rules/10-opportunity-recon.md`
+- `rules/14-recruiter-legitimacy-risk.md` when recruiter, staffing, consulting, unclear-entity, suspicious-domain, sensitive-work, or unsafe-process signals are present
 - `prompts/compass-analysis.md`
 
-**Output discipline:** Analysis is separate from generated artifacts. For identifiable-company role analysis, include Purple Squirrel Factor, company and interview reality, and recommendation and pursuit economics under the strict analysis report contract. Do not generate downstream artifacts unless explicitly requested.
+**Output discipline:** Analysis is separate from generated artifacts. For identifiable-company role analysis, include Purple Squirrel Factor, company and interview reality, and recommendation and pursuit economics under the strict analysis report contract. Apply recruiter-legitimacy risk gating when relevant, but do not let legitimacy findings alter evidence-backed candidate alignment. Do not generate downstream artifacts unless explicitly requested.
 
 ---
 
@@ -207,14 +209,14 @@ Run a COMPASS fit analysis.
 
 **Launcher:** `prompts/compass-verified-opportunity-search.md`
 
-**Purpose:** Discover, verify, score, rank, and when configured persist multiple current opportunities using separate eligibility, evidence-backed alignment, opportunity-quality, conversion-condition, optional secondary contract-utility, and cross-run history judgments.
+**Purpose:** Discover, verify, score, rank, and when configured persist multiple current opportunities using separate eligibility, evidence-backed alignment, opportunity-quality, conversion-condition, recruiter-legitimacy, optional secondary contract-utility, and cross-run history judgments.
 
 **Use when the user asks to:**
 
 - find current opportunities aligned to a verified career record;
 - refresh or build a verified opportunity shortlist;
 - search official employer and ATS sources across multiple employers;
-- compare alignment, hard screens, career value, visibility, saturation, access, and application friction;
+- compare alignment, hard screens, career value, visibility, saturation, access, application friction, and recruiter-legitimacy risk;
 - add a separately ranked bridge, backup, consulting, temporary, fractional, or contract lane when explicitly requested;
 - suppress already handled, previously reported, duplicate, or unchanged reposted roles using a configured opportunity registry;
 - maintain observational opportunity history and append-only run provenance when the Source of Truth enables persistence;
@@ -250,6 +252,7 @@ Run COMPASS Verified Opportunity Search --include-contracts --max-contracts 3.
 - `rules/10-opportunity-recon.md`
 - `rules/12-verified-opportunity-search.md`
 - `rules/13-opportunity-registry.md`
+- `rules/14-recruiter-legitimacy-risk.md` when recruiter-controlled, staffing, consulting, unclear-entity, suspicious-domain, sensitive-work, or unsafe-process paths are present
 - `templates/opportunity-registry/COMPASS_Opportunity_Registry_TEMPLATE.yaml`
 - `templates/opportunity-registry/COMPASS_Opportunity_Search_Run_TEMPLATE.yaml`
 - `prompts/compass-verified-opportunity-search.md`
@@ -262,12 +265,13 @@ Run COMPASS Verified Opportunity Search --include-contracts --max-contracts 3.
 - direct-hire, contract, bridge, fractional, and C2H strategy when relevant;
 - alignment thresholds and any explicit scoring-weight overrides;
 - contract classifications, utility criteria, rate policy, and result limits when contract mode is active;
+- recruiter-legitimacy thresholds, privacy constraints, sensitive-information boundaries, and clearance-sensitive policies when defined;
 - candidate-status and suppression policy;
 - canonical opportunity registry and applicable search-run records;
 - registry and run-log paths plus write policy when persistence is enabled;
 - approved channel or result-format policy.
 
-**Output discipline:** Verify the live official posting and active employer-controlled application flow for direct-employer roles. When contract mode is active and user-specific policy permits it, a verified staffing-firm, employer-of-record, or identifiable recruiter-controlled requisition may support a secondary `Contact first` result without a public client application, but the accountable entity, current opportunity, and actionable path must be verified and the client must remain unverified when undisclosed. Keep eligibility and hard screens, alignment estimate, opportunity quality, conversion conditions, and contract utility separate. Alignment is not hiring probability. Visibility, saturation, recruiter access, temporary economics, and flexibility do not substitute for fit. Do not blend primary and secondary rankings. When configured, observational registry and append-only run-log persistence is part of the command and must be revision-aware, verified after writing, and reported as persisted, degraded, not persisted, or not configured. Observational persistence must not infer or change candidate-confirmed status. Do not submit applications, contact recruiters, accept terms, generate downstream artifacts, change candidate status, or modify unrelated Source of Truth records without explicit user instruction.
+**Output discipline:** Verify the live official posting and active employer-controlled application flow for direct-employer roles. When contract mode is active and user-specific policy permits it, a verified staffing-firm, employer-of-record, or identifiable recruiter-controlled requisition may support a secondary `Contact first` result without a public client application, but the accountable entity, current opportunity, and actionable path must be verified and the client must remain unverified when undisclosed. Keep eligibility and hard screens, alignment estimate, opportunity quality, conversion conditions, recruiter-legitimacy risk, and contract utility separate. Alignment is not hiring probability. Visibility, saturation, recruiter access, temporary economics, flexibility, and legitimacy signals do not substitute for fit. Do not blend primary and secondary rankings. When configured, observational registry and append-only run-log persistence is part of the command and must be revision-aware, verified after writing, and reported as persisted, degraded, not persisted, or not configured. Observational persistence must not infer or change candidate-confirmed status. Do not submit applications, contact recruiters, accept terms, share sensitive information, generate downstream artifacts, change candidate status, or modify unrelated Source of Truth records without explicit user instruction.
 
 ---
 
@@ -296,7 +300,7 @@ Build a COMPASS resume for this job description.
 - `rules/08-human-authenticity.md`
 - `prompts/compass-tailored-resume.md`
 
-**Output discipline:** The resume must not include COMPASS analysis, scoring, risk notes, company research, interview findings, pursuit economics, contract utility, commercial-term analysis, or private tactical notes.
+**Output discipline:** The resume must not include COMPASS analysis, scoring, risk notes, company research, interview findings, recruiter-legitimacy findings, pursuit economics, contract utility, commercial-term analysis, or private tactical notes.
 
 ---
 
@@ -325,7 +329,7 @@ Build a Staff Engineer recruiter resume with COMPASS.
 - `rules/08-human-authenticity.md`
 - `prompts/recruiter-targeted-resume.md`
 
-**Output discipline:** Preserve broad recruiter positioning while respecting TruthGuard, source-grounding, user-specific style rules, and do-not-claim constraints.
+**Output discipline:** Preserve broad recruiter positioning while respecting TruthGuard, source-grounding, user-specific style rules, and do-not-claim constraints. Do not include recruiter-legitimacy analysis or private risk commentary inside the resume.
 
 ---
 
@@ -354,7 +358,7 @@ Write the COMPASS cover letter for the job we analyzed.
 - `rules/08-human-authenticity.md`
 - `prompts/compass-cover-letter.md`
 
-**Output discipline:** Use a calm, professional, forward-looking tone. Do not include internal analysis, ATS tables, compensation strategy, company-review findings, interview-risk notes, pursuit economics, contract utility, commercial-term analysis, or private tactical notes.
+**Output discipline:** Use a calm, professional, forward-looking tone. Do not include internal analysis, ATS tables, compensation strategy, company-review findings, recruiter-legitimacy findings, interview-risk notes, pursuit economics, contract utility, commercial-term analysis, or private tactical notes.
 
 ## Supported Artifact Requests
 
@@ -368,6 +372,7 @@ Supported artifact requests include:
 - coverage registers;
 - Experience Sync reports and public claim indexes;
 - analysis and verified opportunity-search reports;
+- recruiter-legitimacy and opportunity-fraud risk reports;
 - opportunity registries and append-only search-run records;
 - recruiter responses;
 - application answers;
@@ -377,6 +382,12 @@ Supported artifact requests include:
 - other career-specific artifacts.
 
 When generating these artifacts, use the active framework files and rules rather than inventing independent command behavior.
+
+### Recruiter Responses and Verification Messages
+
+Recruiter responses are supported artifacts governed by `rules/06-artifact-rules.md`, `rules/08-human-authenticity.md`, and the applicable Source of Truth channel policy. When the recruiter, company, application path, staffing chain, requested next action, or sensitive-information boundary is unclear or suspicious, also load `rules/14-recruiter-legitimacy-risk.md` and draft a verification-first response rather than a normal interest response.
+
+Do not include internal legitimacy scoring, scam analysis, or private risk commentary in the sendable message unless the user explicitly asks for an internal dossier or disengagement language.
 
 ## Not Currently Active as First-Class Commands
 
@@ -396,4 +407,4 @@ When adding, renaming, or retiring a COMPASS command:
 4. Update `README.md` if the command should be visible to new users.
 5. Update `COMPASS_Changelog.md` with the change.
 6. Update `VERSION.md` when command behavior materially changes framework behavior.
-7. Preserve source-grounding, phase separation, TruthGuard, opportunity-recon evidence discipline, entity separation, action boundaries, persistence honesty, and artifact cleanliness.
+7. Preserve source-grounding, phase separation, TruthGuard, opportunity-recon evidence discipline, recruiter-legitimacy evidence discipline, entity separation, action boundaries, persistence honesty, and artifact cleanliness.
