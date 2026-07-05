@@ -57,6 +57,32 @@ Do not allow a legitimate staffing firm to verify an undisclosed client. Do not 
 
 For staffing or consulting opportunities, an undisclosed client is not automatically suspicious. It is a verification gap and should usually produce `Contact first`, `Proceed cautiously`, or `Do not share sensitive info yet` depending on the remaining evidence and requested next action.
 
+## Private Risk Intel Ledger
+
+When a private recruiter-risk intelligence ledger is configured, COMPASS may use it as a defensive cache for prior sourced observations.
+
+Recommended private Source of Truth path:
+
+```text
+intel/recruiter-risk-intel-ledger.yaml
+```
+
+The public COMPASS Framework repository should contain only the generic template and rules for this ledger. It should not store live lists of named recruiters, people, companies, domains, clients, or alleged bad actors.
+
+Use `templates/recruiter-risk-intel/RECRUITER_RISK_INTEL_LEDGER_TEMPLATE.yaml` as the framework-owned schema template and `prompts/compass-recruiter-risk-intel-update.md` as the maintenance launcher.
+
+A ledger record can support faster triage, but it is not a substitute for current verification when:
+
+- the match is name-only;
+- the record is stale or past its next review date;
+- the requested next action involves sensitive information, money, identity verification, system access, contract terms, onboarding, background checks, or unusual process steps;
+- the opportunity involves staffing, consulting, employer-of-record, government, defense, security, public-sector, regulated, clearance, infrastructure, or sensitive-client context;
+- current evidence conflicts with the cached record.
+
+Use ledger statuses as cached evidence, not automatic conclusions. A `verified_legitimate` record does not prove a new sender or domain is legitimate. A `suspicious_unverified` record does not prove wrongdoing. A `verified_adverse_official` record must preserve source, date, scope, and entity identity.
+
+For ledger matching, prefer exact domains, email domains, profile URLs, requisition IDs, and application URLs over names. Treat name-only matches as weak signals requiring live verification.
+
 ## Evidence Tiers
 
 Prefer current evidence in this order:
@@ -66,7 +92,8 @@ Prefer current evidence in this order:
 3. Recruiter profiles that are tied to the accountable entity through multiple consistent signals.
 4. Current reputable reporting, business records, regulatory filings, acquisition announcements, or company announcements.
 5. Current scam warnings, fraud alerts, complaints, impersonation reports, or public enforcement actions from credible sources.
-6. Review platforms, forums, social posts, and anonymous reports as contextual or anecdotal evidence only.
+6. Private recruiter-risk intelligence ledger records when configured, preserving record date, match strength, status, confidence, and limitations.
+7. Review platforms, forums, social posts, and anonymous reports as contextual or anecdotal evidence only.
 
 Preserve source type, recency, entity identity, and confidence. Do not generalize isolated allegations. Do not promote anonymous reports into verified facts.
 
@@ -166,9 +193,10 @@ When this gate is invoked, report:
 4. Evidence-backed red flags.
 5. Evidence-backed green flags.
 6. Unknowns and verification gaps.
-7. Sensitive-information boundary.
-8. Safe next action.
-9. Optional verification reply when the user needs sendable language.
+7. Private ledger match summary when a configured ledger was checked.
+8. Sensitive-information boundary.
+9. Safe next action.
+10. Optional verification reply when the user needs sendable language.
 
 Do not include accusations in sendable recruiter language unless the user explicitly asks to disengage because fraud is established. Prefer neutral verification wording.
 
@@ -199,6 +227,20 @@ The response should:
 - avoid sharing sensitive personal, financial, clearance, client, government, or proprietary information;
 - keep internal analysis, scoring, and risk commentary out of the sendable text.
 
+## Integration With Recruiter Risk Intel Updates
+
+`prompts/compass-recruiter-risk-intel-update.md` may update a configured private ledger when the user explicitly requests ledger maintenance.
+
+Ledger maintenance must:
+
+- preserve source provenance, record dates, match strength, confidence, uncertainty, and safe-action history;
+- avoid storing unnecessary personal data;
+- avoid storing sensitive candidate, financial, credential, government, client, or proprietary information;
+- mark stale, superseded, unresolved, or cleared records rather than silently deleting them;
+- report whether persistence was completed, degraded, not completed, or not configured.
+
+Ledger maintenance must not modify career claim ledgers, resumes, opportunity registries, candidate-status records, or unrelated Source of Truth files unless explicitly instructed.
+
 ## TruthGuard Integration
 
 This rule follows `rules/04-truthguard.md` and `rules/10-opportunity-recon.md`.
@@ -208,6 +250,7 @@ In particular:
 - do not claim an opportunity is legitimate merely because no scam reports were found;
 - do not claim an opportunity is fraudulent without evidence;
 - do not treat missing evidence as positive or negative proof;
+- do not treat a private ledger record as current proof when stale, weakly matched, or contradicted;
 - do not conflate recruiter, staffing firm, employer of record, client, and end customer;
 - do not infer rates, hours, duration, client identity, contract terms, application status, representation status, or offer status;
 - do not convert anonymous allegations into verified facts;
