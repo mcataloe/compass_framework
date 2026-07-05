@@ -45,7 +45,7 @@ A complete COMPASS career analysis should include the sections relevant to the r
 12. TruthGuard notes
 13. Recommendation and pursuit economics
 
-For identifiable-company job analysis, the Purple Squirrel Factor and company/interview reality sections are required. When current external evidence is unavailable or insufficient, preserve the sections and report the limitation and confidence rather than speculating.
+For identifiable-company job analysis, the Purple Squirrel Factor and company/interview reality sections are required. When recruiter, staffing, consulting, unclear-entity, suspicious-domain, sensitive-work, or unsafe-process signals are present, apply the Recruiter Legitimacy and Opportunity Fraud Risk Gate. When current external evidence is unavailable or insufficient, preserve the relevant sections and report the limitation and confidence rather than speculating.
 
 ## Recommendation Values
 
@@ -61,14 +61,15 @@ Verified Opportunity Search may also use action labels such as `Apply now`, `Con
 
 ## Opportunity Reality Layer
 
-COMPASS analysis includes an Opportunity Reality Layer governed by `rules/10-opportunity-recon.md`.
+COMPASS analysis includes an Opportunity Reality Layer governed by `rules/10-opportunity-recon.md` and, when legitimacy or safety concerns are present, `rules/14-recruiter-legitimacy-risk.md`.
 
-The layer keeps four questions separate:
+The layer keeps five questions separate:
 
 1. Candidate fit: what the candidate can support with direct or carefully framed adjacent evidence.
 2. Requirement-market realism: how scarce, compressed, or historically plausible the requested candidate profile is.
 3. Company and interview reality: what current external evidence suggests about the employer and hiring process.
-4. Pursuit economics: whether the opportunity merits the candidate's limited application and preparation time.
+4. Recruiter legitimacy and opportunity-fraud risk: whether the recruiter, company, entity chain, application path, communication channel, and requested next action are verified enough to continue safely.
+5. Pursuit economics: whether the opportunity merits the candidate's limited application and preparation time.
 
 ### Purple Squirrel Factor
 
@@ -86,6 +87,21 @@ Anonymous reviews are reported sentiment or candidate accounts, not verified fac
 
 Interview realism must be evaluated independently from whether the reporting candidate passed, failed, withdrew, or received an offer.
 
+### Recruiter Legitimacy and Opportunity Fraud Risk
+
+For recruiter-presented, staffing, consulting, employer-of-record, unclear-entity, suspicious-domain, sensitive-work, or unsafe-process opportunities, COMPASS applies `rules/14-recruiter-legitimacy-risk.md`.
+
+The gate evaluates entity separation, domain integrity, recruiter authority, application-path integrity, process safety, staffing/client identity, clearance-sensitive risk, sensitive-information boundaries, and the smallest safe next action.
+
+Use these legitimacy ratings:
+
+- `Verified enough to proceed`
+- `Proceed cautiously`
+- `Do not share sensitive info yet`
+- `Likely scam / disengage`
+
+Legitimacy concerns do not alter the candidate-fit score. They may change the recommended action from application, tailoring, recruiter response, or interview preparation to verification-first, official-path-only, information-limited, or disengagement behavior.
+
 ### Pursuit Economics
 
 Pursuit economics evaluates candidate evidence for load-bearing requirements, material gaps, bridgeability, access path, posting visibility and saturation signals, compensation, level, remote-work alignment, strategic value, preparation effort, opportunity cost, and stronger available alternatives.
@@ -102,7 +118,8 @@ It keeps these judgments separate:
 2. Evidence-backed alignment.
 3. Opportunity quality and career value.
 4. Conversion conditions, including freshness, access, visibility, saturation, and application friction.
-5. Contract utility when an optional secondary contract lane is active.
+5. Recruiter legitimacy and opportunity-fraud risk when applicable.
+6. Contract utility when an optional secondary contract lane is active.
 
 Alignment is reported as a structured decision estimate, normally in five-point increments. It is not a probability of receiving an interview, offer, or hire.
 
@@ -262,7 +279,7 @@ Target documents or requirements may identify useful terminology and needed capa
 
 COMPASS is career-focused. Product, strategy, research, consulting, grant, policy, and personal knowledge workflows are out of scope unless the project owner explicitly reopens scope.
 
-The active career profile covers opportunity discovery, direct-hire and explicitly activated secondary contract search, role evaluation, opportunity reality, resumes, cover letters, recruiter responses, ATS alignment, compensation and remote-work risk, company and interview research, pursuit economics, and interview preparation.
+The active career profile covers opportunity discovery, direct-hire and explicitly activated secondary contract search, role evaluation, recruiter-legitimacy and opportunity-fraud risk, hiring-manager scan optimization, ATS and semantic alignment, compensation and remote-work risk, company and interview research, pursuit economics, and interview preparation.
 
 ### Reviewer Readability
 
@@ -294,11 +311,11 @@ COMPASS should identify likely recruiter, hiring-manager, interviewer, or career
 
 ### External Evidence Discipline
 
-Company facts, staffing and client identity, reported sentiment, interview accounts, market-rarity judgments, opportunity-search findings, contract terms, and pursuit recommendations must preserve source type, recency, confidence, entity identity, and uncertainty. Anonymous, undisclosed, or historical evidence must not be promoted into verified current fact.
+Company facts, staffing and client identity, recruiter legitimacy, application-path integrity, reported sentiment, interview accounts, market-rarity judgments, opportunity-search findings, contract terms, and pursuit recommendations must preserve source type, recency, confidence, entity identity, and uncertainty. Anonymous, undisclosed, or historical evidence must not be promoted into verified current fact.
 
 ### Artifact Separation
 
-External generated artifacts must not contain internal COMPASS analysis, scoring, company research, interview-risk commentary, pursuit economics, compensation strategy, contract utility, commercial-term analysis, or private tactical notes unless the user explicitly asks for an internal dossier.
+External generated artifacts must not contain internal COMPASS analysis, scoring, company research, interview-risk commentary, recruiter-legitimacy findings, pursuit economics, compensation strategy, contract utility, commercial-term analysis, or private tactical notes unless the user explicitly asks for an internal dossier or verification message.
 
 Internal analysis, opportunity-search reports, interview preparation, compensation notes, source-of-truth records, ledgers, and Experience Sync reports may include gaps, risks, provenance, publication decisions, or strategy when those sections are part of the active artifact template.
 
@@ -319,6 +336,9 @@ TruthGuard is the anti-fabrication and evidence-control layer. It must flag:
 - Anonymous or anecdotal employer evidence presented as verified fact
 - Historical employer evidence presented as current without corroboration
 - Entity confusion among similarly named companies, staffing firms, clients, employers of record, parents, subsidiaries, or end customers
+- Recruiter, staffing-firm, employer-of-record, client, end-customer, application-path, or domain legitimacy inferred without evidence
+- Absence of scam reports presented as proof of safety
+- Sensitive personal, financial, credential, clearance, government, client, proprietary, or confidential information shared before channel and stage verification
 - Candidate scarcity used as a substitute for candidate evidence
 - Alignment estimates presented as measured hiring probabilities
 - Low visibility or low saturation presented without current observable evidence
@@ -348,7 +368,7 @@ Target documents or recruiter requests may identify terminology and gaps, but th
 
 ### Opportunity-Context Authority
 
-For employer, staffing, client, market, interview, and opportunity-reality claims, use this order:
+For employer, staffing, client, market, interview, recruiter-legitimacy, application-path, and opportunity-reality claims, use this order:
 
 1. Current authoritative employer, regulator, filing, or other primary sources
 2. Current accountable staffing-firm, employer-of-record, or recruiter-controlled sources for the opportunity facts they directly support
