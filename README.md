@@ -27,6 +27,8 @@ Use these files as the active source of truth:
 - `rules/10-opportunity-recon.md` — Purple Squirrel Factor, company and interview reality, external-evidence handling, and pursuit economics
 - `rules/11-experience-sync.md` — one-way Source of Truth reconciliation into a public or externally shareable experience repository
 - `rules/12-verified-opportunity-search.md` — current-opportunity discovery, live verification, alignment scoring, conversion-condition ranking, and optional secondary contract search
+- `rules/13-opportunity-registry.md` — optional persistent opportunity registry and append-only search-run records
+- `rules/14-recruiter-legitimacy-risk.md` — recruiter, company, entity-chain, application-path, process-safety, and information-sharing risk gate
 - `prompts/` — reusable prompt templates
 - `prompts/compass-intake.md` — reusable COMPASS Intake launcher prompt
 - `prompts/compass-source-rebase.md` — reusable COMPASS Source Rebase launcher prompt
@@ -48,6 +50,7 @@ Use these files as the active source of truth:
 - `templates/source-of-truth-scaffold/sources/seed/` — recommended scaffold location for Initial Seed Artifacts
 - `templates/source-of-truth-scaffold/sync/` — private Source of Truth routing templates for downstream experience targets
 - `templates/experience-sync/` — sanitized target manifest, reconciliation report, and public claim provenance templates
+- `templates/opportunity-registry/` — opportunity registry and append-only search-run templates
 
 Compatibility shims for earlier naming have been removed. Prompt templates and rule files should use COMPASS terminology only.
 
@@ -66,7 +69,7 @@ Current first-class commands:
 - COMPASS Recruiter-Targeted Resume
 - COMPASS Cover Letter
 
-Additional supported artifact requests are governed by `rules/06-artifact-rules.md` and the relevant framework rules.
+Additional supported artifact requests are governed by `rules/06-artifact-rules.md` and the relevant framework rules. Recruiter-legitimacy risk reports are supported artifacts when the user asks whether a recruiter, company, role, application path, staffing chain, or requested next action is safe enough to continue.
 
 ## COMPASS Analysis and Opportunity Reality
 
@@ -78,6 +81,7 @@ For identifiable-company role analysis, the strict analysis report includes:
 - the Purple Squirrel Factor and requirement-market realism;
 - company background and employee-sentiment research when current external access is available;
 - recent comparable technical interview reports and interview-realism assessment;
+- recruiter-legitimacy, entity-chain, domain, application-path, sensitive-work, and process-safety review when applicable;
 - risk, constraints, and sustainability;
 - recommendation and pursuit economics.
 
@@ -85,9 +89,11 @@ The Purple Squirrel Factor evaluates how rare, compressed, or historically impla
 
 Company and interview research must preserve entity identity, source type, recency, role relevance, sample limitations, and confidence. Anonymous reviews are reported sentiment, not verified facts. Sparse or inaccessible evidence should be reported as `Insufficient` rather than guessed.
 
+Recruiter Legitimacy and Opportunity Risk evaluates whether the recruiter, staffing firm, employer of record, direct employer, client, end customer, domain, application path, communication channel, and requested next action are verified enough to continue safely. Legitimacy concerns do not alter candidate-fit scoring; they change the recommended action, verification boundary, and information-sharing boundary.
+
 Pursuit economics evaluates whether the opportunity merits the candidate's application and preparation time based on evidence, gaps, access path, posting signals, compensation, level, remote-work alignment, strategic value, effort, opportunity cost, and stronger alternatives.
 
-Durable behavior is defined in `rules/01-analysis-workflow.md`, `rules/04-truthguard.md`, `rules/06-artifact-rules.md`, and `rules/10-opportunity-recon.md`.
+Durable behavior is defined in `rules/01-analysis-workflow.md`, `rules/04-truthguard.md`, `rules/06-artifact-rules.md`, `rules/10-opportunity-recon.md`, and `rules/14-recruiter-legitimacy-risk.md` when applicable.
 
 ## COMPASS Verified Opportunity Search
 
@@ -99,7 +105,8 @@ The workflow separates:
 2. evidence-backed alignment;
 3. opportunity quality and career value;
 4. conversion conditions such as freshness, access, visibility, saturation, and application friction;
-5. contract utility when an optional secondary contract lane is active.
+5. recruiter-legitimacy risk when applicable;
+6. contract utility when an optional secondary contract lane is active.
 
 Alignment is a structured decision estimate, not a probability of interview, offer, or hire. A failed location, employment, credential, application, contract, or required-experience hard screen overrides the score.
 
@@ -117,7 +124,7 @@ Run COMPASS Verified Opportunity Search --include-contracts --max-contracts 3.
 
 - `--include-contracts` preserves the user's configured primary search and adds a separately ranked secondary contract lane.
 - `--contract-only` returns only the secondary contract lane.
-- `--max-contracts N` caps contract results without weakening eligibility, alignment, verification, or utility gates.
+- `--max-contracts N` caps contract results without weakening eligibility, alignment, verification, legitimacy, or utility gates.
 
 Contract results must not be blended into the primary shortlist. Candidate alignment remains the evidence-backed fit estimate; contract utility separately evaluates structure-aware economics, hours, duration, continuity, flexibility, exclusivity, intellectual-property, conflict, notice, exit, interference, effort, technical relevance, and relationship value.
 
@@ -127,7 +134,9 @@ The reusable contract classifications are bridge, fractional / side, contract-to
 
 COMPASS does not infer contract rate, hours, duration, client identity, conversion value, exclusivity, or concurrent-employment compatibility. Missing load-bearing terms normally produce `Contact first` rather than `Apply now`.
 
-Durable behavior is defined in `rules/12-verified-opportunity-search.md`. The launcher is `prompts/compass-verified-opportunity-search.md`.
+Recruiter-legitimacy concerns may require verification-first handling even when candidate alignment is strong.
+
+Durable behavior is defined in `rules/12-verified-opportunity-search.md`, `rules/13-opportunity-registry.md`, and `rules/14-recruiter-legitimacy-risk.md` when applicable. The launcher is `prompts/compass-verified-opportunity-search.md`.
 
 ## COMPASS Intake
 
@@ -205,9 +214,9 @@ Durable behavior is defined in `rules/11-experience-sync.md`. The launcher is `p
 
 ## Career Profile
 
-COMPASS is career-focused. The active profile is the careers / job-search profile: opportunity discovery, explicitly activated secondary contract search, role evaluation, hiring-manager scan optimization, ATS and semantic alignment, requirement-market realism, company and interview research, pursuit economics, master CV claim-ledger construction, truth-preserving resume tailoring, cover letters, recruiter-specific positioning, compensation and remote-work risk analysis, interview objection prediction, and evidence mapping from source records to job descriptions.
+COMPASS is career-focused. The active profile is the careers / job-search profile: opportunity discovery, explicitly activated secondary contract search, role evaluation, hiring-manager scan optimization, ATS and semantic alignment, recruiter-legitimacy risk, compensation and remote-work risk, company and interview research, pursuit economics, recruiter responses, application answers, follow-up messages, interview preparation, and source-grounded artifact generation.
 
-Generated artifacts must follow the strict output templates in `rules/06-artifact-rules.md` unless the user explicitly requests a different format. Prompt templates are launchers and must defer to the active rule files for artifact section order, source priority, TruthGuard, Opportunity Reality Layer behavior, Verified Opportunity Search behavior, and clean-deliverable requirements.
+Generated artifacts must follow the strict output templates in `rules/06-artifact-rules.md` unless the user explicitly requests a different format. Prompt templates are launchers and must defer to the active rule files for artifact section order, source priority, TruthGuard, Opportunity Reality Layer behavior, Verified Opportunity Search behavior, recruiter-legitimacy behavior, and clean-deliverable requirements.
 
 External career artifacts should also follow `rules/08-human-authenticity.md` so resumes, cover letters, recruiter responses, application answers, follow-up messages, and similar deliverables remain specific, source-grounded, natural, reviewer-readable, and interview-defensible without using fake humanization or AI-detector evasion tactics.
 
@@ -220,11 +229,3 @@ Anything merged to `main` is considered the active COMPASS framework unless an i
 ## Memory and Context Policy
 
 ChatGPT memory may contain user preferences, but this repository should override memory for COMPASS behavior when there is a conflict.
-
-If repository access fails, the assistant should say so clearly and should not reconstruct COMPASS rules from memory unless explicitly authorized.
-
-## Source-of-Truth Policy
-
-COMPASS outputs must use the user's current direct instruction, verified Intake claim ledger, do-not-claim list, and latest approved source-of-truth record before relying on imported artifacts, including Initial Seed Artifacts, as evidence. Target job descriptions and recruiter requests provide terminology and context only; they do not create experience the user does not have. Generated artifacts are downstream outputs, not factual authorities, unless separately imported and verified through Intake.
-
-COMPASS must not invent technologies, ownership, certifications, credentials, metrics, employers, responsibilities, project history, career achievements, market statistics, company facts, client identity, contract rates, hours, duration, conversion terms, commercial terms, or other material claims.
