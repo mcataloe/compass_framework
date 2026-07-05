@@ -2,6 +2,21 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-07.2 - Recruiter Risk Intel Ledger Templates
+
+Added framework-owned templates and a maintenance launcher for a private recruiter-risk intelligence ledger.
+
+Behavior updates:
+
+- Added `templates/recruiter-risk-intel/README.md` to define the public-framework / private-ledger boundary.
+- Added `templates/recruiter-risk-intel/RECRUITER_RISK_INTEL_LEDGER_TEMPLATE.yaml` as the reusable private-ledger scaffold.
+- Added `prompts/compass-recruiter-risk-intel-update.md` as a supported maintenance launcher, not a first-class command.
+- Updated `rules/14-recruiter-legitimacy-risk.md` so a configured private ledger may be used as a defensive cache while stale, name-only, contradicted, or high-risk matches still require current verification.
+- Updated `COMPASS_COMMANDS.md` to expose recruiter-risk intel updates as a supported maintenance artifact and to keep private-ledger matches separate from candidate fit, opportunity quality, and contract utility.
+- Updated `VERSION.md` to expose the active behavior.
+- Preserved the rule that the public COMPASS Framework repository must not store live lists of named recruiters, people, companies, clients, domains, or alleged bad actors.
+- Advanced the active framework identifier from `vNext 2026-07.1` to `vNext 2026-07.2`.
+
 ## vNext 2026-07.1 - Recruiter Legitimacy Risk Gate
 
 Added a durable recruiter-legitimacy and opportunity-risk gate for recruiter-presented, staffing, consulting, employer-of-record, unclear-entity, sensitive-work, and process-safety concerns.
