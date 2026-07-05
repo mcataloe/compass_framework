@@ -2,6 +2,21 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-07.1 - Recruiter Legitimacy Risk Gate
+
+Added a durable recruiter-legitimacy and opportunity-risk gate for recruiter-presented, staffing, consulting, employer-of-record, unclear-entity, sensitive-work, and process-safety concerns.
+
+Behavior updates:
+
+- Added `rules/14-recruiter-legitimacy-risk.md` as the durable rule for entity-chain separation, recruiter authority, domain and application-path integrity, process-safety review, information-sharing boundaries, and verification-first actions.
+- Added legitimacy ratings: `Verified enough to proceed`, `Proceed cautiously`, `Do not share sensitive info yet`, and `Likely scam / disengage`.
+- Clarified that legitimacy findings do not change evidence-backed candidate alignment; they change recommended action, verification requirements, and information-sharing boundaries.
+- Updated COMPASS Analysis behavior so recruiter, staffing, consulting, unclear-entity, suspicious-domain, sensitive-work, or unsafe-process signals load the new gate.
+- Updated Verified Opportunity Search behavior so recruiter-legitimacy risk remains separate from eligibility, alignment, opportunity quality, conversion conditions, and contract utility.
+- Updated recruiter-response behavior so unresolved legitimacy concerns produce verification-first responses rather than normal interest responses.
+- Updated `VERSION.md`, `COMPASS_Current.md`, `COMPASS_COMMANDS.md`, `README.md`, and relevant launcher prompts to expose the active behavior.
+- Advanced the active framework identifier from `vNext 2026-06.5` to `vNext 2026-07.1`.
+
 ## vNext 2026-06.5 - Persistent Opportunity Registry
 
 Added optional durable cross-run opportunity history for COMPASS Verified Opportunity Search.
@@ -99,7 +114,7 @@ Behavior updates:
 - Added `templates/source-of-truth-scaffold/sync/COMPASS_Experience_Targets.yaml` as the generic private routing-map template.
 - Added `templates/source-of-truth-scaffold/sync/README.md` to define the source-side privacy and ownership boundary.
 - Updated Source Rebase to recognize `/sync/` as an optional scaffold path and to create only generic missing placeholders after explicit approval.
-- Required actual source and target links, target IDs, branches, publication defaults, protected paths, and write policy to live in the Source of Truth routing map rather than the public target manifest.
+- Required actual source and target links, target IDs, branches, publication defaults, and protected paths to live in the Source of Truth routing map rather than the public target manifest.
 - Sanitized the target `COMPASS_Experience_Manifest.yaml` template so it contains a stable source ID and reconciliation metadata without exposing the private Source of Truth repository location.
 - Added deterministic target resolution, override-conflict handling, enabled-target checks, and missing-routing-map behavior.
 - Updated Experience Sync dry-run and full-audit behavior to detect public source-location exposure.
