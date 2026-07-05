@@ -25,9 +25,9 @@ Target job descriptions, recruiter requests, and opportunity records do not crea
 
 ### Opportunity context
 
-For employer, staffing, client, market, interview, recruiter-legitimacy, application-path, and opportunity-reality claims, prefer current authoritative primary sources, then accountable current recruiter-controlled or staffing-firm sources for the facts they directly support, then reputable current secondary sources, then clearly attributed recent anecdotal evidence. Preserve entity identity, recency, source type, and confidence.
+For employer, staffing, client, market, interview, recruiter-legitimacy, application-path, private risk-intel ledger, and opportunity-reality claims, prefer current authoritative primary sources, then accountable current recruiter-controlled or staffing-firm sources for the facts they directly support, then configured private-ledger records with preserved date, confidence, match strength, and limitations, then reputable current secondary sources, then clearly attributed recent anecdotal evidence. Preserve entity identity, recency, source type, and confidence.
 
-Opportunity evidence does not create candidate experience. A legitimate recruiter does not verify an undisclosed client. A real client name does not verify a suspicious recruiter identity. Absence of scam reports does not prove safety.
+Opportunity evidence does not create candidate experience. A legitimate recruiter does not verify an undisclosed client. A real client name does not verify a suspicious recruiter identity. Absence of scam reports or absence of a private-ledger record does not prove safety.
 
 ### Behavior, tone, formatting, and presentation
 
@@ -40,7 +40,7 @@ Within TruthGuard, do-not-claim controls, privacy requirements, artifact cleanli
 5. COMPASS artifact-specific rules and generic framework defaults
 6. Project instructions, memory, or model defaults only when not contradicted by stronger sources
 
-User-specific Source of Truth policy may configure thresholds, weights, channels, employment-structure modes, safety thresholds, information-sharing boundaries, or presentation within its scope. It does not create candidate facts and cannot weaken TruthGuard or approved claim boundaries.
+User-specific Source of Truth policy may configure thresholds, weights, channels, employment-structure modes, safety thresholds, information-sharing boundaries, private risk-intel ledger paths, or presentation within its scope. It does not create candidate facts and cannot weaken TruthGuard or approved claim boundaries.
 
 ## Current First-Class Commands
 
@@ -265,13 +265,13 @@ Run COMPASS Verified Opportunity Search --include-contracts --max-contracts 3.
 - direct-hire, contract, bridge, fractional, and C2H strategy when relevant;
 - alignment thresholds and any explicit scoring-weight overrides;
 - contract classifications, utility criteria, rate policy, and result limits when contract mode is active;
-- recruiter-legitimacy thresholds, privacy constraints, sensitive-information boundaries, and clearance-sensitive policies when defined;
+- recruiter-legitimacy thresholds, privacy constraints, sensitive-information boundaries, clearance-sensitive policies, and configured private risk-intel ledger paths when defined;
 - candidate-status and suppression policy;
 - canonical opportunity registry and applicable search-run records;
 - registry and run-log paths plus write policy when persistence is enabled;
 - approved channel or result-format policy.
 
-**Output discipline:** Verify the live official posting and active employer-controlled application flow for direct-employer roles. When contract mode is active and user-specific policy permits it, a verified staffing-firm, employer-of-record, or identifiable recruiter-controlled requisition may support a secondary `Contact first` result without a public client application, but the accountable entity, current opportunity, and actionable path must be verified and the client must remain unverified when undisclosed. Keep eligibility and hard screens, alignment estimate, opportunity quality, conversion conditions, recruiter-legitimacy risk, and contract utility separate. Alignment is not hiring probability. Visibility, saturation, recruiter access, temporary economics, flexibility, and legitimacy signals do not substitute for fit. Do not blend primary and secondary rankings. When configured, observational registry and append-only run-log persistence is part of the command and must be revision-aware, verified after writing, and reported as persisted, degraded, not persisted, or not configured. Observational persistence must not infer or change candidate-confirmed status. Do not submit applications, contact recruiters, accept terms, share sensitive information, generate downstream artifacts, change candidate status, or modify unrelated Source of Truth records without explicit user instruction.
+**Output discipline:** Verify the live official posting and active employer-controlled application flow for direct-employer roles. When contract mode is active and user-specific policy permits it, a verified staffing-firm, employer-of-record, or identifiable recruiter-controlled requisition may support a secondary `Contact first` result without a public client application, but the accountable entity, current opportunity, and actionable path must be verified and the client must remain unverified when undisclosed. Keep eligibility and hard screens, alignment estimate, opportunity quality, conversion conditions, recruiter-legitimacy risk, private-ledger matches when configured, and contract utility separate. Alignment is not hiring probability. Visibility, saturation, recruiter access, temporary economics, flexibility, legitimacy signals, and cached private-ledger records do not substitute for fit. Do not blend primary and secondary rankings. When configured, observational registry and append-only run-log persistence is part of the command and must be revision-aware, verified after writing, and reported as persisted, degraded, not persisted, or not configured. Observational persistence must not infer or change candidate-confirmed status. Do not submit applications, contact recruiters, accept terms, share sensitive information, generate downstream artifacts, change candidate status, or modify unrelated Source of Truth records without explicit user instruction.
 
 ---
 
@@ -373,6 +373,7 @@ Supported artifact requests include:
 - Experience Sync reports and public claim indexes;
 - analysis and verified opportunity-search reports;
 - recruiter-legitimacy and opportunity-fraud risk reports;
+- private recruiter-risk intelligence ledger templates and update patches;
 - opportunity registries and append-only search-run records;
 - recruiter responses;
 - application answers;
@@ -388,6 +389,27 @@ When generating these artifacts, use the active framework files and rules rather
 Recruiter responses are supported artifacts governed by `rules/06-artifact-rules.md`, `rules/08-human-authenticity.md`, and the applicable Source of Truth channel policy. When the recruiter, company, application path, staffing chain, requested next action, or sensitive-information boundary is unclear or suspicious, also load `rules/14-recruiter-legitimacy-risk.md` and draft a verification-first response rather than a normal interest response.
 
 Do not include internal legitimacy scoring, scam analysis, or private risk commentary in the sendable message unless the user explicitly asks for an internal dossier or disengagement language.
+
+### Recruiter Risk Intel Updates
+
+`prompts/compass-recruiter-risk-intel-update.md` is a supported maintenance launcher, not a first-class COMPASS command. Use it when the user explicitly asks to review, refresh, add to, or update a configured private recruiter-risk intelligence ledger.
+
+Required framework files:
+
+- `VERSION.md`
+- `COMPASS_Current.md`
+- `COMPASS_COMMANDS.md`
+- `rules/04-truthguard.md`
+- `rules/10-opportunity-recon.md`
+- `rules/14-recruiter-legitimacy-risk.md`
+- `templates/recruiter-risk-intel/RECRUITER_RISK_INTEL_LEDGER_TEMPLATE.yaml`
+- `prompts/compass-recruiter-risk-intel-update.md`
+
+Required private source when configured:
+
+- `intel/recruiter-risk-intel-ledger.yaml`
+
+Output discipline: preserve source provenance, date, confidence, match strength, uncertainty, privacy boundaries, and write status. Do not store actual live entity records in the public COMPASS Framework repository. Do not modify career claim ledgers, resumes, opportunity registries, candidate-status records, or unrelated Source of Truth files unless explicitly instructed.
 
 ## Not Currently Active as First-Class Commands
 
@@ -407,4 +429,4 @@ When adding, renaming, or retiring a COMPASS command:
 4. Update `README.md` if the command should be visible to new users.
 5. Update `COMPASS_Changelog.md` with the change.
 6. Update `VERSION.md` when command behavior materially changes framework behavior.
-7. Preserve source-grounding, phase separation, TruthGuard, opportunity-recon evidence discipline, recruiter-legitimacy evidence discipline, entity separation, action boundaries, persistence honesty, and artifact cleanliness.
+7. Preserve source-grounding, phase separation, TruthGuard, opportunity-recon evidence discipline, recruiter-legitimacy evidence discipline, private-ledger evidence discipline, entity separation, action boundaries, persistence honesty, and artifact cleanliness.
