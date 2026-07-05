@@ -1,6 +1,6 @@
 # COMPASS Version
 
-Current COMPASS Version: vNext 2026-06.5
+Current COMPASS Version: vNext 2026-07.1
 
 Canonical Branch: main
 
@@ -20,14 +20,18 @@ COMPASS is the only canonical framework name. New rules, prompts, examples, and 
 
 ## Active Behavior Notes
 
-The active vNext 2026-06.5 framework includes COMPASS-only terminology, career-focused scope, COMPASS Intake checkpoint artifact behavior, COMPASS Source Rebase scaffold alignment, COMPASS Experience Sync public-projection reconciliation with private source-side target routing, Initial Seed Artifact support, claim-depth-aware Staff / Principal resume positioning, the Opportunity Reality Layer, the Conversational Handoff Gate, fit-calibrated positioning and gap salience, COMPASS Verified Opportunity Search, and optional persistent opportunity-registry support:
+The active vNext 2026-07.1 framework includes COMPASS-only terminology, career-focused scope, COMPASS Intake checkpoint artifact behavior, COMPASS Source Rebase scaffold alignment, COMPASS Experience Sync public-projection reconciliation with private source-side target routing, Initial Seed Artifact support, claim-depth-aware Staff / Principal resume positioning, the Opportunity Reality Layer, the Recruiter Legitimacy and Opportunity Fraud Risk Gate, the Conversational Handoff Gate, fit-calibrated positioning and gap salience, COMPASS Verified Opportunity Search, and optional persistent opportunity-registry support:
 
 - COMPASS is a career-focused, source-grounded framework for turning messy career inputs into verified, defensible job-search outputs.
 - COMPASS supports the careers / job-search profile. Product, strategy, research, consulting, grant, policy, and personal knowledge workflows are out of scope unless the project owner explicitly reopens scope.
 - Core behavior remains truth-first, source-grounded, checkpointed, and claim-ledger-driven.
 - COMPASS Analysis uses a strict 13-section report contract that separates candidate fit, requested-candidate rarity, company and interview reality, risk, TruthGuard, and pursuit economics.
+- COMPASS Analysis applies the Recruiter Legitimacy and Opportunity Fraud Risk Gate when recruiter, staffing, consulting, unclear-entity, suspicious-domain, sensitive-work, or unsafe-process signals are present.
+- The Recruiter Legitimacy and Opportunity Fraud Risk Gate evaluates entity identity, domain integrity, application path, recruiter authority, process safety, staffing-firm/client separation, clearance-sensitive risk, and safe next action without changing candidate-fit scoring.
+- Legitimacy ratings are `Verified enough to proceed`, `Proceed cautiously`, `Do not share sensitive info yet`, and `Likely scam / disengage`.
+- Legitimacy gaps should change the recommended action, verification boundary, and information-sharing boundary rather than inflate or reduce evidence-backed alignment.
 - COMPASS Verified Opportunity Search is a first-class discovery and shortlist workflow for finding active opportunities across multiple employers and, when explicitly activated, a separately ranked secondary contract lane.
-- Verified Opportunity Search separates eligibility and hard screens, evidence-backed alignment, opportunity quality, conversion conditions, and optional contract utility.
+- Verified Opportunity Search separates eligibility and hard screens, evidence-backed alignment, opportunity quality, conversion conditions, recruiter-legitimacy risk where applicable, and optional contract utility.
 - Alignment is a structured decision estimate rather than a probability of interview, offer, or hiring success.
 - Freshness, access, visibility, saturation, and application friction are conversion conditions and ranking factors; they do not substitute for fit.
 - Low visibility does not qualify a weakly aligned role, and mainstream visibility does not automatically exclude an exceptionally aligned or access-advantaged role when user-specific policy permits it.
@@ -88,11 +92,12 @@ Future COMPASS changes should preserve the core operating principles unless expl
 - Career-profile rules may add specialized output rules without weakening source-grounding or TruthGuard
 - Prompt templates remain workflow launchers and must defer to active rule files for workflow behavior
 - External employer, staffing, client, interview, and contract evidence must preserve attribution, entity identity, recency, confidence, and uncertainty
-- Verified Opportunity Search must preserve separate eligibility, alignment, opportunity-quality, conversion-condition, and optional contract-utility judgments
+- Verified Opportunity Search must preserve separate eligibility, alignment, opportunity-quality, conversion-condition, recruiter-legitimacy risk where applicable, and optional contract-utility judgments
 - Persistent opportunity history must preserve separate identity, observation, reporting, candidate-status, suppression, and provenance state
 - Configured observational registry writes must not be treated as permission to infer candidate actions or employer outcomes
 - Primary and secondary opportunity rankings must remain separate
 - Staffing, employer-of-record, client, and end-customer identities must not be conflated
+- Recruiter-legitimacy concerns must not change evidence-backed candidate-fit scoring; they affect verification, sensitive-information boundaries, and recommended next action
 - COMPASS Intake remains the default process for building a canonical source record from unverified documents or a new user's history
 - COMPASS Source Rebase remains scaffold alignment only and must not perform Intake, claim verification, destructive source-record migration, or overwrite populated opportunity registries and run logs
 - COMPASS Experience Sync remains a one-way downstream public projection and must not modify or supersede Source of Truth records
