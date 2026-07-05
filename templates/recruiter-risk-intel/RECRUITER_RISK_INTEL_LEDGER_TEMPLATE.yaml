@@ -1,0 +1,117 @@
+schema_version: recruiter-risk-intel-ledger.v1
+ledger_name: Recruiter Risk Intel Ledger
+status: template
+owner: private-source-of-truth
+created_date: YYYY-MM-DD
+last_updated: YYYY-MM-DD
+
+purpose: >-
+  Private defensive cache for recruiter-legitimacy and opportunity-risk checks.
+  This ledger supports COMPASS rules/14-recruiter-legitimacy-risk.md.
+  It is not a public accusation list and does not replace current verification
+  when records are stale, weakly matched, contradicted, or high-risk.
+
+privacy_boundary:
+  public_framework_must_not_store_live_entities: true
+  store_actual_records_in_private_source_of_truth: true
+  recommended_private_path: intel/recruiter-risk-intel-ledger.yaml
+  do_not_store:
+    - sensitive_candidate_identity_data
+    - banking_or_payment_data
+    - account_credentials
+    - private_home_addresses
+    - classified_or_controlled_information
+    - non_public_client_information
+    - unnecessary_personal_data
+
+allowed_statuses:
+  - verified_adverse_official
+  - suspicious_unverified
+  - impersonated_legitimate_entity
+  - verified_legitimate
+  - watchlist
+  - cleared_false_positive
+  - stale_recheck_required
+
+allowed_confidence:
+  - high
+  - medium
+  - low
+  - insufficient
+
+match_strength_order:
+  - exact_domain_or_email_domain
+  - exact_profile_url
+  - exact_requisition_or_application_url
+  - exact_phone_or_address_when_appropriate
+  - entity_name_plus_independent_corroborration
+  - name_only_weak_signal
+
+review_policy:
+  default_review_interval_days: 30
+  high_risk_review_interval_days: 7
+  stale_after_days: 60
+  name_only_matches_require_live_verification: true
+  high_risk_next_actions_require_live_verification: true
+  absence_of_prior_record_is_not_proof_of_legitimacy: true
+  absence_of_external_reports_is_not_proof_of_legitimacy: true
+
+entries:
+  - record_id: RRI-000001
+    status: template_example_remove_before_use
+    confidence: insufficient
+    first_seen: YYYY-MM-DD
+    last_verified: YYYY-MM-DD
+    next_review_due: YYYY-MM-DD
+    stale_after: YYYY-MM-DD
+
+    entity:
+      primary_name: Example Recruiting Entity
+      entity_type: staffing_firm
+      known_aliases: []
+      domains: []
+      email_domains: []
+      profile_urls: []
+      phone_numbers: []
+      locations: []
+
+    opportunity_context:
+      claimed_role_titles: []
+      claimed_client: Undisclosed / unverified
+      claimed_end_customer: Undisclosed / unverified
+      employment_structure: unknown
+      application_paths: []
+      requisition_ids: []
+      related_messages_or_threads: []
+
+    associated_people:
+      recruiters: []
+      contacts: []
+      unknown_or_unverified_personas: []
+
+    evidence:
+      sources:
+        - source_id: SRC-000001
+          source_type: user_provided_message
+          source_description: Replace with source description.
+          source_url: null
+          observed_date: YYYY-MM-DD
+          supports: []
+          limitations: []
+      evidence_summary: Replace with concise source-backed summary.
+      red_flags: []
+      green_flags: []
+      unresolved_questions: []
+
+    safety:
+      safe_action: Ask recruiter verification questions
+      information_boundary: Do not share sensitive information until channel and stage are verified.
+      live_verification_required: true
+      heightened_scrutiny_reasons: []
+
+    maintenance:
+      added_by: unknown
+      last_updated_by: unknown
+      update_notes: []
+      supersedes_records: []
+      related_records: []
