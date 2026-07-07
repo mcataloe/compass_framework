@@ -200,6 +200,21 @@ This section defines the generic COMPASS typography schema for generated resume 
 - Bullets: native Word bullets/list formatting, not typed bullet characters when DOCX generation supports list formatting.
 - Wrapped bullet lines should align under the bullet text rather than under the bullet marker.
 
+### Pagination and Orphan Control
+
+Generated DOCX/PDF resume artifacts must avoid orphaned heading groups when rendered pagination can be controlled or validated.
+
+- Do not leave a company heading, role heading, project heading, date line, or metadata line alone at the bottom of a page when the related body text starts on the next page.
+- Treat the following as keep-together groups when rendering allows:
+  - section header + first content line;
+  - company heading + role/metadata line;
+  - role/metadata line + first bullet;
+  - project heading + date/metadata line + first bullet or body sentence.
+- A long project or role body may split across pages after the heading group has been established.
+- If keeping the group together creates excessive whitespace, first try compact spacing, bullet rebalancing, or moving the heading group to the next page.
+- Do not rewrite, remove, weaken, or invent source-backed claims solely to solve pagination.
+- If rendered pagination cannot be controlled or visually validated, state that limitation rather than claiming the artifact has been visually checked.
+
 ### Candidate Name and Contact Block
 
 #### Name / Title-Name Line
@@ -303,7 +318,7 @@ Defaults:
 #### Experience Bullets
 
 - Font size: body text size.
-- Bullet type: native Word bullet/list formatting.
+- Bullet type: native Word bullets/list formatting.
 - Bullet indentation: compact.
 - Hanging indent: wrapped lines align under the bullet text.
 - Paragraph spacing: compact.
@@ -320,6 +335,7 @@ Defaults:
 - Use only when source-backed and useful.
 - Section header follows section-header typography.
 - Project heading follows company/project subheading typography.
+- Project headings and their first related body line must follow the Pagination and Orphan Control rule.
 - Body text follows body text typography.
 - Bullets follow standard bullet typography.
 - Omit this section if it would duplicate the Professional Experience section without adding scanability.
