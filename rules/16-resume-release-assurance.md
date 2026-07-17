@@ -79,7 +79,7 @@ Implementations and private profiles use these candidate-neutral identifiers:
 | `visual.every_page_review` | Records a distinct review of every rendered page. |
 | `release.atomic_publication` | Confirms final paths were published only after aggregate `PASS`. |
 
-A private profile may add namespaced checks, but it must not rename, weaken, or silently omit an applicable required check from this table.
+A private profile must not rename, weaken, or silently omit an applicable required check from this table. Validator version `1.0.0` requires all 20 stable identifiers; support for additional namespaced checks requires a later compatible tool and schema version.
 
 ## Structural DOCX Validation
 
@@ -169,7 +169,9 @@ Do not upload to a user-facing datastore or present a staging link as a workarou
 
 ## Generic CLI Contract
 
-The candidate-neutral interface is documented in `tools/resume_release/README.md`. The implementation belongs to the next Build Unit and must preserve the schemas and status behavior in this rule.
+The candidate-neutral version `1.0.0` interface and implementation are documented in `tools/resume_release/README.md`. It validates staged artifacts with `validate` and performs gated publication with `release`.
+
+Validator `1.0.0` consumes release-contract and employment-coverage schema `1.0.0`, consumes visual-review-attestation schema `1.0.0`, and emits release-manifest schema `1.0.1`.
 
 Expected exit-code classes are:
 
@@ -179,6 +181,8 @@ Expected exit-code classes are:
 - `64` — invalid invocation or incompatible input contract before artifact validation can start.
 
 An implementation must not return success when publication was requested but did not complete.
+
+Every-page visual review uses `schemas/resume-release/visual-review-attestation.schema.json`. The attestation must identify the current staged artifact hash and exact rendered page set and must be supplied by a human reviewer; the validator must not generate or infer it.
 
 ## Privacy and Public/Private Separation
 
