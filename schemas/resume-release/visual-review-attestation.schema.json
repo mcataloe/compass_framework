@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://compass-framework.example/schemas/resume-release/visual-review-attestation.schema.json",
+  "title": "COMPASS Every-Page Visual Review Attestation",
+  "description": "Human attestation that every rendered page for one staged resume artifact was reviewed.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "artifact_sha256",
+    "page_count",
+    "reviewed_pages",
+    "reviewer_type",
+    "attested_at"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "artifact_sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+    "page_count": { "type": "integer", "minimum": 1 },
+    "reviewed_pages": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "integer", "minimum": 1 }
+    },
+    "reviewer_type": { "const": "human" },
+    "attested_at": { "type": "string", "format": "date-time" },
+    "reviewer_reference": { "type": "string", "minLength": 1, "maxLength": 200 }
+  }
+}
