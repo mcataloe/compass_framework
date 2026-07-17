@@ -41,8 +41,9 @@
     "experience_claim": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["rendered_label", "minimum_years", "calculation_method", "qualifying_intervals"],
+      "required": ["included"],
       "properties": {
+        "included": { "type": "boolean" },
         "rendered_label": { "$ref": "#/$defs/non_empty_string" },
         "minimum_years": { "type": "number", "minimum": 0 },
         "calculation_method": { "const": "union_of_calendar_intervals" },
@@ -51,7 +52,13 @@
           "minItems": 1,
           "items": { "$ref": "#/$defs/interval" }
         }
-      }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "included": { "const": true } }, "required": ["included"] },
+          "then": { "required": ["rendered_label", "minimum_years", "calculation_method", "qualifying_intervals"] }
+        }
+      ]
     }
   },
   "$defs": {

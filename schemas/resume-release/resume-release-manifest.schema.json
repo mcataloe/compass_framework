@@ -37,12 +37,22 @@
     "contract": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["contract_id", "schema_version", "profile_id", "profile_version", "sha256"],
+      "required": ["contract_id", "schema_version", "profile_id", "profile_version", "policy_identity", "sha256"],
       "properties": {
         "contract_id": { "$ref": "#/$defs/non_empty_string" },
         "schema_version": { "$ref": "#/$defs/non_empty_string" },
         "profile_id": { "$ref": "#/$defs/non_empty_string" },
         "profile_version": { "$ref": "#/$defs/non_empty_string" },
+        "policy_identity": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["framework_version", "source_policy_version"],
+          "properties": {
+            "framework_version": { "$ref": "#/$defs/non_empty_string" },
+            "source_policy_version": { "$ref": "#/$defs/non_empty_string" },
+            "source_policy_sha256": { "$ref": "#/$defs/sha256" }
+          }
+        },
         "sha256": { "$ref": "#/$defs/sha256" }
       }
     },
@@ -127,6 +137,13 @@
                 "published": { "const": true },
                 "final_artifacts": { "minItems": 1 }
               }
+            },
+            "else": {
+              "properties": {
+                "attempted": { "const": false },
+                "published": { "const": false },
+                "final_artifacts": { "maxItems": 0 }
+              }
             }
           }
         }
@@ -138,6 +155,7 @@
         "properties": {
           "publication": {
             "properties": {
+              "attempted": { "const": false },
               "published": { "const": false },
               "final_artifacts": { "maxItems": 0 }
             }

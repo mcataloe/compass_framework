@@ -328,7 +328,7 @@ COMPASS is a career-focused, source-grounded framework for turning messy career 
 Application type and maturity:
 
 - Type: Markdown documentation, prompt, rule, and example repository.
-- Maturity: Active framework; current version is `vNext 2026-05.6`.
+- Maturity: Active framework; current version is `vNext 2026-07.3`.
 - Canonical branch: `main`.
 - Product runtime: No frontend, backend, package runtime, database, or deployment target is documented in this repository.
 
@@ -345,6 +345,9 @@ Primary product/architecture docs:
 - `COMPASS_Changelog.md` - framework change history and change-management rules.
 - `rules/` - durable behavior rules; prompt templates defer to these files.
 - `rules/07-compass-intake.md` - COMPASS Intake source-of-truth onboarding, storage disclosure, checkpoint artifact, and pause/resume rules.
+- `rules/16-resume-release-assurance.md` - deterministic resume staging, validation, manifest, and atomic-release contract.
+- `schemas/resume-release/` - machine-readable resume release, manifest, and employment-coverage contracts.
+- `tools/resume_release/` - stable interface for candidate-neutral resume-release tooling.
 - `prompts/` - reusable workflow launcher prompt templates.
 - `examples/` - example output and COMPASS Intake checkpoint patterns.
 - `migration/COMPASS_MIGRATION_NOTES.md` - COMPASS-only canonicalization notes.
@@ -361,13 +364,15 @@ Read the relevant docs before implementing layer, architecture, workflow, data m
 - `COMPASS_Current.md` - canonical active framework behavior.
 - `COMPASS_Changelog.md` - material framework change history.
 - `rules/` - numbered durable COMPASS rules.
+- `schemas/` - machine-readable framework contracts, including resume-release schemas.
+- `tools/` - approved candidate-neutral tooling interfaces and implementations.
 - `prompts/` - reusable COMPASS launcher prompts.
 - `examples/` - sample analyses and COMPASS Intake checkpoint output patterns.
 - `migration/` - COMPASS canonicalization notes.
 - Frontend path: none documented.
 - Backend/API path: none documented.
-- Tests path: none documented.
-- Scripts path: none documented.
+- Tests path: none documented; executable resume-release validation tests are reserved for the next implementation unit.
+- Scripts path: `tools/resume_release/` defines the resume-release command interface; executable validation follows in the next implementation unit.
 - Infrastructure path: none documented.
 
 If the repository structure changes, update this section.
@@ -515,7 +520,7 @@ Known source status:
 - Canonical active files: `README.md`, `VERSION.md`, `COMPASS_Current.md`, `COMPASS_Changelog.md`, `rules/`, COMPASS-named prompts, and `examples/`.
 - Deprecated compatibility shims and predecessor-name files have been removed; do not restore them without explicit approval.
 - Migration notes record the COMPASS-only canonicalization posture.
-- The active version is `vNext 2026-05.6`; older changelog entries remain historical context.
+- The active version is `vNext 2026-07.3`; older changelog entries remain historical context.
 - This repository does not vendor a separate LEAP Charter or `/prompts/leap-recon-standard.md`; use this editable repository section as the repo-local LEAP operating source.
 
 ---

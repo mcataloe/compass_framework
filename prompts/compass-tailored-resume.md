@@ -11,12 +11,15 @@ Required framework files:
 - rules/04-truthguard.md
 - rules/06-artifact-rules.md
 - rules/08-human-authenticity.md
+- rules/16-resume-release-assurance.md
 
 Load the user's current artifact-generation and recommended-opportunity-artifact policies when available.
 
 Treat this prompt as a workflow launcher, not as an independent source of resume, formatting, artifact, TruthGuard, page-length, source-priority, or no-fabrication rules.
 
 Use the strict tailored resume template in rules/06-artifact-rules.md unless I explicitly request a different format.
+
+Treat every generated file as a staged, untrusted artifact. Load the current user-specific resume release profile and employment-coverage plan when configured, then follow rules/16-resume-release-assurance.md. Do not present a file path or download as final until every required check is PASS and the matching manifest authorizes atomic publication. FAIL or UNKNOWN blocks release. Keep the manifest and internal validation detail out of the resume and do not display them unless I request them.
 
 Use the previously analyzed target role, job description, recruiter requirement set, COMPASS findings, and approved role-fit evidence only as tailoring inputs. Do not invent facts, claims, metrics, ownership, credentials, technologies, responsibilities, or experience.
 

@@ -297,6 +297,10 @@ Use this section order:
 
 Compensation and remote-work notes may include private strategy. Keep that strategy out of clean resumes and cover letters unless the user explicitly requests negotiation language.
 
+## Resume Artifact Release Assurance
+
+Tailored and recruiter-targeted resumes that produce downloadable artifacts must follow `rules/16-resume-release-assurance.md`. The generated file remains staged and untrusted until the actual filename, current inputs, employment coverage, DOCX structure, rendered pages, whitespace, blank-page behavior, and every-page visual review have been evaluated. Final output requires an aggregate `PASS` and a matching manifest. Any required `FAIL` or `UNKNOWN` blocks final publication; a launcher or user-specific style profile may tighten this contract but may not bypass it.
+
 ## Page Authority
 
 When a user specifies a page length or page limit for a DOCX-style artifact, the page count refers to the rendered Word/DOCX artifact using the relevant formatting standard.

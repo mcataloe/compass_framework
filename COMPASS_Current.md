@@ -305,6 +305,8 @@ Generated artifacts should be purpose-built deliverables, not reproduced source 
 
 Generated artifacts must follow the strict output template for their artifact type in `rules/06-artifact-rules.md` unless the user explicitly requests a different format.
 
+Downloadable resume artifacts must follow `rules/16-resume-release-assurance.md`: generate into staging, validate the current inputs and actual output, render and inspect every page, write a machine-readable manifest, and publish atomically only after every required check is `PASS`. A `FAIL` or `UNKNOWN` result blocks final delivery. User-specific release profiles may tighten this contract but must not weaken its required checks, privacy boundary, or blocking semantics.
+
 ### Objection Prediction
 
 COMPASS should identify likely recruiter, hiring-manager, interviewer, or career-stakeholder objections before materials are generated.
