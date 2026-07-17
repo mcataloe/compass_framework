@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://compass-framework.example/schemas/resume-release/employment-coverage-plan.schema.json",
+  "title": "COMPASS Employment Coverage Plan",
+  "description": "Per-resume accounting of canonical employment roles and experience-duration wording.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "plan_id",
+    "artifact_id",
+    "as_of_date",
+    "source_identity",
+    "roles",
+    "experience_claim"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "plan_id": { "$ref": "#/$defs/non_empty_string" },
+    "artifact_id": { "$ref": "#/$defs/non_empty_string" },
+    "as_of_date": { "type": "string", "format": "date" },
+    "source_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["policy_version", "source_refs"],
+      "properties": {
+        "policy_version": { "$ref": "#/$defs/non_empty_string" },
+        "source_refs": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/non_empty_string" }
+        }
+      }
+    },
+    "roles": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/role" }
+    },
+    "experience_claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rendered_label", "minimum_years", "calculation_method", "qualifying_intervals"],
+      "properties": {
+        "rendered_label": { "$ref": "#/$defs/non_empty_string" },
+        "minimum_years": { "type": "number", "minimum": 0 },
+        "calculation_method": { "const": "union_of_calendar_intervals" },
+        "qualifying_intervals": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/interval" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "non_empty_string": { "type": "string", "minLength": 1 },
+    "interval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start_date"],
+      "properties": {
+        "start_date": { "type": "string", "format": "date" },
+        "end_date": { "type": ["string", "null"], "format": "date" },
+        "current": { "type": "boolean", "default": false }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "current": { "const": true } }, "required": ["current"] },
+          "then": { "properties": { "end_date": { "type": "null" } } }
+        }
+      ]
+    },
+    "role": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["role_id", "source_refs", "disposition", "employment_interval"],
+      "properties": {
+        "role_id": { "$ref": "#/$defs/non_empty_string" },
+        "display_label": { "$ref": "#/$defs/non_empty_string" },
+        "source_refs": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/non_empty_string" }
+        },
+        "disposition": { "enum": ["detailed", "compressed", "excluded"] },
+        "resume_section": { "$ref": "#/$defs/non_empty_string" },
+        "reason": { "type": "string", "minLength": 1 },
+        "employment_interval": { "$ref": "#/$defs/interval" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "disposition": { "const": "excluded" } }, "required": ["disposition"] },
+          "then": { "required": ["reason"] },
+          "else": { "required": ["resume_section"] }
+        }
+      ]
+    }
+  }
+}

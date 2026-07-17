@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://compass-framework.example/schemas/resume-release/resume-release-manifest.schema.json",
+  "title": "COMPASS Resume Release Manifest",
+  "description": "Deterministic evidence and publication outcome for one resume release attempt.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "manifest_id",
+    "validator",
+    "contract",
+    "started_at",
+    "finished_at",
+    "inputs",
+    "checks",
+    "aggregate_status",
+    "publication"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "manifest_id": { "$ref": "#/$defs/non_empty_string" },
+    "validator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version"],
+      "properties": {
+        "name": { "$ref": "#/$defs/non_empty_string" },
+        "version": { "$ref": "#/$defs/non_empty_string" },
+        "runtime": { "$ref": "#/$defs/non_empty_string" },
+        "renderer_versions": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/non_empty_string" }
+        }
+      }
+    },
+    "contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["contract_id", "schema_version", "profile_id", "profile_version", "sha256"],
+      "properties": {
+        "contract_id": { "$ref": "#/$defs/non_empty_string" },
+        "schema_version": { "$ref": "#/$defs/non_empty_string" },
+        "profile_id": { "$ref": "#/$defs/non_empty_string" },
+        "profile_version": { "$ref": "#/$defs/non_empty_string" },
+        "sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "started_at": { "type": "string", "format": "date-time" },
+    "finished_at": { "type": "string", "format": "date-time" },
+    "inputs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "staged_path", "actual_filename", "sha256"],
+        "properties": {
+          "kind": { "enum": ["docx", "pdf", "markdown", "contract", "coverage_plan", "visual_attestation"] },
+          "staged_path": { "$ref": "#/$defs/non_empty_string" },
+          "actual_filename": { "$ref": "#/$defs/non_empty_string" },
+          "sha256": { "$ref": "#/$defs/sha256" }
+        }
+      }
+    },
+    "checks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "required", "status"],
+        "properties": {
+          "id": { "$ref": "#/$defs/check_id" },
+          "required": { "type": "boolean" },
+          "status": { "$ref": "#/$defs/status" },
+          "diagnostic_code": { "$ref": "#/$defs/non_empty_string" },
+          "message": { "type": "string", "maxLength": 1000 },
+          "measurements": {
+            "type": "object",
+            "additionalProperties": { "type": ["string", "number", "integer", "boolean", "null"] }
+          },
+          "evidence_paths": {
+            "type": "array",
+            "items": { "$ref": "#/$defs/non_empty_string" }
+          }
+        }
+      }
+    },
+    "aggregate_status": { "$ref": "#/$defs/status" },
+    "publication": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requested", "attempted", "published", "final_artifacts"],
+      "properties": {
+        "requested": { "type": "boolean" },
+        "attempted": { "type": "boolean" },
+        "published": { "type": "boolean" },
+        "diagnostic_code": { "$ref": "#/$defs/non_empty_string" },
+        "final_artifacts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["kind", "path", "actual_filename", "sha256"],
+            "properties": {
+              "kind": { "enum": ["docx", "pdf", "markdown", "manifest"] },
+              "path": { "$ref": "#/$defs/non_empty_string" },
+              "actual_filename": { "$ref": "#/$defs/non_empty_string" },
+              "sha256": { "$ref": "#/$defs/sha256" }
+            }
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "aggregate_status": { "const": "PASS" } }, "required": ["aggregate_status"] },
+      "then": {
+        "properties": {
+          "publication": {
+            "if": { "properties": { "requested": { "const": true } }, "required": ["requested"] },
+            "then": {
+              "properties": {
+                "attempted": { "const": true },
+                "published": { "const": true },
+                "final_artifacts": { "minItems": 1 }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "aggregate_status": { "enum": ["FAIL", "UNKNOWN"] } }, "required": ["aggregate_status"] },
+      "then": {
+        "properties": {
+          "publication": {
+            "properties": {
+              "published": { "const": false },
+              "final_artifacts": { "maxItems": 0 }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "non_empty_string": { "type": "string", "minLength": 1 },
+    "sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+    "status": { "enum": ["PASS", "FAIL", "UNKNOWN"] },
+    "check_id": {
+      "enum": [
+        "policy.current",
+        "profile.current",
+        "input.hashes",
+        "filename.actual",
+        "docx.package",
+        "docx.styles",
+        "docx.native_lists",
+        "docx.indentation",
+        "docx.margins",
+        "docx.breaks",
+        "docx.keep_next",
+        "content.markdown_docx_parity",
+        "content.employment_coverage",
+        "content.experience_duration",
+        "render.available",
+        "render.pages",
+        "render.whitespace",
+        "render.blank_pages",
+        "visual.every_page_review",
+        "release.atomic_publication"
+      ]
+    }
+  }
+}
