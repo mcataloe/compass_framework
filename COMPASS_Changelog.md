@@ -2,6 +2,23 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-07.4 - Resume Release Validator
+
+Implemented the candidate-neutral validation and atomic-release engine defined by Resume Artifact Release Assurance.
+
+Behavior updates:
+
+- Added `python -m tools.resume_release validate` and `release` with stable exit codes `0`, `1`, `2`, and `64`.
+- Enforced all 20 stable version `1.0.0` check identifiers so a private contract cannot silently remove a release gate.
+- Added dependency-free contract loading, deterministic check aggregation, privacy-safe manifests, DOCX ZIP/OOXML inspection, configured style/list/indentation/margin/break/keep-next checks, normalized anchor and coverage validation, and overlap-safe experience-duration calculation.
+- Added isolated LibreOffice rendering, Poppler page rasterization, dependency-free PGM ink and bottom-whitespace measurement, and blocking `UNKNOWN` behavior for missing or failed required rendering.
+- Added `schemas/resume-release/visual-review-attestation.schema.json` for separately supplied human every-page review evidence. The validator does not generate or infer this attestation.
+- Added staged atomic publication with rollback backups and regression proof that `FAIL`, `UNKNOWN`, and publication errors do not replace an existing final artifact.
+- Corrected a Prompt 1 manifest defect so an attempted publication that is rolled back may be recorded with aggregate `UNKNOWN`; advanced only the release-manifest schema from `1.0.0` to `1.0.1`.
+- Added candidate-neutral generated-fixture tests under `tests/resume_release/` covering structural, content, rendering, visual-review, filename, and publication behavior.
+- Preserved release-contract and employment-coverage schema version `1.0.0` and introduced validator and visual-attestation version `1.0.0`.
+- Advanced the active framework identifier from `vNext 2026-07.3` to `vNext 2026-07.4`.
+
 ## vNext 2026-07.3 - Resume Artifact Release Assurance
 
 Added the framework contract and machine-readable schemas for deterministic resume artifact staging, validation, and publication.

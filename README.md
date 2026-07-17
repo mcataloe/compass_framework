@@ -31,8 +31,8 @@ Use these files as the active source of truth:
 - `rules/14-recruiter-legitimacy-risk.md` — recruiter, company, entity-chain, application-path, process-safety, and information-sharing risk gate
 - `rules/15-opportunity-unique-questions.md` — opportunity-specific interview question design grounded in unresolved decision value
 - `rules/16-resume-release-assurance.md` — deterministic resume staging, validation, manifest, and atomic-release assurance
-- `schemas/resume-release/` — machine-readable resume release, manifest, and employment-coverage contracts
-- `tools/resume_release/` — stable command and check interface for resume-release validation
+- `schemas/resume-release/` — machine-readable resume release, manifest, employment-coverage, and visual-review-attestation contracts
+- `tools/resume_release/` — executable standard-library resume validator and atomic-release interface
 - `prompts/` — reusable prompt templates
 - `prompts/compass-intake.md` — reusable COMPASS Intake launcher prompt
 - `prompts/compass-source-rebase.md` — reusable COMPASS Source Rebase launcher prompt
@@ -223,6 +223,8 @@ COMPASS is career-focused. The active profile is the careers / job-search profil
 Generated artifacts must follow the strict output templates in `rules/06-artifact-rules.md` unless the user explicitly requests a different format. Prompt templates are launchers and must defer to the active rule files for artifact section order, source priority, TruthGuard, Opportunity Reality Layer behavior, Verified Opportunity Search behavior, recruiter-legitimacy behavior, and clean-deliverable requirements.
 
 Downloadable resume artifacts must also follow the release lifecycle in `rules/16-resume-release-assurance.md`. Drafts are staged as untrusted outputs and become final only when every required structural, content, rendered, and visual check is `PASS` and a matching manifest is written. Any `FAIL` or `UNKNOWN`, including unavailable rendering or missing current inputs, blocks final delivery.
+
+The candidate-neutral implementation is `python -m tools.resume_release`. It inspects DOCX/OOXML structure, checks configured content and coverage, renders through supported system tools when required, records every-page review separately, emits a privacy-safe manifest, and publishes final paths only after aggregate `PASS`.
 
 External career artifacts should also follow `rules/08-human-authenticity.md` so resumes, cover letters, recruiter responses, application answers, follow-up messages, and similar deliverables remain specific, source-grounded, natural, reviewer-readable, and interview-defensible without using fake humanization or AI-detector evasion tactics.
 

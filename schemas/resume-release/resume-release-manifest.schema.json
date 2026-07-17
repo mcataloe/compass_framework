@@ -18,7 +18,7 @@
     "publication"
   ],
   "properties": {
-    "schema_version": { "const": "1.0.0" },
+    "schema_version": { "const": "1.0.1" },
     "manifest_id": { "$ref": "#/$defs/non_empty_string" },
     "validator": {
       "type": "object",
@@ -155,7 +155,6 @@
         "properties": {
           "publication": {
             "properties": {
-              "attempted": { "const": false },
               "published": { "const": false },
               "final_artifacts": { "maxItems": 0 }
             }

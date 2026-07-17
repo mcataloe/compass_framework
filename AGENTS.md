@@ -323,14 +323,14 @@ Project name:
 
 Project summary:
 
-COMPASS is a career-focused, source-grounded framework for turning messy career inputs into verified, defensible job-search outputs. It stands for Capture, Organize, Map, Probe, Approve, Synthesize, Store. The repository is a Markdown-based framework source containing canonical behavior docs, durable rules, launcher prompts, and examples; it is not currently documented as an application runtime.
+COMPASS is a career-focused, source-grounded framework for turning messy career inputs into verified, defensible job-search outputs. It stands for Capture, Organize, Map, Probe, Approve, Synthesize, Store. The repository is a Markdown-based framework source containing canonical behavior docs, durable rules, launcher prompts, and examples, plus a bounded standard-library resume-release validator.
 
 Application type and maturity:
 
-- Type: Markdown documentation, prompt, rule, and example repository.
-- Maturity: Active framework; current version is `vNext 2026-07.3`.
+- Type: Markdown framework repository with a bounded Python standard-library validation CLI.
+- Maturity: Active framework; current version is `vNext 2026-07.4`.
 - Canonical branch: `main`.
-- Product runtime: No frontend, backend, package runtime, database, or deployment target is documented in this repository.
+- Product runtime: `python -m tools.resume_release`; no frontend, backend service, database, package manager, or deployment target is documented.
 
 Primary users and use cases:
 
@@ -346,8 +346,8 @@ Primary product/architecture docs:
 - `rules/` - durable behavior rules; prompt templates defer to these files.
 - `rules/07-compass-intake.md` - COMPASS Intake source-of-truth onboarding, storage disclosure, checkpoint artifact, and pause/resume rules.
 - `rules/16-resume-release-assurance.md` - deterministic resume staging, validation, manifest, and atomic-release contract.
-- `schemas/resume-release/` - machine-readable resume release, manifest, and employment-coverage contracts.
-- `tools/resume_release/` - stable interface for candidate-neutral resume-release tooling.
+- `schemas/resume-release/` - machine-readable resume release, manifest, employment-coverage, and visual-attestation contracts.
+- `tools/resume_release/` - executable candidate-neutral resume validation and atomic-release tooling.
 - `prompts/` - reusable workflow launcher prompt templates.
 - `examples/` - example output and COMPASS Intake checkpoint patterns.
 - `migration/COMPASS_MIGRATION_NOTES.md` - COMPASS-only canonicalization notes.
@@ -371,8 +371,8 @@ Read the relevant docs before implementing layer, architecture, workflow, data m
 - `migration/` - COMPASS canonicalization notes.
 - Frontend path: none documented.
 - Backend/API path: none documented.
-- Tests path: none documented; executable resume-release validation tests are reserved for the next implementation unit.
-- Scripts path: `tools/resume_release/` defines the resume-release command interface; executable validation follows in the next implementation unit.
+- Tests path: `tests/resume_release/` for candidate-neutral standard-library regression tests.
+- Scripts path: `tools/resume_release/` provides the executable resume-release module and command interface.
 - Infrastructure path: none documented.
 
 If the repository structure changes, update this section.
@@ -381,7 +381,7 @@ If the repository structure changes, update this section.
 
 ## Technology Stack
 
-- Primary format: Markdown.
+- Primary formats: Markdown and Python.
 - Prompt/rule system: COMPASS rule files and launcher prompts.
 - Version control: Git; `main` is canonical.
 - Frontend: none documented.
@@ -390,8 +390,8 @@ If the repository structure changes, update this section.
 - External datastore references: COMPASS Intake may use Google Drive, GitHub, or another user-selected datastore for source-of-truth artifacts, but only when access is available and explicitly disclosed.
 - Infrastructure/deployment: none documented.
 - Package manager: none documented.
-- Test framework: none documented.
-- Runtime versions: TBD - Project owner should answer: "Are there required shell, Git, Markdown, document-generation, or validation-tool versions for maintaining this repository?"
+- Test framework: Python standard-library `unittest` for `tests/resume_release/`.
+- Runtime versions: Python 3.10 or newer for the resume-release CLI; system renderer versions are discovered and recorded at runtime.
 
 Use the existing stack unless the user explicitly requests evaluation or migration.
 
@@ -448,11 +448,11 @@ Use the most relevant validation commands for the changed area.
 ```
 
 ```bash
-# Typecheck command: not applicable unless future code is added.
+python -m compileall -q tools/resume_release tests/resume_release
 ```
 
 ```bash
-# Test command: no test framework is documented.
+python -m unittest discover -s tests -v
 ```
 
 ```bash
@@ -520,7 +520,7 @@ Known source status:
 - Canonical active files: `README.md`, `VERSION.md`, `COMPASS_Current.md`, `COMPASS_Changelog.md`, `rules/`, COMPASS-named prompts, and `examples/`.
 - Deprecated compatibility shims and predecessor-name files have been removed; do not restore them without explicit approval.
 - Migration notes record the COMPASS-only canonicalization posture.
-- The active version is `vNext 2026-07.3`; older changelog entries remain historical context.
+- The active version is `vNext 2026-07.4`; older changelog entries remain historical context.
 - This repository does not vendor a separate LEAP Charter or `/prompts/leap-recon-standard.md`; use this editable repository section as the repo-local LEAP operating source.
 
 ---

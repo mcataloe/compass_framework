@@ -307,6 +307,8 @@ Generated artifacts must follow the strict output template for their artifact ty
 
 Downloadable resume artifacts must follow `rules/16-resume-release-assurance.md`: generate into staging, validate the current inputs and actual output, render and inspect every page, write a machine-readable manifest, and publish atomically only after every required check is `PASS`. A `FAIL` or `UNKNOWN` result blocks final delivery. User-specific release profiles may tighten this contract but must not weaken its required checks, privacy boundary, or blocking semantics.
 
+The public candidate-neutral implementation is `python -m tools.resume_release`. Private Source of Truth configuration supplies candidate-specific values; the validator and public tests must remain generic.
+
 ### Objection Prediction
 
 COMPASS should identify likely recruiter, hiring-manager, interviewer, or career-stakeholder objections before materials are generated.
