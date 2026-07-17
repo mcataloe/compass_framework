@@ -215,6 +215,10 @@ Generated DOCX/PDF resume artifacts must avoid orphaned heading groups when rend
 - Do not rewrite, remove, weaken, or invent source-backed claims solely to solve pagination.
 - If rendered pagination cannot be controlled or visually validated, state that limitation rather than claiming the artifact has been visually checked.
 
+### Resume Artifact Release Assurance
+
+Any resume workflow that produces a downloadable or otherwise final artifact must follow `rules/16-resume-release-assurance.md`. Generate into staging, treat staged files as untrusted, bind validation to the current release profile and employment-coverage plan, inspect the DOCX structure and rendered output, and review every rendered page. Missing inputs and unavailable checks are `UNKNOWN`; they do not permit an unchecked fallback. A `FAIL` or `UNKNOWN` blocks final publication. Do not rewrite, remove, weaken, or invent source-backed claims to make a release check pass.
+
 ### Candidate Name and Contact Block
 
 #### Name / Title-Name Line

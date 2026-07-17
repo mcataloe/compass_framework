@@ -29,6 +29,10 @@ Use these files as the active source of truth:
 - `rules/12-verified-opportunity-search.md` — current-opportunity discovery, live verification, alignment scoring, conversion-condition ranking, and optional secondary contract search
 - `rules/13-opportunity-registry.md` — optional persistent opportunity registry and append-only search-run records
 - `rules/14-recruiter-legitimacy-risk.md` — recruiter, company, entity-chain, application-path, process-safety, and information-sharing risk gate
+- `rules/15-opportunity-unique-questions.md` — opportunity-specific interview question design grounded in unresolved decision value
+- `rules/16-resume-release-assurance.md` — deterministic resume staging, validation, manifest, and atomic-release assurance
+- `schemas/resume-release/` — machine-readable resume release, manifest, and employment-coverage contracts
+- `tools/resume_release/` — stable command and check interface for resume-release validation
 - `prompts/` — reusable prompt templates
 - `prompts/compass-intake.md` — reusable COMPASS Intake launcher prompt
 - `prompts/compass-source-rebase.md` — reusable COMPASS Source Rebase launcher prompt
@@ -217,6 +221,8 @@ Durable behavior is defined in `rules/11-experience-sync.md`. The launcher is `p
 COMPASS is career-focused. The active profile is the careers / job-search profile: opportunity discovery, explicitly activated secondary contract search, role evaluation, hiring-manager scan optimization, ATS and semantic alignment, recruiter-legitimacy risk, compensation and remote-work risk, company and interview research, pursuit economics, recruiter responses, application answers, follow-up messages, interview preparation, and source-grounded artifact generation.
 
 Generated artifacts must follow the strict output templates in `rules/06-artifact-rules.md` unless the user explicitly requests a different format. Prompt templates are launchers and must defer to the active rule files for artifact section order, source priority, TruthGuard, Opportunity Reality Layer behavior, Verified Opportunity Search behavior, recruiter-legitimacy behavior, and clean-deliverable requirements.
+
+Downloadable resume artifacts must also follow the release lifecycle in `rules/16-resume-release-assurance.md`. Drafts are staged as untrusted outputs and become final only when every required structural, content, rendered, and visual check is `PASS` and a matching manifest is written. Any `FAIL` or `UNKNOWN`, including unavailable rendering or missing current inputs, blocks final delivery.
 
 External career artifacts should also follow `rules/08-human-authenticity.md` so resumes, cover letters, recruiter responses, application answers, follow-up messages, and similar deliverables remain specific, source-grounded, natural, reviewer-readable, and interview-defensible without using fake humanization or AI-detector evasion tactics.
 

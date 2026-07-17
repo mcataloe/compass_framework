@@ -1,0 +1,281 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://compass-framework.example/schemas/resume-release/resume-release-contract.schema.json",
+  "title": "COMPASS Resume Release Contract",
+  "description": "Candidate-neutral configuration contract for deterministic resume validation and release.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "contract_id",
+    "profile",
+    "policy_identity",
+    "required_checks",
+    "artifact",
+    "docx",
+    "content",
+    "render",
+    "visual_review",
+    "publication",
+    "privacy"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "contract_id": { "$ref": "#/$defs/non_empty_string" },
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "version", "sha256"],
+      "properties": {
+        "id": { "$ref": "#/$defs/non_empty_string" },
+        "version": { "$ref": "#/$defs/non_empty_string" },
+        "sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "policy_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["framework_version", "source_policy_version"],
+      "properties": {
+        "framework_version": { "$ref": "#/$defs/non_empty_string" },
+        "source_policy_version": { "$ref": "#/$defs/non_empty_string" },
+        "source_policy_sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "required_checks": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/check_id" }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["formats", "filename_pattern"],
+      "properties": {
+        "formats": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "enum": ["docx", "pdf", "markdown"] }
+        },
+        "filename_pattern": { "$ref": "#/$defs/non_empty_string" },
+        "forbid_url_encoded_filename": { "type": "boolean", "default": true }
+      }
+    },
+    "docx": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required_parts", "style_rules", "list_rules", "layout_rules", "break_rules", "keep_next_rules"],
+      "properties": {
+        "required_parts": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/package_path" }
+        },
+        "style_rules": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/style_rule" }
+        },
+        "list_rules": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/list_rule" }
+        },
+        "layout_rules": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "margin_tolerance_twips": { "type": "integer", "minimum": 0 },
+            "section_margins": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "top": { "type": "integer", "minimum": 0 },
+                "right": { "type": "integer", "minimum": 0 },
+                "bottom": { "type": "integer", "minimum": 0 },
+                "left": { "type": "integer", "minimum": 0 }
+              }
+            }
+          }
+        },
+        "break_rules": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["manual_page_breaks", "page_break_before"],
+          "properties": {
+            "manual_page_breaks": { "enum": ["forbid", "allow_configured", "allow"] },
+            "page_break_before": { "enum": ["forbid", "allow_configured", "allow"] },
+            "allowed_paragraph_styles": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": { "$ref": "#/$defs/non_empty_string" }
+            }
+          }
+        },
+        "keep_next_rules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["paragraph_style", "required"],
+            "properties": {
+              "paragraph_style": { "$ref": "#/$defs/non_empty_string" },
+              "required": { "type": "boolean" }
+            }
+          }
+        }
+      }
+    },
+    "content": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required_sections", "markdown_docx_parity", "employment_coverage", "experience_duration"],
+      "properties": {
+        "required_sections": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/non_empty_string" }
+        },
+        "markdown_docx_parity": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["required", "anchors"],
+          "properties": {
+            "required": { "type": "boolean" },
+            "anchors": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": { "$ref": "#/$defs/non_empty_string" }
+            }
+          }
+        },
+        "employment_coverage": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["required", "allowed_dispositions"],
+          "properties": {
+            "required": { "type": "boolean" },
+            "allowed_dispositions": {
+              "type": "array",
+              "minItems": 3,
+              "uniqueItems": true,
+              "items": { "enum": ["detailed", "compressed", "excluded"] }
+            }
+          }
+        },
+        "experience_duration": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["required", "calculation_method"],
+          "properties": {
+            "required": { "type": "boolean" },
+            "calculation_method": { "const": "union_of_calendar_intervals" }
+          }
+        }
+      }
+    },
+    "render": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required", "supported_renderers", "page_images_required", "max_non_final_bottom_whitespace_ratio", "nearly_blank_page_max_ink_ratio"],
+      "properties": {
+        "required": { "type": "boolean" },
+        "supported_renderers": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/non_empty_string" }
+        },
+        "page_images_required": { "type": "boolean" },
+        "max_non_final_bottom_whitespace_ratio": { "type": "number", "minimum": 0, "maximum": 1 },
+        "nearly_blank_page_max_ink_ratio": { "type": "number", "minimum": 0, "maximum": 1 },
+        "final_page_whitespace_check": { "type": "boolean", "default": false }
+      }
+    },
+    "visual_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required", "scope"],
+      "properties": {
+        "required": { "type": "boolean" },
+        "scope": { "const": "every_page" },
+        "attestation_schema_version": { "$ref": "#/$defs/non_empty_string" }
+      }
+    },
+    "publication": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["atomic", "final_path_on_pass_only", "overwrite_policy"],
+      "properties": {
+        "atomic": { "const": true },
+        "final_path_on_pass_only": { "const": true },
+        "overwrite_policy": { "enum": ["forbid", "replace_on_pass"] }
+      }
+    },
+    "privacy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["diagnostic_mode", "include_full_text"],
+      "properties": {
+        "diagnostic_mode": { "enum": ["metadata_only", "bounded_labels"] },
+        "include_full_text": { "const": false }
+      }
+    }
+  },
+  "$defs": {
+    "non_empty_string": { "type": "string", "minLength": 1 },
+    "sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+    "package_path": { "type": "string", "minLength": 1, "pattern": "^[^/].*" },
+    "check_id": {
+      "enum": [
+        "policy.current",
+        "profile.current",
+        "input.hashes",
+        "filename.actual",
+        "docx.package",
+        "docx.styles",
+        "docx.native_lists",
+        "docx.indentation",
+        "docx.margins",
+        "docx.breaks",
+        "docx.keep_next",
+        "content.markdown_docx_parity",
+        "content.employment_coverage",
+        "content.experience_duration",
+        "render.available",
+        "render.pages",
+        "render.whitespace",
+        "render.blank_pages",
+        "visual.every_page_review",
+        "release.atomic_publication"
+      ]
+    },
+    "style_rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["paragraph_style"],
+      "properties": {
+        "paragraph_style": { "$ref": "#/$defs/non_empty_string" },
+        "font_family": { "$ref": "#/$defs/non_empty_string" },
+        "font_size_half_points": { "type": "integer", "minimum": 1 },
+        "bold": { "type": "boolean" },
+        "color_hex": { "type": "string", "pattern": "^[A-Fa-f0-9]{6}$" },
+        "space_before_twips": { "type": "integer", "minimum": 0 },
+        "space_after_twips": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "list_rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["paragraph_style", "native_numbering_required", "left_indent_twips", "hanging_indent_twips"],
+      "properties": {
+        "paragraph_style": { "$ref": "#/$defs/non_empty_string" },
+        "native_numbering_required": { "const": true },
+        "left_indent_twips": { "type": "integer", "minimum": 0 },
+        "hanging_indent_twips": { "type": "integer", "minimum": 0 },
+        "tolerance_twips": { "type": "integer", "minimum": 0, "default": 0 }
+      }
+    }
+  }
+}

@@ -298,9 +298,10 @@ Build a COMPASS resume for this job description.
 - `rules/04-truthguard.md`
 - `rules/06-artifact-rules.md`
 - `rules/08-human-authenticity.md`
+- `rules/16-resume-release-assurance.md`
 - `prompts/compass-tailored-resume.md`
 
-**Output discipline:** The resume must not include COMPASS analysis, scoring, risk notes, company research, interview findings, recruiter-legitimacy findings, pursuit economics, contract utility, commercial-term analysis, or private tactical notes.
+**Output discipline:** The resume must not include COMPASS analysis, scoring, risk notes, company research, interview findings, recruiter-legitimacy findings, pursuit economics, contract utility, commercial-term analysis, or private tactical notes. Treat generated files as staged and untrusted until the resume-release contract completes. Do not present a downloadable artifact as final unless every required check is `PASS` and the matching manifest authorizes publication; any `FAIL` or `UNKNOWN` stops release.
 
 ---
 
@@ -327,9 +328,10 @@ Build a Staff Engineer recruiter resume with COMPASS.
 - `rules/04-truthguard.md`
 - `rules/06-artifact-rules.md`
 - `rules/08-human-authenticity.md`
+- `rules/16-resume-release-assurance.md`
 - `prompts/recruiter-targeted-resume.md`
 
-**Output discipline:** Preserve broad recruiter positioning while respecting TruthGuard, source-grounding, user-specific style rules, and do-not-claim constraints. Do not include recruiter-legitimacy analysis or private risk commentary inside the resume.
+**Output discipline:** Preserve broad recruiter positioning while respecting TruthGuard, source-grounding, user-specific style rules, and do-not-claim constraints. Do not include recruiter-legitimacy analysis or private risk commentary inside the resume. Treat generated files as staged and untrusted until the resume-release contract completes. Do not present a downloadable artifact as final unless every required check is `PASS` and the matching manifest authorizes publication; any `FAIL` or `UNKNOWN` stops release.
 
 ---
 

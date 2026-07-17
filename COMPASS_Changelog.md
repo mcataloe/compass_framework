@@ -2,6 +2,23 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-07.3 - Resume Artifact Release Assurance
+
+Added the framework contract and machine-readable schemas for deterministic resume artifact staging, validation, and publication.
+
+Behavior updates:
+
+- Added `rules/16-resume-release-assurance.md` to define the candidate-neutral `generate -> stage -> validate -> render -> manifest -> atomically release` lifecycle.
+- Added `PASS`, `FAIL`, and `UNKNOWN` validation semantics. Every required check must be `PASS`; either `FAIL` or `UNKNOWN` blocks final publication.
+- Added release-contract, release-manifest, and employment-coverage-plan schemas under `schemas/resume-release/`.
+- Added stable check identifiers covering current policy and profile inputs, actual filenames, DOCX structure and pagination controls, Markdown/DOCX parity, employment coverage, experience-duration calculation, rendered pages and whitespace, blank pages, every-page visual review, and atomic publication.
+- Required explicit detailed, compressed, or excluded disposition for each in-scope employment role and union-of-calendar-intervals experience calculation.
+- Required generated outputs to remain staged and untrusted until validation succeeds and a matching manifest authorizes atomic publication.
+- Preserved the public/private boundary: generic contracts live in the framework, while candidate-specific profiles, coverage plans, claims, and artifacts remain outside this repository.
+- Added `tools/resume_release/README.md` as the stable command, result, check-ID, and exit-code interface. This build unit defines the interface; the executable validator and tests follow in the next resume-assurance build unit.
+- Updated the canonical framework definition, command registry, artifact and resume rules, both resume launchers, repository guidance, and README navigation to load the release contract.
+- Advanced the active framework identifier from `vNext 2026-07.2` to `vNext 2026-07.3`.
+
 ## vNext 2026-07.2 - Recruiter Risk Intel Ledger Templates
 
 Added framework-owned templates and a maintenance launcher for a private recruiter-risk intelligence ledger.

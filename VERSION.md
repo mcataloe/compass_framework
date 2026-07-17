@@ -1,6 +1,6 @@
 # COMPASS Version
 
-Current COMPASS Version: vNext 2026-07.2
+Current COMPASS Version: vNext 2026-07.3
 
 Canonical Branch: main
 
@@ -20,11 +20,16 @@ COMPASS is the only canonical framework name. New rules, prompts, examples, and 
 
 ## Active Behavior Notes
 
-The active vNext 2026-07.2 framework includes COMPASS-only terminology, career-focused scope, COMPASS Intake checkpoint artifact behavior, COMPASS Source Rebase scaffold alignment, COMPASS Experience Sync public-projection reconciliation with private source-side target routing, Initial Seed Artifact support, claim-depth-aware Staff / Principal resume positioning, the Opportunity Reality Layer, the Recruiter Legitimacy and Opportunity Fraud Risk Gate, private recruiter-risk intelligence ledger templates, the Conversational Handoff Gate, fit-calibrated positioning and gap salience, COMPASS Verified Opportunity Search, and optional persistent opportunity-registry support:
+The active vNext 2026-07.3 framework includes COMPASS-only terminology, career-focused scope, Resume Artifact Release Assurance, COMPASS Intake checkpoint artifact behavior, COMPASS Source Rebase scaffold alignment, COMPASS Experience Sync public-projection reconciliation with private source-side target routing, Initial Seed Artifact support, claim-depth-aware Staff / Principal resume positioning, the Opportunity Reality Layer, the Recruiter Legitimacy and Opportunity Fraud Risk Gate, private recruiter-risk intelligence ledger templates, the Conversational Handoff Gate, fit-calibrated positioning and gap salience, COMPASS Verified Opportunity Search, and optional persistent opportunity-registry support:
 
 - COMPASS is a career-focused, source-grounded framework for turning messy career inputs into verified, defensible job-search outputs.
 - COMPASS supports the careers / job-search profile. Product, strategy, research, consulting, grant, policy, and personal knowledge workflows are out of scope unless the project owner explicitly reopens scope.
 - Core behavior remains truth-first, source-grounded, checkpointed, and claim-ledger-driven.
+- `rules/16-resume-release-assurance.md` defines a candidate-neutral `generate -> stage -> validate -> render -> manifest -> atomically release` lifecycle for downloadable resume artifacts.
+- Resume release checks use `PASS`, `FAIL`, and `UNKNOWN`; every required check must be `PASS`, while `FAIL` and `UNKNOWN` block final publication.
+- Machine-readable contracts under `schemas/resume-release/` bind releases to current inputs, the actual staged filename, an explicit employment-coverage plan, structural and content checks, rendered-page checks, every-page visual review, privacy boundaries, and atomic publication.
+- User-specific release profiles and coverage plans remain private inputs. They may tighten but cannot weaken the public framework contract, and candidate data must not be stored in this repository.
+- `tools/resume_release/README.md` reserves the stable command, check-ID, output, and exit-code interface for executable validation implemented by the next resume-assurance build unit.
 - COMPASS Analysis uses a strict 13-section report contract that separates candidate fit, requested-candidate rarity, company and interview reality, risk, TruthGuard, and pursuit economics.
 - COMPASS Analysis applies the Recruiter Legitimacy and Opportunity Fraud Risk Gate when recruiter, staffing, consulting, unclear-entity, suspicious-domain, sensitive-work, or unsafe-process signals are present.
 - The Recruiter Legitimacy and Opportunity Fraud Risk Gate evaluates entity identity, domain integrity, application path, recruiter authority, process safety, staffing-firm/client separation, clearance-sensitive risk, and safe next action without changing candidate-fit scoring.
@@ -70,6 +75,7 @@ The active vNext 2026-07.2 framework includes COMPASS-only terminology, career-f
 - After verified ingestion, the canonical source-of-truth record, approved claim ledger, and do-not-claim register supersede imported artifacts for downstream use.
 - Generated artifacts are downstream outputs, not factual authorities, unless separately imported and verified through Intake.
 - Generated artifact types use strict output templates from `rules/06-artifact-rules.md` unless the user explicitly requests a different format.
+- Downloadable resume artifacts remain staged and untrusted until a matching release manifest records `PASS` for every required check; missing validation capability is `UNKNOWN`, not an unchecked fallback.
 - External career artifacts use `rules/08-human-authenticity.md` to preserve truthful specificity, reviewer readability, candidate-specific voice, ATS-safe structure, and interview-defensible claims without fake humanization or AI-detector evasion tactics.
 - Fit-calibrated positioning preserves comprehensive internal gap analysis while ordering external evidence according to actual role alignment, leading with source-backed value in highly aligned opportunities and surfacing material gaps proportionately in moderate- or low-alignment opportunities.
 - Short-form external messages use the Conversational Handoff Gate in `rules/08-human-authenticity.md` to continue from shared context, preserve information gain, ask only the minimum useful questions, keep internal analysis out of the message, state each point once, and move toward one clear next action.
