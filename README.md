@@ -31,6 +31,7 @@ Use these files as the active source of truth:
 - `rules/14-recruiter-legitimacy-risk.md` — recruiter, company, entity-chain, application-path, process-safety, and information-sharing risk gate
 - `rules/15-opportunity-unique-questions.md` — opportunity-specific interview question design grounded in unresolved decision value
 - `rules/16-resume-release-assurance.md` — deterministic resume staging, validation, manifest, and atomic-release assurance
+- `rules/17-comprehensive-career-cv.md` — comprehensive approved career-history compilation, role coverage, audience variants, disclosure, and publication boundaries
 - `schemas/resume-release/` — machine-readable resume release, manifest, employment-coverage, and visual-review-attestation contracts
 - `tools/resume_release/` — executable standard-library resume validator and atomic-release interface
 - `prompts/` — reusable prompt templates
@@ -41,6 +42,7 @@ Use these files as the active source of truth:
 - `prompts/compass-verified-opportunity-search.md` — reusable verified opportunity-search launcher prompt
 - `prompts/compass-tailored-resume.md` — reusable tailored resume launcher prompt
 - `prompts/recruiter-targeted-resume.md` — reusable recruiter-targeted resume launcher prompt
+- `prompts/compass-comprehensive-career-cv.md` — reusable comprehensive career CV launcher prompt
 - `prompts/compass-cover-letter.md` — reusable cover letter launcher prompt
 - `prompts/compass-recruiter-response.md` — reusable recruiter response launcher prompt
 - `prompts/compass-application-answer.md` — reusable application answer launcher prompt
@@ -54,6 +56,7 @@ Use these files as the active source of truth:
 - `templates/source-of-truth-scaffold/sources/seed/` — recommended scaffold location for Initial Seed Artifacts
 - `templates/source-of-truth-scaffold/sync/` — private Source of Truth routing templates for downstream experience targets
 - `templates/experience-sync/` — sanitized target manifest, reconciliation report, and public claim provenance templates
+- `templates/comprehensive-career-cv/` — candidate-neutral comprehensive career CV template
 - `templates/opportunity-registry/` — opportunity registry and append-only search-run templates
 
 Compatibility shims for earlier naming have been removed. Prompt templates and rule files should use COMPASS terminology only.
@@ -71,6 +74,7 @@ Current first-class commands:
 - COMPASS Verified Opportunity Search
 - COMPASS Tailored Resume
 - COMPASS Recruiter-Targeted Resume
+- COMPASS Comprehensive Career CV
 - COMPASS Cover Letter
 
 Additional supported artifact requests are governed by `rules/06-artifact-rules.md` and the relevant framework rules. Recruiter-legitimacy risk reports are supported artifacts when the user asks whether a recruiter, company, role, application path, staffing chain, or requested next action is safe enough to continue.
@@ -141,6 +145,27 @@ COMPASS does not infer contract rate, hours, duration, client identity, conversi
 Recruiter-legitimacy concerns may require verification-first handling even when candidate alignment is strong.
 
 Durable behavior is defined in `rules/12-verified-opportunity-search.md`, `rules/13-opportunity-registry.md`, and `rules/14-recruiter-legitimacy-risk.md` when applicable. The launcher is `prompts/compass-verified-opportunity-search.md`.
+
+## COMPASS Comprehensive Career CV
+
+COMPASS Comprehensive Career CV compiles the currently approved career Source of Truth into one broad document for reviewers who need more depth than a targeted resume but do not want to navigate a repository.
+
+The workflow:
+
+- resolves every material role and project scope;
+- assigns each canonical employment role an internal `detailed`, `compressed`, or `excluded` disposition;
+- compiles rather than concatenates dossiers;
+- preserves official titles, contribution depth, implementation stage, collaborator transitions, and outcome boundaries;
+- supports `--recruiter`, `--public`, and `--both` audience modes;
+- applies Experience Sync publication controls to public variants;
+- keeps source records, claim statuses, evidence inventories, and private strategy outside the clean CV;
+- preserves the generated CV as a downstream publication artifact rather than factual authority.
+
+A comprehensive CV may be longer than a normal resume and can be ATS-readable without being role-optimized. Targeted resumes remain the default application artifact.
+
+A downloadable comprehensive-CV DOCX is resume-class output and requires an applicable executable release contract. A conventional resume filename or section contract cannot be bypassed merely by relabeling the artifact.
+
+Durable behavior is defined in `rules/17-comprehensive-career-cv.md`. The launcher is `prompts/compass-comprehensive-career-cv.md`.
 
 ## COMPASS Intake
 
@@ -218,15 +243,15 @@ Durable behavior is defined in `rules/11-experience-sync.md`. The launcher is `p
 
 ## Career Profile
 
-COMPASS is career-focused. The active profile is the careers / job-search profile: opportunity discovery, explicitly activated secondary contract search, role evaluation, hiring-manager scan optimization, ATS and semantic alignment, recruiter-legitimacy risk, compensation and remote-work risk, company and interview research, pursuit economics, recruiter responses, application answers, follow-up messages, interview preparation, and source-grounded artifact generation.
+COMPASS is career-focused. The active profile is the careers / job-search profile: opportunity discovery, explicitly activated secondary contract search, role evaluation, hiring-manager scan optimization, ATS and semantic alignment, recruiter-legitimacy risk, compensation and remote-work risk, company and interview research, pursuit economics, recruiter responses, application answers, follow-up messages, interview preparation, comprehensive career CV generation, and source-grounded artifact generation.
 
 Generated artifacts must follow the strict output templates in `rules/06-artifact-rules.md` unless the user explicitly requests a different format. Prompt templates are launchers and must defer to the active rule files for artifact section order, source priority, TruthGuard, Opportunity Reality Layer behavior, Verified Opportunity Search behavior, recruiter-legitimacy behavior, and clean-deliverable requirements.
 
-Downloadable resume artifacts must also follow the release lifecycle in `rules/16-resume-release-assurance.md`. Drafts are staged as untrusted outputs and become final only when every required structural, content, rendered, and visual check is `PASS` and a matching manifest is written. Any `FAIL` or `UNKNOWN`, including unavailable rendering or missing current inputs, blocks final delivery.
+Downloadable resume-class artifacts, including comprehensive career CV DOCX files, must also follow the release lifecycle in `rules/16-resume-release-assurance.md`. Drafts are staged as untrusted outputs and become final only when every required structural, content, rendered, and visual check is `PASS` and a matching manifest is written. Any `FAIL` or `UNKNOWN`, including unavailable rendering or missing current inputs, blocks final delivery.
 
 The candidate-neutral implementation is `python -m tools.resume_release`. It inspects DOCX/OOXML structure, checks configured content and coverage, renders through supported system tools when required, records every-page review separately, emits a privacy-safe manifest, and publishes final paths only after aggregate `PASS`.
 
-External career artifacts should also follow `rules/08-human-authenticity.md` so resumes, cover letters, recruiter responses, application answers, follow-up messages, and similar deliverables remain specific, source-grounded, natural, reviewer-readable, and interview-defensible without using fake humanization or AI-detector evasion tactics.
+External career artifacts should also follow `rules/08-human-authenticity.md` so resumes, comprehensive CVs, cover letters, recruiter responses, application answers, follow-up messages, and similar deliverables remain specific, source-grounded, natural, reviewer-readable, and interview-defensible without using fake humanization or AI-detector evasion tactics.
 
 ## Branch Policy
 
