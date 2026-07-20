@@ -335,6 +335,54 @@ Build a Staff Engineer recruiter resume with COMPASS.
 
 ---
 
+### COMPASS Comprehensive Career CV
+
+**Launcher:** `prompts/compass-comprehensive-career-cv.md`
+
+**Purpose:** Compile the currently approved career Source of Truth into a broad, human-readable and ATS-readable career document without turning the CV into a second Source of Truth.
+
+**Use when the user asks to:**
+
+- regenerate a comprehensive or master CV from verified career records;
+- produce a single-document view of the currently approved career history;
+- create recruiter and/or public comprehensive-CV variants;
+- publish a comprehensive career CV into a configured experience repository.
+
+**Example triggers:**
+
+```text
+Run COMPASS Comprehensive Career CV.
+Run COMPASS Comprehensive Career CV --recruiter.
+Run COMPASS Comprehensive Career CV --public.
+Run COMPASS Comprehensive Career CV --both.
+```
+
+**Modes:**
+
+- `--recruiter` — recruiter-facing comprehensive CV using approved contact and audience policy;
+- `--public` — public-disclosure variant governed by Experience Sync publication controls;
+- `--both` — one resolved factual content model with separate recruiter and public publication envelopes.
+
+**Required framework files:**
+
+- `VERSION.md`
+- `COMPASS_Current.md`
+- `COMPASS_COMMANDS.md`
+- `rules/00-operating-principles.md`
+- `rules/02-resume-generation.md`
+- `rules/04-truthguard.md`
+- `rules/06-artifact-rules.md`
+- `rules/08-human-authenticity.md`
+- `rules/11-experience-sync.md` for public repository publication
+- `rules/16-resume-release-assurance.md` for downloadable DOCX output
+- `rules/17-comprehensive-career-cv.md`
+- `templates/comprehensive-career-cv/COMPASS_Comprehensive_Career_CV_TEMPLATE.md`
+- `prompts/compass-comprehensive-career-cv.md`
+
+**Output discipline:** Resolve every material employment, role, and project scope; assign every canonical role an internal `detailed`, `compressed`, or `excluded` disposition; compile rather than concatenate dossiers; preserve implementation stage and contribution depth; keep source mechanics outside the clean CV; use Experience Sync for public repository publication; and never treat the generated CV as factual authority. A downloadable DOCX remains staged and untrusted until the applicable executable release contract completes with aggregate `PASS`. Targeted resumes remain the default application artifact.
+
+---
+
 ### COMPASS Cover Letter
 
 **Launcher:** `prompts/compass-cover-letter.md`
