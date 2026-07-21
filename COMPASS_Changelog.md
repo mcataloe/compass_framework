@@ -2,6 +2,19 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-07.5 - End-to-End Artifact-Name Integrity
+
+Closed the gap between a correct staged filename and an incorrectly encoded delivered or downloaded filename.
+
+Behavior updates:
+
+- Required one decoded canonical filename to control filesystem creation, publication, attachment, display, manifest, archive, metadata, completion, and browser-download naming surfaces.
+- Added post-publication `artifact.name_integrity` verification with `PASS`, `FAIL`, and release-blocking `UNKNOWN` behavior.
+- Added artifact-name integrity receipt and report schemas covering staged/final files, objects, attachments, downloads, controlled `Content-Disposition`, storage labels, links, manifests, ZIPs, generated metadata, and copied variants.
+- Added `python -m tools.resume_release verify-name-integrity` and preserved opaque transport encoding only for an explicitly required transport target; encoded display or downloaded names still fail.
+- Added candidate-neutral regression tests for literal spaces, encoded and double-encoded spaces, links, attachments, download metadata, manifests, ZIP names and entries, unchanged publication/download, and transport leakage.
+- Advanced the validator from `1.0.0` to `1.1.0` and the active framework identifier from `vNext 2026-07.4` to `vNext 2026-07.5`; existing release-contract, employment-coverage, visual-attestation, and release-manifest schema versions remain compatible.
+
 ## vNext 2026-07.4 - Resume Release Validator
 
 Implemented the candidate-neutral validation and atomic-release engine defined by Resume Artifact Release Assurance.
