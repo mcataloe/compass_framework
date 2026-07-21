@@ -9,6 +9,7 @@ from pathlib import Path
 from .constants import EXIT_INVALID, VALIDATOR_VERSION
 from .contracts import ContractError, load_inputs
 from .engine import ResumeReleaseEngine
+from .name_integrity import verify_name_integrity
 
 
 class ReleaseArgumentParser(argparse.ArgumentParser):
@@ -49,6 +50,17 @@ def build_parser() -> argparse.ArgumentParser:
         if name == "release":
             command.add_argument("--output-docx", type=Path, help="final DOCX path")
             command.add_argument("--output-markdown", type=Path, help="final Markdown path")
+    verify_name = subcommands.add_parser(
+        "verify-name-integrity",
+        help="verify actual artifact names after publication or attachment",
+    )
+    verify_name.add_argument("--contract", type=Path, required=True, help="release contract JSON")
+    verify_name.add_argument(
+        "--receipt", type=Path, required=True, help="artifact-name integrity receipt JSON"
+    )
+    verify_name.add_argument(
+        "--report-out", type=Path, required=True, help="name-integrity report output path"
+    )
     return parser
 
 
@@ -60,6 +72,17 @@ def _invocation_error(message: str) -> int:
 def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
+    if args.command == "verify-name-integrity":
+        try:
+            return verify_name_integrity(args.contract, args.receipt, args.report_out)
+        except ContractError as exc:
+            return _invocation_error(str(exc))
+        except OSError as exc:
+            print(
+                f"resume-release: name verification could not complete ({exc.__class__.__name__})",
+                file=sys.stderr,
+            )
+            return 2
     if args.docx is None and args.markdown is None:
         return _invocation_error("at least one staged artifact is required")
     if args.command == "release":
