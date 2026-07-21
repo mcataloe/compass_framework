@@ -9,10 +9,10 @@ Resume style, content, pagination, rendering, and source-grounding requirements 
 The required lifecycle is:
 
 ```text
-generate -> stage -> validate -> render -> manifest -> atomically release
+generate -> stage -> validate -> render -> manifest -> atomically release -> publish/attach -> verify delivered name -> present
 ```
 
-A staged resume is an untrusted internal artifact. It must not be copied, uploaded, presented, linked as final, or used as a factual authority until the complete release gate passes.
+A staged resume is an untrusted internal artifact. It must not be copied, uploaded, presented, linked as final, or used as a factual authority until the local release gate passes. A locally released file is publication-ready, not delivery-verified: after upload or attachment it must remain unpresented until the actual delivered-name verification passes.
 
 ## Applicability
 
@@ -49,6 +49,7 @@ The release gate requires:
 5. The actual filesystem output names and intended final paths.
 6. Required render tools and a writable staging location.
 7. Every-page visual-review evidence when the contract requires it.
+8. After publication or attachment, an artifact-name integrity receipt conforming to `schemas/resume-release/artifact-name-integrity-receipt.schema.json` when the contract requires delivery-name verification.
 
 Missing, unreadable, incompatible, stale, or unverifiable required input produces `UNKNOWN` and blocks release.
 
@@ -79,7 +80,17 @@ Implementations and private profiles use these candidate-neutral identifiers:
 | `visual.every_page_review` | Records a distinct review of every rendered page. |
 | `release.atomic_publication` | Confirms final paths were published only after aggregate `PASS`. |
 
-A private profile must not rename, weaken, or silently omit an applicable required check from this table. Validator version `1.0.0` requires all 20 stable identifiers; support for additional namespaced checks requires a later compatible tool and schema version.
+A private profile must not rename, weaken, or silently omit an applicable required check from this table. Validator version `1.1.0` preserves all 20 stable local-release identifiers. Post-publication delivery uses the separate candidate-neutral `artifact.name_integrity` verification because its evidence does not exist until after upload or attachment.
+
+## Post-Publication Artifact-Name Integrity
+
+The canonical filename must be resolved once as a decoded filename and reused without URL encoding before file creation, upload, attachment, or presentation. A literal space in a filename is the normal space character. Percent-encoded or nested percent-encoded values used in place of filename characters are forbidden naming values.
+
+Checking the intended filename or local staged path alone is insufficient. After publication or attachment, record and verify every applicable actual naming surface defined by the artifact-name receipt schema, including filesystem and object names, attachment and browser-download metadata, controlled `Content-Disposition` filename values, storage display names, link labels and visible text, raw-space link targets where supported, completion listings, manifest fields, ZIP names and entries, generated metadata, and copied variants.
+
+An underlying transport may percent-encode an opaque URI only when the transport requires it. That exception applies only to the transport target: the decoded canonical filename must still control the displayed name, attachment metadata, persisted name fields, and browser-saved filename. Double encoding is never acceptable.
+
+Run `python -m tools.resume_release verify-name-integrity` against the actual observations after publication or attachment. The resulting `artifact.name_integrity` status must be `PASS` before the artifact link or attachment is presented as final. A mismatch or encoding leak is `FAIL`; a required platform-controlled surface that cannot be inspected is `UNKNOWN`. Either blocks presentation and triggers correction plus complete re-verification.
 
 ## Structural DOCX Validation
 
@@ -167,11 +178,13 @@ The release implementation must:
 
 Do not upload to a user-facing datastore or present a staging link as a workaround for a blocked final path.
 
+Successful atomic publication does not prove attachment, link, storage-metadata, or browser-download name integrity. Those surfaces are verified only by the post-publication receipt and report.
+
 ## Generic CLI Contract
 
-The candidate-neutral version `1.0.0` interface and implementation are documented in `tools/resume_release/README.md`. It validates staged artifacts with `validate` and performs gated publication with `release`.
+The candidate-neutral version `1.1.0` interface and implementation are documented in `tools/resume_release/README.md`. It validates staged artifacts with `validate`, performs gated local publication with `release`, and verifies post-publication naming surfaces with `verify-name-integrity`.
 
-Validator `1.0.0` consumes release-contract and employment-coverage schema `1.0.0`, consumes visual-review-attestation schema `1.0.0`, and emits release-manifest schema `1.0.1`.
+Validator `1.1.0` consumes release-contract and employment-coverage schema `1.0.0`, consumes visual-review-attestation and artifact-name receipt schema `1.0.0`, emits release-manifest schema `1.0.1`, and emits artifact-name integrity report schema `1.0.0`.
 
 Expected exit-code classes are:
 
@@ -180,7 +193,7 @@ Expected exit-code classes are:
 - `2` — aggregate `UNKNOWN`;
 - `64` — invalid invocation or incompatible input contract before artifact validation can start.
 
-An implementation must not return success when publication was requested but did not complete.
+An implementation must not return success when publication was requested but did not complete. A successful local `release` command must not be represented as proof of post-publication delivery-name integrity.
 
 Every-page visual review uses `schemas/resume-release/visual-review-attestation.schema.json`. The attestation must identify the current staged artifact hash and exact rendered page set and must be supplied by a human reviewer; the validator must not generate or infer it.
 
@@ -204,6 +217,6 @@ Do not commit live candidate artifacts or candidate-specific profile values to t
 
 Resume launchers remain workflow entry points and must defer to this rule.
 
-When a resume workflow cannot retrieve a required contract, cannot run its required checks, or cannot produce the required manifest, stop with a release limitation. Do not silently fall back to unchecked generation or a remembered style profile.
+When a resume workflow cannot retrieve a required contract, cannot run its required checks, cannot produce the required manifest, or cannot verify a required delivered naming surface, stop with a release limitation. Do not silently fall back to unchecked generation, a remembered style profile, or the correctness of the staged filename.
 
 User-specific Source of Truth policy may tighten this rule but may not convert a required `FAIL` or `UNKNOWN` into `PASS`, remove TruthGuard, or weaken privacy and artifact-cleanliness boundaries.
