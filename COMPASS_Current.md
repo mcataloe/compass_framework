@@ -305,7 +305,7 @@ Generated artifacts should be purpose-built deliverables, not reproduced source 
 
 Generated artifacts must follow the strict output template for their artifact type in `rules/06-artifact-rules.md` unless the user explicitly requests a different format.
 
-Downloadable resume artifacts must follow `rules/16-resume-release-assurance.md`: generate into staging, validate the current inputs and actual output, render and inspect every page, write a machine-readable manifest, and publish atomically only after every required check is `PASS`. A `FAIL` or `UNKNOWN` result blocks final delivery. User-specific release profiles may tighten this contract but must not weaken its required checks, privacy boundary, or blocking semantics.
+Downloadable resume artifacts must follow `rules/16-resume-release-assurance.md`: generate into staging, validate the current inputs and actual output, render and inspect every page, write a machine-readable manifest, and publish atomically only after every required local check is `PASS`. After upload or attachment, verify the actual displayed, persisted, manifested, archived, and browser-downloaded names with `artifact.name_integrity`; a correct staged filename does not prove delivered-name integrity. A `FAIL` or `UNKNOWN` result blocks final presentation. User-specific release profiles may tighten this contract but must not weaken its required checks, privacy boundary, or blocking semantics.
 
 The public candidate-neutral implementation is `python -m tools.resume_release`. Private Source of Truth configuration supplies candidate-specific values; the validator and public tests must remain generic.
 
