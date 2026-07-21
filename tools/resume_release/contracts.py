@@ -102,20 +102,23 @@ def load_contract(path: Path) -> dict[str, Any]:
     if unknown:
         raise ContractError("required_checks contains an unsupported check identifier")
     if set(checks) != set(CHECK_IDS):
-        raise ContractError("required_checks must include every stable version 1.0.0 check")
+        raise ContractError("required_checks must include every stable local-release check")
     artifact = _require_object(contract["artifact"], "artifact")
     formats = _require_list(artifact.get("formats"), "artifact.formats")
     if not formats or any(value not in {"docx", "pdf", "markdown"} for value in formats):
         raise ContractError("artifact.formats contains an unsupported format")
     if "pdf" in formats:
-        raise ContractError("validator version 1.0.0 accepts staged DOCX and Markdown, not staged PDF")
+        raise ContractError("validator version 1.1.0 accepts staged DOCX and Markdown, not staged PDF")
     if "docx" not in formats:
-        raise ContractError("validator version 1.0.0 requires DOCX in artifact.formats")
+        raise ContractError("validator version 1.1.0 requires DOCX in artifact.formats")
     pattern = _require_string(artifact.get("filename_pattern"), "artifact.filename_pattern")
     try:
         re.compile(pattern)
     except re.error as exc:
         raise ContractError("artifact.filename_pattern is not a valid regular expression") from exc
+    for key in ("forbid_url_encoded_filename", "require_delivery_name_receipt"):
+        if key in artifact and not isinstance(artifact[key], bool):
+            raise ContractError(f"artifact.{key} must be a boolean")
     for key in ("docx", "content", "render", "visual_review", "publication", "privacy"):
         _require_object(contract[key], key)
     docx = contract["docx"]
