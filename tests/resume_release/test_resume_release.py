@@ -69,11 +69,24 @@ NUMBERING_XML = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 """
 
 
-def document_xml(*, manual_break: bool = False, forced_break: bool = False) -> str:
+def document_xml(
+    *,
+    manual_break: bool = False,
+    forced_break: bool = False,
+    undeclared_compatibility_prefixes: bool = False,
+    invalid_encoding_declaration: bool = False,
+) -> str:
     break_xml = '<w:r><w:br w:type="page"/></w:r>' if manual_break else ""
     forced_xml = "<w:pageBreakBefore/>" if forced_break else ""
-    return f"""<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+    encoding = "UTF-16" if invalid_encoding_declaration else "UTF-8"
+    compatibility = (
+        ' xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"'
+        ' mc:Ignorable="w14 wp14"'
+        if undeclared_compatibility_prefixes
+        else ""
+    )
+    return f"""<?xml version="1.0" encoding="{encoding}" standalone="yes"?>
+<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"{compatibility}>
   <w:body>
     <w:p><w:pPr><w:pStyle w:val="Heading"/>{forced_xml}</w:pPr><w:r><w:t>SECTION_A</w:t></w:r>{break_xml}</w:p>
     <w:p><w:pPr><w:pStyle w:val="Body"/></w:pPr><w:r><w:t>ROLE_A ANCHOR_A 2+ years</w:t></w:r></w:p>
@@ -96,6 +109,8 @@ def write_docx(
     manual_break: bool = False,
     forced_break: bool = False,
     style_forced_break: bool = False,
+    undeclared_compatibility_prefixes: bool = False,
+    invalid_encoding_declaration: bool = False,
 ) -> None:
     if malformed:
         path.write_bytes(b"not-a-zip-package")
@@ -116,7 +131,10 @@ def write_docx(
         "[Content_Types].xml": CONTENT_TYPES,
         "_rels/.rels": ROOT_RELS,
         "word/document.xml": document_xml(
-            manual_break=manual_break, forced_break=forced_break
+            manual_break=manual_break,
+            forced_break=forced_break,
+            undeclared_compatibility_prefixes=undeclared_compatibility_prefixes,
+            invalid_encoding_declaration=invalid_encoding_declaration,
         ),
         "word/styles.xml": styles,
         "word/numbering.xml": numbering,
@@ -350,6 +368,18 @@ class ResumeReleaseTests(unittest.TestCase):
     def test_malformed_required_ooxml_part_fails(self) -> None:
         write_docx(self.docx, malformed_part="[Content_Types].xml")
         manifest, _ = self._run()
+        self.assertEqual(self._status(manifest, "docx.package"), FAIL)
+
+    def test_undeclared_markup_compatibility_prefixes_fail_package(self) -> None:
+        write_docx(self.docx, undeclared_compatibility_prefixes=True)
+        manifest, code = self._run()
+        self.assertEqual(code, 1)
+        self.assertEqual(self._status(manifest, "docx.package"), FAIL)
+
+    def test_mismatched_xml_encoding_declaration_fails_package(self) -> None:
+        write_docx(self.docx, invalid_encoding_declaration=True)
+        manifest, code = self._run()
+        self.assertEqual(code, 1)
         self.assertEqual(self._status(manifest, "docx.package"), FAIL)
 
     def test_invalid_native_list_semantics_fail(self) -> None:

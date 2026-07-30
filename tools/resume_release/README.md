@@ -83,7 +83,10 @@ The implementation must:
 
 - use only the Python standard library unless a later approved Prompt changes the dependency boundary;
 - treat contract, coverage, renderer, and visual-review unavailability explicitly;
-- inspect DOCX as an OOXML ZIP package rather than trusting visual appearance alone;
+- inspect every OOXML XML/relationship part for declared-encoding correctness and
+  markup-compatibility namespace integrity, rather than trusting ZIP validity or visual
+  appearance alone;
+- reject percent-encoded actual artifact filenames before publication;
 - invoke render tools through argument arrays rather than constructed shell commands;
 - use staging paths and safe temporary directories;
 - emit deterministic privacy-safe manifests;
