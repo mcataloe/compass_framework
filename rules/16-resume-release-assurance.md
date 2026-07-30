@@ -12,7 +12,9 @@ The required lifecycle is:
 generate -> stage -> validate -> render -> manifest -> atomically release -> publish/attach -> verify delivered name -> present
 ```
 
-A staged resume is an untrusted internal artifact. It must not be copied, uploaded, presented, linked as final, or used as a factual authority until the local release gate passes. A locally released file is publication-ready, not delivery-verified: after upload or attachment it must remain unpresented until the actual delivered-name verification passes.
+A staged resume is an untrusted internal artifact. It must not be copied, uploaded, presented, linked as final, or used as a factual authority until the local release gate passes. A locally released file is publication-ready, not delivery-verified: after upload or attachment it must remain unpresented as final until the actual delivered-name verification passes.
+
+By default, user-facing delivery requires aggregate `PASS`. A more specific user-owned Source of Truth policy may authorize delivery on aggregate `UNKNOWN` only as `Generated — Release Validation Pending` when all content, authority, coverage, readability, and inspectable filename checks pass. That pending state is not a release, does not convert `UNKNOWN` to `PASS`, and may not be described as final, official, validated, or publication-ready. Aggregate `FAIL` remains delivery-blocking.
 
 ## Applicability
 
@@ -31,6 +33,8 @@ Every required check has exactly one status:
 - `UNKNOWN` — the check could not run completely, its required source or tool was unavailable, its result was indeterminate, or its evidence was missing.
 
 `FAIL` and `UNKNOWN` are both release-blocking. There is no partial, substantial, warning-only, or self-attested substitute for a required `PASS`.
+
+A candidate-specific Source of Truth may define an explicitly labeled pending-delivery state for aggregate `UNKNOWN`; it may not define one for aggregate `FAIL`. Pending delivery preserves the aggregate `UNKNOWN` result and must identify the unavailable or indeterminate validation evidence.
 
 The aggregate status is:
 
@@ -90,7 +94,7 @@ Checking the intended filename or local staged path alone is insufficient. After
 
 An underlying transport may percent-encode an opaque URI only when the transport requires it. That exception applies only to the transport target: the decoded canonical filename must still control the displayed name, attachment metadata, persisted name fields, and browser-saved filename. Double encoding is never acceptable.
 
-Run `python -m tools.resume_release verify-name-integrity` against the actual observations after publication or attachment. The resulting `artifact.name_integrity` status must be `PASS` before the artifact link or attachment is presented as final. A mismatch or encoding leak is `FAIL`; a required platform-controlled surface that cannot be inspected is `UNKNOWN`. Either blocks presentation and triggers correction plus complete re-verification.
+Run `python -m tools.resume_release verify-name-integrity` against the actual observations after publication or attachment. The resulting `artifact.name_integrity` status must be `PASS` before the artifact link or attachment is presented as final. A mismatch or encoding leak is `FAIL` and blocks delivery until corrected and completely re-verified. A required platform-controlled surface that cannot be inspected is `UNKNOWN`; it blocks final presentation, while an applicable user-owned Source of Truth may allow explicitly labeled pending delivery under the Status Contract.
 
 ## Structural DOCX Validation
 
@@ -176,7 +180,7 @@ The release implementation must:
 5. Record published hashes and paths in the successful manifest.
 6. Keep failure manifests clearly separated from released deliverables.
 
-Do not upload to a user-facing datastore or present a staging link as a workaround for a blocked final path.
+Do not upload to a user-facing datastore or present a staging link as a workaround for aggregate `FAIL` or a blocked final path. When a candidate-specific Source of Truth authorizes pending delivery on aggregate `UNKNOWN`, publish the pending artifact through a clearly non-final path or status envelope and keep it separate from validated final outputs.
 
 Successful atomic publication does not prove attachment, link, storage-metadata, or browser-download name integrity. Those surfaces are verified only by the post-publication receipt and report.
 
@@ -217,6 +221,6 @@ Do not commit live candidate artifacts or candidate-specific profile values to t
 
 Resume launchers remain workflow entry points and must defer to this rule.
 
-When a resume workflow cannot retrieve a required contract, cannot run its required checks, cannot produce the required manifest, or cannot verify a required delivered naming surface, stop with a release limitation. Do not silently fall back to unchecked generation, a remembered style profile, or the correctness of the staged filename.
+When a resume workflow cannot retrieve a required contract, cannot run its required checks, cannot produce the required manifest, or cannot verify a required delivered naming surface, stop with a release limitation. Do not silently fall back to unchecked generation, a remembered style profile, or the correctness of the staged filename. If the user-specific Source of Truth authorizes pending delivery for that aggregate `UNKNOWN`, disclose the exact limitation and use the pending-delivery status; otherwise stop before delivery.
 
-User-specific Source of Truth policy may tighten this rule but may not convert a required `FAIL` or `UNKNOWN` into `PASS`, remove TruthGuard, or weaken privacy and artifact-cleanliness boundaries.
+User-specific Source of Truth policy may tighten this rule or authorize explicitly labeled pending delivery on aggregate `UNKNOWN`. It may not convert a required `FAIL` or `UNKNOWN` into `PASS`, authorize pending delivery on `FAIL`, remove TruthGuard, or weaken privacy, factual authority, employment coverage, inspectable filename, readability, or artifact-cleanliness boundaries.
