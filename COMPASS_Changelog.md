@@ -2,6 +2,22 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-07.6 - Resume Release Hardening and End-to-End Artifact-Name Integrity
+
+Closed gaps where a Word-incompatible OOXML package could pass validation and where a correct staged filename could become an incorrectly encoded delivered or downloaded filename.
+
+Behavior updates:
+
+- Validated declared XML encoding against actual bytes for every OOXML XML and relationship part.
+- Validated markup-compatibility namespace prefixes and rejected undeclared prefixes referenced by compatibility attributes or `mc:Choice Requires`.
+- Preserved atomic-publication durability checks on Windows by syncing publication temporaries through a writable file descriptor.
+- Required one decoded canonical filename to control filesystem creation, publication, attachment, display, manifest, archive, metadata, completion, and browser-download naming surfaces.
+- Added post-publication `artifact.name_integrity` verification with `PASS`, `FAIL`, and release-blocking `UNKNOWN` behavior.
+- Added artifact-name integrity receipt and report schemas covering staged/final files, objects, attachments, downloads, controlled `Content-Disposition`, storage labels, links, manifests, ZIPs, generated metadata, and copied variants.
+- Added `python -m tools.resume_release verify-name-integrity` and preserved opaque transport encoding only for an explicitly required transport target; encoded display or downloaded names still fail.
+- Added candidate-neutral regression tests for OOXML encoding and compatibility-prefix defects plus literal spaces, encoded and double-encoded spaces, delivery metadata, manifests, ZIP names and entries, and transport leakage.
+- Advanced the validator from `1.0.0` to `1.1.0` and the active framework identifier from `vNext 2026-07.5` to `vNext 2026-07.6`; existing release-contract, employment-coverage, visual-attestation, and release-manifest schema versions remain compatible.
+
 ## vNext 2026-07.5 - Comprehensive Career CV
 
 Added a first-class workflow for compiling approved career evidence into a broad, human-readable and ATS-readable career document without creating a second Source of Truth.

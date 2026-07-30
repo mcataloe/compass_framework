@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://compass-framework.example/schemas/resume-release/artifact-name-integrity-report.schema.json",
+  "title": "COMPASS Artifact Name Integrity Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "artifact_id", "canonical_filename", "verified_at", "check", "aggregate_status"],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "artifact_id": { "type": "string", "minLength": 1 },
+    "canonical_filename": { "type": "string", "minLength": 1 },
+    "verified_at": { "type": "string", "format": "date-time" },
+    "check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "status", "diagnostic_code", "surface_results"],
+      "properties": {
+        "id": { "const": "artifact.name_integrity" },
+        "status": { "enum": ["PASS", "FAIL", "UNKNOWN"] },
+        "diagnostic_code": { "type": "string", "minLength": 1 },
+        "surface_results": {
+          "type": "array",
+          "minItems": 18,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["surface", "status", "diagnostic_code"],
+            "properties": {
+              "surface": { "type": "string", "minLength": 1 },
+              "status": { "enum": ["PASS", "FAIL", "UNKNOWN"] },
+              "diagnostic_code": { "type": "string", "minLength": 1 }
+            }
+          }
+        }
+      }
+    },
+    "aggregate_status": { "enum": ["PASS", "FAIL", "UNKNOWN"] }
+  }
+}

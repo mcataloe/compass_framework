@@ -61,7 +61,8 @@
           "items": { "enum": ["docx", "pdf", "markdown"] }
         },
         "filename_pattern": { "$ref": "#/$defs/non_empty_string" },
-        "forbid_url_encoded_filename": { "type": "boolean", "default": true }
+        "forbid_url_encoded_filename": { "type": "boolean", "default": true },
+        "require_delivery_name_receipt": { "type": "boolean", "default": false }
       }
     },
     "docx": {

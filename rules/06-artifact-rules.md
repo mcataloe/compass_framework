@@ -14,17 +14,37 @@ When COMPASS generates downloadable resume artifacts and no user-specific source
 2. PDF
 3. Markdown
 
-Use the same human-readable base artifact name across formats. Word/DOCX and PDF filenames should use normal spaces, not underscores and not URL-encoded spaces. Markdown filenames may use underscores in place of spaces when useful for repository or plain-text workflows.
+Use the same human-readable base artifact name across formats. A normal filename space is the literal space character. URI or transport encoding is not an artifact name and must not be reused as a filesystem name, object name, attachment name, download name, display name, archive name, archive entry, manifest value, link label, completion listing, or generated name metadata. DOCX, PDF, Markdown, and other generated artifact filenames use normal spaces.
 
 Default naming examples:
 
 ```text
 Candidate Name - Company Role Title - YYYY-MM.docx
 Candidate Name - Company Role Title - YYYY-MM.pdf
-Candidate_Name_Company_Role_Title_YYYY_MM.md
+Candidate Name - Company Role Title - YYYY-MM.md
 ```
 
 A user's source-of-truth style guide may narrow or override the default downloadable formats for that user. User-specific file naming rules supersede these framework defaults when present.
+
+## End-to-End Artifact-Name Integrity
+
+Resolve the canonical filename once before creating the artifact, then reuse that decoded value through filesystem creation, staging, publication, attachment, presentation, archive creation, manifest generation, copied variants, and completion output. Do not URL-encode the canonical filename before any of those steps.
+
+Checking only the intended name or local staged path is insufficient. Before presenting an artifact as final, verify each applicable actual surface, including:
+
+- staged and final filesystem filenames;
+- published object and attachment names;
+- browser download and controlled `Content-Disposition` filenames;
+- storage or Library display names;
+- Markdown link labels, user-visible link text, and raw-space link targets when supported;
+- completion-message artifact listings;
+- manifest filename and path fields;
+- ZIP filenames and entry names;
+- generated name metadata and copied or regenerated format variants.
+
+Any percent-encoded octet or nested percent encoding used in place of a filename character is a release failure. An underlying transport may encode its own opaque URI only when the platform requires it; the decoded canonical filename must still control every displayed, attached, downloaded, and persisted naming field.
+
+After publication or attachment, verify the actual delivered name. A mismatch, encoded-space leak, unavailable required observation, or uninspectable browser download result is `FAIL` or `UNKNOWN` and blocks final presentation. Correct the delivery surface and rerun the full name-integrity verification; do not relabel a bad link or rely on the original local filename as proof.
 
 ## Strict Template Rule
 
@@ -299,7 +319,7 @@ Compensation and remote-work notes may include private strategy. Keep that strat
 
 ## Resume Artifact Release Assurance
 
-Tailored and recruiter-targeted resumes that produce downloadable artifacts must follow `rules/16-resume-release-assurance.md`. The generated file remains staged and untrusted until the actual filename, current inputs, employment coverage, DOCX structure, rendered pages, whitespace, blank-page behavior, and every-page visual review have been evaluated. Final output requires an aggregate `PASS` and a matching manifest. Any required `FAIL` or `UNKNOWN` blocks final publication; a launcher or user-specific style profile may tighten this contract but may not bypass it.
+Tailored and recruiter-targeted resumes that produce downloadable artifacts must follow `rules/16-resume-release-assurance.md`. The generated file remains staged and untrusted until the actual filename, current inputs, employment coverage, DOCX structure, rendered pages, whitespace, blank-page behavior, and every-page visual review have been evaluated. A locally published file remains publication-ready but not safe to present as a delivered artifact until post-publication artifact-name integrity also passes. Any required `FAIL` or `UNKNOWN` blocks final presentation; a launcher or user-specific style profile may tighten this contract but may not bypass it.
 
 ## Page Authority
 
@@ -322,10 +342,9 @@ Recommended base-name patterns:
 
 Filename rules for downloadable generated artifacts:
 
-- Word/DOCX filenames should use normal human-readable spaces, not underscores.
-- PDF filenames should use normal human-readable spaces, not underscores.
-- Markdown filenames may use underscores in place of spaces when useful for repository or plain-text workflows.
-- Do not URL-encode spaces in final user-facing filenames.
+- Word/DOCX, PDF, Markdown, and other user-facing filenames use normal human-readable spaces. A user-specific policy may refine the naming pattern but must not replace spaces with transport encoding.
+- Do not URL-encode filenames or reuse a percent-encoded transport value as an artifact or display name.
+- Validate actual post-publication and browser-download names, not only the staged filesystem name.
 
 ## Reviewability
 

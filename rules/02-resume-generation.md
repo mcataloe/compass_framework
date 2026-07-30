@@ -48,7 +48,7 @@ Unless a user-specific source-of-truth style guide or explicit user instruction 
 2. PDF
 3. Markdown
 
-Use the same human-readable base artifact name across formats. Word/DOCX and PDF filenames should use normal spaces. Markdown filenames may use underscores when useful for repository or plain-text workflows. Do not URL-encode spaces in final user-facing filenames.
+Use the same decoded, human-readable base artifact name across formats. Normal spaces are literal spaces. Do not reuse URI or transport encoding as a filesystem, object, attachment, display, manifest, archive, link-label, or downloaded filename. After publication or attachment, verify the actual delivered and browser-saved name under `rules/16-resume-release-assurance.md`; a correct staged filename alone is insufficient.
 
 User-specific source-of-truth rules override these default resume download formats and file-naming rules when present.
 
