@@ -94,13 +94,16 @@ The implementation must:
 
 - use only the Python standard library unless a later approved Prompt changes the dependency boundary;
 - treat contract, coverage, renderer, and visual-review unavailability explicitly;
-- inspect DOCX as an OOXML ZIP package rather than trusting visual appearance alone;
+- inspect every OOXML XML/relationship part for declared-encoding correctness and
+  markup-compatibility namespace integrity, rather than trusting ZIP validity or visual
+  appearance alone;
+- reject percent-encoded actual artifact filenames before publication;
 - invoke render tools through argument arrays rather than constructed shell commands;
 - use staging paths and safe temporary directories;
 - emit deterministic privacy-safe manifests;
 - leave existing final files unchanged on `FAIL`, `UNKNOWN`, or invalid invocation;
 - use atomic move/replace semantics after aggregate `PASS`;
-- keep candidate-specific values and artifacts outside the public framework repository.
+- keep candidate-specific values and artifacts outside the public framework repository;
 - treat URI encoding as transport-only and verify the actual displayed, persisted, attached, archived, manifested, and downloaded name after publication.
 
 Malformed or incompatible JSON inputs and invalid invocations exit `64`. Malformed artifacts become check results so their release-blocking evidence appears in the manifest.

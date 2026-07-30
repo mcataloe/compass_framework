@@ -328,7 +328,7 @@ COMPASS is a career-focused, source-grounded framework for turning messy career 
 Application type and maturity:
 
 - Type: Markdown framework repository with a bounded Python standard-library validation CLI.
-- Maturity: Active framework; current version is `vNext 2026-07.4`.
+- Maturity: Active framework; current version is `vNext 2026-07.6`.
 - Canonical branch: `main`.
 - Product runtime: `python -m tools.resume_release`; no frontend, backend service, database, package manager, or deployment target is documented.
 
@@ -520,7 +520,7 @@ Known source status:
 - Canonical active files: `README.md`, `VERSION.md`, `COMPASS_Current.md`, `COMPASS_Changelog.md`, `rules/`, COMPASS-named prompts, and `examples/`.
 - Deprecated compatibility shims and predecessor-name files have been removed; do not restore them without explicit approval.
 - Migration notes record the COMPASS-only canonicalization posture.
-- The active version is `vNext 2026-07.4`; older changelog entries remain historical context.
+- The active version is `vNext 2026-07.6`; older changelog entries remain historical context.
 - This repository does not vendor a separate LEAP Charter or `/prompts/leap-recon-standard.md`; use this editable repository section as the repo-local LEAP operating source.
 
 ---

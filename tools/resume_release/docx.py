@@ -3,16 +3,30 @@
 from __future__ import annotations
 
 import io
+import re
 import zipfile
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 from xml.etree import ElementTree as ET
+from xml.parsers import expat
 
 W_NS = "http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+MC_NS = "http://schemas.openxmlformats.org/markup-compatibility/2006"
 NS = {"w": W_NS}
 MAX_PACKAGE_MEMBERS = 10_000
 MAX_UNCOMPRESSED_BYTES = 100 * 1024 * 1024
+XML_DECLARED_ENCODING = re.compile(
+    br"^\s*<\?xml\s+[^>]*encoding\s*=\s*(['\"])([^'\"]+)\1",
+    re.IGNORECASE,
+)
+COMPATIBILITY_PREFIX_ATTRIBUTES = {
+    "Ignorable",
+    "MustUnderstand",
+    "PreserveAttributes",
+    "PreserveElements",
+    "ProcessContent",
+}
 
 
 def qn(local: str) -> str:
@@ -80,6 +94,60 @@ class DocxInspectionError(ValueError):
     pass
 
 
+def _validate_xml_encoding_and_namespaces(data: bytes) -> str | None:
+    declared = XML_DECLARED_ENCODING.match(data)
+    if declared:
+        try:
+            data.decode(declared.group(2).decode("ascii"), errors="strict")
+        except (LookupError, UnicodeDecodeError, UnicodeError):
+            return "XML declared encoding does not match part bytes"
+
+    scopes: list[dict[str, str]] = []
+    pending: dict[str, str] = {}
+
+    def namespace_start(prefix: str | None, uri: str) -> None:
+        pending[prefix or ""] = uri
+
+    def start(name: str, attributes: dict[str, str]) -> None:
+        scope = dict(scopes[-1]) if scopes else {}
+        scope.update(pending)
+        pending.clear()
+        scopes.append(scope)
+
+        for attribute_name, value in attributes.items():
+            if " " not in attribute_name:
+                continue
+            uri, local = attribute_name.split(" ", 1)
+            if uri != MC_NS or local not in COMPATIBILITY_PREFIX_ATTRIBUTES:
+                continue
+            for token in value.split():
+                prefix = token.split(":", 1)[0]
+                if prefix not in scope:
+                    raise DocxInspectionError(
+                        f"undeclared markup-compatibility prefix: {prefix}"
+                    )
+
+        if name == f"{MC_NS} Choice":
+            for token in attributes.get("Requires", "").split():
+                if token not in scope:
+                    raise DocxInspectionError(
+                        f"undeclared markup-compatibility prefix: {token}"
+                    )
+
+    def end(_name: str) -> None:
+        scopes.pop()
+
+    parser = expat.ParserCreate(namespace_separator=" ")
+    parser.StartNamespaceDeclHandler = namespace_start
+    parser.StartElementHandler = start
+    parser.EndElementHandler = end
+    try:
+        parser.Parse(data, True)
+    except (expat.ExpatError, DocxInspectionError, UnicodeError) as exc:
+        return str(exc) or exc.__class__.__name__
+    return None
+
+
 class DocxInspector:
     """Parses the bounded structural subset required by the release contract."""
 
@@ -141,15 +209,15 @@ class DocxInspector:
         if self.package_error:
             return False, ["package_unreadable"]
         missing = [part for part in required_parts if part not in self.parts]
-        for part in required_parts:
-            if part not in self.parts or part in self.xml_errors:
+        xml_parts = [
+            part for part in self.parts if part.endswith(".xml") or part.endswith(".rels")
+        ]
+        for part in xml_parts:
+            if part in self.xml_errors:
                 continue
-            if part.endswith(".xml") or part.endswith(".rels"):
-                try:
-                    ET.fromstring(self.parts[part])
-                except ET.ParseError:
-                    self.xml_errors[part] = "XML parse error"
-        invalid = [part for part in required_parts if part in self.xml_errors]
+            if problem := _validate_xml_encoding_and_namespaces(self.parts[part]):
+                self.xml_errors[part] = problem
+        invalid = sorted(self.xml_errors)
         return not missing and not invalid, missing + invalid
 
     def normalized_text(self) -> str:

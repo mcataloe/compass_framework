@@ -823,7 +823,8 @@ class ResumeReleaseEngine:
                 os.close(descriptor)
                 temporary = Path(temporary_name)
                 shutil.copyfile(source, temporary)
-                with temporary.open("rb") as stream:
+                # Windows requires a writable descriptor for fsync.
+                with temporary.open("rb+") as stream:
                     os.fsync(stream.fileno())
                 backup = None
                 if target.exists():

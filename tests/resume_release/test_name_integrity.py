@@ -8,7 +8,7 @@ from pathlib import Path
 from tools.resume_release.cli import main as cli_main
 from tools.resume_release.name_integrity import SURFACES, build_name_integrity_report
 
-from test_resume_release import base_contract
+from tests.resume_release.test_resume_release import base_contract
 
 
 CANONICAL = "Candidate Name - Example Company - Staff Software Engineer (Time Management) - 07-2026 - Resume.docx"
