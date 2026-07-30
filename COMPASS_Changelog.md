@@ -2,6 +2,21 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-07.7 - Pending Delivery and Resume-Class Format Reconciliation
+
+Reconciled generic resume-release assurance with more specific user-owned Source of Truth policies without weakening validated release status.
+
+Behavior updates:
+
+- Preserved aggregate `PASS` as the only authority for final, official, validated, or publication-ready resume status.
+- Allowed a user-owned Source of Truth to authorize aggregate `UNKNOWN` delivery only as `Generated — Release Validation Pending`, with the exact limitation disclosed.
+- Kept aggregate `FAIL` delivery-blocking and prohibited candidate-specific policy from converting `FAIL` or `UNKNOWN` into `PASS`.
+- Required pending outputs to remain separate from validated final outputs and prohibited staging-link workarounds.
+- Required Comprehensive Career CV generation to resolve user-owned artifact-format policy before generation.
+- Made DOCX mandatory for Comprehensive Career CV when the user-owned resume-class policy requires it; Markdown remains companion-only in that case.
+- Updated the command registry and Comprehensive Career CV rule to use the reconciled status and format behavior.
+- Advanced the active framework identifier from `vNext 2026-07.6` to `vNext 2026-07.7`.
+
 ## vNext 2026-07.6 - Resume Release Hardening and End-to-End Artifact-Name Integrity
 
 Closed gaps where a Word-incompatible OOXML package could pass validation and where a correct staged filename could become an incorrectly encoded delivered or downloaded filename.
