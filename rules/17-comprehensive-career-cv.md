@@ -172,15 +172,15 @@ Comprehensive Career CV
 
 For a broad, non-company-specific artifact, use the configured general-company and broad-title segments rather than omitting required filename segments.
 
-Default text publication is Markdown. DOCX may also be generated when the applicable artifact-release contract explicitly supports the comprehensive-CV filename, required sections, employment coverage, and publication path.
+Resolve the user's current artifact-format policy before generation. When that policy requires DOCX for resume-class or Comprehensive Career CV releases, DOCX is mandatory and Markdown is a companion format only; a Markdown-only result is a blocked CV release. When the user-owned policy is silent, the generic text default is Markdown. Generate DOCX only when the applicable artifact-release contract supports the comprehensive-CV filename, required sections, employment coverage, and publication path.
 
 ## DOCX Release Assurance
 
 A downloadable comprehensive-CV DOCX is a resume-class artifact and must pass `rules/16-resume-release-assurance.md` plus any stricter user-specific release profile.
 
-If the active release contract covers only conventional resume filenames or sections, do not relabel an unvalidated DOCX as final. Update and validate the applicable contract first, or release only formats that can be validated under the current policy.
+If the active release contract covers only conventional resume filenames or sections, do not relabel an unvalidated DOCX as final. Update and validate the applicable contract first. Releasing only another format is permitted only when the user-owned format policy does not require DOCX.
 
-`FAIL`, `UNKNOWN`, missing template verification, missing employment coverage, unavailable rendering, or missing every-page visual review blocks final DOCX publication.
+Aggregate `FAIL` blocks DOCX delivery. Aggregate `UNKNOWN`, missing template verification, unavailable rendering, or missing every-page visual review blocks final DOCX publication; an applicable user-owned Source of Truth may authorize delivery only as `Generated — Release Validation Pending` under `rules/16-resume-release-assurance.md`. Missing material employment coverage, unsupported claims, unreadable output, or an inspectable canonical filename mismatch remains a hard delivery blocker.
 
 ## Output Separation
 
