@@ -2,6 +2,22 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-07.5 - Comprehensive Career CV
+
+Added a first-class workflow for compiling approved career evidence into a broad, human-readable and ATS-readable career document without creating a second Source of Truth.
+
+Behavior updates:
+
+- Added `COMPASS Comprehensive Career CV` to the canonical command registry.
+- Added `rules/17-comprehensive-career-cv.md` for source resolution, compilation rather than dossier concatenation, per-role coverage dispositions, implementation-stage preservation, audience variants, disclosure boundaries, and output separation.
+- Added `prompts/compass-comprehensive-career-cv.md` with `--recruiter`, `--public`, and `--both` modes.
+- Added a candidate-neutral comprehensive-CV Markdown template.
+- Required public comprehensive-CV publication to use the existing Experience Sync truth and publication gates, target routing, branch-and-pull-request policy, and no-provisional-claim behavior when configured.
+- Clarified that targeted resumes remain the default application artifact and that ATS readability is not equivalent to role-specific optimization.
+- Classified downloadable comprehensive-CV DOCX files as resume-class artifacts that require an applicable executable release contract; a conventional resume filename or section contract may not be bypassed through relabeling.
+- Preserved generated CVs and public experience repositories as downstream publication artifacts rather than factual authorities.
+- Advanced the active framework identifier from `vNext 2026-07.4` to `vNext 2026-07.5`.
+
 ## vNext 2026-07.4 - Resume Release Validator
 
 Implemented the candidate-neutral validation and atomic-release engine defined by Resume Artifact Release Assurance.

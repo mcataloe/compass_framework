@@ -1,6 +1,6 @@
 # COMPASS Version
 
-Current COMPASS Version: vNext 2026-07.4
+Current COMPASS Version: vNext 2026-07.5
 
 Canonical Branch: main
 
@@ -20,11 +20,15 @@ COMPASS is the only canonical framework name. New rules, prompts, examples, and 
 
 ## Active Behavior Notes
 
-The active vNext 2026-07.4 framework includes COMPASS-only terminology, career-focused scope, executable Resume Artifact Release Assurance, COMPASS Intake checkpoint artifact behavior, COMPASS Source Rebase scaffold alignment, COMPASS Experience Sync public-projection reconciliation with private source-side target routing, Initial Seed Artifact support, claim-depth-aware Staff / Principal resume positioning, the Opportunity Reality Layer, the Recruiter Legitimacy and Opportunity Fraud Risk Gate, private recruiter-risk intelligence ledger templates, the Conversational Handoff Gate, fit-calibrated positioning and gap salience, COMPASS Verified Opportunity Search, and optional persistent opportunity-registry support:
+The active vNext 2026-07.5 framework includes COMPASS-only terminology, career-focused scope, executable Resume Artifact Release Assurance, COMPASS Intake checkpoint artifact behavior, COMPASS Source Rebase scaffold alignment, COMPASS Experience Sync public-projection reconciliation with private source-side target routing, COMPASS Comprehensive Career CV, Initial Seed Artifact support, claim-depth-aware Staff / Principal resume positioning, the Opportunity Reality Layer, the Recruiter Legitimacy and Opportunity Fraud Risk Gate, private recruiter-risk intelligence ledger templates, the Conversational Handoff Gate, fit-calibrated positioning and gap salience, COMPASS Verified Opportunity Search, and optional persistent opportunity-registry support:
 
 - COMPASS is a career-focused, source-grounded framework for turning messy career inputs into verified, defensible job-search outputs.
 - COMPASS supports the careers / job-search profile. Product, strategy, research, consulting, grant, policy, and personal knowledge workflows are out of scope unless the project owner explicitly reopens scope.
 - Core behavior remains truth-first, source-grounded, checkpointed, and claim-ledger-driven.
+- COMPASS Comprehensive Career CV is a first-class command for compiling the currently approved career Source of Truth into a broad human-readable and ATS-readable document without turning the CV into a second factual authority.
+- Comprehensive-CV generation requires per-role coverage dispositions, implementation-stage preservation, recruiter/public publication envelopes, and Experience Sync for public repository publication.
+- Targeted resumes remain the default application artifact; a comprehensive CV is a broad review and evidence-depth artifact rather than automatic role optimization.
+- Downloadable comprehensive-CV DOCX files remain resume-class artifacts and require an applicable executable release contract; an ordinary resume contract must not be bypassed through relabeling.
 - `rules/16-resume-release-assurance.md` defines a candidate-neutral `generate -> stage -> validate -> render -> manifest -> atomically release` lifecycle for downloadable resume artifacts.
 - Resume release checks use `PASS`, `FAIL`, and `UNKNOWN`; every required check must be `PASS`, while `FAIL` and `UNKNOWN` block final publication.
 - Machine-readable contracts under `schemas/resume-release/` bind releases to current inputs, the actual staged filename, an explicit employment-coverage plan, structural and content checks, rendered-page checks, every-page visual review, privacy boundaries, and atomic publication.
@@ -99,7 +103,6 @@ Future COMPASS changes should preserve the core operating principles unless expl
 - Short-form conversational outputs continue the established exchange instead of restating shared context or leaking internal analysis
 - Strict artifact output templates preserved unless the user explicitly requests a different format
 - Career-profile rules may add specialized output rules without weakening source-grounding or TruthGuard
-- Prompt templates remain workflow launchers and must defer to active rule files for workflow behavior
 - External employer, staffing, client, interview, contract, and private-ledger evidence must preserve attribution, entity identity, recency, confidence, match strength, and uncertainty
 - Verified Opportunity Search must preserve separate eligibility, alignment, opportunity-quality, conversion-condition, recruiter-legitimacy risk where applicable, private-ledger matches when configured, and optional contract-utility judgments
 - Persistent opportunity history must preserve separate identity, observation, reporting, candidate-status, suppression, and provenance state
@@ -112,4 +115,5 @@ Future COMPASS changes should preserve the core operating principles unless expl
 - COMPASS Source Rebase remains scaffold alignment only and must not perform Intake, claim verification, destructive source-record migration, or overwrite populated opportunity registries and run logs
 - COMPASS Experience Sync remains a one-way downstream public projection and must not modify or supersede Source of Truth records
 - Source-side Experience Sync routing remains private Source of Truth configuration and must not be copied into public target metadata
+- COMPASS Comprehensive Career CV remains a generated publication, not a source archive or factual authority, and must preserve role coverage, contribution depth, implementation stage, disclosure controls, and resume-release requirements
 - Initial Seed Artifacts remain provisional evidence and provenance until superseded by verified source-of-truth records and ledgers
