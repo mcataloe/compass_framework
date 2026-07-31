@@ -1,6 +1,6 @@
 # COMPASS Version
 
-Current COMPASS Version: vNext 2026-07.6
+Current COMPASS Version: vNext 2026-07.7
 
 Canonical Branch: main
 
@@ -20,7 +20,7 @@ COMPASS is the only canonical framework name. New rules, prompts, examples, and 
 
 ## Active Behavior Notes
 
-The active vNext 2026-07.6 framework includes COMPASS-only terminology, career-focused scope, executable Resume Artifact Release Assurance with hardened OOXML validation and post-publication artifact-name integrity, COMPASS Intake checkpoint artifact behavior, COMPASS Source Rebase scaffold alignment, COMPASS Experience Sync public-projection reconciliation with private source-side target routing, COMPASS Comprehensive Career CV, Initial Seed Artifact support, claim-depth-aware Staff / Principal resume positioning, the Opportunity Reality Layer, the Recruiter Legitimacy and Opportunity Fraud Risk Gate, private recruiter-risk intelligence ledger templates, the Conversational Handoff Gate, fit-calibrated positioning and gap salience, COMPASS Verified Opportunity Search, and optional persistent opportunity-registry support:
+The active vNext 2026-07.7 framework includes COMPASS-only terminology, career-focused scope, executable Resume Artifact Release Assurance with hardened OOXML validation and post-publication artifact-name integrity, COMPASS Intake checkpoint artifact behavior, COMPASS Source Rebase scaffold alignment, COMPASS Experience Sync public-projection reconciliation with private source-side target routing, COMPASS Comprehensive Career CV, Initial Seed Artifact support, claim-depth-aware Staff / Principal resume positioning, the Opportunity Reality Layer, the Recruiter Legitimacy and Opportunity Fraud Risk Gate, private recruiter-risk intelligence ledger templates, the Conversational Handoff Gate, fit-calibrated positioning and gap salience, COMPASS Verified Opportunity Search, and optional persistent opportunity-registry support:
 
 - COMPASS is a career-focused, source-grounded framework for turning messy career inputs into verified, defensible job-search outputs.
 - COMPASS supports the careers / job-search profile. Product, strategy, research, consulting, grant, policy, and personal knowledge workflows are out of scope unless the project owner explicitly reopens scope.
@@ -31,6 +31,8 @@ The active vNext 2026-07.6 framework includes COMPASS-only terminology, career-f
 - Downloadable comprehensive-CV DOCX files remain resume-class artifacts and require an applicable executable release contract; an ordinary resume contract must not be bypassed through relabeling.
 - `rules/16-resume-release-assurance.md` defines a candidate-neutral `generate -> stage -> validate -> render -> manifest -> atomically release` lifecycle for downloadable resume artifacts.
 - Resume release checks use `PASS`, `FAIL`, and `UNKNOWN`; every required check must be `PASS`, while `FAIL` and `UNKNOWN` block final publication.
+- A more specific user-owned Source of Truth may authorize delivery on aggregate `UNKNOWN` only as `Generated — Release Validation Pending`; this preserves `UNKNOWN`, never authorizes pending delivery on `FAIL`, and never permits final or official release language without aggregate `PASS`.
+- Resume-class artifact-format policy is resolved before Comprehensive Career CV generation; when the user-owned policy requires DOCX, Markdown is companion-only and cannot substitute.
 - Machine-readable contracts under `schemas/resume-release/` bind releases to current inputs, the actual staged filename, an explicit employment-coverage plan, structural and content checks, rendered-page checks, every-page visual review, privacy boundaries, and atomic publication.
 - User-specific release profiles and coverage plans remain private inputs. They may tighten but cannot weaken the public framework contract, and candidate data must not be stored in this repository.
 - `python -m tools.resume_release` implements version `1.1.0` validation, atomic local release, and post-publication artifact-name verification using only the Python standard library, with blocking `FAIL` or `UNKNOWN` behavior when required rendering or delivery-name verification is unavailable or invalid.

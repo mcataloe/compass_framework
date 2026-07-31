@@ -379,7 +379,7 @@ Run COMPASS Comprehensive Career CV --both.
 - `templates/comprehensive-career-cv/COMPASS_Comprehensive_Career_CV_TEMPLATE.md`
 - `prompts/compass-comprehensive-career-cv.md`
 
-**Output discipline:** Resolve every material employment, role, and project scope; assign every canonical role an internal `detailed`, `compressed`, or `excluded` disposition; compile rather than concatenate dossiers; preserve implementation stage and contribution depth; keep source mechanics outside the clean CV; use Experience Sync for public repository publication; and never treat the generated CV as factual authority. A downloadable DOCX remains staged and untrusted until the applicable executable release contract completes with aggregate `PASS`. Targeted resumes remain the default application artifact.
+**Output discipline:** Resolve every material employment, role, and project scope; assign every canonical role an internal `detailed`, `compressed`, or `excluded` disposition; compile rather than concatenate dossiers; preserve implementation stage and contribution depth; keep source mechanics outside the clean CV; use Experience Sync for public repository publication; and never treat the generated CV as factual authority. Resolve the user's current artifact-format policy before generation. If that policy requires DOCX for resume-class or Comprehensive Career CV releases, DOCX is mandatory and Markdown cannot substitute. A downloadable DOCX may be presented as final only after aggregate `PASS`; aggregate `UNKNOWN` may be delivered only as `Generated — Release Validation Pending` when the user-owned Source of Truth explicitly authorizes that state, and aggregate `FAIL` blocks delivery. Targeted resumes remain the default application artifact.
 
 ---
 
