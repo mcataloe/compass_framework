@@ -209,7 +209,7 @@ Is this recruiter/company/job legitimate enough to continue?
 
 **Launcher:** `prompts/compass-verified-opportunity-search.md`
 
-**Purpose:** Discover, verify, score, rank, and when configured persist multiple current opportunities using separate eligibility, evidence-backed alignment, opportunity-quality, conversion-condition, recruiter-legitimacy, optional secondary contract-utility, and cross-run history judgments.
+**Purpose:** Discover, verify, score, rank, and when configured persist multiple current opportunities using separate eligibility, evidence-backed alignment, opportunity-quality, conversion-condition, recruiter-legitimacy, optional secondary contract-utility, search-breadth, telemetry, and cross-run history judgments.
 
 **Use when the user asks to:**
 
@@ -220,6 +220,7 @@ Is this recruiter/company/job legitimate enough to continue?
 - add a separately ranked bridge, backup, consulting, temporary, fractional, or contract lane when explicitly requested;
 - suppress already handled, previously reported, duplicate, or unchanged reposted roles using a configured opportunity registry;
 - maintain observational opportunity history and append-only run provenance when the Source of Truth enables persistence;
+- measure discovery breadth, material inspection, live verification, expansion passes, stop reason, and telemetry reconciliation;
 - prepare a prioritized application or qualification queue without submitting applications or contacting recruiters.
 
 **Example triggers:**
@@ -241,6 +242,8 @@ Run COMPASS Verified Opportunity Search --include-contracts --max-contracts 3.
 - `--contract-only` — return only the secondary contract lane;
 - `--max-contracts N` — cap contract results without weakening gates.
 
+`--max N` and other result caps limit reported opportunities. They do not ordinarily cap discovery, quick screening, material inspection, duplicate or prior-display reconciliation, or live-verification effort.
+
 **Required framework files:**
 
 - `VERSION.md`
@@ -252,6 +255,7 @@ Run COMPASS Verified Opportunity Search --include-contracts --max-contracts 3.
 - `rules/10-opportunity-recon.md`
 - `rules/12-verified-opportunity-search.md`
 - `rules/13-opportunity-registry.md`
+- `rules/18-opportunity-search-breadth-telemetry.md`
 - `rules/14-recruiter-legitimacy-risk.md` when recruiter-controlled, staffing, consulting, unclear-entity, suspicious-domain, sensitive-work, or unsafe-process paths are present
 - `templates/opportunity-registry/COMPASS_Opportunity_Registry_TEMPLATE.yaml`
 - `templates/opportunity-registry/COMPASS_Opportunity_Search_Run_TEMPLATE.yaml`
@@ -264,6 +268,7 @@ Run COMPASS Verified Opportunity Search --include-contracts --max-contracts 3.
 - location, remote, travel, employment-structure, level, and compensation constraints;
 - direct-hire, contract, bridge, fractional, and C2H strategy when relevant;
 - alignment thresholds and any explicit scoring-weight overrides;
+- search-breadth targets, source and title-family coverage, expansion-pass limits, and no-yield stopping thresholds;
 - contract classifications, utility criteria, rate policy, and result limits when contract mode is active;
 - recruiter-legitimacy thresholds, privacy constraints, sensitive-information boundaries, clearance-sensitive policies, and configured private risk-intel ledger paths when defined;
 - candidate-status and suppression policy;
@@ -271,7 +276,7 @@ Run COMPASS Verified Opportunity Search --include-contracts --max-contracts 3.
 - registry and run-log paths plus write policy when persistence is enabled;
 - approved channel or result-format policy.
 
-**Output discipline:** Verify the live official posting and active employer-controlled application flow for direct-employer roles. When contract mode is active and user-specific policy permits it, a verified staffing-firm, employer-of-record, or identifiable recruiter-controlled requisition may support a secondary `Contact first` result without a public client application, but the accountable entity, current opportunity, and actionable path must be verified and the client must remain unverified when undisclosed. Keep eligibility and hard screens, alignment estimate, opportunity quality, conversion conditions, recruiter-legitimacy risk, private-ledger matches when configured, and contract utility separate. Alignment is not hiring probability. Visibility, saturation, recruiter access, temporary economics, flexibility, legitimacy signals, and cached private-ledger records do not substitute for fit. Do not blend primary and secondary rankings. When configured, observational registry and append-only run-log persistence is part of the command and must be revision-aware, verified after writing, and reported as persisted, degraded, not persisted, or not configured. Observational persistence must not infer or change candidate-confirmed status. Do not submit applications, contact recruiters, accept terms, share sensitive information, generate downstream artifacts, change candidate status, or modify unrelated Source of Truth records without explicit user instruction.
+**Output discipline:** Verify the live official posting and active employer-controlled application flow for direct-employer roles. When contract mode is active and user-specific policy permits it, a verified staffing-firm, employer-of-record, or identifiable recruiter-controlled requisition may support a secondary `Contact first` result without a public client application, but the accountable entity, current opportunity, and actionable path must be verified and the client must remain unverified when undisclosed. Keep eligibility and hard screens, alignment estimate, opportunity quality, conversion conditions, recruiter-legitimacy risk, private-ledger matches when configured, and contract utility separate. Alignment is not hiring probability. Visibility, saturation, recruiter access, temporary economics, flexibility, legitimacy signals, and cached private-ledger records do not substitute for fit. Do not blend primary and secondary rankings. Follow configured breadth targets without weakening gates; record unique discovery, quick-screen, material-inspection, live-verification, expansion-pass, breadth-status, and stop-reason telemetry. Every materially inspected opportunity must receive exactly one terminal disposition, and the persisted counts must reconcile to the canonical records. When configured, observational registry and append-only run-log persistence is part of the command and must be revision-aware, verified after writing, and reported as persisted, degraded, not persisted, or not configured. Aggregate breadth telemetry may be persisted, but raw search noise must not be stored. Observational persistence must not infer or change candidate-confirmed status. Do not submit applications, contact recruiters, accept terms, share sensitive information, generate downstream artifacts, change candidate status, or modify unrelated Source of Truth records without explicit user instruction.
 
 ---
 
