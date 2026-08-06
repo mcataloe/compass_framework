@@ -2,7 +2,7 @@
 
 These templates define the reusable persistence contract for `COMPASS Verified Opportunity Search`.
 
-The registry is a current materialized view of opportunities that reached a durable search state. Search-run files are append-only provenance records describing what a specific run considered, reported, excluded, suppressed, consolidated, or recognized as materially changed.
+The registry is a current materialized view of opportunities that reached a durable search state. Search-run files are append-only provenance records describing what a specific run considered, reported, excluded, suppressed, consolidated, recognized as materially changed, and how broadly the search was executed.
 
 ## Files
 
@@ -11,9 +11,45 @@ The registry is a current materialized view of opportunities that reached a dura
 
 ## Repository boundary
 
-The COMPASS framework owns the generic schema and behavior. A user's Source of Truth owns the actual registry, run logs, candidate-confirmed statuses, suppression configuration, and repository write policy.
+The COMPASS framework owns the generic schema and behavior. A user's Source of Truth owns the actual registry, run logs, candidate-confirmed statuses, suppression configuration, search-breadth targets, and repository write policy.
 
 A configured Source of Truth may authorize a Verified Opportunity Search run to persist observational facts without a second instruction. This does not authorize inferred candidate-status changes.
+
+## Search breadth and telemetry
+
+`rules/18-opportunity-search-breadth-telemetry.md` defines the reusable stage and reconciliation contract.
+
+The run template separates:
+
+- `source_hits_observed` — optional raw result count when the discovery tool exposes a reliable total;
+- `unique_opportunities_discovered` — normalized opportunity candidates after exact duplicate and syndication collapse;
+- `quick_screened` — unique roles checked for visible title, level, location, work mode, structure, compensation, and obvious hard screens;
+- `materially_inspected` — roles inspected deeply enough to receive a defensible terminal disposition;
+- `live_verified` — materially inspected roles whose active posting and actionable application or qualification path were verified;
+- `reported` — opportunity records actually shown to the user under the active output contract.
+
+A user's Source of Truth may set numeric targets and required source or title-family coverage. `--max N` limits reported results; it does not ordinarily limit discovery, quick screening, material inspection, or duplicate and prior-display reconciliation.
+
+Every materially inspected opportunity must have one canonical run record and exactly one terminal disposition. Counts must be derived from those records rather than estimated from the narrative after drafting.
+
+The telemetry block records:
+
+- configured targets;
+- actual stage counts;
+- source and title-family coverage;
+- expansion-pass summaries;
+- breadth status;
+- stop reason and limitations;
+- reconciliation checks.
+
+Use these breadth statuses:
+
+- `complete` — configured targets and coverage were satisfied, or an allowed early-success condition was satisfied;
+- `incomplete` — one or more configured targets or coverage requirements were not satisfied;
+- `not_configured` — no user-specific floors exist, though stage telemetry and stop reason remain required;
+- `unverified` — required telemetry could not be reconstructed or validated.
+
+A complete configured search contract is not a claim that every possible market opportunity was found.
 
 ## Observational persistence
 
@@ -26,7 +62,9 @@ A search may persist an opportunity when at least one condition is met:
 
 Do not persist raw snippets or low-confidence discovery noise merely because it appeared in search results.
 
-Permitted observational fields include identity, source URLs, posting state, dates seen or verified, duplicate relationships, reporting history, material changes, run provenance, and persistence results.
+Aggregate breadth telemetry, expansion-pass summaries, source/title coverage, stop reason, and reconciliation results may be persisted even though transient weak discovery leads are not.
+
+Permitted observational fields include identity, source URLs, posting state, dates seen or verified, duplicate relationships, reporting history, material changes, run provenance, search telemetry, and persistence results.
 
 ## Candidate-status boundary
 
@@ -49,6 +87,20 @@ A new requisition ID is not automatically a duplicate. Use `related_repost_of` w
 
 Tracking parameters, fragments, redirect variants, and alternate ATS paths do not create separate opportunities.
 
+## Reconciliation expectations
+
+Before persistence, validate at least:
+
+- `materially_inspected` equals the number of canonical considered records;
+- every canonical considered record has exactly one terminal disposition;
+- terminal-disposition totals equal `materially_inspected`;
+- `live_verified` does not exceed `materially_inspected`;
+- reported recommendations have corresponding material-inspection and live-verification records;
+- duplicate and prior-display totals match canonical records;
+- `--max N` constrains reporting rather than discovery-stage counts.
+
+Record reconciliation as `PASS`, `FAIL`, or `UNKNOWN` with concise diagnostics.
+
 ## Write and recovery order
 
 1. Read and validate the current registry.
@@ -68,3 +120,5 @@ If the run record succeeds but the registry update fails, report `Persistence de
 - Breaking changes require a documented migration.
 - Do not silently delete unknown user-owned fields.
 - Source Rebase must not overwrite or normalize populated opportunity registries or run logs.
+- Historical completed run records remain append-only and are not rewritten merely to add telemetry fields.
+- Missing historical telemetry means unavailable, not zero.
