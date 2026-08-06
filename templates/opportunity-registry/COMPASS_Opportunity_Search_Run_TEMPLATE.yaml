@@ -8,7 +8,35 @@ framework_version: null
 registry_revision_before: null
 registry_revision_after: null
 
+result_limits:
+  max_primary_results: null
+  max_contract_results: null
+
+telemetry:
+  targets:
+    unique_opportunities_discovered: null
+    materially_inspected: null
+    consecutive_no_yield_passes: null
+  actual:
+    source_hits_observed: null
+    unique_opportunities_discovered: 0
+    quick_screened: 0
+    materially_inspected: 0
+    live_verified: 0
+    reported: 0
+  coverage:
+    source_families: []
+    title_families: []
+  expansion_passes: []
+  breadth_status: not_configured
+  stop_reason: null
+  limitations: []
+  reconciliation:
+    status: UNKNOWN
+    checks: []
+
 results:
+  # One record per materially inspected opportunity. Each record must have exactly one terminal disposition.
   considered: []
   reported: []
   excluded: []
