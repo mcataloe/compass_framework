@@ -2,6 +2,23 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-08.1 - Verified Opportunity Search Breadth and Telemetry
+
+Added a measurable search-breadth contract so result limits no longer obscure how broadly a Verified Opportunity Search was executed.
+
+Behavior updates:
+
+- Added `rules/18-opportunity-search-breadth-telemetry.md` with canonical stages for observable source hits, unique normalized discoveries, quick screens, material inspections, live verification, and reported opportunities.
+- Clarified that `--max N` and other result limits cap reporting rather than ordinary discovery, screening, material inspection, duplicate or prior-display reconciliation, or live-verification effort.
+- Added user-configurable breadth floors, source and title-family coverage, expansion-pass tracking, consecutive no-yield stopping thresholds, and explicit stop reasons.
+- Required one canonical run record and exactly one terminal disposition for every materially inspected opportunity.
+- Added reconciliation invariants so stage counts, terminal dispositions, duplicate and prior-display counts, and reported results derive from canonical records rather than manual narrative estimates.
+- Expanded the opportunity-search run template with targets, actual stage counts, coverage summaries, expansion passes, breadth status, stop reason, limitations, and reconciliation results.
+- Preserved the persistence boundary: aggregate telemetry may be stored, but raw snippets and weak discovery noise remain transient.
+- Preserved historical run files as append-only and defined missing historical telemetry as unavailable rather than zero.
+- Updated the command registry, launcher, current framework description, template documentation, and active version.
+- Advanced the active framework identifier from `vNext 2026-07.7` to `vNext 2026-08.1`.
+
 ## vNext 2026-07.7 - Pending Delivery and Resume-Class Format Reconciliation
 
 Reconciled generic resume-release assurance with more specific user-owned Source of Truth policies without weakening validated release status.
