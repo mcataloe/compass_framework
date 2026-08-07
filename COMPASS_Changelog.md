@@ -2,6 +2,21 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-08.2 - Recruiter Fit Brief
+
+Added an optional recruiter-facing derivative to COMPASS Analysis while preserving the complete private analysis and its leakage firewall.
+
+Behavior updates:
+
+- Added `COMPASS Analysis --recruiter-brief` as an explicit generation-only option; ordinary Analysis behavior is unchanged without the flag.
+- Added `rules/19-recruiter-fit-brief.md` with eligibility, gap taxonomy, legitimacy, public-safety, disclosure, leakage, format, validation, and action boundaries.
+- Added a candidate-neutral strict Recruiter Fit Brief template and acceptance scenarios covering strong fit, defined material gaps, adjacent evidence, hard-screen failure, leakage, sensitive information, and no-flag regression.
+- Required the brief to be generated from the same resolved evidence through its own template, never by truncating or redacting the internal analysis.
+- Limited external submission postures to `Strong fit` and `Credible fit with defined gaps`; hard-screen failure, `Pass`, and unsafe legitimacy states block default generation.
+- Preserved TruthGuard, Human Authenticity, artifact separation, public-disclosure controls, and the rule that generation never attaches, uploads, forwards, or sends the brief.
+- Updated the command registry, analysis workflow, artifact rules, launcher, current framework description, README, and active version.
+- Advanced the active framework identifier from `vNext 2026-08.1` to `vNext 2026-08.2`.
+
 ## vNext 2026-08.1 - Verified Opportunity Search Breadth and Telemetry
 
 Added a measurable search-breadth contract so result limits no longer obscure how broadly a Verified Opportunity Search was executed.
