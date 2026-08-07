@@ -4,7 +4,7 @@ This file defines COMPASS artifact behavior.
 
 ## Artifact Types
 
-COMPASS may generate canonical career records, claim ledgers, do-not-claim registers, coverage registers, Experience Sync reports, public claim indexes, analysis reports, tailored resumes, recruiter-targeted resumes, cover letters, recruiter responses, application answers, follow-up messages, interview preparation notes, compensation notes, and other career-specific artifacts.
+COMPASS may generate canonical career records, claim ledgers, do-not-claim registers, coverage registers, Experience Sync reports, public claim indexes, analysis reports, Recruiter Fit Briefs, tailored resumes, recruiter-targeted resumes, cover letters, recruiter responses, application answers, follow-up messages, interview preparation notes, compensation notes, and other career-specific artifacts.
 
 ## Default Download Formats
 
@@ -56,12 +56,15 @@ Missing or unsupported material must be handled according to artifact type:
 
 - Clean deliverables such as resumes, cover letters, recruiter responses, application answers, and follow-up messages must omit unsupported claims.
 - Analysis, interview preparation, compensation notes, source-of-truth records, ledgers, and Experience Sync reports may identify gaps when those gaps are part of the artifact's purpose.
+- A Recruiter Fit Brief may identify only the externally appropriate gap categories and exact boundaries permitted by `rules/19-recruiter-fit-brief.md`; it must not expose the internal analysis behind those judgments.
 - Target documents, job descriptions, recruiter requests, and opportunity records may supply terminology and context only. They must not create experience, skills, ownership, metrics, credentials, or facts the user does not have.
 - Compensation and remote-work content must stay out of clean resumes and cover letters unless the user explicitly asks for negotiation language.
 
 ## Separation Rule
 
 External generated artifacts must be clean deliverables. Do not include internal COMPASS analysis in an external artifact unless the user explicitly requests an internal dossier.
+
+A Recruiter Fit Brief generated under `rules/19-recruiter-fit-brief.md` remains a clean external artifact. Its direct-alignment, adjacent-alignment, and material-gap statements are purpose-built external disclosures, not permission to copy internal scoring, diagnostic reasoning, evidence maps, risk analysis, or private strategy. The brief must be generated from resolved evidence through its own template, never by shortening or redacting an analysis report.
 
 Analysis reports, interview preparation notes, compensation notes, source-of-truth records, ledgers, and Experience Sync reports may include internal context, gaps, risk notes, provenance, publication decisions, Purple Squirrel scoring, company research, interview-reality findings, and pursuit economics when those sections are part of the strict template.
 
@@ -73,7 +76,7 @@ Generated artifacts are downstream outputs, not factual authorities. Do not use 
 
 Clean external deliverables must pass a Human Authenticity review before final output.
 
-This applies to tailored resumes, recruiter-targeted resumes, cover letters, recruiter responses, application answers, follow-up messages, LinkedIn or about summaries, public experience narratives, and similar external career artifacts.
+This applies to Recruiter Fit Briefs, tailored resumes, recruiter-targeted resumes, cover letters, recruiter responses, application answers, follow-up messages, LinkedIn or about summaries, public experience narratives, and similar external career artifacts.
 
 The pass requires:
 
@@ -203,6 +206,22 @@ The final recommendation and pursuit-economics section should include, when rele
 - conditions that would change the recommendation.
 
 Do not express conversion likelihood as a statistically measured probability unless reliable evidence supports that precision. Follow `rules/10-opportunity-recon.md` for opportunity-reality behavior and `rules/04-truthguard.md` for candidate and employer evidence boundaries.
+
+## Recruiter Fit Brief Template
+
+Use `templates/recruiter-fit-brief/COMPASS_Recruiter_Fit_Brief_TEMPLATE.md` and preserve this section order:
+
+1. Candidate-prepared disclosure
+2. Fit thesis
+3. Directly supported alignment
+4. Transferable or adjacent alignment
+5. Material gaps and boundaries
+6. Accurate recruiter positioning
+7. Submission posture
+
+Recruiter Fit Briefs are externally shareable only after the complete internal analysis and every gate in `rules/19-recruiter-fit-brief.md` pass. Target approximately 300–500 words and one readable rendered page when a paginated format is produced. Omit a section only when the strict template or Rule 19 explicitly permits omission; do not fill an empty section with unsupported or non-material content.
+
+The brief must exclude alignment percentages, COMPASS scores, Purple Squirrel scoring, ATS commentary, conversion-likelihood judgments, pursuit economics, compensation strategy, company or interview research, recruiter-legitimacy analysis, private risk intelligence, objection strategy, source paths, ledger or dossier mechanics, and confidential or unnecessarily detailed project information.
 
 ## Tailored Resume Template
 
@@ -334,6 +353,7 @@ Use names that are clear and sortable.
 Recommended base-name patterns:
 
 - `Candidate Name - Company Role Title - YYYY-MM`
+- `Candidate Name - Company Role Title - MM-YYYY - Recruiter Fit Brief`
 - `Candidate Name - Staff Engineer - Tailored for Recruiter Name - MM-YYYY`
 - `Project Name - Artifact Type - YYYY-MM`
 - `Organization - Strategy Memo - YYYY-MM`

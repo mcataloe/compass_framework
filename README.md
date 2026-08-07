@@ -32,6 +32,7 @@ Use these files as the active source of truth:
 - `rules/15-opportunity-unique-questions.md` — opportunity-specific interview question design grounded in unresolved decision value
 - `rules/16-resume-release-assurance.md` — deterministic resume staging, validation, manifest, and atomic-release assurance
 - `rules/17-comprehensive-career-cv.md` — comprehensive approved career-history compilation, role coverage, audience variants, disclosure, and publication boundaries
+- `rules/19-recruiter-fit-brief.md` — optional recruiter-facing fit brief generation, disclosure, leakage, safety, and action boundaries
 - `schemas/resume-release/` — machine-readable resume release, manifest, employment-coverage, and visual-review-attestation contracts
 - `tools/resume_release/` — executable standard-library resume validator and atomic-release interface
 - `prompts/` — reusable prompt templates
@@ -58,6 +59,8 @@ Use these files as the active source of truth:
 - `templates/experience-sync/` — sanitized target manifest, reconciliation report, and public claim provenance templates
 - `templates/comprehensive-career-cv/` — candidate-neutral comprehensive career CV template
 - `templates/opportunity-registry/` — opportunity registry and append-only search-run templates
+- `templates/recruiter-fit-brief/` — candidate-neutral strict Recruiter Fit Brief template
+- `examples/recruiter-fit-brief-acceptance-scenarios.md` — candidate-neutral acceptance and regression scenarios
 
 Compatibility shims for earlier naming have been removed. Prompt templates and rule files should use COMPASS terminology only.
 
@@ -81,7 +84,7 @@ Additional supported artifact requests are governed by `rules/06-artifact-rules.
 
 ## COMPASS Analysis and Opportunity Reality
 
-COMPASS Analysis evaluates candidate fit and opportunity reality as related but separate questions for an identified role.
+COMPASS Analysis evaluates candidate fit and opportunity reality as related but separate questions for an identified role. The optional `--recruiter-brief` flag requests a separate recruiter-facing derivative after the complete private analysis.
 
 For identifiable-company role analysis, the strict analysis report includes:
 
@@ -101,7 +104,9 @@ Recruiter Legitimacy and Opportunity Risk evaluates whether the recruiter, staff
 
 Pursuit economics evaluates whether the opportunity merits the candidate's application and preparation time based on evidence, gaps, access path, posting signals, compensation, level, remote-work alignment, strategic value, effort, opportunity cost, and stronger alternatives.
 
-Durable behavior is defined in `rules/01-analysis-workflow.md`, `rules/04-truthguard.md`, `rules/06-artifact-rules.md`, `rules/10-opportunity-recon.md`, and `rules/14-recruiter-legitimacy-risk.md` when applicable.
+With `--recruiter-brief`, COMPASS may generate a 300–500 word external brief that leads with supported value, separates direct from adjacent evidence, names material gaps precisely, and states an accurate submission posture. The brief excludes internal scores, ATS notes, research, risk analysis, strategy, and evidence-control mechanics. It is created through its own template, never by shortening the analysis, and generation never sends or attaches it.
+
+Durable behavior is defined in `rules/01-analysis-workflow.md`, `rules/04-truthguard.md`, `rules/06-artifact-rules.md`, `rules/10-opportunity-recon.md`, `rules/14-recruiter-legitimacy-risk.md` when applicable, and `rules/19-recruiter-fit-brief.md` when the flag is active.
 
 ## COMPASS Verified Opportunity Search
 

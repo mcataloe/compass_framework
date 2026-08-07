@@ -6,7 +6,7 @@ This file governs COMPASS analysis behavior.
 
 Run analysis when the user asks for career fit assessment, role evaluation, job comparison, recruiter positioning, application recommendation, evidence mapping, or risk review.
 
-Do not generate later artifacts unless requested.
+Do not generate later artifacts unless requested. `--recruiter-brief` is an explicit request for the separate derivative governed by `rules/19-recruiter-fit-brief.md`; it is not permission to generate any other downstream artifact or take an external action.
 
 ## Required Analysis Behavior
 
@@ -58,6 +58,19 @@ For career/job-search analysis, include:
 13. Recommendation and pursuit economics
 
 Use the same section order for analysis reports defined in `rules/06-artifact-rules.md`.
+
+## Optional Recruiter Fit Brief Phase
+
+When and only when `--recruiter-brief` is active:
+
+1. Complete the full private analysis first.
+2. Apply the eligibility, legitimacy, evidence, disclosure, and action gates in `rules/19-recruiter-fit-brief.md`.
+3. If eligible, generate a separate Recruiter Fit Brief from the same resolved role and evidence set using its strict template.
+4. Do not create the brief by truncating, redacting, summarizing, or deleting sections from the analysis.
+5. Keep the complete analysis private and preserve all ordinary analysis-leakage controls for every other external artifact.
+6. Treat generation as the end of the authorized action unless the user separately requests attachment, upload, forwarding, or sending.
+
+Without the flag, skip this phase and preserve ordinary Analysis behavior.
 
 ## Recommendation Discipline
 
