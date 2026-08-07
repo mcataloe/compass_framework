@@ -14,7 +14,7 @@ COMPASS runs in phases.
 
 1. COMPASS Intake when a verified source of truth is needed.
 2. Verified Opportunity Search when the user wants current discovery and cross-opportunity ranking.
-3. Analysis only for an identified role or opportunity.
+3. Analysis only for an identified role or opportunity. The optional `--recruiter-brief` flag may request a separate external derivative after the full analysis.
 4. Targeted artifact generation only when requested.
 5. Supporting narrative or response generation only when requested.
 6. Follow-up, revision, or defense preparation only when requested.
@@ -46,6 +46,18 @@ A complete COMPASS career analysis should include the sections relevant to the r
 13. Recommendation and pursuit economics
 
 For identifiable-company job analysis, the Purple Squirrel Factor and company/interview reality sections are required. When recruiter, staffing, consulting, unclear-entity, suspicious-domain, sensitive-work, or unsafe-process signals are present, apply the Recruiter Legitimacy and Opportunity Fraud Risk Gate. When current external evidence is unavailable or insufficient, preserve the relevant sections and report the limitation and confidence rather than speculating.
+
+## Optional Recruiter Fit Brief
+
+`COMPASS Analysis --recruiter-brief` requests the complete private 13-section analysis plus a separate purpose-built Recruiter Fit Brief governed by `rules/19-recruiter-fit-brief.md`.
+
+The brief is generated from the same resolved role and evidence set through its own strict template. It is never a shortened, redacted, or mechanically sanitized analysis report. Without the flag, no brief is generated.
+
+The brief leads with supported value, distinguishes direct evidence from credible adjacent evidence, and discloses only material readiness gaps with exact boundaries. Normal employer-specific ramp-up is not framed as a deficiency, and non-material omissions are excluded. Allowed submission postures are `Strong fit` and `Credible fit with defined gaps`.
+
+A hard-screen failure, a `Pass` recommendation, `Do not share sensitive info yet`, or `Likely scam / disengage` blocks default generation. `Proceed cautiously` requires explicit post-analysis approval before the brief is generated. Generation never authorizes attachment, upload, forwarding, or sending.
+
+The brief remains subject to TruthGuard, public-disclosure controls, Human Authenticity, strict artifact separation, and the full leakage exclusions in Rule 19.
 
 ## Recommendation Values
 
@@ -311,7 +323,7 @@ Short-form conversational artifacts must also pass the Conversational Handoff Ga
 
 Generated artifacts should be purpose-built deliverables, not reproduced source archives.
 
-Generated artifacts must follow the strict output template for their artifact type in `rules/06-artifact-rules.md` unless the user explicitly requests a different format.
+Generated artifacts must follow the strict output template for their artifact type in `rules/06-artifact-rules.md` unless the user explicitly requests a different format. Recruiter Fit Briefs additionally require the explicit `--recruiter-brief` flag and every gate in `rules/19-recruiter-fit-brief.md`.
 
 Downloadable resume artifacts must follow `rules/16-resume-release-assurance.md`: generate into staging, validate the current inputs and actual output, render and inspect every page, write a machine-readable manifest, and publish atomically only after every required local check is `PASS`. After upload or attachment, verify the actual displayed, persisted, manifested, archived, and browser-downloaded names with `artifact.name_integrity`; a correct staged filename does not prove delivered-name integrity. A `FAIL` or `UNKNOWN` result blocks final presentation. User-specific release profiles may tighten this contract but must not weaken its required checks, privacy boundary, or blocking semantics.
 
