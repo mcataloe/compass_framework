@@ -167,7 +167,7 @@ Apply the approved COMPASS Experience Sync.
 
 **Launcher:** `prompts/compass-analysis.md`
 
-**Purpose:** Evaluate an identified role, job description, recruiter request, opportunity, or career target using source-grounded candidate-fit analysis plus the Opportunity Reality Layer and, when applicable, the Recruiter Legitimacy and Opportunity Fraud Risk Gate.
+**Purpose:** Evaluate an identified role, job description, recruiter request, opportunity, or career target using source-grounded candidate-fit analysis plus the Opportunity Reality Layer and, when applicable, the Recruiter Legitimacy and Opportunity Fraud Risk Gate. The optional `--recruiter-brief` flag also requests a separate externally shareable Recruiter Fit Brief under Rule 19.
 
 **Use when the user asks to:**
 
@@ -186,8 +186,16 @@ Run COMPASS Analysis on this role.
 Use COMPASS on this job description.
 Evaluate this opportunity with COMPASS.
 Run a COMPASS fit analysis.
+Run COMPASS Analysis --recruiter-brief on this role.
 Is this recruiter/company/job legitimate enough to continue?
 ```
+
+**Modes:**
+
+- default — produce the complete private analysis only;
+- `--recruiter-brief` — produce the complete private analysis and, when Rule 19 permits generation, a separate purpose-built external Recruiter Fit Brief.
+
+The flag authorizes generation only. It never authorizes attachment, upload, forwarding, sending, or other external action. Without the flag, analysis behavior is unchanged and no Recruiter Fit Brief is generated.
 
 **Required framework files:**
 
@@ -199,9 +207,10 @@ Is this recruiter/company/job legitimate enough to continue?
 - `rules/06-artifact-rules.md`
 - `rules/10-opportunity-recon.md`
 - `rules/14-recruiter-legitimacy-risk.md` when recruiter, staffing, consulting, unclear-entity, suspicious-domain, sensitive-work, or unsafe-process signals are present
+- `rules/19-recruiter-fit-brief.md` and `templates/recruiter-fit-brief/COMPASS_Recruiter_Fit_Brief_TEMPLATE.md` only when `--recruiter-brief` is active
 - `prompts/compass-analysis.md`
 
-**Output discipline:** Analysis is separate from generated artifacts. For identifiable-company role analysis, include Purple Squirrel Factor, company and interview reality, and recommendation and pursuit economics under the strict analysis report contract. Apply recruiter-legitimacy risk gating when relevant, but do not let legitimacy findings alter evidence-backed candidate alignment. Do not generate downstream artifacts unless explicitly requested.
+**Output discipline:** Analysis is separate from generated artifacts. For identifiable-company role analysis, include Purple Squirrel Factor, company and interview reality, and recommendation and pursuit economics under the strict analysis report contract. Apply recruiter-legitimacy risk gating when relevant, but do not let legitimacy findings alter evidence-backed candidate alignment. Do not generate downstream artifacts unless explicitly requested. `--recruiter-brief` is the narrow exception: after the complete analysis, generate a separate brief from the same resolved evidence under Rule 19. Never derive it by shortening, redacting, or deleting sections from the internal analysis, and never automatically share it.
 
 ---
 
