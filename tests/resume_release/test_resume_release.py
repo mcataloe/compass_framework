@@ -75,6 +75,7 @@ def document_xml(
     forced_break: bool = False,
     undeclared_compatibility_prefixes: bool = False,
     invalid_encoding_declaration: bool = False,
+    experience_label: str = "2+ years",
 ) -> str:
     break_xml = '<w:r><w:br w:type="page"/></w:r>' if manual_break else ""
     forced_xml = "<w:pageBreakBefore/>" if forced_break else ""
@@ -89,7 +90,7 @@ def document_xml(
 <w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"{compatibility}>
   <w:body>
     <w:p><w:pPr><w:pStyle w:val="Heading"/>{forced_xml}</w:pPr><w:r><w:t>SECTION_A</w:t></w:r>{break_xml}</w:p>
-    <w:p><w:pPr><w:pStyle w:val="Body"/></w:pPr><w:r><w:t>ROLE_A ANCHOR_A 2+ years</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Body"/></w:pPr><w:r><w:t>ROLE_A ANCHOR_A {experience_label}</w:t></w:r></w:p>
     <w:p><w:pPr><w:pStyle w:val="Bullet"/></w:pPr><w:r><w:t>Neutral capability statement</w:t></w:r></w:p>
     <w:sectPr><w:pgSz w:w="12240" w:h="15840"/><w:pgMar w:top="1080" w:right="1080" w:bottom="1080" w:left="1080"/></w:sectPr>
   </w:body>
@@ -111,6 +112,7 @@ def write_docx(
     style_forced_break: bool = False,
     undeclared_compatibility_prefixes: bool = False,
     invalid_encoding_declaration: bool = False,
+    experience_label: str = "2+ years",
 ) -> None:
     if malformed:
         path.write_bytes(b"not-a-zip-package")
@@ -135,6 +137,7 @@ def write_docx(
             forced_break=forced_break,
             undeclared_compatibility_prefixes=undeclared_compatibility_prefixes,
             invalid_encoding_declaration=invalid_encoding_declaration,
+            experience_label=experience_label,
         ),
         "word/styles.xml": styles,
         "word/numbering.xml": numbering,
@@ -429,6 +432,57 @@ class ResumeReleaseTests(unittest.TestCase):
         self.coverage["experience_claim"]["minimum_years"] = 10
         manifest, _ = self._run()
         self.assertEqual(self._status(manifest, "content.experience_duration"), FAIL)
+
+    def test_anchor_based_experience_uses_completed_years_as_of_artifact_date(self) -> None:
+        write_docx(self.docx, experience_label="8+ years")
+        self.markdown.write_text("SECTION_A ROLE_A ANCHOR_A 8+ years\n", encoding="utf-8")
+        self.contract["content"]["experience_duration"]["calculation_method"] = (
+            "elapsed_full_years_from_start_date"
+        )
+        self.coverage["as_of_date"] = "2026-08-10"
+        self.coverage["roles"][0]["employment_interval"]["start_date"] = "2017-11-01"
+        self.coverage["experience_claim"] = {
+            "included": True,
+            "rendered_label": "8+ years",
+            "minimum_years": 8,
+            "calculation_method": "elapsed_full_years_from_start_date",
+            "anchor_role_id": "role-a",
+            "anchor_start_date": "2017-11-01",
+        }
+        manifest, code = self._run()
+        self.assertEqual(code, 0)
+        self.assertEqual(self._status(manifest, "content.experience_duration"), PASS)
+
+    def test_anchor_based_experience_rejects_stale_label_after_anniversary(self) -> None:
+        self.contract["content"]["experience_duration"]["calculation_method"] = (
+            "elapsed_full_years_from_start_date"
+        )
+        self.coverage["as_of_date"] = "2026-11-01"
+        self.coverage["roles"][0]["employment_interval"]["start_date"] = "2017-11-01"
+        self.coverage["experience_claim"] = {
+            "included": True,
+            "rendered_label": "8+ years",
+            "minimum_years": 8,
+            "calculation_method": "elapsed_full_years_from_start_date",
+            "anchor_role_id": "role-a",
+            "anchor_start_date": "2017-11-01",
+        }
+        manifest, code = self._run()
+        self.assertEqual(code, 1)
+        self.assertEqual(self._status(manifest, "content.experience_duration"), FAIL)
+
+    def test_anchor_start_date_must_match_anchor_role(self) -> None:
+        self.coverage["experience_claim"] = {
+            "included": True,
+            "rendered_label": "8+ years",
+            "minimum_years": 8,
+            "calculation_method": "elapsed_full_years_from_start_date",
+            "anchor_role_id": "role-a",
+            "anchor_start_date": "2017-11-01",
+        }
+        self._write_inputs()
+        with self.assertRaises(ContractError):
+            load_coverage(self.coverage_path)
 
     def test_markdown_docx_anchor_mismatch_fails(self) -> None:
         self.markdown.write_text("SECTION_A ROLE_A 2+ years\n", encoding="utf-8")
