@@ -108,9 +108,9 @@ def load_contract(path: Path) -> dict[str, Any]:
     if not formats or any(value not in {"docx", "pdf", "markdown"} for value in formats):
         raise ContractError("artifact.formats contains an unsupported format")
     if "pdf" in formats:
-        raise ContractError("validator version 1.1.0 accepts staged DOCX and Markdown, not staged PDF")
+        raise ContractError("validator version 1.2.0 accepts staged DOCX and Markdown, not staged PDF")
     if "docx" not in formats:
-        raise ContractError("validator version 1.1.0 requires DOCX in artifact.formats")
+        raise ContractError("validator version 1.2.0 requires DOCX in artifact.formats")
     pattern = _require_string(artifact.get("filename_pattern"), "artifact.filename_pattern")
     try:
         re.compile(pattern)
@@ -184,7 +184,10 @@ def load_contract(path: Path) -> dict[str, Any]:
     )
     if set(allowed_dispositions) != {"detailed", "compressed", "excluded"}:
         raise ContractError("content.employment_coverage.allowed_dispositions is incomplete")
-    if experience_rule.get("calculation_method") != "union_of_calendar_intervals":
+    if experience_rule.get("calculation_method") not in {
+        "union_of_calendar_intervals",
+        "elapsed_full_years_from_start_date",
+    }:
         raise ContractError("content.experience_duration.calculation_method is unsupported")
     render = contract["render"]
     for key in (
@@ -248,6 +251,7 @@ def load_coverage(path: Path) -> dict[str, Any]:
     if not roles:
         raise ContractError("roles must contain at least one role")
     role_ids: set[str] = set()
+    role_start_dates: dict[str, str] = {}
     for index, raw_role in enumerate(roles):
         role = _require_object(raw_role, f"roles[{index}]")
         role_id = _require_string(role.get("role_id"), f"roles[{index}].role_id")
@@ -275,33 +279,56 @@ def load_coverage(path: Path) -> dict[str, Any]:
                 )
         except ValueError as exc:
             raise ContractError(f"roles[{index}].employment_interval contains an invalid date") from exc
+        role_start_dates[role_id] = interval["start_date"]
     claim = _require_object(coverage["experience_claim"], "experience_claim")
     if not isinstance(claim.get("included"), bool):
         raise ContractError("experience_claim.included must be a boolean")
     if claim["included"]:
-        for key in ("rendered_label", "minimum_years", "calculation_method", "qualifying_intervals"):
+        for key in ("rendered_label", "minimum_years", "calculation_method"):
             if key not in claim:
                 raise ContractError(f"experience_claim is missing {key}")
         _require_string(claim["rendered_label"], "experience_claim.rendered_label")
         if not isinstance(claim["minimum_years"], (int, float)) or claim["minimum_years"] < 0:
             raise ContractError("experience_claim.minimum_years must be non-negative")
-        if claim["calculation_method"] != "union_of_calendar_intervals":
+        method = claim["calculation_method"]
+        if method not in {
+            "union_of_calendar_intervals",
+            "elapsed_full_years_from_start_date",
+        }:
             raise ContractError("experience_claim.calculation_method is unsupported")
-        qualifying = _require_list(claim["qualifying_intervals"], "experience_claim.qualifying_intervals")
-        if not qualifying:
-            raise ContractError("experience_claim.qualifying_intervals must not be empty")
-        for index, raw_interval in enumerate(qualifying):
-            interval = _require_object(raw_interval, f"experience_claim.qualifying_intervals[{index}]")
-            try:
-                date.fromisoformat(
-                    _require_string(interval.get("start_date"), f"experience_claim.qualifying_intervals[{index}].start_date")
-                )
-                if interval.get("end_date") is not None:
+        if method == "union_of_calendar_intervals":
+            qualifying = _require_list(claim.get("qualifying_intervals"), "experience_claim.qualifying_intervals")
+            if not qualifying:
+                raise ContractError("experience_claim.qualifying_intervals must not be empty")
+            for index, raw_interval in enumerate(qualifying):
+                interval = _require_object(raw_interval, f"experience_claim.qualifying_intervals[{index}]")
+                try:
                     date.fromisoformat(
-                        _require_string(interval.get("end_date"), f"experience_claim.qualifying_intervals[{index}].end_date")
+                        _require_string(interval.get("start_date"), f"experience_claim.qualifying_intervals[{index}].start_date")
                     )
+                    if interval.get("end_date") is not None:
+                        date.fromisoformat(
+                            _require_string(interval.get("end_date"), f"experience_claim.qualifying_intervals[{index}].end_date")
+                        )
+                except ValueError as exc:
+                    raise ContractError("experience_claim.qualifying_intervals contains an invalid date") from exc
+        else:
+            anchor_role_id = _require_string(
+                claim.get("anchor_role_id"), "experience_claim.anchor_role_id"
+            )
+            if anchor_role_id not in role_ids:
+                raise ContractError("experience_claim.anchor_role_id must reference a coverage role")
+            try:
+                anchor_start_date = _require_string(
+                    claim.get("anchor_start_date"), "experience_claim.anchor_start_date"
+                )
+                date.fromisoformat(anchor_start_date)
             except ValueError as exc:
-                raise ContractError("experience_claim.qualifying_intervals contains an invalid date") from exc
+                raise ContractError("experience_claim.anchor_start_date is invalid") from exc
+            if role_start_dates[anchor_role_id] != anchor_start_date:
+                raise ContractError(
+                    "experience_claim.anchor_start_date must match the anchor role start date"
+                )
     return coverage
 
 
