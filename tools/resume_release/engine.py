@@ -637,14 +637,30 @@ class ResumeReleaseEngine:
             )
         if not self._inspector_ready(inspector):
             return _result("content.experience_duration", UNKNOWN, "experience.docx_text_unavailable")
+        method = claim.get("calculation_method")
+        configured_method = contract["content"]["experience_duration"]["calculation_method"]
         try:
-            years = self._union_years(
-                claim["qualifying_intervals"], date.fromisoformat(coverage["as_of_date"])
-            )
+            as_of_date = date.fromisoformat(coverage["as_of_date"])
+            if method != configured_method:
+                raise ValueError("coverage calculation method differs from contract")
+            if method == "union_of_calendar_intervals":
+                years = self._union_years(claim["qualifying_intervals"], as_of_date)
+                expected_label = claim["rendered_label"]
+                sufficient = years + 1e-9 >= float(claim["minimum_years"])
+            elif method == "elapsed_full_years_from_start_date":
+                years = self._elapsed_full_years(
+                    date.fromisoformat(claim["anchor_start_date"]), as_of_date
+                )
+                expected_label = f"{years}+ years"
+                sufficient = (
+                    float(claim["minimum_years"]) == years
+                    and claim["rendered_label"] == expected_label
+                )
+            else:
+                raise ValueError("unsupported experience calculation method")
         except (TypeError, ValueError, KeyError):
             return _result("content.experience_duration", FAIL, "experience.interval_invalid")
-        label_present = _normalized(claim["rendered_label"]) in inspector.normalized_text()
-        sufficient = years + 1e-9 >= float(claim["minimum_years"])
+        label_present = _normalized(expected_label) in inspector.normalized_text()
         valid = label_present and sufficient
         return _result(
             "content.experience_duration",
@@ -656,6 +672,16 @@ class ResumeReleaseEngine:
                 "label_present": label_present,
             },
         )
+
+    @staticmethod
+    def _elapsed_full_years(start_date: date, as_of_date: date) -> int:
+        if as_of_date < start_date:
+            raise ValueError("experience anchor is after the as-of date")
+        anniversary_pending = (as_of_date.month, as_of_date.day) < (
+            start_date.month,
+            start_date.day,
+        )
+        return as_of_date.year - start_date.year - int(anniversary_pending)
 
     @staticmethod
     def _union_years(intervals: list[dict[str, Any]], as_of_date: date) -> float:
