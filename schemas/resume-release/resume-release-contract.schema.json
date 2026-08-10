@@ -172,7 +172,9 @@
           "required": ["required", "calculation_method"],
           "properties": {
             "required": { "type": "boolean" },
-            "calculation_method": { "const": "union_of_calendar_intervals" }
+            "calculation_method": {
+              "enum": ["union_of_calendar_intervals", "elapsed_full_years_from_start_date"]
+            }
           }
         }
       }
