@@ -4,7 +4,7 @@ This directory contains the candidate-neutral COMPASS resume validator and atomi
 
 The governing behavior is `rules/16-resume-release-assurance.md`. JSON inputs and outputs must conform to the schemas under `schemas/resume-release/`.
 
-The tool version is `1.1.0` and requires Python 3.10 or newer. It uses only the Python standard library, accepts release-contract and employment-coverage schema version `1.0.0`, emits release manifest schema version `1.0.1`, and emits artifact-name integrity report schema version `1.0.0`.
+The tool version is `1.2.0` and requires Python 3.10 or newer. It uses only the Python standard library, accepts release-contract and employment-coverage schema version `1.0.0`, emits release manifest schema version `1.0.1`, and emits artifact-name integrity report schema version `1.0.0`.
 
 ## Module and Commands
 
@@ -50,7 +50,7 @@ The receipt uses `schemas/resume-release/artifact-name-integrity-receipt.schema.
 
 Use `python -m tools.resume_release --help` or the command-specific `--help` output for the complete argument list. At least one staged artifact is required. A release requires the corresponding final output path.
 
-Validator `1.1.0` requires staged DOCX and accepts optional Markdown. PDF is an internal render product in this version, not a staged or published CLI artifact; a contract requesting staged PDF or omitting DOCX is incompatible and exits `64`.
+Validator `1.2.0` requires staged DOCX and accepts optional Markdown. PDF is an internal render product in this version, not a staged or published CLI artifact; a contract requesting staged PDF or omitting DOCX is incompatible and exits `64`.
 
 ## Visual-Review Attestation
 
@@ -71,7 +71,7 @@ The artifact hash, page count, and exact page set must match the current staged 
 
 ## Supported Rendering
 
-When rendering is required, version `1.1.0` supports:
+When rendering is required, version `1.2.0` supports:
 
 - LibreOffice or `soffice` for isolated DOCX-to-PDF conversion;
 - Poppler `pdftoppm` for grayscale page bitmaps;
@@ -108,7 +108,7 @@ The implementation must:
 
 Malformed or incompatible JSON inputs and invalid invocations exit `64`. Malformed artifacts become check results so their release-blocking evidence appears in the manifest.
 
-Validator version `1.1.0` preserves all 20 stable local-release check identifiers in the contract. Format- or policy-disabled checks return an explicit non-bypassing `PASS` reason; omitting a stable check is an incompatible contract, not a downgrade mechanism. Candidate-specific contracts may additionally set `artifact.require_delivery_name_receipt` to require the post-publication `artifact.name_integrity` gate.
+Validator version `1.2.0` preserves all 20 stable local-release check identifiers in the contract. Format- or policy-disabled checks return an explicit non-bypassing `PASS` reason; omitting a stable check is an incompatible contract, not a downgrade mechanism. Candidate-specific contracts may additionally set `artifact.require_delivery_name_receipt` to require the post-publication `artifact.name_integrity` gate. The experience-duration check supports both overlap-safe union intervals and exact completed years from a source-backed start-date anchor; anchor-based labels must match the artifact as-of date exactly.
 
 Publication uses same-directory temporary files, per-target atomic replacement, and rollback backups for existing final files. A failed or unavailable check never starts publication. A publication error changes `release.atomic_publication` to `UNKNOWN`, rolls back completed replacements where practical, and leaves the failure manifest in staging.
 

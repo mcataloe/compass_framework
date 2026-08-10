@@ -76,7 +76,7 @@ Implementations and private profiles use these candidate-neutral identifiers:
 | `docx.keep_next` | Validates configured keep-with-next and orphan-control structure. |
 | `content.markdown_docx_parity` | Validates configured cross-format sections and anchors. |
 | `content.employment_coverage` | Accounts for every required canonical role. |
-| `content.experience_duration` | Validates configured experience-duration wording and interval calculation. |
+| `content.experience_duration` | Validates configured experience-duration wording and chronology calculation. |
 | `render.available` | Confirms that the required renderer completed successfully. |
 | `render.pages` | Confirms expected page production and page-image generation. |
 | `render.whitespace` | Validates configured page-density and bottom-whitespace thresholds. |
@@ -84,7 +84,7 @@ Implementations and private profiles use these candidate-neutral identifiers:
 | `visual.every_page_review` | Records a distinct review of every rendered page. |
 | `release.atomic_publication` | Confirms final paths were published only after aggregate `PASS`. |
 
-A private profile must not rename, weaken, or silently omit an applicable required check from this table. Validator version `1.1.0` preserves all 20 stable local-release identifiers. Post-publication delivery uses the separate candidate-neutral `artifact.name_integrity` verification because its evidence does not exist until after upload or attachment.
+A private profile must not rename, weaken, or silently omit an applicable required check from this table. Validator version `1.2.0` preserves all 20 stable local-release identifiers. Post-publication delivery uses the separate candidate-neutral `artifact.name_integrity` verification because its evidence does not exist until after upload or attachment.
 
 ## Post-Publication Artifact-Name Integrity
 
@@ -125,7 +125,8 @@ When a coverage plan is required:
 - an excluded role must include an explicit internal reason;
 - the clean resume must not expose internal coverage classifications or exclusion reasoning;
 - omission for pagination or convenience must not be treated as an implicit exclusion;
-- experience-duration calculations must use the configured calendar-interval method and must not double-count overlapping roles.
+- experience-duration calculations must use the configured method: either union calendar intervals without double-counting overlapping roles, or completed years elapsed from one source-backed career-start anchor;
+- anchor-based claims must be recalculated for the artifact's current as-of date and must render the exact derived `N+ years` label rather than a cached minimum.
 
 Cross-format validation must compare configured anchors and sections from the actual staged files. It must not assume that successfully generating DOCX proves parity with Markdown or another source format.
 
@@ -186,9 +187,9 @@ Successful atomic publication does not prove attachment, link, storage-metadata,
 
 ## Generic CLI Contract
 
-The candidate-neutral version `1.1.0` interface and implementation are documented in `tools/resume_release/README.md`. It validates staged artifacts with `validate`, performs gated local publication with `release`, and verifies post-publication naming surfaces with `verify-name-integrity`.
+The candidate-neutral version `1.2.0` interface and implementation are documented in `tools/resume_release/README.md`. It validates staged artifacts with `validate`, performs gated local publication with `release`, and verifies post-publication naming surfaces with `verify-name-integrity`.
 
-Validator `1.1.0` consumes release-contract and employment-coverage schema `1.0.0`, consumes visual-review-attestation and artifact-name receipt schema `1.0.0`, emits release-manifest schema `1.0.1`, and emits artifact-name integrity report schema `1.0.0`.
+Validator `1.2.0` consumes release-contract and employment-coverage schema `1.0.0`, consumes visual-review-attestation and artifact-name receipt schema `1.0.0`, emits release-manifest schema `1.0.1`, and emits artifact-name integrity report schema `1.0.0`.
 
 Expected exit-code classes are:
 

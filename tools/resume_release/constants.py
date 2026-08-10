@@ -1,7 +1,7 @@
 """Stable public constants for the resume release interface."""
 
 VALIDATOR_NAME = "compass-resume-release"
-VALIDATOR_VERSION = "1.1.0"
+VALIDATOR_VERSION = "1.2.0"
 CONTRACT_SCHEMA_VERSION = "1.0.0"
 MANIFEST_SCHEMA_VERSION = "1.0.1"
 COVERAGE_SCHEMA_VERSION = "1.0.0"
