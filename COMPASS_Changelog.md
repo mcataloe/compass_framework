@@ -2,6 +2,19 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-08.3 - Dynamic Career-Start Experience Claims
+
+Added a candidate-neutral experience-duration mode for artifacts whose headline is based on completed years since a verified first industry role rather than accumulated employment intervals.
+
+Behavior updates:
+
+- Added `elapsed_full_years_from_start_date` alongside the existing overlap-safe `union_of_calendar_intervals` calculation method.
+- Required anchor-based coverage plans to identify a source-backed role and to use that role's exact canonical start date.
+- Derived the only valid anchor-based headline as `N+ years` from the artifact as-of date; cached or stale labels fail `content.experience_duration`.
+- Preserved the existing union-interval mode for compatible candidate profiles and contracts.
+- Updated the public schemas, contract loader, validator, rule, interface documentation, and synthetic regression tests without adding dependencies or candidate-specific data.
+- Advanced the resume-release validator from `1.1.0` to `1.2.0` and the active framework identifier from `vNext 2026-08.2` to `vNext 2026-08.3`.
+
 ## vNext 2026-08.2 - Recruiter Fit Brief
 
 Added an optional recruiter-facing derivative to COMPASS Analysis while preserving the complete private analysis and its leakage firewall.
