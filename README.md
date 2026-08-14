@@ -32,6 +32,7 @@ Use these files as the active source of truth:
 - `rules/15-opportunity-unique-questions.md` — opportunity-specific interview question design grounded in unresolved decision value
 - `rules/16-resume-release-assurance.md` — deterministic resume staging, validation, manifest, and atomic-release assurance
 - `rules/17-comprehensive-career-cv.md` — comprehensive approved career-history compilation, role coverage, audience variants, disclosure, and publication boundaries
+- `rules/18-opportunity-search-breadth-telemetry.md` — measurable search breadth, named-source attempts, substitutions, coverage gates, rotation, and reconciled telemetry
 - `rules/19-recruiter-fit-brief.md` — optional recruiter-facing fit brief generation, disclosure, leakage, safety, and action boundaries
 - `schemas/resume-release/` — machine-readable resume release, manifest, employment-coverage, and visual-review-attestation contracts
 - `tools/resume_release/` — executable standard-library resume validator and atomic-release interface
@@ -125,7 +126,7 @@ Alignment is a structured decision estimate, not a probability of interview, off
 
 Low visibility may improve pursuit economics, but it cannot qualify a weakly aligned role. Mainstream visibility may lower priority, but it does not automatically exclude an exceptionally aligned or verified access-advantaged role when the user's Source of Truth permits that exception.
 
-The workflow verifies the official current posting and employer-controlled application flow for direct-employer roles, reconciles conflicting requisition versions, inspects accessible screening questions, suppresses configured duplicate or previously handled opportunities, and rechecks priority roles before reporting them.
+The workflow verifies the official current posting and employer-controlled application flow for direct-employer roles, reconciles conflicting requisition versions, inspects accessible screening questions, suppresses configured duplicate or previously handled opportunities, and rechecks priority roles before reporting them. When user-specific policy configures named sources, it records one controlled-status attempt per applicable required or selected rotating source, uses approved substitutions for blocked paths, and evaluates numeric breadth, source coverage, title-family coverage, and telemetry reconciliation as independent gates.
 
 Optional secondary contract modes are explicit:
 
@@ -149,7 +150,7 @@ COMPASS does not infer contract rate, hours, duration, client identity, conversi
 
 Recruiter-legitimacy concerns may require verification-first handling even when candidate alignment is strong.
 
-Durable behavior is defined in `rules/12-verified-opportunity-search.md`, `rules/13-opportunity-registry.md`, and `rules/14-recruiter-legitimacy-risk.md` when applicable. The launcher is `prompts/compass-verified-opportunity-search.md`.
+Durable behavior is defined in `rules/12-verified-opportunity-search.md`, `rules/13-opportunity-registry.md`, `rules/18-opportunity-search-breadth-telemetry.md`, and `rules/14-recruiter-legitimacy-risk.md` when applicable. The launcher is `prompts/compass-verified-opportunity-search.md`.
 
 ## COMPASS Comprehensive Career CV
 
