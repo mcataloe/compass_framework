@@ -2,6 +2,23 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-08.4 - Opportunity Source Coverage Contract
+
+Added candidate-neutral named-source attempt, substitution, gate, and rotation semantics to Verified Opportunity Search.
+
+Behavior updates:
+
+- Added one canonical source-attempt record per applicable required or selected rotating source, including valid zero-yield attempts.
+- Added controlled source-attempt statuses: `completed`, `completed_via_substitution`, `blocked_unsubstituted`, `skipped`, and `not_applicable`.
+- Required approved recorded substitutions for blocked sources to satisfy coverage; disclosure alone no longer counts.
+- Separated numeric breadth, source coverage, title-family coverage, and telemetry reconciliation into independent gates.
+- Limited early-success bypass to the numeric breadth gate.
+- Added rolling rotation state derived from append-only completed search-run history rather than the opportunity registry.
+- Added query-bundle coverage without implying a source-by-title Cartesian product.
+- Expanded the search-run template and specification-level pressure tests for zero-yield attempts, substitutions, incomplete coverage, rotation, status drift, and bundled queries.
+- Preserved append-only historical records and prohibited source-attempt backfill from memory.
+- Advanced the active framework identifier from `vNext 2026-08.3` to `vNext 2026-08.4`.
+
 ## vNext 2026-08.3 - Dynamic Career-Start Experience Claims
 
 Added a candidate-neutral experience-duration mode for artifacts whose headline is based on completed years since a verified first industry role rather than accumulated employment intervals.
