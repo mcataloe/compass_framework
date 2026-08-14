@@ -16,6 +16,10 @@ Every case must validate:
 6. Duplicate and prior-display counts derive from canonical records.
 7. `--max N` limits reporting rather than ordinary discovery-stage counts.
 8. Raw weak discovery leads are not persisted as durable opportunity records.
+9. Every applicable required or selected rotating source has exactly one source-attempt record using a controlled status.
+10. A blocked source satisfies coverage only through an approved recorded substitution.
+11. Numeric breadth, source coverage, title-family coverage, and telemetry reconciliation are evaluated independently.
+12. Rotation state derives from append-only completed run history, not the current opportunity registry.
 
 ## Case 1 — Normal broad run
 
@@ -64,7 +68,8 @@ Expected:
 - `breadth_status: complete`
 - `stop_reason: requested_result_count_satisfied`
 - five primary recommendations maximum
-- the below-floor discovery and inspection counts are not treated as failure because the allowed early-success condition was satisfied
+- the below-floor discovery and inspection counts are not treated as failure because the allowed early-success condition satisfied the numeric gate
+- applicable source coverage, title-family coverage, and telemetry reconciliation still pass
 
 ## Case 3 — Heavy prior-display suppression
 
@@ -180,3 +185,73 @@ Expected:
 - no historical rewrite
 - missing telemetry is `unavailable` or breadth `unverified`, not zero
 - prior reporting history remains usable for suppression
+
+## Case 13 — Named sources complete with zero yield
+
+A configured contract lane requires eight core sources. All eight have one `completed` attempt record; five add zero unique opportunities.
+
+Expected:
+
+- all eight attempts satisfy the named-source requirement
+- zero yield does not convert a completed attempt into a failure
+- source coverage may be `PASS` when all other applicable requirements pass
+
+## Case 14 — Approved substitution for an access block
+
+One required source is inaccessible through its normal job page. The run completes a configured official-domain search and records `completed_via_substitution`, the substitute identifier, access method, and limitation.
+
+Expected:
+
+- the source requirement is satisfied
+- the limitation remains visible
+- no claim is made that the normal source was scraped
+
+## Case 15 — Blocked without substitution
+
+One applicable required source records `blocked_unsubstituted`.
+
+Expected:
+
+- `source_coverage: FAIL`
+- overall `breadth_status: incomplete` even when numeric floors are reached
+- the valid opportunity findings remain reportable with the limitation
+
+## Case 16 — Early success cannot bypass coverage
+
+The requested five qualified results are found before numeric floors. Two required sources were skipped and one required query bundle was not used.
+
+Expected:
+
+- early success may satisfy only `numeric_breadth`
+- source coverage and title-family coverage fail
+- overall breadth is incomplete rather than complete
+
+## Case 17 — Rolling rotation from run history
+
+The current opportunity registry contains observations from every rotating firm, but the prior two completed contract-run records show attempts for only part of the configured rotation.
+
+Expected:
+
+- rotation state uses the append-only completed run records
+- registry observations do not satisfy the rotation window
+- missing historical attempt telemetry is `UNKNOWN`, not backfilled
+
+## Case 18 — Controlled status and gate drift
+
+A draft run uses `telemetry_degraded` as a breadth status and `blocked` as a source-attempt status.
+
+Expected:
+
+- reconciliation `FAIL`
+- neither value is silently accepted or mapped
+- the run must use the controlled breadth and source-attempt status vocabularies before verified release
+
+## Case 19 — Bundled queries without a Cartesian explosion
+
+A policy requires four query bundles across a run and twenty named sources. Each bundle is used on multiple suitable sources, and every source attempt records the bundles it used, but not all eighty source-by-bundle combinations are executed.
+
+Expected:
+
+- title-family coverage may be `PASS` when all four required bundles were used
+- source coverage is evaluated from required attempts and rotation cadence
+- no Cartesian product is inferred unless the policy explicitly requires it

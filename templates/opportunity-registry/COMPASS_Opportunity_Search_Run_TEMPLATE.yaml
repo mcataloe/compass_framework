@@ -27,6 +27,19 @@ telemetry:
   coverage:
     source_families: []
     title_families: []
+    query_bundles: []
+    # One record per applicable required source and selected rotating source.
+    # Allowed statuses: completed, completed_via_substitution,
+    # blocked_unsubstituted, skipped, not_applicable.
+    source_attempts: []
+    # Each summary identifies the tier/window, runs evaluated, required sources,
+    # satisfied sources, missing sources, and PASS/FAIL/UNKNOWN status.
+    rotation_windows: []
+  gates:
+    numeric_breadth: NOT_CONFIGURED
+    source_coverage: NOT_CONFIGURED
+    title_family_coverage: NOT_CONFIGURED
+    telemetry_reconciliation: UNKNOWN
   expansion_passes: []
   breadth_status: not_configured
   stop_reason: null

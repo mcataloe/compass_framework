@@ -27,7 +27,8 @@ A user's Source of Truth may configure:
 
 - minimum unique-opportunity discovery targets;
 - minimum material-inspection targets;
-- required source and title-family coverage;
+- required source, named-roster, rotation-window, query-bundle, and title-family coverage;
+- controlled source-attempt statuses and approved substitution methods;
 - expansion-pass limits;
 - no-yield stopping thresholds;
 - additional telemetry fields;
@@ -50,7 +51,7 @@ It does not ordinarily cap:
 - duplicate or prior-display reconciliation;
 - live-verification attempts.
 
-The search may stop before configured breadth targets when the requested number of fully qualified opportunities has already been found and the active user-specific policy permits early success. The run must record that stop reason.
+The search may stop before configured numeric breadth targets when the requested number of fully qualified opportunities has already been found and the active user-specific policy permits early success. Early success may bypass only the numeric breadth gate. It must not bypass applicable source coverage, query-bundle or title-family coverage, or telemetry reconciliation. The run must record that stop reason.
 
 ## Canonical Search Stages
 
@@ -132,6 +133,45 @@ Do not inflate breadth by:
 - counting generic talent networks or role-family pages as concrete opportunities;
 - counting unidentifiable snippets that cannot be reconciled to a role.
 
+## Source Attempts and Coverage Gates
+
+When a Source of Truth configures named sources, mandatory surfaces, tiers, or rotation windows, completion means mandatory attempt with an approved substitution path when blocked. It does not mean that every site must be scraped successfully or yield an opportunity.
+
+Maintain one source-attempt record for every applicable required source and every selected rotating source. At minimum, each record must include:
+
+- `source_id`;
+- `lane`;
+- `status`;
+- `access_method`;
+- `query_bundles`;
+- `unique_opportunities_added`;
+- `materially_inspected_added`;
+- `substitute_source_id`;
+- `limitation`.
+
+Use only these source-attempt statuses:
+
+- `completed` — the configured source or surface was attempted through its normal accountable path, including valid zero-yield attempts;
+- `completed_via_substitution` — the normal path was blocked and an approved substitution was completed and recorded;
+- `blocked_unsubstituted` — the normal path was blocked and no approved substitution was completed;
+- `skipped` — the applicable source was not attempted;
+- `not_applicable` — the active policy explicitly permits non-applicability for that source in this run.
+
+A blocked source does not satisfy coverage merely because the limitation is disclosed. It satisfies coverage only through `completed_via_substitution` under the active policy. `blocked_unsubstituted` and `skipped` fail the applicable source requirement. `not_applicable` satisfies a requirement only when the user-specific policy defines the exact non-applicability condition.
+
+Evaluate four gates independently:
+
+1. `numeric_breadth` — configured unique-discovery and material-inspection targets;
+2. `source_coverage` — mandatory surfaces, named sources, tier minimums, substitutions, and rolling rotation windows;
+3. `title_family_coverage` — configured title families or query bundles;
+4. `telemetry_reconciliation` — source attempts, stages, dispositions, and reported results reconcile.
+
+Gate statuses are `PASS`, `FAIL`, `NOT_CONFIGURED`, or `UNKNOWN`. Overall `breadth_status: complete` requires every applicable gate to be `PASS`, except that an explicitly allowed early-success stop may satisfy the numeric breadth gate below its numeric floor. `FAIL` or `UNKNOWN` on source coverage, title-family coverage, or telemetry reconciliation prevents verified completion.
+
+A policy may require bundled queries. Cover the configured bundles across the run; do not infer a source-by-title Cartesian product unless the policy explicitly requires one.
+
+Derive rolling rotation state from append-only completed search-run history. Do not use the current opportunity registry as rotation authority, because opportunity state and source-attempt history are different concerns. Missing historical attempt telemetry remains unavailable and must not be backfilled from memory.
+
 ## Expansion Passes
 
 An expansion pass deliberately broadens at least one dimension after the initial search pass, such as:
@@ -175,7 +215,7 @@ Do not use `--max N` itself as a stop reason unless the requested qualified resu
 
 Use one of:
 
-- `complete` — configured breadth targets and coverage requirements were satisfied, or an allowed early-success condition was satisfied.
+- `complete` — configured numeric breadth, applicable source coverage, applicable title-family or query-bundle coverage, and telemetry reconciliation were satisfied; an allowed early-success condition may satisfy only the numeric breadth gate below its floor.
 - `incomplete` — one or more configured targets or coverage requirements were not satisfied.
 - `not_configured` — no user-specific breadth targets exist; stage telemetry and stop reason are still required.
 - `unverified` — required telemetry could not be reconstructed or validated.
@@ -189,7 +229,9 @@ A search-run record should include:
 - configured result limits;
 - breadth targets;
 - stage counts;
-- source and title-family coverage;
+- source-family, named-source, rotation-window, query-bundle, and title-family coverage;
+- per-source attempt records with controlled status, access method, yield, substitution, and limitation fields;
+- independent completion-gate statuses;
 - expansion-pass records;
 - primary stop reason;
 - secondary limitations;
@@ -212,6 +254,17 @@ telemetry:
     materially_inspected: 0
     live_verified: 0
     reported: 0
+  coverage:
+    source_families: []
+    title_families: []
+    query_bundles: []
+    source_attempts: []
+    rotation_windows: []
+  gates:
+    numeric_breadth: NOT_CONFIGURED
+    source_coverage: NOT_CONFIGURED
+    title_family_coverage: NOT_CONFIGURED
+    telemetry_reconciliation: UNKNOWN
   breadth_status: not_configured
   stop_reason: null
   limitations: []
@@ -233,6 +286,12 @@ Before final reporting and persistence, validate at least:
 8. Duplicate and prior-display counts match the applicable canonical records rather than prose estimates.
 9. Every reported recommendation has a corresponding materially inspected record and live-verification result required by Rule 12.
 10. `--max N` limits reported primary recommendations, not discovery-stage counts.
+11. Every applicable required or selected rotating source has exactly one source-attempt record.
+12. Every source-attempt status is in the controlled status set.
+13. A blocked source counted as satisfied has an approved substitution and status `completed_via_substitution`.
+14. Per-source unique and material-inspection additions are nonnegative and do not exceed the reconciled run totals; they are attribution fields, not an alternative source of stage totals.
+15. Rotation-window evaluation derives from append-only completed run history and records unavailable history as `UNKNOWN` rather than assuming coverage.
+16. Overall breadth is `complete` only when all applicable gates satisfy the completion rule, including the early-success exception limited to numeric breadth.
 
 Record reconciliation as `PASS`, `FAIL`, or `UNKNOWN` with concise diagnostics. `FAIL` or `UNKNOWN` blocks a claim that telemetry or breadth was successfully verified. It does not erase otherwise valid opportunity findings, but the limitation must be disclosed.
 
@@ -245,6 +304,7 @@ Do not persist every raw hit or weak discovery lead merely to support telemetry.
 - aggregate stage counts;
 - breadth targets and status;
 - source/title coverage summaries;
+- privacy-safe source-attempt records, substitution outcomes, gate statuses, and rotation-window summaries;
 - expansion-pass summaries;
 - stop reason and limitations;
 - canonical records that independently meet Rule 13's durable persistence threshold.
@@ -260,7 +320,8 @@ When reconciling older runs:
 - treat missing telemetry as unavailable, not zero;
 - do not reconstruct exact discovery or inspection counts from memory;
 - preserve existing reported-opportunity and prior-display evidence;
-- label historical breadth as `unverified` when the old record cannot support the new contract.
+- label historical breadth as `unverified` when the old record cannot support the new contract;
+- do not backfill source attempts, substitutions, or rotation coverage from the opportunity registry or memory.
 
 The new fields are additive for schema-version compatibility unless a future executable schema explicitly requires a version migration.
 
@@ -277,7 +338,14 @@ Before activating an implementation, test at least:
 - stale registry with successful run-history reconciliation;
 - materially inspected roles whose application paths remain unverified;
 - arithmetic reconciliation across all stage and terminal-disposition counts;
-- `--max N` limiting reporting without limiting discovery.
+- `--max N` limiting reporting without limiting discovery;
+- a required named-source run in which all sources complete, including valid zero-yield attempts;
+- an access-blocked source completed through an approved substitution;
+- an access-blocked source without a substitution, which leaves source coverage incomplete;
+- early success that satisfies numeric breadth but cannot bypass source or title-family coverage;
+- rolling rotation derived from append-only completed run history;
+- invalid or drifted source-attempt and breadth-status values;
+- bundled query coverage without an accidental source-by-title Cartesian requirement.
 
 ## Action Boundary
 

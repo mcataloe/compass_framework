@@ -1,6 +1,6 @@
 # COMPASS Version
 
-Current COMPASS Version: vNext 2026-08.3
+Current COMPASS Version: vNext 2026-08.4
 
 Canonical Branch: main
 
@@ -20,7 +20,7 @@ COMPASS is the only canonical framework name. New rules, prompts, examples, and 
 
 ## Active Behavior Notes
 
-The active vNext 2026-08.3 framework includes COMPASS-only terminology, career-focused scope, executable Resume Artifact Release Assurance with hardened OOXML validation and post-publication artifact-name integrity, COMPASS Intake checkpoint artifact behavior, COMPASS Source Rebase scaffold alignment, COMPASS Experience Sync public-projection reconciliation with private source-side target routing, COMPASS Comprehensive Career CV, Initial Seed Artifact support, claim-depth-aware Staff / Principal resume positioning, the Opportunity Reality Layer, the Recruiter Legitimacy and Opportunity Fraud Risk Gate, private recruiter-risk intelligence ledger templates, the Conversational Handoff Gate, fit-calibrated positioning and gap salience, the optional Recruiter Fit Brief, COMPASS Verified Opportunity Search with measurable search breadth and reconciled telemetry, and optional persistent opportunity-registry support:
+The active vNext 2026-08.4 framework includes COMPASS-only terminology, career-focused scope, executable Resume Artifact Release Assurance with hardened OOXML validation and post-publication artifact-name integrity, COMPASS Intake checkpoint artifact behavior, COMPASS Source Rebase scaffold alignment, COMPASS Experience Sync public-projection reconciliation with private source-side target routing, COMPASS Comprehensive Career CV, Initial Seed Artifact support, claim-depth-aware Staff / Principal resume positioning, the Opportunity Reality Layer, the Recruiter Legitimacy and Opportunity Fraud Risk Gate, private recruiter-risk intelligence ledger templates, the Conversational Handoff Gate, fit-calibrated positioning and gap salience, the optional Recruiter Fit Brief, COMPASS Verified Opportunity Search with measurable search breadth and reconciled telemetry, and optional persistent opportunity-registry support:
 
 - COMPASS is a career-focused, source-grounded framework for turning messy career inputs into verified, defensible job-search outputs.
 - COMPASS supports the careers / job-search profile. Product, strategy, research, consulting, grant, policy, and personal knowledge workflows are out of scope unless the project owner explicitly reopens scope.
@@ -54,10 +54,10 @@ The active vNext 2026-08.3 framework includes COMPASS-only terminology, career-f
 - Alignment is a structured decision estimate rather than a probability of interview, offer, or hiring success.
 - Freshness, access, visibility, saturation, and application friction are conversion conditions and ranking factors; they do not substitute for fit.
 - Low visibility does not qualify a weakly aligned role, and mainstream visibility does not automatically exclude an exceptionally aligned or access-advantaged role when user-specific policy permits it.
-- `rules/18-opportunity-search-breadth-telemetry.md` defines canonical discovery stages, configurable breadth targets, expansion-pass tracking, explicit stop conditions, and reconciled run telemetry.
+- `rules/18-opportunity-search-breadth-telemetry.md` defines canonical discovery stages, configurable breadth targets, named-source attempt records, approved substitutions, independent completion gates, rolling rotation, expansion-pass tracking, explicit stop conditions, and reconciled run telemetry.
 - `--max N` and other result limits cap reporting rather than ordinary discovery, screening, material inspection, duplicate or prior-display reconciliation, or live-verification effort.
 - Every materially inspected opportunity must have one canonical run record and exactly one terminal disposition; stage counts and report sections must derive from those records.
-- Search-run records may persist aggregate breadth targets, actual stage counts, source and title-family coverage, expansion-pass summaries, breadth status, stop reason, limitations, and reconciliation results without persisting every raw hit or weak discovery lead.
+- Search-run records may persist aggregate breadth targets, actual stage counts, controlled source-attempt records, substitutions, source and title-family coverage, rotation-window summaries, independent gate statuses, expansion-pass summaries, breadth status, stop reason, limitations, and reconciliation results without persisting every raw hit or weak discovery lead.
 - Historical completed run records remain append-only and missing historical telemetry is unavailable rather than zero.
 - Optional contract modes use `--include-contracts`, `--contract-only`, and `--max-contracts N`; contract results remain separate from primary rankings.
 - Contract utility evaluates structure-aware economics, hours, duration, flexibility, continuity, exclusivity, intellectual-property, conflict, exit, interference, effort, technical relevance, and relationship value without changing candidate alignment.
@@ -117,7 +117,7 @@ Future COMPASS changes should preserve the core operating principles unless expl
 - Career-profile rules may add specialized output rules without weakening source-grounding or TruthGuard
 - External employer, staffing, client, interview, contract, and private-ledger evidence must preserve attribution, entity identity, recency, confidence, match strength, and uncertainty
 - Verified Opportunity Search must preserve separate eligibility, alignment, opportunity-quality, conversion-condition, recruiter-legitimacy risk where applicable, private-ledger matches when configured, and optional contract-utility judgments
-- Verified Opportunity Search must keep result limits separate from search breadth and must not claim reconciled discovery or inspection telemetry without canonical records
+- Verified Opportunity Search must keep result limits separate from search breadth, evaluate numeric breadth, source coverage, title-family coverage, and telemetry reconciliation independently, and must not claim verified coverage without canonical opportunity and source-attempt records
 - Persistent opportunity history must preserve separate identity, observation, reporting, candidate-status, suppression, and provenance state
 - Configured observational registry writes must not be treated as permission to infer candidate actions or employer outcomes
 - Primary and secondary opportunity rankings must remain separate

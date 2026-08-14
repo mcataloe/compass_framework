@@ -159,11 +159,11 @@ Visibility and saturation are independent conversion dimensions. Low visibility 
 
 The search must verify the official current posting and active employer-controlled application flow for direct-employer roles, reconcile conflicting requisition versions, inspect accessible hard screens, suppress configured duplicate or previously handled opportunities, and perform a final live recheck for reported priority roles.
 
-Result limits such as `--max N` cap reported opportunities. They do not ordinarily cap discovery, quick screening, material inspection, prior-display or duplicate reconciliation, or live-verification effort.
+Result limits such as `--max N` cap reported opportunities. They do not ordinarily cap discovery, source attempts, quick screening, material inspection, prior-display or duplicate reconciliation, or live-verification effort.
 
 Verified Opportunity Search uses canonical stages for raw source hits when observable, unique normalized opportunities discovered, quick screens, material inspections, live verification, and reporting. Every materially inspected opportunity must have one canonical run record and exactly one terminal disposition. Counts, result sections, and persistence records must derive from that canonical set rather than from manual narrative estimates.
 
-A user's Source of Truth may configure minimum unique-discovery and material-inspection targets, source and title-family coverage, expansion-pass limits, and consecutive no-yield stopping thresholds. Runs must record target versus actual counts, expansion-pass yield, breadth status, stop reason, limitations, and arithmetic reconciliation. Completing the configured breadth contract is not a claim that every possible market opportunity was found.
+A user's Source of Truth may configure minimum unique-discovery and material-inspection targets, mandatory surfaces, named source rosters, approved substitutions, rotation windows, query bundles, title-family coverage, expansion-pass limits, and consecutive no-yield stopping thresholds. Runs must record one controlled-status attempt for every applicable required or selected rotating source. Numeric breadth, source coverage, title-family coverage, and telemetry reconciliation are independent gates; early success may bypass only numeric floors. Rotation derives from append-only completed run history, and query bundles do not imply a source-by-title Cartesian product. Completing the configured breadth contract is not a claim that every possible market opportunity was found.
 
 When contract mode is active, a user-specific policy may permit a verified staffing-firm, employer-of-record, or identifiable recruiter-controlled requisition to appear as a separately ranked secondary `Contact first` result even when no public client application exists. The accountable entity, concrete current opportunity, and actionable path must be verified; staffing firm, employer of record, client, and end customer must remain distinct; undisclosed clients remain unverified.
 
@@ -197,7 +197,7 @@ Identity prioritizes ATS and requisition identifiers. URL variation alone does n
 
 Completed run records are append-only. Registry writes must be revision-aware, preserve unknown user-owned fields, fail safely on malformed or incompatible state, and retain recovery evidence when a run log succeeds but the registry update fails.
 
-Aggregate search telemetry, source and title-family coverage, expansion-pass summaries, breadth status, stop reason, limitations, and reconciliation results may be persisted without storing every raw hit or weak discovery lead.
+Aggregate search telemetry, controlled source-attempt records, approved substitutions, source and title-family coverage, rotation-window and expansion-pass summaries, independent gate statuses, breadth status, stop reason, limitations, and reconciliation results may be persisted without storing every raw hit or weak discovery lead.
 
 ## COMPASS Intake — Verified Source-of-Truth Onboarding
 
