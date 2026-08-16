@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "name": "COMPASS Career Intelligence",
+  "description": "Applies the candidate-neutral COMPASS framework to verified candidate sources for opportunity analysis, job-search workflows, career artifacts, and Source of Truth maintenance.",
+  "framework_repository": "mcataloe/compass_framework",
+  "framework_branch": "main",
+  "validated_framework_version": "vNext 2026-08.4",
+  "validated_framework_commit": "9457634628dbd6ccfe4a3bcc93f97b21598d35d3",
+  "sharing_during_validation": "private",
+  "recommended_model": null,
+  "capabilities": {
+    "web_search": true,
+    "canvas": true,
+    "code_interpreter_and_data_analysis": true,
+    "image_generation": false
+  },
+  "integration_mode": "apps",
+  "required_apps": [
+    "GitHub"
+  ],
+  "knowledge_files": [],
+  "conversation_starters": [
+    "Use this Project's current runtime to analyze a job description with COMPASS.",
+    "Run COMPASS Verified Opportunity Search using this Project's current Source of Truth.",
+    "Draft a recruiter response and release it only if the Project gate passes.",
+    "Check whether this candidate Source of Truth is ready for COMPASS workflows."
+  ]
+}
+
