@@ -1,9 +1,11 @@
 import json
 import pathlib
+import re
 import unittest
 
 
 PACKAGE_ROOT = pathlib.Path(__file__).resolve().parents[1]
+REPO_ROOT = PACKAGE_ROOT.parents[1]
 
 
 class CustomGptPackageTests(unittest.TestCase):
@@ -23,6 +25,13 @@ class CustomGptPackageTests(unittest.TestCase):
         self.assertEqual(self.config["sharing_during_validation"], "private")
         self.assertEqual(self.config["knowledge_files"], [])
         self.assertGreaterEqual(len(self.config["conversation_starters"]), 3)
+
+    def test_validated_framework_version_matches_current_version(self):
+        version_text = (REPO_ROOT / "VERSION.md").read_text()
+        match = re.search(r"^Current COMPASS Version: (.+)$", version_text, re.MULTILINE)
+        self.assertIsNotNone(match)
+        self.assertEqual(self.config["validated_framework_version"], match.group(1))
+        self.assertRegex(self.config["validated_framework_commit"], r"^[0-9a-f]{40}$")
 
     def test_instructions_require_current_github_preflight(self):
         for required in (
