@@ -5,7 +5,7 @@
   "framework_repository": "mcataloe/compass_framework",
   "framework_branch": "main",
   "validated_framework_version": "vNext 2026-08.5",
-  "validated_framework_commit": "8b969570bb740b867676074c1a31d62a455576d5",
+  "validated_framework_commit": "8d4043ab8e39761d4b2f2b4271f9a5b6743e743a",
   "sharing_during_validation": "private",
   "recommended_model": null,
   "capabilities": {
