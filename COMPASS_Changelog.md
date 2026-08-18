@@ -2,6 +2,24 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-08.5 - Repository-Defined Source Persistence and Retired Scaffold Paths
+
+Added candidate-neutral persistence-contract resolution so mature Source-of-Truth repositories can keep one current canonical authority model without forcing parallel historical artifact layers, while preserving the existing COMPASS default for repositories that still use checkpoints and ledgers.
+
+Behavior updates:
+
+- Added explicit Intake persistence-contract resolution before committed writes.
+- Preserved checkpoint, approved-claim, do-not-claim, coverage-register, and storage-status artifacts as the generic default when no current user-owned override exists.
+- Added an opt-in repository-defined canonical persistence mode that may update governing current records directly only when equivalent claim approval/rejection, claim-depth, do-not-claim, coverage, unresolved-state, pause/resume, storage-honesty, and historical-retention controls are preserved.
+- Allowed Git history to serve as recoverable historical checkpoint only when current user-owned repository policy explicitly declares Git-backed retention.
+- Made the Intake Materiality Gate consume the current authorities required by the active persistence contract rather than requiring retired default artifacts.
+- Updated Source Rebase to resolve the current Source Manifest before drift classification and to exclude explicitly retired active-tree paths from the repository-specific expected scaffold.
+- Clarified that absent manifest-retired paths are not drift and must not be proposed or recreated; existing retired paths remain untouched because Source Rebase itself remains non-destructive.
+- Preserved historical-path and generic scaffold behavior as the default for repositories without explicit retirement declarations.
+- Updated the generic Source Manifest and Source Rebase report templates, Intake and Source Rebase launchers, canonical framework docs, command guidance, and repository-agent guidance.
+- Added candidate-neutral policy regression tests for default compatibility, explicit override requirements, retired-path handling, and version/changelog agreement.
+- Advanced the active framework identifier from `vNext 2026-08.4` to `vNext 2026-08.5`.
+
 ## vNext 2026-08.4 - Opportunity Source Coverage Contract
 
 Added candidate-neutral named-source attempt, substitution, gate, and rotation semantics to Verified Opportunity Search.

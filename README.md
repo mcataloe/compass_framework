@@ -21,9 +21,9 @@ Use these files as the active source of truth:
 - `COMPASS_COMMANDS.md` — canonical user-facing command registry
 - `COMPASS_Changelog.md` — framework change history
 - `rules/` — durable behavior rules
-- `rules/07-compass-intake.md` — COMPASS Intake source-of-truth onboarding and claim verification rules
+- `rules/07-compass-intake.md` — COMPASS Intake source-of-truth onboarding, persistence-contract resolution, and claim verification rules
 - `rules/08-human-authenticity.md` — truthful human-authenticity and reviewer-signal rules for external artifacts
-- `rules/09-source-rebase.md` — safe source-of-truth scaffold alignment rules
+- `rules/09-source-rebase.md` — safe source-of-truth scaffold alignment and retired-path rules
 - `rules/10-opportunity-recon.md` — Purple Squirrel Factor, company and interview reality, external-evidence handling, and pursuit economics
 - `rules/11-experience-sync.md` — one-way Source of Truth reconciliation into a public or externally shareable experience repository
 - `rules/12-verified-opportunity-search.md` — current-opportunity discovery, live verification, alignment scoring, conversion-condition ranking, and optional secondary contract search
@@ -52,10 +52,10 @@ Use these files as the active source of truth:
 - `prompts/compass-interview-prep.md` — reusable interview preparation launcher prompt
 - `prompts/compass-compensation-note.md` — reusable compensation and remote-work note launcher prompt
 - `examples/` — example output patterns
-- `examples/compass-intake-artifact-templates.md` — copy-ready COMPASS Intake artifact skeletons
+- `examples/compass-intake-artifact-templates.md` — copy-ready COMPASS default Intake artifact skeletons
 - `examples/seed-artifacts/SEED_ARTIFACTS_MANIFEST_EXAMPLE.md` — fictional seed artifact manifest example
-- `templates/source-of-truth-scaffold/` — framework-owned source-of-truth scaffold and report templates
-- `templates/source-of-truth-scaffold/sources/seed/` — recommended scaffold location for Initial Seed Artifacts
+- `templates/source-of-truth-scaffold/` — framework-owned generic source-of-truth scaffold and report templates
+- `templates/source-of-truth-scaffold/sources/seed/` — generic recommended scaffold location for Initial Seed Artifacts
 - `templates/source-of-truth-scaffold/sync/` — private Source of Truth routing templates for downstream experience targets
 - `templates/experience-sync/` — sanitized target manifest, reconciliation report, and public claim provenance templates
 - `templates/comprehensive-career-cv/` — candidate-neutral comprehensive career CV template
@@ -175,17 +175,17 @@ Durable behavior is defined in `rules/17-comprehensive-career-cv.md`. The launch
 
 ## COMPASS Intake
 
-COMPASS Intake is the verified source-of-truth onboarding workflow for creating or updating a durable career source of truth.
+COMPASS Intake is the verified Source-of-Truth onboarding workflow for creating or updating a durable career source of truth.
 
 Use Intake when a career record, job-search profile, resume source set, recruiter positioning file, interview-prep record, or other career source needs a durable source of truth.
 
-Intake accepts source documents such as prior resumes, cover letters, LinkedIn exports, performance reviews, certification records, portfolio notes, recruiter notes, interview notes, job descriptions, achievement lists, project summaries, or other career reference material. These sources are treated as evidence leads, not automatic truth. After their material claims are ingested, reconciled, and verified, the canonical source-of-truth record and approved ledgers supersede the imported artifacts for downstream use.
+Intake accepts source documents such as prior resumes, cover letters, LinkedIn exports, performance reviews, certification records, portfolio notes, recruiter notes, interview notes, job descriptions, achievement lists, project summaries, or other career reference material. These sources are treated as evidence leads, not automatic truth. After their material claims are ingested, reconciled, and verified, the governing current Source-of-Truth authority supersedes the imported artifact for downstream use. Under the generic default persistence model, separate approved-claim and do-not-claim ledgers remain current controls when present; an explicit repository-defined canonical persistence contract may instead place equivalent controls in the governing current record.
 
-Initial Seed Artifacts are user-provided source materials stored under `/sources/seed/` when the scaffold is available. Seed artifacts may include existing resumes, shortened resumes, comprehensive resumes, master CVs, LinkedIn exports, cover letters, portfolio summaries, achievement lists, or similar career evidence. They are seed, provisional, evidence, and not canonical. They may support Provisional Resume / CV Mode while Intake is incomplete, but verified Intake records, approved claim ledgers, and do-not-claim ledgers supersede them when available.
+Initial Seed Artifacts are user-provided source materials stored under `/sources/seed/` when the generic scaffold path is active. They are seed, provisional, evidence, and not canonical. They may support Provisional Resume / CV Mode while Intake is incomplete. A current user-owned repository lifecycle may explicitly retire superseded seed paths after complete ingestion when required lineage is preserved elsewhere; Source Rebase must respect that explicit retirement and must not recreate the path.
 
-Intake asks generally 3-5 questions per response or batch. That limit is a pacing rule, not a scope limit; Intake should continue in small batches until material imported claims are covered, intentionally paused, deferred, rejected, excluded as not material, or marked as needing evidence, metrics, or scope clarification.
+Intake asks generally 3–5 questions per response or batch. That limit is a pacing rule, not a scope limit; Intake should continue in small batches until material imported claims are covered, intentionally paused, deferred, rejected, excluded as not material, or marked as needing evidence, metrics, or scope clarification.
 
-Before asking Intake questions, Intake runs a Materiality Gate: inspect available approved ledgers, do-not-claim records, coverage registers, checkpoint records, canonical source records, and relevant source artifacts first. Ask only unresolved material questions whose answers would change source-of-truth construction, claim approval, claim depth, evidence requirements, or downstream-safe wording. If context is sufficient, proceed with the source basis and safe assumptions instead of asking redundant questions.
+Before asking Intake questions, Intake resolves the active persistence contract and runs a Materiality Gate against the current authorities required by that contract. Under default artifact persistence, this normally includes approved ledgers, do-not-claim records, coverage registers, checkpoints, canonical source records, and relevant source artifacts. Under explicit repository-defined canonical persistence, use the governing current canonical and cross-cutting authorities identified by current user-owned policy rather than requiring retired default artifacts. Ask only unresolved material questions whose answers would change Source-of-Truth construction, claim approval, claim depth, evidence requirements, or downstream-safe wording.
 
 Default setup for non-technical users:
 
@@ -197,35 +197,35 @@ Default setup for non-technical users:
 
 GitHub remains optional for end users. Technical users may fork this repository or maintain their own optimized COMPASS framework source.
 
-COMPASS Intake must support pause/resume behavior. Users may say `I need a break`, `pause`, `bookmark this`, or `let's continue later`; COMPASS should stop asking new questions and emit a checkpoint that can be resumed later.
+COMPASS Intake must support pause/resume behavior. If the user pauses, persist a resume point under the active persistence contract. Under default artifact persistence, this normally emits a checkpoint. Under explicit repository-defined canonical persistence, the current canonical record or designated workflow state may hold the resume point without an unnecessary parallel checkpoint file.
 
-A checkpoint is a progress commit, not proof of full source coverage. Intake complete means the relevant material imported claims are captured in the coverage register and resolved into approved, narrowed, rejected, evidence-needed, metric-needed, scope-needed, deferred, or excluded status.
+A persisted round boundary is a progress commit, not proof of full source coverage. Intake complete means the relevant material imported claims have durable coverage dispositions under the active persistence contract and are resolved into approved, narrowed, rejected, evidence-needed, metric-needed, scope-needed, deferred, or excluded status.
 
-Every committed Intake round should use stable artifact templates for the checkpoint Markdown record, claim-ledger entries, do-not-claim entries, coverage-register entries, storage-status block, and optional ZIP bundle manifest. The durable requirements are defined in `rules/07-compass-intake.md`; copy-ready skeletons are available in `examples/compass-intake-artifact-templates.md`.
+Every committed Intake round must persist the state required by the active persistence contract. The generic default uses stable checkpoint, claim-ledger, do-not-claim, coverage-register, storage-status, and optional ZIP-bundle templates defined in `rules/07-compass-intake.md` and `examples/compass-intake-artifact-templates.md`. An explicit repository-defined canonical persistence contract may update governing current authorities directly without mandatory parallel default artifacts, provided equivalent claim safety, coverage, pause/resume, retention, and storage-honesty guarantees remain intact.
 
 Intake storage behavior must be honest:
 
 - Before asking setup questions, disclose whether direct write/update access to the requested datastore is available.
-- If direct Google Drive write/update access is available, save or update the Intake source-of-truth files in the user's selected folder.
-- If direct write/update access is unavailable or uncertain, produce downloadable or copy-ready checkpoint files and clearly tell the user what to save where.
-- When practical, package changed checkpoint files into a downloadable ZIP bundle for upload to the target datastore.
-- Never claim that files were saved when they were only generated in chat, generated locally, or offered for download.
+- If direct write/update access is available, save or update the current Source-of-Truth state required by the active persistence contract.
+- If direct write/update access is unavailable or uncertain, produce downloadable or copy-ready state in the shape required by the active persistence contract and clearly tell the user what to save where.
+- Under the generic default model, changed checkpoint artifacts may be packaged into a ZIP bundle when practical.
+- Never claim that files or Source-of-Truth state were saved when they were only generated in chat, generated locally, or offered for download.
 
 ## COMPASS Source Rebase
 
-COMPASS Source Rebase is the safe scaffold-alignment workflow for existing COMPASS source-of-truth repositories.
+COMPASS Source Rebase is the safe scaffold-alignment workflow for existing COMPASS Source-of-Truth repositories.
 
-Use Source Rebase when a framework upgrade changes the recommended source-of-truth scaffold and the user wants to identify or create missing scaffold directories or placeholder files without disturbing existing source records.
+Use Source Rebase when a framework upgrade changes the recommended generic scaffold and the user wants to identify or create missing scaffold directories or placeholder files without disturbing existing source records.
 
-Source Rebase defaults to dry-run mode. It may inspect structure and produce a report, but it must not overwrite, delete, rename, move, edit, or otherwise modify existing user-owned files.
+Source Rebase defaults to dry-run mode. It resolves the current user-owned Source Manifest when present before classifying drift, then derives a repository-specific expected scaffold from the generic framework scaffold. It must not overwrite, delete, rename, move, edit, or otherwise modify existing user-owned files.
 
-The first permitted write mode is `create-missing-only`, and it requires explicit user approval for the exact target. In that mode, COMPASS may create only absent scaffold directories or absent framework placeholder files, including missing `/sources/seed/` and `/sync/` scaffold paths. Existing paths are always skipped and reported.
+The first permitted write mode is `create-missing-only`, and it requires explicit user approval for the exact target. In that mode, COMPASS may create only absent, non-retired scaffold directories or framework placeholder files. Existing paths are always skipped and reported. A path explicitly retired by current user-owned manifest policy is not missing drift and must not be proposed or recreated.
 
-The optional `/sync/COMPASS_Experience_Targets.yaml` file belongs in the private Source of Truth and stores actual downstream target locations and publication defaults. Source Rebase may create only the generic missing scaffold; populating real repository mappings requires a separate explicit configuration instruction.
+The optional `/sync/COMPASS_Experience_Targets.yaml` file belongs in the private Source of Truth and stores actual downstream target locations and publication defaults. Source Rebase may create only the generic missing scaffold when that path remains active; populating real repository mappings requires a separate explicit configuration instruction.
 
-Historical checkpoint files, including older `COMPASS_Layer0_*` files, must be preserved and reported as historical paths. Source Rebase must not rename or normalize them for terminology cleanliness.
+Historical preservation remains the generic default. Historical checkpoint files, including older `COMPASS_Layer0_*` files, must not be renamed or normalized merely for terminology cleanliness. When a current user-owned manifest explicitly retires a historical path from the active architecture, Source Rebase treats its absence as intentional and does not recreate it. If an explicitly retired path still exists, Source Rebase reports it and leaves it untouched; deletion is a separate repository-maintenance operation.
 
-Source Rebase is not COMPASS Intake or Experience Sync. It does not verify, extract, reconcile, approve, reject, publish, or modify career claims.
+Source Rebase is not COMPASS Intake or Experience Sync. It does not verify, extract, reconcile, approve, reject, publish, lifecycle-delete, or modify career claims.
 
 ## COMPASS Experience Sync
 
@@ -237,7 +237,7 @@ The private Source of Truth should maintain the authoritative routing map at `sy
 
 The public experience repository should use a sanitized `COMPASS_Experience_Manifest.yaml` containing a stable source identifier and reconciliation metadata rather than the private Source of Truth repository name or URL.
 
-Experience Sync defaults to `dry-run`. It may compare source records, claim ledgers, do-not-claim controls, coverage status, source-side routing, public files, structured claims, and prior reconciliation metadata, but it performs no writes.
+Experience Sync defaults to `dry-run`. It may compare current approved source records and controls, coverage status, source-side routing, public files, structured claims, and prior reconciliation metadata, but it performs no writes and does not require a specific legacy persistence shape when the current Source of Truth defines an equivalent canonical model.
 
 `full-audit` rechecks the entire public projection and is appropriate for first-time setup, suspected drift, manual target edits, missing manifest history, publication-policy changes, major framework changes, or migration away from a public manifest that exposed private source routing.
 

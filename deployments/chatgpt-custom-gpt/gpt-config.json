@@ -4,8 +4,8 @@
   "description": "Applies the candidate-neutral COMPASS framework to verified candidate sources for opportunity analysis, job-search workflows, career artifacts, and Source of Truth maintenance.",
   "framework_repository": "mcataloe/compass_framework",
   "framework_branch": "main",
-  "validated_framework_version": "vNext 2026-08.4",
-  "validated_framework_commit": "9457634628dbd6ccfe4a3bcc93f97b21598d35d3",
+  "validated_framework_version": "vNext 2026-08.5",
+  "validated_framework_commit": "8d4043ab8e39761d4b2f2b4271f9a5b6743e743a",
   "sharing_during_validation": "private",
   "recommended_model": null,
   "capabilities": {
@@ -26,4 +26,3 @@
     "Check whether this candidate Source of Truth is ready for COMPASS workflows."
   ]
 }
-

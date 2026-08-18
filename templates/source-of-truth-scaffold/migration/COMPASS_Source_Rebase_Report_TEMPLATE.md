@@ -28,45 +28,80 @@
 - Visibility verification available: true/false/unknown
 - Storage status label:
 
-## 5. Existing Layout Found
+## 5. Manifest Policy Resolution
+
+- Current Source Manifest found: yes/no
+- Manifest path:
+- Persistence/lifecycle policy found: yes/no
+- Retired-path policy found: yes/no
+- Policy ambiguity or conflict:
+
+Do not infer retired paths from absence, naming, age, or apparent non-use.
+
+## 6. Existing Layout Found
 
 List directories/files detected.
 
-## 6. Expected Scaffold
+## 7. Generic Expected Scaffold
 
-List expected directories/files from the current framework scaffold, including `/sources/seed/` Initial Seed Artifact paths when applicable.
+List directories/files from the current generic framework scaffold, including `/sources/seed/` Initial Seed Artifact paths and `/sync/` routing paths when applicable.
 
-## 7. Files Already Present
+## 8. Manifest-Retired Active-Tree Paths
+
+List paths or path classes explicitly retired by current user-owned manifest policy.
+
+For each path, state whether it is:
+
+- absent as intended; or
+- still present and left untouched.
+
+An absent explicitly retired path is not missing drift.
+
+## 9. Repository-Specific Expected Scaffold
+
+List the generic expected scaffold after applying explicit current manifest retirement policy.
+
+Only this repository-specific expected scaffold is eligible for missing-path classification or `create-missing-only` proposals.
+
+## 10. Files Already Present
 
 List expected files that already exist and were skipped.
 
-## 8. Missing Files / Directories
+## 11. Missing Non-Retired Files / Directories
 
-List scaffold files/directories that are missing.
+List repository-specific expected scaffold files/directories that are missing.
 
-## 9. Drift Detected
+Do not include manifest-retired paths.
 
-Classify drift as:
+## 12. Drift Detected
+
+Classify findings as:
 
 - Missing expected directory
 - Missing expected scaffold file
 - Existing user-owned file at expected path
 - Existing file differs from current scaffold
-- Legacy/historical path preserved
+- Legacy/historical path preserved by current policy
+- Manifest-retired path absent as intended
+- Manifest-retired path still present and untouched
 - Unexpected extra file/directory
 - Potential conflict requiring human review
 
-## 10. Legacy / Historical Paths Preserved
+## 13. Legacy / Historical Paths Preserved
 
-List historical paths such as older `COMPASS_Layer0_*` checkpoints.
+List historical paths that remain active under current repository policy, such as older `COMPASS_Layer0_*` checkpoints.
 
-State that they were preserved and not renamed.
+State that Source Rebase preserved and did not rename them.
 
-## 11. Proposed Create-Only Changes
+Historical preservation is the generic default when current user-owned policy does not explicitly retire the path.
 
-List changes that may be created in `create-missing-only` mode after approval. Missing seed scaffold directories and seed placeholder/template files may be proposed, but existing resumes, CVs, or source files must not be moved into `/sources/seed/`.
+## 14. Proposed Create-Only Changes
 
-## 12. Forbidden Changes Not Performed
+List changes that may be created in `create-missing-only` mode after approval.
+
+Only absent non-retired paths may be proposed. Missing seed scaffold directories and seed placeholder/template files may be proposed only when they remain part of the repository-specific expected scaffold. Existing resumes, CVs, or source files must not be moved into `/sources/seed/`.
+
+## 15. Forbidden Changes Not Performed
 
 Confirm:
 
@@ -75,15 +110,17 @@ Confirm:
 - No renames
 - No moves
 - No checkpoint rewrites
-- No claim-ledger edits
+- No claim-control edits
 - No do-not-claim edits
 - No automatic movement of existing resumes, CVs, or source files into `/sources/seed/`
+- No recreation of manifest-retired paths
+- No lifecycle deletion of existing retired paths
 
-## 13. Manual Decisions Required
+## 16. Manual Decisions Required
 
-List unresolved decisions.
+List unresolved decisions, including ambiguous retirement declarations or ownership conflicts.
 
-## 14. Storage Status
+## 17. Storage Status
 
 Use one approved label:
 
@@ -92,11 +129,12 @@ Use one approved label:
 - Storage status: copy-ready only / not yet persisted
 - Storage status: storage unavailable / manual save required
 
-## 15. Next Safe Action
+## 18. Next Safe Action
 
 Recommend one:
 
 - remain in dry-run
-- approve create-missing-only
-- resolve conflicts first
+- approve create-missing-only for the exact non-retired path set
+- resolve manifest ambiguity or conflicts first
 - continue COMPASS Intake separately
+- perform separately authorized lifecycle cleanup outside Source Rebase

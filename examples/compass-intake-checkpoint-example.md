@@ -1,11 +1,16 @@
-# COMPASS Intake Checkpoint Example
+# COMPASS Intake Checkpoint Example — Default Artifact Persistence
+
+This example demonstrates the generic default Intake persistence model. Use it only when the active Source-of-Truth persistence contract resolves to default artifact persistence.
 
 Use `examples/compass-intake-artifact-templates.md` for copy-ready checkpoint, claim-ledger, do-not-claim, coverage-register, storage-status, and ZIP manifest skeletons. The durable rule source remains `rules/07-compass-intake.md`.
+
+A current user-owned Source of Truth may explicitly declare repository-defined canonical persistence. In that mode, update the governing current authorities according to the active policy and do not generate this parallel checkpoint/ledger set merely because this example exists.
 
 ```yaml
 checkpoint:
   framework: COMPASS
   workflow: "COMPASS Intake — Verified Source-of-Truth Onboarding"
+  persistence_mode: "default_artifact_persistence"
   checkpoint_id: "compass-intake-YYYY-MM-DD-001"
   round_id: "Round1A"
   current_stage: "Source harvesting / cross-examination"
@@ -43,9 +48,9 @@ checkpoint:
 
 ## Artifact Expectations
 
-Every committed Intake checkpoint should produce at least one checkpoint Markdown artifact.
+Under default artifact persistence, every committed Intake round should produce at least one checkpoint Markdown artifact.
 
-When applicable, it should also produce updated ledger artifacts:
+When applicable, it should also produce updated default control artifacts:
 
 - Approved claim ledger
 - Do-not-claim register
@@ -54,3 +59,5 @@ When applicable, it should also produce updated ledger artifacts:
 - Claim-depth boundary updates when applicable
 
 If direct datastore write access is unavailable, the assistant should generate downloadable or copy-ready files and clearly state that the files still need to be uploaded by the user.
+
+These expectations do not apply as mandatory parallel files when an explicit current repository-defined canonical persistence contract supplies equivalent governing state.
