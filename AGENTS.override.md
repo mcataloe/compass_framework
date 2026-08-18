@@ -1,19 +1,37 @@
-# COMPASS Framework — Repository Agent Override
+# COMPASS Framework Repository Override
 
-This repository-level override supersedes the editable repository section in the root `AGENTS.md` for current repository facts and project-specific operating guidance. The locked global LEAP section in `AGENTS.md` remains unchanged and is not being revised by this initiative.
+This repository-level override applies to `mcataloe/compass_framework` and corrects stale repository metadata and current project-specific operating guidance in the editable portion of `AGENTS.md` without modifying the locked global LEAP section.
 
-## Current Repository State
+## Canonical Identity
 
-- Project: `COMPASS Framework`
+- Repository: `mcataloe/compass_framework`
 - Canonical branch: `main`
-- Active framework version: `vNext 2026-08.5`
-- Primary formats: Markdown and Python
-- Executable runtime: `python -m tools.resume_release`
-- Automated regression tests: Python standard-library `unittest`
+- Framework: COMPASS
+- Current active version: `vNext 2026-08.5`
+- Execution method for repository work: LEAP
 
-Use `VERSION.md`, `COMPASS_Current.md`, `COMPASS_Changelog.md`, the applicable `rules/`, and current launcher prompts as the active framework sources.
+LEAP is the evidence-first repository reconnaissance and implementation method. COMPASS is the career-focused framework implemented by this repository. They are not competing framework names.
 
-## LEAP and Change Discipline
+## Active Authority
+
+Use the current repository files in this order for COMPASS behavior:
+
+1. Explicit user instruction for the current task
+2. `VERSION.md`
+3. `COMPASS_Current.md`
+4. `COMPASS_COMMANDS.md`
+5. Relevant files under `rules/`
+6. Relevant launcher prompts, examples, and migration notes
+
+For downstream workflows, keep these authority domains separate:
+
+- Candidate facts and career claims
+- Employer, market, and interview context
+- User-specific behavior, tone, formatting, and presentation
+
+Use the source and policy priorities in `COMPASS_Current.md`. User-specific Source-of-Truth style records override generic framework style defaults within their scope, but cannot weaken TruthGuard, claim-depth or do-not-claim boundaries, privacy, artifact cleanliness, coverage, persistence honesty, or other non-optional controls.
+
+## Repository Change Discipline
 
 - Ground changes in current repository files before editing.
 - Keep durable behavior in `rules/` and canonical framework docs rather than only in launcher prompts or examples.
@@ -29,7 +47,7 @@ COMPASS Intake must resolve the active Source-of-Truth persistence contract befo
 
 - If no current user-owned persistence override exists, the generic checkpoint, approved-claim, do-not-claim, coverage-register, and storage-status artifact model remains the default.
 - A current user-owned Source of Truth may explicitly declare repository-defined canonical persistence.
-- An override changes storage shape only. It must preserve equivalent claim approval/rejection state, claim depth, do-not-claim boundaries, coverage, unresolved state, pause/resume continuity, historical retention, conflict handling, privacy, and storage honesty.
+- A repository-defined override changes storage shape only. It must preserve equivalent claim approval/rejection state, claim depth, do-not-claim boundaries, coverage, unresolved state, pause/resume continuity, historical retention, conflict handling, privacy, and storage honesty.
 - Do not infer a persistence override from dossiers, Git history, missing legacy folders, or a nonstandard layout.
 - Git history may serve as the recoverable historical checkpoint only when current user-owned policy explicitly declares Git-backed retention.
 
@@ -91,3 +109,7 @@ Stop rather than silently weaken or reinterpret:
 - a material framework version/alignment requirement.
 
 Do not restore retired scaffold paths merely because older generic COMPASS behavior expected them.
+
+## Scope of This Override
+
+This file keeps repository-specific version, identity, and active persistence/rebase guidance current without changing the locked global LEAP operating section. It does not add candidate data, alter the canonical COMPASS name, weaken TruthGuard, or replace the durable behavior defined in `rules/07-compass-intake.md` and `rules/09-source-rebase.md`.
