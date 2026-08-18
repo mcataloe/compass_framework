@@ -13,6 +13,12 @@ def read(path: str) -> str:
 
 
 class RepositoryPersistencePolicyTests(unittest.TestCase):
+    def test_operating_principles_abstract_storage_shape(self) -> None:
+        text = read("rules/00-operating-principles.md")
+        self.assertIn("## 12. Source-of-Truth Persistence Abstraction", text)
+        self.assertIn("current equivalent authority or state", text)
+        self.assertIn("do not infer an override", text)
+
     def test_intake_keeps_default_and_requires_explicit_override(self) -> None:
         text = read("rules/07-compass-intake.md")
         self.assertIn("### Default Artifact Persistence", text)
