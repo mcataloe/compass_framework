@@ -2,7 +2,7 @@
 
 This file defines the current user-facing COMPASS command surface.
 
-Prompt templates remain workflow launchers, not independent policy sources. When a command is executed, use the active framework files, rule files, and the user's verified source-of-truth records to govern behavior.
+Prompt templates remain workflow launchers, not independent policy sources. When a command is executed, use the active framework files, rule files, and the user's verified Source-of-Truth records to govern behavior.
 
 ## Command Authority
 
@@ -13,13 +13,15 @@ COMPASS commands must keep candidate facts, opportunity-context evidence, and us
 Use this order:
 
 1. The user's direct instruction in the current conversation
-2. The user's verified COMPASS Intake claim ledger and do-not-claim list, when available
-3. The user's latest approved canonical career source-of-truth record
+2. The user's current verified claim-control and do-not-claim state under the active Source-of-Truth persistence contract, when separate from the canonical record
+3. The user's latest approved canonical career Source-of-Truth record
 4. A provisional baseline explicitly authorized by the user's Source of Truth, used only at its documented source-stated depth
-5. Imported artifacts, including Initial Seed Artifacts under `/sources/seed/`, as evidence and provenance only
+5. Imported artifacts, including Initial Seed Artifacts when their generic scaffold is active, as evidence and provenance only
 6. Target job descriptions, recruiter requests, and opportunity records for terminology and context only
 7. Generated artifacts as historical outputs only
 8. Project instructions or memory only when not contradicted by stronger sources and never as a substitute for an available source record
+
+Under default artifact persistence, item 2 is normally represented by approved claim and do-not-claim ledgers. Under an explicit repository-defined canonical persistence contract, the governing current canonical record may own the same boundaries directly when current user-owned policy says so.
 
 Target job descriptions, recruiter requests, and opportunity records do not create experience, skills, ownership, metrics, credentials, achievements, or facts.
 
@@ -40,7 +42,7 @@ Within TruthGuard, do-not-claim controls, privacy requirements, artifact cleanli
 5. COMPASS artifact-specific rules and generic framework defaults
 6. Project instructions, memory, or model defaults only when not contradicted by stronger sources
 
-User-specific Source of Truth policy may configure thresholds, weights, channels, employment-structure modes, safety thresholds, information-sharing boundaries, private risk-intel ledger paths, or presentation within its scope. It does not create candidate facts and cannot weaken TruthGuard or approved claim boundaries.
+User-specific Source of Truth policy may configure persistence shape, lifecycle, thresholds, weights, channels, employment-structure modes, safety thresholds, information-sharing boundaries, private risk-intel ledger paths, or presentation within its scope. It does not create candidate facts and cannot weaken TruthGuard, claim-depth boundaries, do-not-claim controls, coverage, storage honesty, or other non-optional framework safety rules.
 
 ## Current First-Class Commands
 
@@ -48,13 +50,13 @@ User-specific Source of Truth policy may configure thresholds, weights, channels
 
 **Launcher:** `prompts/compass-intake.md`
 
-**Purpose:** Build or update a verified career source of truth through evidence capture, claim verification, Materiality Gate questioning, coverage tracking, and checkpoint artifacts.
+**Purpose:** Build or update a verified career Source of Truth through evidence capture, claim verification, Materiality Gate questioning, coverage tracking, and durable committed-round persistence under the active Source-of-Truth persistence contract.
 
 **Use when the user asks to:**
 
 - create or update a COMPASS Source of Truth;
 - ingest career documents;
-- stage Initial Seed Artifacts;
+- stage Initial Seed Artifacts when the active repository lifecycle uses them;
 - verify claims from resumes, CVs, LinkedIn exports, recruiter notes, interview notes, performance reviews, certifications, portfolio notes, or project summaries;
 - reconcile gaps or contradictions across career source material.
 
@@ -75,20 +77,22 @@ Update my COMPASS Source of Truth.
 - `rules/07-compass-intake.md`
 - `prompts/compass-intake.md`
 
+**Persistence discipline:** Resolve current user-owned Source-of-Truth persistence policy before committed writes. If no explicit repository-defined override exists, use the default checkpoint, approved-claim, do-not-claim, coverage-register, and storage-status artifacts. An explicit repository-defined canonical persistence contract may update governing current authorities directly only while preserving equivalent TruthGuard, claim-depth, do-not-claim, coverage, pause/resume, historical-retention, conflict-handling, and storage-honesty guarantees.
+
 ---
 
 ### COMPASS Source Rebase
 
 **Launcher:** `prompts/compass-source-rebase.md`
 
-**Purpose:** Safely align an existing COMPASS source-of-truth repository with the current framework-owned scaffold without overwriting, deleting, renaming, moving, or modifying existing user-owned source records.
+**Purpose:** Safely align an existing COMPASS Source-of-Truth repository with the current framework-owned generic scaffold as filtered by current user-owned manifest policy, without overwriting, deleting, renaming, moving, or modifying existing user-owned source records.
 
 **Use when the user asks to:**
 
 - run COMPASS Source Rebase;
 - align an existing Source of Truth with the current scaffold;
-- identify or add missing scaffold directories or placeholder files;
-- add missing `/sources/seed/` or private `/sync/` scaffold paths safely.
+- identify or add missing non-retired scaffold directories or placeholder files;
+- add missing `/sources/seed/` or private `/sync/` scaffold paths safely when those paths remain active under current repository policy.
 
 **Example triggers:**
 
@@ -115,7 +119,7 @@ Dry-run the source repo scaffold update.
 - `templates/source-of-truth-scaffold/migration/COMPASS_Source_Rebase_Report_TEMPLATE.md`
 - `prompts/compass-source-rebase.md`
 
-**Output discipline:** Default to dry-run. Existing user-owned source records always win. Do not overwrite, delete, rename, move, edit, verify claims, perform Intake or Experience Sync, move existing resumes or CVs into `/sources/seed/`, or populate actual source or target mappings without explicit instruction.
+**Output discipline:** Default to dry-run. Resolve the current Source Manifest before classifying drift. Existing user-owned records always win. An active-tree path explicitly retired by current user-owned manifest policy is excluded from the repository-specific expected scaffold; its absence is not drift and it must not be proposed or recreated. If an explicitly retired path still exists, report it and leave it untouched. Do not overwrite, delete, rename, move, edit, verify claims, perform Intake or Experience Sync, perform lifecycle deletion, move existing resumes or CVs into `/sources/seed/`, or populate actual source or target mappings without explicit instruction.
 
 ---
 
@@ -159,7 +163,7 @@ Apply the approved COMPASS Experience Sync.
 
 **Modes:** `dry-run`, `full-audit`, and explicitly approved `apply-approved`.
 
-**Output discipline:** Experience Sync never modifies the Source of Truth or routing map, verifies new career claims, writes directly to a target default branch, or merges a pull request without explicit instruction.
+**Output discipline:** Experience Sync never modifies the Source of Truth or routing map, verifies new career claims, writes directly to a target default branch, or merges a pull request without explicit instruction. It consumes the current approved authorities defined by the active Source-of-Truth persistence contract rather than requiring one legacy persistence shape.
 
 ---
 
@@ -431,9 +435,9 @@ The active artifact rules support additional career-specific artifacts even when
 Supported artifact requests include:
 
 - canonical career records;
-- claim ledgers;
-- do-not-claim registers;
-- coverage registers;
+- claim-control records or ledgers under the active persistence contract;
+- do-not-claim controls;
+- coverage state or registers under the active persistence contract;
 - Experience Sync reports and public claim indexes;
 - analysis and verified opportunity-search reports;
 - recruiter-legitimacy and opportunity-fraud risk reports;
@@ -446,7 +450,7 @@ Supported artifact requests include:
 - compensation notes;
 - other career-specific artifacts.
 
-When generating these artifacts, use the active framework files and rules rather than inventing independent command behavior.
+When generating these artifacts, use the active framework files and rules rather than inventing independent command behavior. Do not create default parallel persistence artifacts when a current user-owned Source-of-Truth contract explicitly replaces them with equivalent canonical state.
 
 ### Recruiter Responses and Verification Messages
 
@@ -473,7 +477,7 @@ Required private source when configured:
 
 - `intel/recruiter-risk-intel-ledger.yaml`
 
-Output discipline: preserve source provenance, date, confidence, match strength, uncertainty, privacy boundaries, and write status. Do not store actual live entity records in the public COMPASS Framework repository. Do not modify career claim ledgers, resumes, opportunity registries, candidate-status records, or unrelated Source of Truth files unless explicitly instructed.
+Output discipline: preserve source provenance, date, confidence, match strength, uncertainty, privacy boundaries, and write status. Do not store actual live entity records in the public COMPASS Framework repository. Do not modify career claim controls, resumes, opportunity registries, candidate-status records, or unrelated Source-of-Truth files unless explicitly instructed.
 
 ## Not Currently Active as First-Class Commands
 

@@ -1,6 +1,6 @@
 # COMPASS Version
 
-Current COMPASS Version: vNext 2026-08.4
+Current COMPASS Version: vNext 2026-08.5
 
 Canonical Branch: main
 
@@ -20,11 +20,11 @@ COMPASS is the only canonical framework name. New rules, prompts, examples, and 
 
 ## Active Behavior Notes
 
-The active vNext 2026-08.4 framework includes COMPASS-only terminology, career-focused scope, executable Resume Artifact Release Assurance with hardened OOXML validation and post-publication artifact-name integrity, COMPASS Intake checkpoint artifact behavior, COMPASS Source Rebase scaffold alignment, COMPASS Experience Sync public-projection reconciliation with private source-side target routing, COMPASS Comprehensive Career CV, Initial Seed Artifact support, claim-depth-aware Staff / Principal resume positioning, the Opportunity Reality Layer, the Recruiter Legitimacy and Opportunity Fraud Risk Gate, private recruiter-risk intelligence ledger templates, the Conversational Handoff Gate, fit-calibrated positioning and gap salience, the optional Recruiter Fit Brief, COMPASS Verified Opportunity Search with measurable search breadth and reconciled telemetry, and optional persistent opportunity-registry support:
+The active vNext 2026-08.5 framework includes COMPASS-only terminology, career-focused scope, executable Resume Artifact Release Assurance with hardened OOXML validation and post-publication artifact-name integrity, COMPASS Intake repository-defined persistence compatibility, COMPASS Source Rebase scaffold alignment with explicit retired-path handling, COMPASS Experience Sync public-projection reconciliation with private source-side target routing, COMPASS Comprehensive Career CV, Initial Seed Artifact support, claim-depth-aware Staff / Principal resume positioning, the Opportunity Reality Layer, the Recruiter Legitimacy and Opportunity Fraud Risk Gate, private recruiter-risk intelligence ledger templates, the Conversational Handoff Gate, fit-calibrated positioning and gap salience, the optional Recruiter Fit Brief, COMPASS Verified Opportunity Search with measurable search breadth and reconciled telemetry, and optional persistent opportunity-registry support:
 
 - COMPASS is a career-focused, source-grounded framework for turning messy career inputs into verified, defensible job-search outputs.
 - COMPASS supports the careers / job-search profile. Product, strategy, research, consulting, grant, policy, and personal knowledge workflows are out of scope unless the project owner explicitly reopens scope.
-- Core behavior remains truth-first, source-grounded, checkpointed, and claim-ledger-driven.
+- Core behavior remains truth-first and source-grounded. Intake persistence is resolved from current user-owned Source-of-Truth policy: checkpoint/ledger/register persistence remains the generic default, while an explicit repository-defined canonical persistence contract may replace parallel artifacts without weakening TruthGuard, claim depth, do-not-claim state, coverage, pause/resume state, or storage honesty.
 - COMPASS Comprehensive Career CV is a first-class command for compiling the currently approved career Source of Truth into a broad human-readable and ATS-readable document without turning the CV into a second factual authority.
 - Comprehensive-CV generation requires per-role coverage dispositions, implementation-stage preservation, recruiter/public publication envelopes, and Experience Sync for public repository publication.
 - Targeted resumes remain the default application artifact; a comprehensive CV is a broad review and evidence-depth artifact rather than automatic role optimization.
@@ -74,22 +74,22 @@ The active vNext 2026-08.4 framework includes COMPASS-only terminology, career-f
 - Identifiable-company analysis requires current company and interview research when external access is available, with entity disambiguation, source-tier handling, recency labels, role relevance, sample limitations, and confidence.
 - Anonymous employee and candidate reviews remain attributed sentiment or reported accounts, not verified company facts.
 - Pursuit economics considers evidence, material gaps, bridgeability, access path, posting signals, compensation, level, remote alignment, strategic value, effort, opportunity cost, and stronger alternatives.
-- COMPASS Intake requires checkpoint artifact generation at every committed round.
-- COMPASS Intake uses stable artifact templates for checkpoint records, claim-ledger entries, do-not-claim entries, coverage-register entries, storage-status blocks, and optional ZIP bundle manifests.
-- COMPASS Intake requires coverage tracking for material imported claims; checkpoints are progress commits, not proof of full source ingestion.
-- COMPASS Intake runs a Materiality Gate before asking questions: it inspects available approved ledgers, do-not-claim records, coverage registers, checkpoint records, canonical source records, and relevant source artifacts, then asks only unresolved material questions.
-- COMPASS Source Rebase supports safe dry-run and explicitly approved create-missing-only scaffold alignment for source-of-truth repositories without overwriting, deleting, renaming, moving, or modifying existing user-owned records.
-- COMPASS Source Rebase recognizes `/sources/seed/` as the recommended scaffold path for Initial Seed Artifacts and `/sync/` as the optional private scaffold path for Experience Sync target routing.
-- COMPASS Source Rebase preserves historical checkpoint files such as older `COMPASS_Layer0_*` paths as historical records rather than normalizing names.
+- COMPASS Intake resolves a persistence contract before committed writes; absent an explicit current user-owned override, default checkpoint, approved-claim, do-not-claim, coverage-register, and storage-status artifacts remain required.
+- A current user-owned Source of Truth may explicitly authorize repository-defined canonical persistence; in that mode governing current records store equivalent approval, rejection, claim-depth, do-not-claim, coverage, unresolved-state, and resume-point data without mandatory parallel legacy artifacts.
+- Git history may serve as a recoverable historical checkpoint only when active repository policy explicitly declares Git-backed retention.
+- COMPASS Intake runs a Materiality Gate before asking questions. It inspects the current authorities required by the active persistence contract; the default model includes ledgers, coverage registers, checkpoints, canonical records, and relevant source artifacts, while repository-defined canonical mode must not require retired default artifacts.
+- COMPASS Source Rebase supports safe dry-run and explicitly approved create-missing-only scaffold alignment for Source-of-Truth repositories without overwriting, deleting, renaming, moving, or modifying existing user-owned records.
+- COMPASS Source Rebase recognizes `/sources/seed/` as the generic recommended scaffold path for Initial Seed Artifacts and `/sync/` as the optional private scaffold path for Experience Sync target routing.
+- COMPASS Source Rebase resolves current Source Manifest policy before drift classification. Explicitly retired active-tree paths are excluded from the repository-specific expected scaffold, their absence is not drift, and they are not recreated. Existing retired paths remain untouched because Source Rebase is non-destructive. Historical preservation remains the generic default absent explicit retirement.
 - COMPASS Experience Sync reconciles an approved Source of Truth into a separate public or externally shareable experience repository as a one-way downstream projection.
 - COMPASS Experience Sync resolves downstream targets from the private Source of Truth routing map at `sync/COMPASS_Experience_Targets.yaml` when available.
 - Public Experience Manifests use a stable source identifier and reconciliation metadata rather than exposing the private Source of Truth repository location.
 - COMPASS Experience Sync defaults to dry-run, supports full-audit, and permits writes only in explicitly approved `apply-approved` mode through a non-default target branch and pull request.
 - COMPASS Experience Sync applies factual approval and public-disclosure suitability as separate gates, preserves claim-depth and do-not-claim boundaries, and never modifies the Source of Truth or routing map.
-- Imported resumes, CVs, LinkedIn profiles, cover letters, portfolio examples, recruiter resumes, and prior generated artifacts are evidence inputs until their material claims are verified into the canonical source of truth.
-- Initial Seed Artifacts under `/sources/seed/` are seed, provisional, evidence, and not canonical. They may support Provisional Resume / CV Mode while Intake is incomplete.
+- Imported resumes, CVs, LinkedIn profiles, cover letters, portfolio examples, recruiter resumes, and prior generated artifacts are evidence inputs until their material claims are verified into the governing current Source of Truth.
+- Initial Seed Artifacts under `/sources/seed/` are seed, provisional, evidence, and not canonical when that generic scaffold path is active. They may support Provisional Resume / CV Mode while Intake is incomplete.
 - Comprehensive resumes and master CVs may be stronger provisional baselines than shortened or tailored resumes, but neither becomes permanent canonical truth merely by being stored as a seed artifact.
-- After verified ingestion, the canonical source-of-truth record, approved claim ledger, and do-not-claim register supersede imported artifacts for downstream use.
+- After verified ingestion, the governing current Source-of-Truth authorities supersede imported artifacts for downstream use.
 - Generated artifacts are downstream outputs, not factual authorities, unless separately imported and verified through Intake.
 - Generated artifact types use strict output templates from `rules/06-artifact-rules.md` unless the user explicitly requests a different format.
 - Downloadable resume artifacts remain staged and untrusted until a matching release manifest records `PASS` for every required check; missing validation capability is `UNKNOWN`, not an unchecked fallback.
@@ -101,7 +101,7 @@ The active vNext 2026-08.4 framework includes COMPASS-only terminology, career-f
 - Senior-IC resumes use claim-depth-aware wording, preserve official employment titles, prioritize verified Staff / Principal evidence, and distinguish intended benefits from realized outcomes.
 - Resume review should preserve useful technical depth while revising repeated architecture-taxonomy lists that obscure the candidate's action, decision, or consequence.
 - Intake setup must disclose whether direct datastore writes are available before asking setup questions.
-- If direct writes are unavailable, Intake must generate downloadable or copy-ready files and clearly instruct the user where to upload them.
+- If direct writes are unavailable, Intake must generate downloadable or copy-ready state in the shape required by the active persistence contract and clearly instruct the user where to save it.
 
 ## Compatibility Rule
 
@@ -125,8 +125,9 @@ Future COMPASS changes should preserve the core operating principles unless expl
 - Recruiter-legitimacy concerns must not change evidence-backed candidate-fit scoring; they affect verification, sensitive-information boundaries, and recommended next action
 - Private recruiter-risk intelligence ledgers are private Source of Truth records, not public framework data, and stale, weakly matched, or contradicted records must not be treated as current proof
 - COMPASS Intake remains the default process for building a canonical source record from unverified documents or a new user's history
-- COMPASS Source Rebase remains scaffold alignment only and must not perform Intake, claim verification, destructive source-record migration, or overwrite populated opportunity registries and run logs
+- Repository-defined Intake persistence may change storage shape only through explicit current user-owned policy and must preserve truthful source grounding, claim depth, do-not-claim boundaries, coverage, conflict handling, pause/resume continuity, historical retention, and storage honesty
+- COMPASS Source Rebase remains scaffold alignment only and must not perform Intake, claim verification, destructive source-record migration, lifecycle deletion, or overwrite populated opportunity registries and run logs
 - COMPASS Experience Sync remains a one-way downstream public projection and must not modify or supersede Source of Truth records
 - Source-side Experience Sync routing remains private Source of Truth configuration and must not be copied into public target metadata
 - COMPASS Comprehensive Career CV remains a generated publication, not a source archive or factual authority, and must preserve role coverage, contribution depth, implementation stage, disclosure controls, and resume-release requirements
-- Initial Seed Artifacts remain provisional evidence and provenance until superseded by verified source-of-truth records and ledgers
+- Initial Seed Artifacts remain provisional evidence and provenance until superseded by governing current verified Source-of-Truth authorities under the active persistence contract
