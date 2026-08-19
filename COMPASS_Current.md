@@ -307,6 +307,8 @@ Favor clear evidence and narrative signal over dense keyword packing.
 
 For Staff, Principal, Architect, and comparable senior individual-contributor resumes, preserve official employment titles while communicating operating level through verified architecture ownership, technical direction, cross-team influence, organizational leverage, operational accountability, and hands-on implementation.
 
+For role-tailored resumes with a bounded job description or requirement set, carry target importance into artifact ordering. Distinguish hard screens, load-bearing required qualifications, central responsibilities, differentiating preferred qualifications, and secondary preferred/contextual value. Establish major qualification signals quickly, then prefer source-backed evidence that proves those requirements while also differentiating through preferred capability, contribution depth, senior scope, decision consequence, or meaningful outcomes. Do not let novelty bury a hard requirement, and do not invent a required-versus-preferred taxonomy for an unbounded recruiter resume.
+
 Use approved claim depth to constrain verbs and leadership language. Do not mechanically convert cautious wording into ownership or leadership claims.
 
 Treat source-backed qualitative consequences as valid impact evidence. Do not force numerical metrics or convert intended benefits into realized outcomes.
