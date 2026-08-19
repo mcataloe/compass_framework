@@ -1,6 +1,6 @@
 # COMPASS Version
 
-Current COMPASS Version: vNext 2026-08.5
+Current COMPASS Version: vNext 2026-08.6
 
 Canonical Branch: main
 
@@ -20,7 +20,7 @@ COMPASS is the only canonical framework name. New rules, prompts, examples, and 
 
 ## Active Behavior Notes
 
-The active vNext 2026-08.5 framework includes COMPASS-only terminology, career-focused scope, executable Resume Artifact Release Assurance with hardened OOXML validation and post-publication artifact-name integrity, COMPASS Intake repository-defined persistence compatibility, COMPASS Source Rebase scaffold alignment with explicit retired-path handling, COMPASS Experience Sync public-projection reconciliation with private source-side target routing, COMPASS Comprehensive Career CV, Initial Seed Artifact support, claim-depth-aware Staff / Principal resume positioning, the Opportunity Reality Layer, the Recruiter Legitimacy and Opportunity Fraud Risk Gate, private recruiter-risk intelligence ledger templates, the Conversational Handoff Gate, fit-calibrated positioning and gap salience, the optional Recruiter Fit Brief, COMPASS Verified Opportunity Search with measurable search breadth and reconciled telemetry, and optional persistent opportunity-registry support:
+The active vNext 2026-08.6 framework includes COMPASS-only terminology, career-focused scope, executable Resume Artifact Release Assurance with hardened OOXML validation and post-publication artifact-name integrity, COMPASS Intake repository-defined persistence compatibility, COMPASS Source Rebase scaffold alignment with explicit retired-path handling, COMPASS Experience Sync public-projection reconciliation with private source-side target routing, COMPASS Comprehensive Career CV, Initial Seed Artifact support, claim-depth-aware Staff / Principal resume positioning, qualification-plus-differentiation evidence prioritization for role-tailored resumes, the Opportunity Reality Layer, the Recruiter Legitimacy and Opportunity Fraud Risk Gate, private recruiter-risk intelligence ledger templates, the Conversational Handoff Gate, fit-calibrated positioning and gap salience, the optional Recruiter Fit Brief, COMPASS Verified Opportunity Search with measurable search breadth and reconciled telemetry, and optional persistent opportunity-registry support:
 
 - COMPASS is a career-focused, source-grounded framework for turning messy career inputs into verified, defensible job-search outputs.
 - COMPASS supports the careers / job-search profile. Product, strategy, research, consulting, grant, policy, and personal knowledge workflows are out of scope unless the project owner explicitly reopens scope.
@@ -95,6 +95,7 @@ The active vNext 2026-08.5 framework includes COMPASS-only terminology, career-f
 - Downloadable resume artifacts remain staged and untrusted until a matching release manifest records `PASS` for every required check; missing validation capability is `UNKNOWN`, not an unchecked fallback.
 - External career artifacts use `rules/08-human-authenticity.md` to preserve truthful specificity, reviewer readability, candidate-specific voice, ATS-safe structure, and interview-defensible claims without fake humanization or AI-detector evasion tactics.
 - Fit-calibrated positioning preserves comprehensive internal gap analysis while ordering external evidence according to actual role alignment, leading with source-backed value in highly aligned opportunities and surfacing material gaps proportionately in moderate- or low-alignment opportunities.
+- Role-tailored resumes classify bounded target criteria by hard-screen, load-bearing required, central-responsibility, differentiating-preferred, and secondary-preferred importance, then establish qualification quickly while preferring source-backed evidence that simultaneously differentiates through preferred capability, contribution depth, senior scope, decision consequence, or meaningful outcomes.
 - Short-form external messages use the Conversational Handoff Gate in `rules/08-human-authenticity.md` to continue from shared context, preserve information gain, ask only the minimum useful questions, keep internal analysis out of the message, state each point once, and move toward one clear next action.
 - Conversational message drafting must identify established context, the remaining necessary answer or boundary, unresolved gating information, and the single next action before producing sendable text.
 - Conversational message revision must run a deletion pass that removes resume-summary phrasing, analysis leakage, repeated known context, generic interest signaling, and social filler that adds no answer, boundary, question, or action.

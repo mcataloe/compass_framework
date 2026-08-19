@@ -93,6 +93,44 @@ For Staff Engineer, Principal Engineer, Architect, senior platform, and comparab
 - Preserve contributor-level work when it is the strongest truthful evidence. Senior positioning must not erase collaboration or imply authority the candidate did not have.
 - Keep broad recruiter resumes sufficiently versatile, but still lead with the candidate's strongest verified senior-level signals.
 
+## Qualification + Differentiation Evidence Prioritization
+
+For a tailored resume with a controlling job description, recruiter requirement set, or other bounded role criteria, COMPASS must carry requirement importance from target analysis into resume evidence ordering rather than treating all matching terms as equal.
+
+Classify each material target element as one of:
+
+1. **Hard screen** — a non-negotiable eligibility or required-experience gate.
+2. **Load-bearing required qualification** — a capability the reviewer must be able to confirm quickly for the candidate to appear qualified.
+3. **Central responsibility** — one of the role's primary expected outcomes, operating responsibilities, or recurring work areas.
+4. **Differentiating preferred qualification** — a preferred, bonus, or unusually valuable capability that can distinguish an otherwise qualified candidate.
+5. **Secondary preferred or contextual value** — useful but non-central preference, domain familiarity, or supporting signal.
+
+When a prior COMPASS Analysis has already classified or weighted target requirements, reuse that resolved importance rather than silently reclassifying the role. When no prior analysis exists, perform the minimum target classification needed for resume prioritization without turning the resume artifact into an analysis report.
+
+For each source-backed candidate evidence item considered for inclusion, evaluate two separate signals:
+
+- **Qualification signal** — how strongly and directly the evidence proves a hard screen, load-bearing required qualification, or central responsibility.
+- **Differentiation signal** — how strongly the same evidence distinguishes the candidate from another person who merely satisfies the baseline, including preferred qualifications, unusually strong contribution depth, senior scope, decision consequence, uncommon domain transfer, or consequential outcomes.
+
+Apply the following ordering rule:
+
+> Establish qualification fast; among evidence that satisfies that constraint, prefer the evidence that differentiates most strongly and truthfully.
+
+Operationally:
+
+- Prefer source-backed evidence that simultaneously proves one or more load-bearing requirements **and** communicates a differentiating preferred capability, senior scope, consequential decision, or meaningful outcome.
+- Within the first two or three bullets of each materially relevant recent role, prioritize the major load-bearing capabilities that the role can genuinely prove while using the most differentiating available evidence for that coverage.
+- Do not spend several early bullets repeatedly proving the same baseline capability when different source-backed evidence can broaden required-qualification coverage or add meaningful differentiation.
+- A generic required-qualification bullet should not outrank a stronger accomplishment that proves the same requirement while also demonstrating preferred capability, contribution depth, or reviewer value.
+- Do not bury a hard screen or load-bearing requirement merely because a preferred qualification is more novel or visually interesting.
+- Weak, indirect, old, or low-claim-depth preferred evidence must not displace strong direct evidence for a required capability. Recency and role relevance remain important when evidence strength is otherwise comparable.
+- Do not promote an older differentiator above materially stronger recent evidence unless its target relevance and reviewer value clearly justify the tradeoff.
+- Do not combine unrelated accomplishments or overload one bullet with target keywords merely to satisfy multiple requirement categories. Multi-signal bullets are preferred only when the signals arise naturally from the same underlying work.
+- The absence of a preferred qualification does not weaken truthful required evidence and must never trigger fabrication, keyword laundering, or unsupported transfer claims.
+- Hard-screen failures remain analysis or eligibility concerns; resume ordering cannot convert an unmet gate into a satisfied one.
+
+For broad recruiter-targeted resumes without a bounded role or requirement set, do not invent a required-versus-preferred taxonomy. Use the Staff and Principal Evidence Prioritization rules and the user's verified target-role-family strategy instead. If a recruiter-targeted resume is explicitly bounded to a concrete requirement set, this section may be applied to that bounded scope.
+
 ## Claim-Depth-Aware Wording
 
 Use the approved claim depth to constrain wording. The following is non-exhaustive semantic guidance, not a word-substitution engine:
@@ -327,7 +365,7 @@ Defaults:
 - Hanging indent: wrapped lines align under the bullet text.
 - Paragraph spacing: compact.
 - Rule: preserve actual scope, technology, contribution depth, and outcome when source-backed.
-- For senior-IC target roles, apply the Staff and Principal Evidence Prioritization, Claim-Depth-Aware Wording, Evidence-Grounded Outcomes, and Bullet Construction rules above.
+- For senior-IC target roles, apply the Staff and Principal Evidence Prioritization, Qualification + Differentiation Evidence Prioritization when applicable, Claim-Depth-Aware Wording, Evidence-Grounded Outcomes, and Bullet Construction rules above.
 
 #### Role-to-Role Spacing
 
