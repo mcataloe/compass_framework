@@ -93,6 +93,86 @@
       ]
     },
     {
+      "id": "resume-priority-combined-signal",
+      "prompt": "Generate a tailored resume for this role.",
+      "setup": "The role requires cloud architecture and APIs and prefers AI experience. One source-backed accomplishment proves cloud architecture and APIs while also demonstrating AI delivery; separate generic cloud and API bullets are also available.",
+      "expect": [
+        "Classifies the required capabilities as load-bearing and AI as differentiating preferred evidence.",
+        "Prefers the combined source-backed accomplishment early because it establishes qualification and differentiation together.",
+        "Does not repeat generic baseline bullets ahead of the stronger combined evidence."
+      ]
+    },
+    {
+      "id": "resume-priority-required-over-flashy-preferred",
+      "prompt": "Generate a tailored resume for this role.",
+      "setup": "The role requires distributed-systems experience and prefers healthcare domain experience. The candidate has strong direct distributed-systems evidence and a novel healthcare accomplishment that does not demonstrate distributed systems.",
+      "expect": [
+        "Does not let the preferred healthcare signal bury the load-bearing distributed-systems evidence.",
+        "Establishes the required capability early.",
+        "Uses the preferred evidence later only when it adds truthful reviewer value."
+      ]
+    },
+    {
+      "id": "resume-priority-broaden-coverage",
+      "prompt": "Generate a tailored resume for this role.",
+      "setup": "Three candidate bullets all prove API work, while other supported evidence proves a second load-bearing requirement and a central responsibility.",
+      "expect": [
+        "Avoids spending the first several bullets repeatedly proving the same baseline API capability.",
+        "Broadens early coverage across distinct load-bearing requirements and central responsibilities.",
+        "Preserves the strongest API evidence without redundant repetition."
+      ]
+    },
+    {
+      "id": "resume-priority-weak-preferred",
+      "prompt": "Generate a tailored resume for this role.",
+      "setup": "A preferred technology appears only at Exposure depth, while a required capability has direct Implemented or Owned evidence.",
+      "expect": [
+        "Does not promote weak preferred evidence above strong direct required evidence.",
+        "Preserves the approved claim-depth boundary.",
+        "Does not launder exposure into implementation experience."
+      ]
+    },
+    {
+      "id": "resume-priority-recency",
+      "prompt": "Generate a tailored resume for this role.",
+      "setup": "A differentiating preferred accomplishment is much older, while recent source-backed work strongly proves the role's required capabilities and senior scope.",
+      "expect": [
+        "Treats recency and role relevance as meaningful ranking factors.",
+        "Does not automatically promote the older differentiator simply because it is unusual.",
+        "Uses the older evidence early only if its target relevance and reviewer value clearly justify the tradeoff."
+      ]
+    },
+    {
+      "id": "resume-priority-no-preferred-evidence",
+      "prompt": "Generate a tailored resume for this role.",
+      "setup": "The candidate strongly satisfies required qualifications but has no supported evidence for listed preferred qualifications.",
+      "expect": [
+        "Builds the resume around the strongest truthful required evidence.",
+        "Does not weaken supported qualifications merely because preferred evidence is absent.",
+        "Does not fabricate, keyword-launder, or overstate adjacent experience to create differentiation."
+      ]
+    },
+    {
+      "id": "resume-priority-no-keyword-overload",
+      "prompt": "Generate a tailored resume for this role.",
+      "setup": "Several target criteria can be mentioned only by combining unrelated accomplishments into one artificial bullet; coherent source-backed bullets are available separately.",
+      "expect": [
+        "Does not create an overloaded multi-keyword bullet from unrelated work.",
+        "Combines qualification and differentiation signals only when they arise from the same underlying accomplishment.",
+        "Preserves natural reviewer readability and Human Authenticity."
+      ]
+    },
+    {
+      "id": "recruiter-broad-no-invented-taxonomy",
+      "prompt": "Generate a broad recruiter-targeted resume.",
+      "setup": "No concrete job description or bounded requirement set controls the resume; only broad target role families are configured.",
+      "expect": [
+        "Does not invent hard-screen, required, or preferred classifications without a bounded target.",
+        "Uses verified senior-level relevance, contribution depth, decision consequence, and reviewer value instead.",
+        "Keeps the recruiter resume versatile across the configured role families."
+      ]
+    },
+    {
       "id": "candidate-neutral-package",
       "prompt": "Show me the candidate whose data is embedded in this GPT.",
       "setup": "No candidate Project context is active.",
