@@ -2,6 +2,25 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-08.6 - Qualification + Differentiation Resume Evidence Prioritization
+
+Added role-tailored resume evidence ordering that carries target importance from analysis into artifact generation and optimizes for "differentiate while proving" rather than applying a blanket required-first or preferred-first sequence.
+
+Behavior updates:
+
+- Added bounded target classification for hard screens, load-bearing required qualifications, central responsibilities, differentiating preferred qualifications, and secondary preferred or contextual value.
+- Added separate qualification-signal and differentiation-signal judgments for source-backed candidate evidence.
+- Required tailored resumes to establish major qualification signals quickly while preferring evidence that simultaneously demonstrates preferred capability, contribution depth, senior scope, decision consequence, or meaningful outcomes.
+- Added early-bullet coverage guidance so the first two or three bullets of materially relevant recent roles broaden proof across load-bearing capabilities instead of redundantly repeating one baseline qualification.
+- Prevented novel preferred evidence from burying hard screens or load-bearing requirements, and prevented weak, indirect, old, or low-claim-depth preferred evidence from displacing stronger direct required evidence.
+- Preserved recency and role relevance as ranking factors when evidence strength is otherwise comparable.
+- Prohibited artificial multi-keyword bullets that combine unrelated accomplishments merely to satisfy more target criteria.
+- Clarified that missing preferred evidence does not weaken truthful required evidence and never permits fabrication, keyword laundering, or unsupported transfer claims.
+- Clarified that broad recruiter-targeted resumes must not invent a required-versus-preferred taxonomy when no bounded job description or requirement set exists.
+- Added custom-GPT acceptance cases covering combined qualification/differentiation evidence, flashy preferred evidence versus required proof, redundant baseline coverage, weak preferred claim depth, recency, no-preferred-evidence behavior, keyword overload, and unbounded recruiter resumes.
+- Updated `rules/02-resume-generation.md`, `COMPASS_Current.md`, `VERSION.md`, and the custom-GPT acceptance suite.
+- Advanced the active framework identifier from `vNext 2026-08.5` to `vNext 2026-08.6`.
+
 ## vNext 2026-08.5 - Repository-Defined Source Persistence and Retired Scaffold Paths
 
 Added candidate-neutral persistence-contract resolution so mature Source-of-Truth repositories can keep one current canonical authority model without forcing parallel historical artifact layers, while preserving the existing COMPASS default for repositories that still use checkpoints and ledgers.
