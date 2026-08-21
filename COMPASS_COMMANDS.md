@@ -23,7 +23,9 @@ Use this order:
 
 Under default artifact persistence, item 2 is normally represented by approved claim and do-not-claim ledgers. Under an explicit repository-defined canonical persistence contract, the governing current canonical record may own the same boundaries directly when current user-owned policy says so.
 
-Target job descriptions, recruiter requests, and opportunity records do not create experience, skills, ownership, metrics, credentials, achievements, or facts.
+Target job descriptions, recruiter requests, and opportunity records do not create experience, skills, ownership, metrics, credentials, achievements, professional-effectiveness evidence, or facts.
+
+Professional-effectiveness capability labels governed by `rules/20-professional-effectiveness-evidence.md` are derived analytical metadata. Positive candidate signals must resolve to verified underlying actions, decisions, constraints, stakeholder context, and consequences under the active Source-of-Truth authority model.
 
 ### Opportunity context
 
@@ -42,7 +44,7 @@ Within TruthGuard, do-not-claim controls, privacy requirements, artifact cleanli
 5. COMPASS artifact-specific rules and generic framework defaults
 6. Project instructions, memory, or model defaults only when not contradicted by stronger sources
 
-User-specific Source of Truth policy may configure persistence shape, lifecycle, thresholds, weights, channels, employment-structure modes, safety thresholds, information-sharing boundaries, private risk-intel ledger paths, or presentation within its scope. It does not create candidate facts and cannot weaken TruthGuard, claim-depth boundaries, do-not-claim controls, coverage, storage honesty, or other non-optional framework safety rules.
+User-specific Source of Truth policy may configure persistence shape, lifecycle, thresholds, weights, channels, employment-structure modes, safety thresholds, information-sharing boundaries, professional-effectiveness annotation behavior, private risk-intel ledger paths, or presentation within its scope. It does not create candidate facts and cannot weaken TruthGuard, claim-depth boundaries, do-not-claim controls, coverage, storage honesty, or other non-optional framework safety rules.
 
 ## Current First-Class Commands
 
@@ -75,9 +77,10 @@ Update my COMPASS Source of Truth.
 - `COMPASS_Current.md`
 - `rules/00-operating-principles.md`
 - `rules/07-compass-intake.md`
+- `rules/20-professional-effectiveness-evidence.md`
 - `prompts/compass-intake.md`
 
-**Persistence discipline:** Resolve current user-owned Source-of-Truth persistence policy before committed writes. If no explicit repository-defined override exists, use the default checkpoint, approved-claim, do-not-claim, coverage-register, and storage-status artifacts. An explicit repository-defined canonical persistence contract may update governing current authorities directly only while preserving equivalent TruthGuard, claim-depth, do-not-claim, coverage, pause/resume, historical-retention, conflict-handling, and storage-honesty guarantees.
+**Persistence discipline:** Resolve current user-owned Source-of-Truth persistence policy before committed writes. If no explicit repository-defined override exists, use the default checkpoint, approved-claim, do-not-claim, coverage-register, and storage-status artifacts. An explicit repository-defined canonical persistence contract may update governing current authorities directly only while preserving equivalent TruthGuard, claim-depth, do-not-claim, coverage, pause/resume, historical-retention, conflict-handling, and storage-honesty guarantees. Professional-effectiveness annotations may be persisted only after the underlying factual evidence is approved and only in the shape authorized by the active Source-of-Truth policy.
 
 ---
 
@@ -181,7 +184,7 @@ Apply the approved COMPASS Experience Sync.
 - assess recruiter positioning;
 - decide whether to apply;
 - map source evidence to target requirements;
-- identify risks, gaps, objections, role compression, employer reality, recruiter legitimacy, unsafe process signals, sensitive-information boundaries, or pursuit economics.
+- identify risks, gaps, objections, role compression, employer reality, recruiter legitimacy, unsafe process signals, sensitive-information boundaries, professional-effectiveness requirements, or pursuit economics.
 
 **Example triggers:**
 
@@ -210,11 +213,12 @@ The flag authorizes generation only. It never authorizes attachment, upload, for
 - `rules/04-truthguard.md`
 - `rules/06-artifact-rules.md`
 - `rules/10-opportunity-recon.md`
+- `rules/20-professional-effectiveness-evidence.md`
 - `rules/14-recruiter-legitimacy-risk.md` when recruiter, staffing, consulting, unclear-entity, suspicious-domain, sensitive-work, or unsafe-process signals are present
 - `rules/19-recruiter-fit-brief.md` and `templates/recruiter-fit-brief/COMPASS_Recruiter_Fit_Brief_TEMPLATE.md` only when `--recruiter-brief` is active
 - `prompts/compass-analysis.md`
 
-**Output discipline:** Analysis is separate from generated artifacts. For identifiable-company role analysis, include Purple Squirrel Factor, company and interview reality, and recommendation and pursuit economics under the strict analysis report contract. Apply recruiter-legitimacy risk gating when relevant, but do not let legitimacy findings alter evidence-backed candidate alignment. Do not generate downstream artifacts unless explicitly requested. `--recruiter-brief` is the narrow exception: after the complete analysis, generate a separate brief from the same resolved evidence under Rule 19. Never derive it by shortening, redacting, or deleting sections from the internal analysis, and never automatically share it.
+**Output discipline:** Analysis is separate from generated artifacts. For identifiable-company role analysis, include Purple Squirrel Factor, company and interview reality, and recommendation and pursuit economics under the strict analysis report contract. Apply professional-effectiveness mapping only through source-backed evidence and inside the existing 13 sections. Apply recruiter-legitimacy risk gating when relevant, but do not let legitimacy findings alter evidence-backed candidate alignment. Do not generate downstream artifacts unless explicitly requested. `--recruiter-brief` is the narrow exception: after the complete analysis, generate a separate brief from the same resolved evidence under Rule 19. Never derive it by shortening, redacting, or deleting sections from the internal analysis, and never automatically share it.
 
 ---
 
@@ -317,9 +321,10 @@ Build a COMPASS resume for this job description.
 - `rules/06-artifact-rules.md`
 - `rules/08-human-authenticity.md`
 - `rules/16-resume-release-assurance.md`
+- `rules/20-professional-effectiveness-evidence.md`
 - `prompts/compass-tailored-resume.md`
 
-**Output discipline:** The resume must not include COMPASS analysis, scoring, risk notes, company research, interview findings, recruiter-legitimacy findings, pursuit economics, contract utility, commercial-term analysis, or private tactical notes. Treat generated files as staged and untrusted until the resume-release contract completes. Do not present a downloadable artifact as final unless every required check is `PASS` and the matching manifest authorizes publication; any `FAIL` or `UNKNOWN` stops release.
+**Output discipline:** The resume must not include COMPASS analysis, scoring, risk notes, company research, interview findings, recruiter-legitimacy findings, pursuit economics, contract utility, commercial-term analysis, or private tactical notes. Professional-effectiveness evidence should appear through source-backed work rather than a generic Soft Skills section or unsupported adjective list. Treat generated files as staged and untrusted until the resume-release contract completes. Do not present a downloadable artifact as final unless every required check is `PASS` and the matching manifest authorizes publication; any `FAIL` or `UNKNOWN` stops release.
 
 ---
 
@@ -347,9 +352,10 @@ Build a Staff Engineer recruiter resume with COMPASS.
 - `rules/06-artifact-rules.md`
 - `rules/08-human-authenticity.md`
 - `rules/16-resume-release-assurance.md`
+- `rules/20-professional-effectiveness-evidence.md`
 - `prompts/recruiter-targeted-resume.md`
 
-**Output discipline:** Preserve broad recruiter positioning while respecting TruthGuard, source-grounding, user-specific style rules, and do-not-claim constraints. Do not include recruiter-legitimacy analysis or private risk commentary inside the resume. Treat generated files as staged and untrusted until the resume-release contract completes. Do not present a downloadable artifact as final unless every required check is `PASS` and the matching manifest authorizes publication; any `FAIL` or `UNKNOWN` stops release.
+**Output discipline:** Preserve broad recruiter positioning while respecting TruthGuard, source-grounding, user-specific style rules, and do-not-claim constraints. Use recurring corroborated professional-effectiveness patterns only when the underlying evidence supports them. Do not include recruiter-legitimacy analysis or private risk commentary inside the resume. Treat generated files as staged and untrusted until the resume-release contract completes. Do not present a downloadable artifact as final unless every required check is `PASS` and the matching manifest authorizes publication; any `FAIL` or `UNKNOWN` stops release.
 
 ---
 
@@ -424,9 +430,10 @@ Write the COMPASS cover letter for the job we analyzed.
 - `rules/04-truthguard.md`
 - `rules/06-artifact-rules.md`
 - `rules/08-human-authenticity.md`
+- `rules/20-professional-effectiveness-evidence.md`
 - `prompts/compass-cover-letter.md`
 
-**Output discipline:** Use a calm, professional, forward-looking tone. Do not include internal analysis, ATS tables, compensation strategy, company-review findings, recruiter-legitimacy findings, interview-risk notes, pursuit economics, contract utility, commercial-term analysis, or private tactical notes.
+**Output discipline:** Use a calm, professional, forward-looking tone. When professional-effectiveness evidence is material, demonstrate it through concrete source-backed behavior rather than trait lists. Do not include internal analysis, ATS tables, compensation strategy, company-review findings, recruiter-legitimacy findings, interview-risk notes, pursuit economics, contract utility, commercial-term analysis, or private tactical notes.
 
 ## Supported Artifact Requests
 
@@ -450,11 +457,11 @@ Supported artifact requests include:
 - compensation notes;
 - other career-specific artifacts.
 
-When generating these artifacts, use the active framework files and rules rather than inventing independent command behavior. Do not create default parallel persistence artifacts when a current user-owned Source-of-Truth contract explicitly replaces them with equivalent canonical state.
+When generating these artifacts, use the active framework files and rules rather than inventing independent command behavior. Load `rules/20-professional-effectiveness-evidence.md` whenever the requested artifact materially uses professional-effectiveness evidence or behavioral matching. Do not create default parallel persistence artifacts or standalone competency profiles when a current user-owned Source-of-Truth contract explicitly replaces them with equivalent canonical state.
 
 ### Recruiter Responses and Verification Messages
 
-Recruiter responses are supported artifacts governed by `rules/06-artifact-rules.md`, `rules/08-human-authenticity.md`, and the applicable Source of Truth channel policy. When the recruiter, company, application path, staffing chain, requested next action, or sensitive-information boundary is unclear or suspicious, also load `rules/14-recruiter-legitimacy-risk.md` and draft a verification-first response rather than a normal interest response.
+Recruiter responses are supported artifacts governed by `rules/06-artifact-rules.md`, `rules/08-human-authenticity.md`, and the applicable Source of Truth channel policy. When the response materially uses professional-effectiveness positioning, also load `rules/20-professional-effectiveness-evidence.md`. When the recruiter, company, application path, staffing chain, requested next action, or sensitive-information boundary is unclear or suspicious, also load `rules/14-recruiter-legitimacy-risk.md` and draft a verification-first response rather than a normal interest response.
 
 Do not include internal legitimacy scoring, scam analysis, or private risk commentary in the sendable message unless the user explicitly asks for an internal dossier or disengagement language.
 
@@ -497,4 +504,4 @@ When adding, renaming, or retiring a COMPASS command:
 4. Update `README.md` if the command should be visible to new users.
 5. Update `COMPASS_Changelog.md` with the change.
 6. Update `VERSION.md` when command behavior materially changes framework behavior.
-7. Preserve source-grounding, phase separation, TruthGuard, opportunity-recon evidence discipline, recruiter-legitimacy evidence discipline, private-ledger evidence discipline, entity separation, action boundaries, persistence honesty, and artifact cleanliness.
+7. Preserve source-grounding, phase separation, TruthGuard, professional-effectiveness evidence discipline, opportunity-recon evidence discipline, recruiter-legitimacy evidence discipline, private-ledger evidence discipline, entity separation, action boundaries, persistence honesty, and artifact cleanliness.
