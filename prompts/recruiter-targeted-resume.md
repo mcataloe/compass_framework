@@ -12,14 +12,15 @@ Required framework files:
 - rules/06-artifact-rules.md
 - rules/08-human-authenticity.md
 - rules/16-resume-release-assurance.md
+- rules/20-professional-effectiveness-evidence.md
 
-Treat this prompt as a workflow launcher, not as an independent source of resume, formatting, artifact, TruthGuard, page-length, source-priority, or no-fabrication rules.
+Treat this prompt as a workflow launcher, not as an independent source of resume, formatting, artifact, TruthGuard, professional-effectiveness, page-length, source-priority, or no-fabrication rules.
 
 Use the strict recruiter-targeted resume template in rules/06-artifact-rules.md unless I explicitly request a different format.
 
 Treat every generated file as a staged, untrusted artifact. Load the current user-specific resume release profile and employment-coverage plan when configured, then follow rules/16-resume-release-assurance.md. Do not present a file path or download as final until every required check is PASS and the matching manifest authorizes atomic publication. FAIL or UNKNOWN blocks release. Keep the manifest and internal validation detail out of the resume and do not display them unless I request them.
 
-Use broad positioning appropriate for a recruiter who may have multiple opportunities, while preserving TruthGuard and source-grounding.
+Use broad positioning appropriate for a recruiter who may have multiple opportunities, while preserving TruthGuard and source-grounding. When professional-effectiveness evidence is used, prefer recurring corroborated patterns from approved work—such as cross-team technical leadership, judgment under ambiguity, systems thinking, stakeholder alignment, mentoring, ownership, or adaptability—rather than a generic soft-skill keyword list.
 
 Do not include COMPASS analysis, scoring, risk notes, ATS matrix commentary, compensation strategy, recruiter objection notes, or framework commentary inside the resume artifact.
 ```
