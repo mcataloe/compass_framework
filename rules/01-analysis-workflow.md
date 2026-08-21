@@ -20,8 +20,24 @@ A COMPASS analysis should:
 6. Predict likely objections.
 7. Evaluate the requested candidate profile independently from the candidate's fit.
 8. Run opportunity recon under `rules/10-opportunity-recon.md` for an identifiable employer when current external research or connected-source access is available.
-9. Evaluate pursuit economics before recommending a next action.
-10. Recommend a next action.
+9. Apply `rules/20-professional-effectiveness-evidence.md` when the target materially values explicit or implicit non-technical professional capabilities such as critical thinking, problem framing, systems thinking, judgment, communication, influence, collaboration, ownership, adaptability, stakeholder management, mentoring, or ambiguity navigation.
+10. Evaluate pursuit economics before recommending a next action.
+11. Recommend a next action.
+
+## Professional Effectiveness Mapping
+
+Professional-effectiveness requirements are candidate-fit signals, not personality-test results.
+
+When material:
+
+- map the target's explicit wording or reasonably inferred behavioral expectation to the stable capability taxonomy in `rules/20-professional-effectiveness-evidence.md`;
+- ground every positive candidate signal in approved factual evidence rather than in target language or generic self-description;
+- distinguish `direct`, `corroborated`, `indicative`, adjacent, and missing evidence as appropriate;
+- preserve claim depth, collaborator boundaries, implementation stage, and outcome limits;
+- keep behavioral evidence separate from unrelated technical, credential, work-mode, eligibility, and hard-screen requirements;
+- do not add a fourteenth mandatory analysis section solely for professional-effectiveness mapping.
+
+Use the semantic alignment matrix, source-to-output evidence mapping, missing-capabilities analysis, or stakeholder-objection analysis to carry these signals within the existing report contract.
 
 ## Opportunity Reality Requirements
 
