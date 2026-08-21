@@ -2,6 +2,24 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-08.7 - Professional Effectiveness Evidence
+
+Added a source-grounded professional-effectiveness model so COMPASS can treat critical thinking, systems thinking, judgment, communication, influence, ownership, adaptability, and related non-technical capabilities as first-class hiring signals without turning them into unsupported personality claims.
+
+Behavior updates:
+
+- Added `rules/20-professional-effectiveness-evidence.md` with a candidate-neutral taxonomy spanning cognitive/strategic, interpersonal, leadership/leverage, and executional capabilities.
+- Added an evidence-atom contract that keeps the verified action, decision, constraint, stakeholder context, and consequence as factual authority while treating capability labels as derived metadata.
+- Added `direct`, `corroborated`, and `indicative` signal-strength semantics without introducing personality scores, performance ratings, or percentiles.
+- Added explicit and implicit target-signal mapping for professional-effectiveness requirements while preserving separate technical, credential, eligibility, and hard-screen judgments.
+- Kept professional-effectiveness mapping inside the existing 13-section COMPASS Analysis contract rather than adding a fourteenth mandatory section.
+- Required tailored resumes, recruiter resumes, cover letters, application/recruiter messaging, and interview preparation to demonstrate relevant behaviors through source-backed decisions, actions, tradeoffs, coordination, and consequences instead of generic soft-skill adjective lists.
+- Added interview-story-bank guidance for behaviorally rich evidence while prohibiting synthetic stories assembled from unrelated experiences.
+- Updated COMPASS Intake so capability annotations may be derived only after the underlying factual evidence is approved and so generic self-rating questions such as `Are you a critical thinker?` are avoided when concrete behavioral evidence can be examined.
+- Preserved backward compatibility for existing Source-of-Truth records and made explicit capability annotation/backfill optional and just-in-time rather than requiring mass record rewrites.
+- Updated the Analysis, Tailored Resume, Recruiter-Targeted Resume, Cover Letter, Interview Preparation, and Intake launchers to load and apply Rule 20.
+- Advanced the active framework identifier from `vNext 2026-08.6` to `vNext 2026-08.7`.
+
 ## vNext 2026-08.6 - Qualification + Differentiation Resume Evidence Prioritization
 
 Added role-tailored resume evidence ordering that carries target importance from analysis into artifact generation and optimizes for "differentiate while proving" rather than applying a blanket required-first or preferred-first sequence.
