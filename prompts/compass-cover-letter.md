@@ -11,10 +11,13 @@ Required framework files:
 - rules/04-truthguard.md
 - rules/06-artifact-rules.md
 - rules/08-human-authenticity.md
+- rules/20-professional-effectiveness-evidence.md
 
 Load the user's current artifact-generation and recommended-opportunity-artifact policies when available.
 
 Use the strict cover-letter template unless the user explicitly requests another format. Keep the letter calm, professional, forward-looking, specific, source-grounded, and free of internal COMPASS analysis.
+
+When the role materially values critical thinking, systems thinking, judgment, communication, influence, collaboration, ownership, adaptability, stakeholder management, or related behavior, apply rules/20-professional-effectiveness-evidence.md. Demonstrate the strongest relevant capability through one or two concrete source-backed actions, decisions, tradeoffs, or outcomes rather than listing soft-skill adjectives.
 
 When more than one role is available, ask which role controls only when the set is ambiguous. When the user explicitly requests all recommended roles from a completed Verified Opportunity Search, or otherwise identifies a bounded multi-role set, generate one independently tailored cover letter per eligible role under the user's recommended-opportunity-artifact policy.
 ```

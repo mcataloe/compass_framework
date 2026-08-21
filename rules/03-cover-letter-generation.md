@@ -16,6 +16,10 @@ Cover letters must be specific, source-grounded, and non-generic.
 
 Use at least one source-backed value example when available.
 
+When the target role materially values a professional-effectiveness capability governed by `rules/20-professional-effectiveness-evidence.md`, prefer one or two concrete source-backed actions, decisions, tradeoffs, stakeholder interactions, or consequences that demonstrate the capability. Do not substitute generic labels such as `critical thinker`, `strong communicator`, `strategic`, `collaborative`, or `resilient` for evidence.
+
+Professional-effectiveness evidence does not authorize stronger ownership, management, outcome, or scope language than the governing candidate source permits.
+
 Do not invent company-specific enthusiasm, personal motivation, culture fit, values alignment, or role-specific affinity.
 
 Avoid generic filler such as "excited to apply" unless it is natural in context and does not substitute for source-backed fit.

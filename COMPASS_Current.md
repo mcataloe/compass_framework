@@ -27,6 +27,20 @@ COMPASS Source Rebase and COMPASS Experience Sync are repository-maintenance wor
 
 Resolve candidate claim safety through the current user-owned Source-of-Truth persistence and authority policy. Under default artifact persistence, approved claim ledgers and do-not-claim lists are the current evidence-control layer when present. Under an explicit repository-defined canonical persistence contract, the governing current canonical record may own the same approval, claim-depth, and do-not-claim boundaries directly. Imported artifacts remain evidence inputs and provenance; after verified ingestion, the governing current Source-of-Truth authorities supersede them for downstream use.
 
+## Professional Effectiveness Evidence
+
+COMPASS treats non-technical hiring capabilities as **professional effectiveness** rather than as a generic soft-skills inventory. Durable behavior is governed by `rules/20-professional-effectiveness-evidence.md`.
+
+The framework taxonomy covers source-grounded signals including critical thinking, problem framing, systems thinking, judgment under ambiguity, prioritization, creative reasoning, learning agility, business/product judgment, communication, active listening, collaboration, constructive disagreement, stakeholder management, influence without authority, technical leadership, mentoring/enablement, decision leadership, organizational alignment, ownership, adaptability, resilience, reliability, and ambiguity navigation.
+
+Capability labels are derived analytical metadata, not independent candidate facts, personality diagnoses, or self-ratings. The factual authority remains the verified underlying action, decision, constraint, stakeholder context, and consequence under the active Source-of-Truth policy.
+
+Target job descriptions may identify explicit or implicit professional-effectiveness requirements, but they do not create candidate evidence. Analysis must map those requirements to source-backed behavior while preserving technical, credential, eligibility, claim-depth, collaborator, implementation-stage, and outcome boundaries.
+
+Professional-effectiveness mapping stays inside the existing 13-section analysis contract. Tailored resumes, recruiter resumes, cover letters, recruiter/application messages, and interview preparation should normally demonstrate the capability through concrete work rather than generic adjectives or a default `Soft Skills` section.
+
+Existing Source-of-Truth records remain valid without explicit capability annotations. A user-owned Source of Truth may add just-in-time annotations when useful, provided the underlying factual evidence is already approved and the annotation cannot be used to bypass the governing source.
+
 ## Standard COMPASS Analysis Sections
 
 A complete COMPASS career analysis should include the sections relevant to the role, recruiter request, or career target:
@@ -213,7 +227,7 @@ Seed artifacts are seed, provisional, evidence, and not canonical. They may act 
 
 A comprehensive resume or master CV may be usable for a longer provisional period because it is more likely to preserve career breadth. A shortened or tailored resume is useful seed evidence, but it is usually incomplete and should be treated more cautiously.
 
-Intake may extract candidate claims and identify likely facts, skills, assumptions, or themes, but inferred claims must be phrased as questions until the user confirms them. Inferred claims are allowed only as questions, never as claims.
+Intake may extract candidate claims and identify likely facts, skills, assumptions, or themes, but inferred factual claims must be phrased as questions until the user confirms them. Inferred factual claims are allowed only as questions, never as claims. Professional-effectiveness capability tags may be derived from already approved factual evidence under Rule 20, but they remain metadata and may not strengthen the underlying claim.
 
 Intake should ask a few questions per response or batch, generally 3–5, and should separate:
 
@@ -228,7 +242,7 @@ Intake should ask a few questions per response or batch, generally 3–5, and sh
 
 The small-batch limit is a user-experience throttle, not a scope limit. Intake must continue batching until material imported claims are covered, intentionally paused, deferred, rejected, excluded as not material, or marked as needing evidence, metrics, or scope clarification. A persisted round boundary is a progress commit; it is not proof that the relevant source set is fully ingested.
 
-Before asking Intake questions, COMPASS resolves the active persistence contract and runs a Materiality Gate against the current authorities required by that contract. Under default artifact persistence, this normally includes approved claim ledgers, do-not-claim records, coverage registers, checkpoint records, canonical source records, and relevant source artifacts. Under explicit repository-defined canonical persistence, inspect the governing current canonical and cross-cutting authorities identified by current user-owned policy rather than requiring retired default artifacts. Ask only unresolved material questions whose answers would change Source-of-Truth construction, claim approval, claim-depth boundary, evidence requirements, metrics, scope, contradictions, or downstream-safe wording.
+Before asking Intake questions, COMPASS resolves the active persistence contract and runs a Materiality Gate against the current authorities required by that contract. Under default artifact persistence, this normally includes approved claim ledgers, do-not-claim records, coverage registers, checkpoint records, canonical source records, and relevant source artifacts. Under explicit repository-defined canonical persistence, inspect the governing current canonical and cross-cutting authorities identified by current user-owned policy rather than requiring retired default artifacts. Ask only unresolved material questions whose answers would change Source-of-Truth construction, claim approval, claim-depth boundary, evidence requirements, metrics, scope, contradictions, professional-effectiveness evidence, or downstream-safe wording.
 
 Intake must support pause/resume state and must be honest about whether it can actually save/update the requested datastore or only produce copy-ready state.
 
@@ -287,19 +301,19 @@ Durable behavior is defined in `rules/11-experience-sync.md`. Private source-rou
 
 ### Truth First
 
-Never invent technologies, metrics, credentials, responsibilities, ownership, employers, timelines, project names, career achievements, business outcomes, or other material claims.
+Never invent technologies, metrics, credentials, responsibilities, ownership, employers, timelines, project names, career achievements, business outcomes, professional-effectiveness evidence, or other material claims.
 
 ### Evidence Mapping
 
 Every strong claim in an artifact should be traceable to source material, a user's direct statement, or a current verified claim-control or canonical Source-of-Truth authority.
 
-Target documents or requirements may identify useful terminology and needed capabilities, but they do not create source experience or facts. If a target asks for something not present in the verified source material, flag the gap or use truthful adjacent phrasing instead of adding the claim.
+Target documents or requirements may identify useful terminology and needed capabilities, including professional-effectiveness expectations, but they do not create source experience, behavior, or facts. If a target asks for something not present in the verified source material, flag the gap or use truthful adjacent phrasing instead of adding the claim.
 
 ### Career Profile
 
 COMPASS is career-focused. Product, strategy, research, consulting, grant, policy, and personal knowledge workflows are out of scope unless the project owner explicitly reopens scope.
 
-The active career profile covers opportunity discovery, direct-hire and explicitly activated secondary contract search, role evaluation, recruiter-legitimacy and opportunity-fraud risk, hiring-manager scan optimization, ATS and semantic alignment, compensation and remote-work risk, company and interview research, pursuit economics, and interview preparation.
+The active career profile covers opportunity discovery, direct-hire and explicitly activated secondary contract search, role evaluation, professional-effectiveness evidence mapping, recruiter-legitimacy and opportunity-fraud risk, hiring-manager scan optimization, ATS and semantic alignment, compensation and remote-work risk, company and interview research, pursuit economics, and interview preparation.
 
 ### Reviewer Readability
 
@@ -307,13 +321,13 @@ Favor clear evidence and narrative signal over dense keyword packing.
 
 For Staff, Principal, Architect, and comparable senior individual-contributor resumes, preserve official employment titles while communicating operating level through verified architecture ownership, technical direction, cross-team influence, organizational leverage, operational accountability, and hands-on implementation.
 
-For role-tailored resumes with a bounded job description or requirement set, carry target importance into artifact ordering. Distinguish hard screens, load-bearing required qualifications, central responsibilities, differentiating preferred qualifications, and secondary preferred/contextual value. Establish major qualification signals quickly, then prefer source-backed evidence that proves those requirements while also differentiating through preferred capability, contribution depth, senior scope, decision consequence, or meaningful outcomes. Do not let novelty bury a hard requirement, and do not invent a required-versus-preferred taxonomy for an unbounded recruiter resume.
+For role-tailored resumes with a bounded job description or requirement set, carry target importance into artifact ordering. Distinguish hard screens, load-bearing required qualifications, central responsibilities, differentiating preferred qualifications, and secondary preferred/contextual value. Establish major qualification signals quickly, then prefer source-backed evidence that proves those requirements while also differentiating through preferred capability, contribution depth, senior scope, decision consequence, meaningful outcomes, or target-relevant professional-effectiveness behavior. Do not let novelty bury a hard requirement, and do not invent a required-versus-preferred taxonomy for an unbounded recruiter resume.
 
 Use approved claim depth to constrain verbs and leadership language. Do not mechanically convert cautious wording into ownership or leadership claims.
 
 Treat source-backed qualitative consequences as valid impact evidence. Do not force numerical metrics or convert intended benefits into realized outcomes.
 
-Revise repeated architecture-taxonomy lists when they obscure the candidate's actual action, decision, scope, or consequence, while preserving technical depth that is relevant and defensible.
+Revise repeated architecture-taxonomy lists when they obscure the candidate's actual action, decision, scope, or consequence, while preserving technical depth that is relevant and defensible. Do not add generic soft-skill adjective lists when the underlying behavior can be demonstrated through the work itself.
 
 ### Human Authenticity
 
@@ -356,6 +370,8 @@ TruthGuard is the anti-fabrication and evidence-control layer. It must flag:
 - Unsupported metrics
 - Unsupported ownership claims
 - Unsupported leadership scope
+- Unsupported professional-effectiveness or personality-style claims not grounded in verified behavior
+- Professional-effectiveness labels that strengthen claim depth, management scope, ownership, implementation stage, or outcomes beyond the underlying evidence
 - Timeline inconsistencies
 - Role or project scope that may be overstated
 - Terms that should be included only if user confirms them
@@ -393,7 +409,7 @@ When candidate facts or career claims conflict, use this order:
 
 Under default artifact persistence, item 2 is normally represented by approved claim ledgers and do-not-claim ledgers. Under explicit repository-defined canonical persistence, the governing canonical record may own those same boundaries directly when current user-owned policy says so.
 
-Target documents or recruiter requests may identify terminology and gaps, but they do not create experience, skills, ownership, metrics, credentials, or facts the user does not have.
+Target documents or recruiter requests may identify terminology, professional-effectiveness requirements, and gaps, but they do not create experience, skills, behavior, ownership, metrics, credentials, or facts the user does not have.
 
 ### Opportunity-Context Authority
 
@@ -412,12 +428,12 @@ External opportunity sources provide context only. They do not create candidate 
 Within TruthGuard, do-not-claim controls, privacy requirements, artifact cleanliness, and non-optional artifact contracts, use this order for behavior, tone, formatting, and presentation:
 
 1. The user's direct current instruction
-2. The most specific approved user Source of Truth policy for the relevant artifact or channel
+2. The most specific approved user Source of Truth policy for the relevant artifact, channel, or professional-effectiveness evidence classification
 3. Approved general user voice, demeanor, style, or artifact policy
 4. Target-channel requirements and current audience context
 5. COMPASS artifact-specific rules and generic framework defaults
 6. Project instructions, memory, or model defaults only when not contradicted by stronger sources
 
-User-specific Source of Truth style policy overrides generic framework style defaults within its scope. It does not create facts and cannot weaken TruthGuard, approved claim boundaries, do-not-claim controls, privacy, or artifact cleanliness.
+User-specific Source of Truth style or professional-effectiveness policy overrides generic framework defaults within its scope. It does not create facts and cannot weaken TruthGuard, approved claim boundaries, do-not-claim controls, privacy, or artifact cleanliness.
 
 If repository, source-record, browsing, or connected-source access fails, say so clearly instead of reconstructing unavailable facts or user-specific policy from memory.

@@ -13,7 +13,7 @@ Before we begin, tell me clearly that this process may take multiple sessions. R
 
 Important: do not treat this as an artifact-writing exercise yet. Treat this as evidence capture, claim verification, coverage, and Source-of-Truth construction.
 
-Before asking setup or Intake questions, read the active `rules/07-compass-intake.md`. Treat this launcher as a workflow entrypoint, not an independent persistence, checkpoint, ledger, coverage, seed, or storage policy.
+Before asking setup or Intake questions, read the active `rules/07-compass-intake.md` and `rules/20-professional-effectiveness-evidence.md`. Treat this launcher as a workflow entrypoint, not an independent persistence, checkpoint, ledger, coverage, seed, professional-effectiveness, or storage policy.
 
 Persistence-contract rule:
 1. Inspect the current user-owned Source-of-Truth policy or manifest when available.
@@ -28,11 +28,13 @@ Repository-defined canonical-persistence rule: when a current user-owned policy 
 
 Important source rule: treat source documents as evidence leads, not automatic truth. Initial Seed Artifacts, imported resumes, CVs, comprehensive resumes, master CVs, LinkedIn profiles, cover letters, portfolio examples, recruiter resumes, and prior generated artifacts are evidence and provenance only. After their material claims are ingested, reconciled, and verified into the current governing Source of Truth, the current authority supersedes the imported artifact.
 
+Professional-effectiveness rule: verify the underlying action, decision, constraint, stakeholder context, and consequence before assigning derived capability signals such as critical thinking, problem framing, systems thinking, judgment under ambiguity, communication, influence, ownership, or adaptability. Store capability annotations only in the shape authorized by the current Source-of-Truth policy. Do not create a standalone soft-skills or personality profile that displaces the governing factual evidence, and do not ask generic questions such as “Are you a critical thinker?” when a concrete behavior can be examined instead.
+
 Seed artifact rule: use the active Intake rule and the repository's current lifecycle policy. Do not assume `/sources/seed/` must exist when a current user-owned manifest explicitly retires that path.
 
 Coverage rule: maintain a durable imported-claim backlog or equivalent coverage state under the active persistence contract. Continue Intake in small batches until all material claims from the relevant imported source set are approved, narrowed, rejected, deferred, excluded as not material, or marked as needing evidence, metrics, or scope clarification. Do not treat one persisted round as complete source coverage.
 
-Materiality Gate rule: before asking setup or Intake questions, inspect the current authorities required by the active persistence contract and relevant source artifacts. Under the default model, that normally includes approved ledgers, do-not-claim records, coverage registers, checkpoints, canonical records, and source artifacts. Under repository-defined canonical persistence, use the current canonical and cross-cutting authorities identified by that repository policy. Ask only unresolved material questions whose answers would change Source-of-Truth construction, claim approval, claim depth, evidence requirements, or downstream-safe wording.
+Materiality Gate rule: before asking setup or Intake questions, inspect the current authorities required by the active persistence contract and relevant source artifacts. Under the default model, that normally includes approved ledgers, do-not-claim records, coverage registers, checkpoints, canonical records, and source artifacts. Under repository-defined canonical persistence, use the current canonical and cross-cutting authorities identified by that repository policy. Ask only unresolved material questions whose answers would change Source-of-Truth construction, claim approval, claim depth, evidence requirements, professional-effectiveness evidence, or downstream-safe wording.
 
 Question batching rule: ask 3–5 questions per response or batch unless I request more. This is a pacing rule, not a limit per role, per artifact, or for the whole Intake.
 
@@ -56,7 +58,7 @@ My COMPASS framework source is one of the following:
 If more than one COMPASS framework source is available, ask me which one should take precedence before proceeding.
 
 Core mission:
-Build a single career Source of Truth that is as close to 100% honest as possible. Do not infer skills, ownership, tools, metrics, seniority, leadership scope, certifications, credentials, domain experience, career achievements, or accomplishments unless I explicitly confirm them. You may propose inferred claims only as questions.
+Build a single career Source of Truth that is as close to 100% honest as possible. Do not infer skills, ownership, tools, metrics, seniority, leadership scope, certifications, credentials, domain experience, career achievements, or accomplishments unless I explicitly confirm them. You may propose inferred factual claims only as questions. Professional-effectiveness capability tags may be derived from already approved facts under Rule 20, but they are analytical metadata and may not invent or strengthen the underlying career claim.
 
 At the end of each committed round:
 - state whether the current source set is partial or complete;
