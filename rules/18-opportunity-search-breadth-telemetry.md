@@ -29,6 +29,9 @@ A user's Source of Truth may configure:
 - minimum material-inspection targets;
 - required source, named-roster, rotation-window, query-bundle, and title-family coverage;
 - controlled source-attempt statuses and approved substitution methods;
+- a minimum actionable-result objective and the exact result class that satisfies it;
+- staged discovery and material-inspection escalation targets;
+- hard search ceilings for unique discoveries, material inspections, expansion passes, or another bounded effort measure;
 - expansion-pass limits;
 - no-yield stopping thresholds;
 - additional telemetry fields;
@@ -109,6 +112,8 @@ Maintain one canonical working record for each materially inspected opportunity.
 - whether the opportunity was previously displayed;
 - whether it is a duplicate or related repost;
 - live-verification result;
+- viability-threshold result when configured;
+- actionable-result class and count eligibility when configured;
 - terminal disposition;
 - concise disposition reason.
 
@@ -132,6 +137,23 @@ Do not inflate breadth by:
 - counting broad employer career pages as opportunities;
 - counting generic talent networks or role-family pages as concrete opportunities;
 - counting unidentifiable snippets that cannot be reconciled to a role.
+
+## Minimum Actionable-Result Objectives
+
+A user's Source of Truth may configure a minimum actionable-result objective separately from a reporting cap. The policy must define:
+
+- the result class that counts, such as fully qualified, application-safe, `Apply now`, or another controlled user-specific class;
+- the minimum count;
+- the baseline breadth checkpoint;
+- the staged expansion plan;
+- the hard search ceiling;
+- the viability threshold used for no-yield evaluation.
+
+The minimum is an outcome objective, not a quota that can be satisfied by weakening eligibility, evidence, live-verification, work-mode, compensation, legitimacy, duplicate, prior-display, or utility gates.
+
+When the baseline breadth checkpoint is reached but the configured minimum has not been satisfied, `breadth_targets_satisfied` is a checkpoint rather than a stop condition. Continue through the configured expansion stages until the minimum is satisfied or another bounded stop condition applies.
+
+The workflow must be allowed to return fewer than the minimum after bounded exhaustion. It must never search indefinitely or promote a borderline opportunity merely to satisfy the count.
 
 ## Source Attempts and Coverage Gates
 
@@ -191,25 +213,27 @@ Each pass must record:
 - unique opportunities added;
 - materially inspected opportunities added;
 - viable opportunities added;
+- actionable results added under the configured minimum-result class;
 - whether the pass was a no-yield pass.
 
-A no-yield pass adds no new opportunity that reaches material inspection or another stricter user-configured viability threshold.
+A no-yield pass adds no new opportunity that reaches the configured viability threshold. When no stricter threshold is configured, material inspection remains the default. A policy may instead define viability as passing hard eligibility, work-mode, and known economic floors while remaining eligible for application or qualification review.
 
 ## Stop Conditions
 
 A run may stop when one of the following is true:
 
-1. `requested_result_count_satisfied` — the requested number of fully qualified reportable opportunities has been found and user-specific policy permits early success.
-2. `breadth_targets_satisfied` — configured discovery and inspection targets plus required source/title coverage have been satisfied.
-3. `consecutive_no_yield_passes` — the configured number of expansion passes produced no new material inspection or other configured viable candidate.
-4. `source_exhaustion` — the practical approved search space was exhausted before targets were reached.
-5. `source_access_blocked` — material search surfaces were inaccessible or unavailable.
-6. `safety_or_policy_block` — continuing would violate tool, privacy, legal, security, or user-specific policy.
-7. `user_requested_stop` — the user explicitly stopped or narrowed the run.
+1. `requested_result_count_satisfied` — the configured minimum actionable-result count or requested fully qualified result count has been found and user-specific policy permits success.
+2. `breadth_targets_satisfied` — configured discovery and inspection targets plus required source/title coverage have been satisfied, and no unmet minimum actionable-result objective requires continued expansion.
+3. `configured_search_ceiling_reached` — the run reached its configured bounded ceiling before satisfying the minimum actionable-result objective.
+4. `consecutive_no_yield_passes` — the configured number of expansion passes produced no new opportunity at the configured viability threshold.
+5. `source_exhaustion` — the practical approved search space was exhausted before targets or the actionable-result objective were reached.
+6. `source_access_blocked` — material search surfaces were inaccessible or unavailable.
+7. `safety_or_policy_block` — continuing would violate tool, privacy, legal, security, or user-specific policy.
+8. `user_requested_stop` — the user explicitly stopped or narrowed the run.
 
 Record exactly one primary stop reason and any secondary limitations.
 
-Do not use `--max N` itself as a stop reason unless the requested qualified result count was actually satisfied.
+Do not use `--max N` itself as a stop reason unless the requested qualified result count was actually satisfied. Do not use `breadth_targets_satisfied` when a configured minimum actionable-result objective remains unmet and expansion capacity remains.
 
 ## Breadth Status
 
@@ -222,12 +246,22 @@ Use one of:
 
 Do not claim comprehensive market coverage merely because `breadth_status` is `complete`. It means the configured search contract was completed, not that every possible role on the market was found.
 
+When a minimum actionable-result objective is configured, also record `result_objective_status` as one of:
+
+- `satisfied` — the configured minimum was reached;
+- `unmet_after_bounded_exhaustion` — the run stopped at a configured ceiling, source exhaustion, no-yield threshold, access block, or safety/policy boundary with fewer results;
+- `not_configured` — no minimum actionable-result objective applies.
+
+Breadth completion and result-objective satisfaction are separate. A run may have `breadth_status: complete` and `result_objective_status: unmet_after_bounded_exhaustion` when it fully executes the bounded search contract but the market does not supply enough qualified opportunities.
+
 ## Required Run Telemetry
 
 A search-run record should include:
 
 - configured result limits;
 - breadth targets;
+- minimum actionable-result objective, result class, and actual count;
+- staged expansion checkpoints and hard search ceilings when configured;
 - stage counts;
 - source-family, named-source, rotation-window, query-bundle, and title-family coverage;
 - per-source attempt records with controlled status, access method, yield, substitution, and limitation fields;
@@ -247,6 +281,12 @@ telemetry:
     unique_opportunities_discovered: null
     materially_inspected: null
     consecutive_no_yield_passes: null
+    minimum_actionable_results: null
+    actionable_result_class: null
+    search_ceiling:
+      unique_opportunities_discovered: null
+      materially_inspected: null
+      expansion_passes: null
   actual:
     source_hits_observed: null
     unique_opportunities_discovered: 0
@@ -254,6 +294,7 @@ telemetry:
     materially_inspected: 0
     live_verified: 0
     reported: 0
+    actionable_results: 0
   coverage:
     source_families: []
     title_families: []
@@ -266,6 +307,7 @@ telemetry:
     title_family_coverage: NOT_CONFIGURED
     telemetry_reconciliation: UNKNOWN
   breadth_status: not_configured
+  result_objective_status: not_configured
   stop_reason: null
   limitations: []
 ```
@@ -292,6 +334,9 @@ Before final reporting and persistence, validate at least:
 14. Per-source unique and material-inspection additions are nonnegative and do not exceed the reconciled run totals; they are attribution fields, not an alternative source of stage totals.
 15. Rotation-window evaluation derives from append-only completed run history and records unavailable history as `UNKNOWN` rather than assuming coverage.
 16. Overall breadth is `complete` only when all applicable gates satisfy the completion rule, including the early-success exception limited to numeric breadth.
+17. Every counted actionable result satisfies the configured actionable-result class and has the material inspection and live verification required by Rule 12.
+18. `breadth_targets_satisfied` is not used while a configured minimum actionable-result objective remains unmet and unused expansion capacity remains.
+19. A run stopped at `configured_search_ceiling_reached` records the configured ceiling, actual effort, actionable-result shortfall, and final viability yield without weakening gates.
 
 Record reconciliation as `PASS`, `FAIL`, or `UNKNOWN` with concise diagnostics. `FAIL` or `UNKNOWN` blocks a claim that telemetry or breadth was successfully verified. It does not erase otherwise valid opportunity findings, but the limitation must be disclosed.
 
@@ -346,6 +391,10 @@ Before activating an implementation, test at least:
 - rolling rotation derived from append-only completed run history;
 - invalid or drifted source-attempt and breadth-status values;
 - bundled query coverage without an accidental source-by-title Cartesian requirement.
+- a minimum actionable-result objective that continues beyond the baseline breadth checkpoint;
+- an objective satisfied during a later expansion stage;
+- a configured search ceiling reached with fewer actionable results than requested;
+- evidence-detail uncertainty that is routed to confirmation rather than converted into negative evidence.
 
 ## Action Boundary
 
