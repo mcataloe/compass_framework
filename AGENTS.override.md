@@ -7,7 +7,7 @@ This repository-level override applies to `mcataloe/compass_framework` and corre
 - Repository: `mcataloe/compass_framework`
 - Canonical branch: `main`
 - Framework: COMPASS
-- Current active version: `vNext 2026-08.5`
+- Current active version: `vNext 2026-08.8`
 - Execution method for repository work: LEAP
 
 LEAP is the evidence-first repository reconnaissance and implementation method. COMPASS is the career-focused framework implemented by this repository. They are not competing framework names.

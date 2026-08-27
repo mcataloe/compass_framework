@@ -32,7 +32,7 @@ class ProfessionalEffectivenessPolicyTests(unittest.TestCase):
         text = read("rules/20-professional-effectiveness-evidence.md")
         self.assertIn("Capability tags are derived metadata", text)
         self.assertIn("Do not create professional-effectiveness evidence from a target job description", text)
-        self.assertIn("Do not create a personality scorecard", text)
+        self.assertIn("- create a personality scorecard;", text)
         self.assertIn("Do not create a fourteenth required report section", text)
         self.assertIn("Do not add a generic `Soft Skills` section by default", text)
 
@@ -58,7 +58,7 @@ class ProfessionalEffectivenessPolicyTests(unittest.TestCase):
         current = read("COMPASS_Current.md")
         changelog = read("COMPASS_Changelog.md")
 
-        self.assertIn("Current COMPASS Version: vNext 2026-08.7", version)
+        self.assertIn("Current COMPASS Version: vNext 2026-08.8", version)
         self.assertIn("rules/20-professional-effectiveness-evidence.md", version)
         self.assertIn("## Professional Effectiveness Evidence", current)
         self.assertIn("## vNext 2026-08.7 - Professional Effectiveness Evidence", changelog)

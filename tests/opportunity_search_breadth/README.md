@@ -20,6 +20,9 @@ Every case must validate:
 10. A blocked source satisfies coverage only through an approved recorded substitution.
 11. Numeric breadth, source coverage, title-family coverage, and telemetry reconciliation are evaluated independently.
 12. Rotation state derives from append-only completed run history, not the current opportunity registry.
+13. A configured minimum actionable-result objective is separate from the reporting cap.
+14. Baseline breadth is a checkpoint rather than a stop while the minimum remains unmet and expansion capacity remains.
+15. Search ceilings and no-yield rules bound effort without weakening result gates.
 
 ## Case 1 — Normal broad run
 
@@ -255,3 +258,59 @@ Expected:
 - title-family coverage may be `PASS` when all four required bundles were used
 - source coverage is evaluated from required attempts and rotation cadence
 - no Cartesian product is inferred unless the policy explicitly requires it
+
+## Case 20 — Minimum actionable result continues beyond baseline
+
+Configuration requires two `Application-safe` results, with a 40/15 baseline checkpoint and a 150/50 hard ceiling. The baseline pass reaches 46 unique discoveries and 19 material inspections but finds zero actionable results.
+
+Expected:
+
+- the run does not stop with `breadth_targets_satisfied`
+- the 40/15 floor is recorded as the completed baseline checkpoint
+- expansion continues under the configured stages
+- no eligibility, evidence, verification, compensation, or utility gate is weakened
+
+## Case 21 — Objective satisfied during expansion
+
+The baseline finds one application-safe result. Expansion pass 2 finds a second while required source, title-family, and reconciliation gates pass.
+
+Expected:
+
+- `result_objective_status: satisfied`
+- `stop_reason: requested_result_count_satisfied`
+- both counted results satisfy the configured class and Rule 12 live-verification requirements
+- the reporting cap still limits display independently
+
+## Case 22 — Bounded exhaustion below objective
+
+The run reaches 150 unique discoveries, 50 material inspections, and eight expansion passes with only one application-safe result.
+
+Expected:
+
+- `stop_reason: configured_search_ceiling_reached`
+- `result_objective_status: unmet_after_bounded_exhaustion`
+- target, actual, shortfall, and final viability yield are reported
+- the one valid result is retained
+- no borderline role is promoted to satisfy the minimum
+
+## Case 23 — Viability-based no-yield threshold
+
+Three consecutive expansion passes add materially inspected exclusions but no role that passes hard eligibility, work mode, and known economic floors for application or qualification review.
+
+Expected:
+
+- each pass records material-inspection additions and zero viable additions
+- each pass is no-yield under the configured viability threshold
+- `stop_reason: consecutive_no_yield_passes`
+- the system does not search indefinitely merely because exclusions continue to accumulate
+
+## Case 24 — Evidence detail unknown is not negative evidence
+
+Current evidence establishes professional use of an AI-assisted engineering workflow, but exact cadence is unresolved. A role requires daily AI-tool fluency.
+
+Expected:
+
+- the unresolved cadence is `User confirmation required`, not affirmative evidence that the candidate lacks AI-tool experience
+- the role is not hard-screened solely because the exact cadence is absent from the record
+- a current candidate confirmation may resolve the cadence at the exact confirmed depth
+- unrelated unsupported mandatory technologies remain eligible for normal hard-screen treatment

@@ -179,6 +179,8 @@ Verified Opportunity Search uses canonical stages for raw source hits when obser
 
 A user's Source of Truth may configure minimum unique-discovery and material-inspection targets, mandatory surfaces, named source rosters, approved substitutions, rotation windows, query bundles, title-family coverage, expansion-pass limits, and consecutive no-yield stopping thresholds. Runs must record one controlled-status attempt for every applicable required or selected rotating source. Numeric breadth, source coverage, title-family coverage, and telemetry reconciliation are independent gates; early success may bypass only numeric floors. Rotation derives from append-only completed run history, and query bundles do not imply a source-by-title Cartesian product. Completing the configured breadth contract is not a claim that every possible market opportunity was found.
 
+A Source of Truth may also configure a minimum actionable-result objective, its qualifying result class, staged expansion checkpoints, viability-based no-yield semantics, and bounded search ceilings. When that objective remains unmet, the baseline numeric breadth target is a checkpoint rather than a stop condition. Result-objective satisfaction remains separate from breadth completion, and bounded exhaustion must return fewer results rather than weaken gates or search indefinitely.
+
 When contract mode is active, a user-specific policy may permit a verified staffing-firm, employer-of-record, or identifiable recruiter-controlled requisition to appear as a separately ranked secondary `Contact first` result even when no public client application exists. The accountable entity, concrete current opportunity, and actionable path must be verified; staffing firm, employer of record, client, and end customer must remain distinct; undisclosed clients remain unverified.
 
 Canonical optional contract modes are:
@@ -189,7 +191,11 @@ Canonical optional contract modes are:
 
 Secondary engagements should be classified through the user's Source of Truth using bridge, fractional or side, contract-to-hire, or unspecified contract categories. Do not infer concurrent-employment compatibility from a contract or remote label.
 
-Contract utility must remain separate from alignment. Evaluate rate, benefits treatment, hours, duration, employment structure, renewal, exclusivity, intellectual-property, confidentiality, conflict, notice, exit, interference, effort, technical relevance, and relationship value when known. Missing rate, hours, duration, client identity, employment structure, exclusivity, conversion compensation, or another load-bearing term normally produces `Contact first` rather than `Apply now`.
+Contract utility must remain separate from alignment. Evaluate rate, benefits treatment, hours, duration, employment structure, renewal, exclusivity, intellectual-property, confidentiality, conflict, notice, exit, interference, effort, technical relevance, and relationship value when known.
+
+Application-stage readiness must remain separate from agreement-stage and acceptance-stage review. Missing rate, employment structure, hours or schedule, client identity when materially necessary, conversion compensation, work-mode facts, or another user-configured pre-application term may produce `Contact first`. Ordinary missing intellectual-property, confidentiality, termination, notice, non-solicitation, or comparable agreement language does not by itself block `Apply now`; preserve it for pre-acceptance review unless a known adverse term or current user-specific policy makes it pre-application load-bearing. `Apply now` never authorizes submission or acceptance.
+
+An unresolved evidence detail is not affirmative negative evidence. When a broader capability is source-supported but exact cadence, frequency, duration, or tool allocation is unresolved, use confirmation or qualification rather than a hard-screen exclusion based solely on the unresolved detail. Truly unsupported mandatory technologies, credentials, domains, or experience areas remain eligible for hard-screen treatment.
 
 Default qualitative contract utility grades are:
 

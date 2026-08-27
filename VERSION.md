@@ -1,6 +1,6 @@
 # COMPASS Version
 
-Current COMPASS Version: vNext 2026-08.7
+Current COMPASS Version: vNext 2026-08.8
 
 Canonical Branch: main
 
@@ -20,7 +20,7 @@ COMPASS is the only canonical framework name. New rules, prompts, examples, and 
 
 ## Active Behavior Notes
 
-The active vNext 2026-08.7 framework includes COMPASS-only terminology, career-focused scope, executable Resume Artifact Release Assurance with hardened OOXML validation and post-publication artifact-name integrity, COMPASS Intake repository-defined persistence compatibility, COMPASS Source Rebase scaffold alignment with explicit retired-path handling, COMPASS Experience Sync public-projection reconciliation with private source-side target routing, COMPASS Comprehensive Career CV, Initial Seed Artifact support, claim-depth-aware Staff / Principal resume positioning, qualification-plus-differentiation evidence prioritization for role-tailored resumes, source-grounded professional-effectiveness evidence and behavioral-signal mapping, the Opportunity Reality Layer, the Recruiter Legitimacy and Opportunity Fraud Risk Gate, private recruiter-risk intelligence ledger templates, the Conversational Handoff Gate, fit-calibrated positioning and gap salience, the optional Recruiter Fit Brief, COMPASS Verified Opportunity Search with measurable search breadth and reconciled telemetry, and optional persistent opportunity-registry support:
+The active vNext 2026-08.8 framework includes COMPASS-only terminology, career-focused scope, executable Resume Artifact Release Assurance with hardened OOXML validation and post-publication artifact-name integrity, COMPASS Intake repository-defined persistence compatibility, COMPASS Source Rebase scaffold alignment with explicit retired-path handling, COMPASS Experience Sync public-projection reconciliation with private source-side target routing, COMPASS Comprehensive Career CV, Initial Seed Artifact support, claim-depth-aware Staff / Principal resume positioning, qualification-plus-differentiation evidence prioritization for role-tailored resumes, source-grounded professional-effectiveness evidence and behavioral-signal mapping, the Opportunity Reality Layer, the Recruiter Legitimacy and Opportunity Fraud Risk Gate, private recruiter-risk intelligence ledger templates, the Conversational Handoff Gate, fit-calibrated positioning and gap salience, the optional Recruiter Fit Brief, COMPASS Verified Opportunity Search with measurable search breadth, adaptive actionable-result objectives, staged contract readiness, and reconciled telemetry, and optional persistent opportunity-registry support:
 
 - COMPASS is a career-focused, source-grounded framework for turning messy career inputs into verified, defensible job-search outputs.
 - COMPASS supports the careers / job-search profile. Product, strategy, research, consulting, grant, policy, and personal knowledge workflows are out of scope unless the project owner explicitly reopens scope.
@@ -62,9 +62,14 @@ The active vNext 2026-08.7 framework includes COMPASS-only terminology, career-f
 - `--max N` and other result limits cap reporting rather than ordinary discovery, screening, material inspection, duplicate or prior-display reconciliation, or live-verification effort.
 - Every materially inspected opportunity must have one canonical run record and exactly one terminal disposition; stage counts and report sections must derive from those records.
 - Search-run records may persist aggregate breadth targets, actual stage counts, controlled source-attempt records, substitutions, source and title-family coverage, rotation-window summaries, independent gate statuses, expansion-pass summaries, breadth status, stop reason, limitations, and reconciliation results without persisting every raw hit or weak discovery lead.
+- User-specific search policy may define a minimum actionable-result objective separately from reporting caps, along with staged expansion checkpoints, viability-based no-yield semantics, and bounded discovery, inspection, or pass ceilings.
+- Baseline breadth is a checkpoint rather than a stop while a configured actionable-result objective remains unmet and expansion capacity remains; bounded exhaustion returns fewer results instead of weakening gates or searching indefinitely.
+- Result-objective satisfaction is reported separately from breadth completion, including explicit `unmet_after_bounded_exhaustion` status when the market does not supply enough qualified opportunities.
 - Historical completed run records remain append-only and missing historical telemetry is unavailable rather than zero.
 - Optional contract modes use `--include-contracts`, `--contract-only`, and `--max-contracts N`; contract results remain separate from primary rankings.
 - Contract utility evaluates structure-aware economics, hours, duration, flexibility, continuity, exclusivity, intellectual-property, conflict, exit, interference, effort, technical relevance, and relationship value without changing candidate alignment.
+- Application-stage contract readiness is separate from agreement-stage review. Missing pre-application commercial facts may require qualification, while ordinary missing IP, confidentiality, termination, notice, non-solicitation, or comparable agreement language does not by itself block application unless the active user-specific policy makes the exact term pre-application load-bearing.
+- An unresolved cadence, frequency, duration, or tool-allocation detail is not affirmative evidence that a candidate lacks an already-supported broader capability; use confirmation or qualification rather than a hard-screen based solely on that unresolved detail.
 - Verified staffing-firm, employer-of-record, or identifiable recruiter-controlled requisitions may support a secondary `Contact first` result when user-specific policy permits it, but accountable entities must remain distinct and undisclosed clients remain unverified.
 - The framework does not infer contract rates, hours, duration, client identity, conversion value, exclusivity, or concurrent-work compatibility.
 - `rules/13-opportunity-registry.md` defines optional durable cross-run opportunity history using a schema-versioned current registry and append-only search-run records.
