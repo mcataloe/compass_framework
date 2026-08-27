@@ -17,6 +17,7 @@ Behavior updates:
 - Clarified that `Apply now` means application-safe under the active policy and never authorizes submission, acceptance, representation, or agreement to commercial or legal terms.
 - Prohibited conversion of unresolved evidence cadence, frequency, duration, or tool-allocation detail into affirmative evidence that a candidate lacks an already-supported broader capability.
 - Added pressure-test cases for expansion beyond baseline breadth, later-stage objective success, bounded shortfall, viability-based no-yield stopping, and unknown-versus-absent evidence handling.
+- Aligned the Custom GPT validated-framework marker with the active version and validated policy head.
 - Advanced the active framework identifier from `vNext 2026-08.7` to `vNext 2026-08.8`.
 
 ## vNext 2026-08.7 - Professional Effectiveness Evidence
