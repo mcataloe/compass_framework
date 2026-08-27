@@ -171,7 +171,26 @@ Classify each material requirement as:
 
 A required negative answer, unsupported claim, or unmet non-negotiable condition is a hard-screen risk. Unless equivalent experience is explicitly allowed or current evidence shows flexibility on that exact screen, exclude the role from verified main results.
 
+Do not convert an unresolved evidence detail into affirmative evidence that the candidate lacks the capability. Apply these distinctions:
+
+- A mandatory technology, credential, domain, or experience area that has no supporting current evidence may remain `Unsupported` and may hard-screen the role.
+- A broader capability that is already supported must not be hard-screened only because an exact cadence, frequency, duration, task allocation, or product-by-product breakdown is unresolved.
+- When the missing detail could materially change pursuit and the current evidence neither confirms nor contradicts it, use `User confirmation required` or the user-specific qualification action rather than representing the capability as absent.
+- A current direct candidate confirmation may resolve the missing detail at the exact confirmed depth; do not broaden it beyond the candidate's words.
+
 A high alignment score never rescues a failed eligibility or hard-screen gate.
+
+## Application-Stage and Agreement-Stage Readiness
+
+Keep permission to apply separate from permission to accept, sign, or represent compatibility with a contract.
+
+For an `Apply now` recommendation, verify the active application path, accountable entity, eligibility, work mode, hard qualifications, and any commercial fact that the user's current policy makes load-bearing before application. A known disqualifying rate, structure, schedule, location, representation restriction, or other current-step conflict may block `Apply now`.
+
+Terms that are normally supplied in a recruiter screen, representation agreement, offer, or services agreement do not automatically block application merely because the public posting omits them. Intellectual-property assignment, confidentiality detail, termination language, notice obligations, non-solicitation, and comparable agreement provisions normally remain later-stage review items unless the posting exposes an adverse term or the user's Source of Truth explicitly makes that exact term pre-application load-bearing.
+
+Use `Contact first` when there is no active application path, the route is recruiter-controlled, or a missing rate, employment structure, schedule, client, work-mode fact, or other current-step term must be qualified before applying under the active user-specific policy. Do not use `Contact first` merely because ordinary acceptance-stage boilerplate is unavailable in a public posting.
+
+An application-safe opportunity is not acceptance-safe. No `Apply now` label authorizes submission, acceptance, representation, or agreement to legal or commercial terms.
 
 ## Secondary Contract Classification
 
@@ -261,15 +280,15 @@ Consider, when known:
 
 Do not mechanically convert a direct-hire salary target into a contract-rate threshold. Use user-specific structure-aware policy when available.
 
-When rate, hours, duration, employment structure, client identity, exclusivity, conversion compensation, or another load-bearing term is missing, default to `Contact first` rather than `Apply now` unless the user's Source of Truth explicitly defines another safe behavior.
+Stage missing information according to `Application-Stage and Agreement-Stage Readiness`. Missing rate, employment structure, expected hours or schedule, client identity when materially necessary, conversion compensation, or another user-configured pre-application term may require `Contact first`. Missing ordinary agreement-stage language does not by itself prevent `Apply now`; retain it as an explicit pre-acceptance review item.
 
 Use qualitative utility grades unless a user-specific policy defines another scale:
 
-- `A — Strong secondary opportunity` — strong alignment, acceptable disclosed economics, workable constraints, and clear income, access, experience, or optionality value.
-- `B — Qualify first` — promising, but one or more load-bearing commercial, scheduling, identity, duration, exclusivity, or conversion terms remain unknown.
+- `A — Strong secondary opportunity` — strong alignment, application-safe economics and constraints, and clear income, access, experience, or optionality value; ordinary agreement-stage review may still remain.
+- `B — Qualify first` — promising, but one or more pre-application or recruiter-qualification commercial, scheduling, identity, duration, work-mode, or conversion terms remain unknown.
 - `C — Weak utility` — economically weak, overly restrictive, directionally misaligned, excessively disruptive, or otherwise not worth the opportunity cost.
 
-A missing rate or material engagement term normally prevents an `A` grade.
+A missing pre-application or recruiter-qualification term normally prevents an `A` grade. Missing ordinary agreement-stage boilerplate alone does not.
 
 ## Visibility, Saturation, and Conversion Conditions
 
@@ -383,6 +402,7 @@ When contract mode is active, report secondary results in a separate lane. For e
 - alignment estimate and interpretation band;
 - strongest evidence and primary objection;
 - contract utility grade;
+- application-stage readiness: `Application-safe`, `Qualification required`, or `Not application-safe`;
 - missing commercial, scheduling, identity, conversion, or legal terms;
 - current verification source and date;
 - application or qualification-stage visibility;
