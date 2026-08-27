@@ -146,7 +146,9 @@ When user-specific policy permits it, a verified staffing-firm, employer-of-reco
 
 The reusable contract classifications are bridge, fractional / side, contract-to-hire, and unspecified contract structure. The default utility grades are `A — Strong secondary opportunity`, `B — Qualify first`, and `C — Weak utility`.
 
-COMPASS does not infer contract rate, hours, duration, client identity, conversion value, exclusivity, or concurrent-employment compatibility. Missing load-bearing terms normally produce `Contact first` rather than `Apply now`.
+COMPASS does not infer contract rate, hours, duration, client identity, conversion value, exclusivity, or concurrent-employment compatibility. It separates application-stage readiness from agreement-stage review: missing pre-application terms may produce `Contact first`, while ordinary missing IP, confidentiality, termination, notice, non-solicitation, or comparable agreement language remains a later-stage review item unless the user's policy makes the exact term pre-application load-bearing.
+
+User-specific policy may configure a minimum actionable-result objective separately from reporting caps. In that mode, baseline breadth is a checkpoint and the search continues through bounded adaptive expansion until the objective is satisfied or a configured ceiling, viability no-yield threshold, source exhaustion, access block, or safety boundary applies. Bounded exhaustion returns fewer results rather than weakening gates or searching indefinitely.
 
 Recruiter-legitimacy concerns may require verification-first handling even when candidate alignment is strong.
 
