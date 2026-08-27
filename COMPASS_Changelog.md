@@ -2,6 +2,23 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-08.8 - Adaptive Opportunity Yield and Staged Contract Readiness
+
+Corrected Verified Opportunity Search so configured breadth floors cannot prematurely end a bounded search whose minimum actionable-result objective remains unmet, and separated permission to apply from later contract-agreement review.
+
+Behavior updates:
+
+- Added candidate-neutral minimum actionable-result objectives that remain separate from `--max` reporting caps.
+- Made baseline numeric breadth a checkpoint when the configured result objective remains unmet and expansion capacity remains.
+- Added staged expansion, configurable viability-based no-yield handling, bounded search ceilings, `configured_search_ceiling_reached`, and separate result-objective status.
+- Required bounded exhaustion to return fewer results rather than weaken eligibility, evidence, verification, work-mode, compensation, legitimacy, duplicate, prior-display, or utility gates.
+- Separated application-stage readiness from agreement-stage and acceptance-stage review for contract opportunities.
+- Clarified that missing pre-application facts may require `Contact first`, while ordinary missing IP, confidentiality, termination, notice, non-solicitation, or comparable agreement language does not automatically block `Apply now`.
+- Clarified that `Apply now` means application-safe under the active policy and never authorizes submission, acceptance, representation, or agreement to commercial or legal terms.
+- Prohibited conversion of unresolved evidence cadence, frequency, duration, or tool-allocation detail into affirmative evidence that a candidate lacks an already-supported broader capability.
+- Added pressure-test cases for expansion beyond baseline breadth, later-stage objective success, bounded shortfall, viability-based no-yield stopping, and unknown-versus-absent evidence handling.
+- Advanced the active framework identifier from `vNext 2026-08.7` to `vNext 2026-08.8`.
+
 ## vNext 2026-08.7 - Professional Effectiveness Evidence
 
 Added a source-grounded professional-effectiveness model so COMPASS can treat critical thinking, systems thinking, judgment, communication, influence, ownership, adaptability, and related non-technical capabilities as first-class hiring signals without turning them into unsupported personality claims.
