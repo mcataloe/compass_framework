@@ -2,6 +2,25 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-08.8 - Recall-First Interview Answer Retrieval
+
+Added a candidate-neutral interview-answer retrieval contract so COMPASS preparation optimizes for semantic recall and natural reconstruction under pressure instead of treating polished prose as the primary thing to memorize.
+
+Behavior updates:
+
+- Added `rules/21-interview-answer-retrieval.md` as the durable rule for recall-first interview answer preparation.
+- Added the default `Core -> Memory hook -> Three beats -> Story hook -> optional Natural answer` ordering for proposed interview answers.
+- Limited default answer scaffolds to no more than three competing primary ideas while allowing supporting detail underneath those beats.
+- Added explicit question-shape routing for approach/process questions, concrete-example questions, tradeoff questions, and technical/architecture questions.
+- Added a principle-to-example pivot so `give me an example` switches directly into one coherent source-backed story instead of repeating the abstract answer.
+- Added compact story-retrieval shapes including `Problem -> Action -> Result`, `Change -> People -> Action -> Result`, and `Constraint -> Options -> Decision -> Consequence`.
+- Added a bounded ramble-recovery pattern, `Stop -> Re-anchor -> Core answer -> Stop`, with natural reset language as optional tools rather than required scripts.
+- Required expanded sample wording, when useful, to appear after the retrieval structure and be labeled `Do not memorize verbatim`.
+- Preserved the existing eight-section Interview Preparation Notes contract in `rules/06-artifact-rules.md`; the new rule governs answer-level structure inside talking points, story preparation, and likely-question practice rather than replacing the artifact contract.
+- Preserved TruthGuard, claim depth, do-not-claim boundaries, collaborator and implementation-stage boundaries, professional-effectiveness evidence rules, declared interview lens, and user-specific interview policy.
+- Updated `prompts/compass-interview-prep.md` to load and defer to Rule 21.
+- Updated `VERSION.md` to expose the active recall-first behavior while retaining the active `vNext 2026-08.8` identifier; the separately validated Custom GPT deployment marker remains unchanged until its own validation lifecycle advances.
+
 ## vNext 2026-08.8 - Adaptive Opportunity Yield and Staged Contract Readiness
 
 Corrected Verified Opportunity Search so configured breadth floors cannot prematurely end a bounded search whose minimum actionable-result objective remains unmet, and separated permission to apply from later contract-agreement review.
@@ -257,7 +276,6 @@ Behavior updates:
 - Added `rules/13-opportunity-registry.md` as the durable contract for schema-versioned opportunity registries, append-only search-run records, revision-aware writes, partial-failure recovery, idempotency, and persistence reporting.
 - Added generic registry and search-run templates under `templates/opportunity-registry/`.
 - Separated opportunity identity, observation, reporting history, candidate-confirmed status, suppression, and provenance so search observations cannot silently become candidate actions or employer outcomes.
-- Authorized configured Verified Opportunity Search runs to persist observational opportunity facts without a second instruction when the user's Source of Truth defines the paths and write policy.
 - Preserved explicit user authority for candidate statuses including applied, interviewing, rejected, withdrawn, contacted, represented, accepted, and do-not-pursue.
 - Added exact-identifier precedence, conservative semantic duplicate handling, `possible_duplicate_of`, and `related_repost_of` behavior.
 - Added material-change rules for reopenings, new hiring cycles, compensation, eligibility, scope, hard screens, access, and contract terms.
