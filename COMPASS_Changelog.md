@@ -2,6 +2,25 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-09.1 - Criterion Evidence Recoverability
+
+Added a vendor-neutral post-draft recoverability gate for role-tailored resumes so important truthful qualifications are not merely present in the candidate Source of Truth but are actually discoverable from the finished artifact.
+
+Behavior updates:
+
+- Added `rules/22-criterion-evidence-recoverability.md` as the durable contract for criterion-level resume evidence recoverability.
+- Required post-draft auditing of supported hard screens, load-bearing qualifications, and material central responsibilities against the actual finished resume.
+- Added internal `Strong`, `Adequate`, `Weak`, `Unsupported`, and `Not Applicable` recoverability states without exposing validation matrices inside clean resume artifacts.
+- Distinguished candidate evidence existence from artifact evidence exposure so a resume may be revised when governing evidence exists but is buried, generic, ambiguous, or visible only through a skills inventory.
+- Clarified that Core Skills is a curated recognizability index rather than automatic proof of a load-bearing qualification when stronger contextual work evidence exists.
+- Allowed unmistakable semantic equivalence to satisfy recoverability without requiring verbatim target keywords, while clarifying that exact lexical matches without governing evidence do not prove a criterion.
+- Added a bounded revision loop covering evidence selection, wording specificity, target-accurate terminology, placement, bullet ordering, and non-redundant coverage.
+- Required optimization to stop when supported criteria are Strong or Adequate and further rewriting would degrade human readability, differentiation, TruthGuard, or claim-depth precision.
+- Prohibited invented ATS scores, candidate ranks, reranker scores, embedding-similarity scores, advancement probabilities, and unsupported claims about proprietary ATS architecture.
+- Updated tailored and bounded recruiter-targeted resume launchers to load the new rule while preserving broad recruiter resumes from invented requirement taxonomies.
+- Added Custom GPT acceptance cases for skills-only evidence, semantic equivalence, exact-keyword-without-proof, buried evidence, human-first stopping, and proprietary-score refusal.
+- Advanced the active framework identifier from `vNext 2026-08.8` to `vNext 2026-09.1`.
+
 ## vNext 2026-08.8 - Recall-First Interview Answer Retrieval
 
 Added a candidate-neutral interview-answer retrieval contract so COMPASS preparation optimizes for semantic recall and natural reconstruction under pressure instead of treating polished prose as the primary thing to memorize.
@@ -364,7 +383,7 @@ Behavior updates:
 - Added `templates/source-of-truth-scaffold/sync/README.md` to define the source-side privacy and ownership boundary.
 - Updated Source Rebase to recognize `/sync/` as an optional scaffold path and to create only generic missing placeholders after explicit approval.
 - Required actual source and target links, target IDs, branches, publication defaults, and protected paths to live in the Source of Truth routing map rather than the public target manifest.
-- Sanitized the target `COMPASS_Experience_Manifest.yaml` template so it contains a stable source ID and reconciliation metadata without exposing the private Source of Truth repository location.
+- Sanitized the target `COMPASS_Experience_Manifest.yaml` template so it contains a stable source identifier and reconciliation metadata without exposing the private Source of Truth repository location.
 - Added deterministic target resolution, override-conflict handling, enabled-target checks, and missing-routing-map behavior.
 - Updated Experience Sync dry-run and full-audit behavior to detect public source-location exposure.
 - Updated the reconciliation report to record routing-map access, selected target ID, target-resolution basis, and public-manifest sanitization.
