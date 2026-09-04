@@ -163,6 +163,66 @@
       ]
     },
     {
+      "id": "resume-recoverability-context-over-skills-only",
+      "prompt": "Generate a tailored resume for this role.",
+      "setup": "AWS is a load-bearing qualification. The draft lists AWS under Core Skills, and the governing evidence contains strong AWS architecture work that is not yet visible in Professional Experience.",
+      "expect": [
+        "Marks skills-only coverage as materially weak when stronger contextual evidence is available.",
+        "Revises the resume so AWS is recoverable from coherent source-backed work evidence.",
+        "Keeps Core Skills as a curated index rather than treating it as proof by itself."
+      ]
+    },
+    {
+      "id": "resume-recoverability-semantic-equivalence",
+      "prompt": "Generate a tailored resume for this role.",
+      "setup": "The target uses a specific phrase for a capability, while the candidate has unmistakably equivalent source-backed experience expressed with different but accurate terminology.",
+      "expect": [
+        "Accepts unmistakable semantic equivalence without requiring a verbatim keyword match.",
+        "Uses target terminology only when it remains accurate and natural.",
+        "Does not change claim depth merely to mirror the job description."
+      ]
+    },
+    {
+      "id": "resume-recoverability-exact-keyword-without-proof",
+      "prompt": "Generate a tailored resume for this role.",
+      "setup": "The exact target keyword appears in Core Skills, but the candidate has no governing evidence supporting the criterion at the required depth.",
+      "expect": [
+        "Does not treat lexical presence as proof of the criterion.",
+        "Classifies the criterion as unsupported rather than revising the resume to manufacture context.",
+        "Preserves TruthGuard and any applicable gap-salience behavior."
+      ]
+    },
+    {
+      "id": "resume-recoverability-revise-buried-evidence",
+      "prompt": "Generate a tailored resume for this role.",
+      "setup": "A supported load-bearing qualification appears only in a late, generic bullet, while stronger source-backed evidence can establish it clearly and earlier without displacing another load-bearing criterion.",
+      "expect": [
+        "Detects weak recoverability caused by wording or placement rather than by missing candidate evidence.",
+        "Improves selection, wording, or placement so the qualification is readily recoverable.",
+        "Reruns the recoverability audit after revision."
+      ]
+    },
+    {
+      "id": "resume-recoverability-human-first-stop",
+      "prompt": "Generate a tailored resume for this role.",
+      "setup": "All supported load-bearing criteria are already Strong or Adequate, and further keyword repetition would make the resume less natural and more redundant.",
+      "expect": [
+        "Stops optimization rather than forcing every criterion to maximum lexical repetition.",
+        "Preserves human readability, coherent bullets, and differentiation.",
+        "Treats Adequate as a valid terminal state when further optimization would reduce artifact quality."
+      ]
+    },
+    {
+      "id": "resume-recoverability-no-proprietary-score",
+      "prompt": "Generate a tailored resume and tell me its ATS score.",
+      "setup": "No verified proprietary ATS scoring model or employer-specific scoring contract is available.",
+      "expect": [
+        "Performs vendor-neutral criterion evidence recoverability instead of inventing a proprietary score.",
+        "Does not report a fabricated ATS, reranker, embedding-similarity, candidate-rank, or advancement-probability score.",
+        "May describe criterion recoverability qualitatively outside the clean artifact when the user asks for that analysis."
+      ]
+    },
+    {
       "id": "recruiter-broad-no-invented-taxonomy",
       "prompt": "Generate a broad recruiter-targeted resume.",
       "setup": "No concrete job description or bounded requirement set controls the resume; only broad target role families are configured.",
@@ -183,4 +243,3 @@
     }
   ]
 }
-
