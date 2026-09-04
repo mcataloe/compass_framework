@@ -13,8 +13,9 @@ Required framework files:
 - rules/08-human-authenticity.md
 - rules/16-resume-release-assurance.md
 - rules/20-professional-effectiveness-evidence.md
+- rules/22-criterion-evidence-recoverability.md
 
-Treat this prompt as a workflow launcher, not as an independent source of resume, formatting, artifact, TruthGuard, professional-effectiveness, page-length, source-priority, or no-fabrication rules.
+Treat this prompt as a workflow launcher, not as an independent source of resume, formatting, artifact, TruthGuard, professional-effectiveness, criterion-recoverability, page-length, source-priority, or no-fabrication rules.
 
 Use the strict recruiter-targeted resume template in rules/06-artifact-rules.md unless I explicitly request a different format.
 
@@ -22,5 +23,7 @@ Treat every generated file as a staged, untrusted artifact. Load the current use
 
 Use broad positioning appropriate for a recruiter who may have multiple opportunities, while preserving TruthGuard and source-grounding. When professional-effectiveness evidence is used, prefer recurring corroborated patterns from approved work—such as cross-team technical leadership, judgment under ambiguity, systems thinking, stakeholder alignment, mentoring, ownership, or adaptability—rather than a generic soft-skill keyword list.
 
-Do not include COMPASS analysis, scoring, risk notes, ATS matrix commentary, compensation strategy, recruiter objection notes, or framework commentary inside the resume artifact.
+Do not invent a bounded target taxonomy for a broad recruiter resume. If the user explicitly bounds the recruiter resume to a concrete job description or requirement set, apply rules/22-criterion-evidence-recoverability.md after drafting so supported load-bearing criteria are recoverable from coherent source-backed evidence without inventing ATS scores, proprietary ranking behavior, or unsupported coverage.
+
+Do not include COMPASS analysis, scoring, risk notes, ATS matrix commentary, compensation strategy, recruiter objection notes, criterion-recoverability matrices, or framework commentary inside the resume artifact.
 ```
