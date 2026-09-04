@@ -322,9 +322,10 @@ Build a COMPASS resume for this job description.
 - `rules/08-human-authenticity.md`
 - `rules/16-resume-release-assurance.md`
 - `rules/20-professional-effectiveness-evidence.md`
+- `rules/22-criterion-evidence-recoverability.md`
 - `prompts/compass-tailored-resume.md`
 
-**Output discipline:** The resume must not include COMPASS analysis, scoring, risk notes, company research, interview findings, recruiter-legitimacy findings, pursuit economics, contract utility, commercial-term analysis, or private tactical notes. Professional-effectiveness evidence should appear through source-backed work rather than a generic Soft Skills section or unsupported adjective list. Treat generated files as staged and untrusted until the resume-release contract completes. Do not present a downloadable artifact as final unless every required check is `PASS` and the matching manifest authorizes publication; any `FAIL` or `UNKNOWN` stops release.
+**Output discipline:** The resume must not include COMPASS analysis, scoring, risk notes, company research, interview findings, recruiter-legitimacy findings, pursuit economics, contract utility, commercial-term analysis, criterion-recoverability matrices, or private tactical notes. Professional-effectiveness evidence should appear through source-backed work rather than a generic Soft Skills section or unsupported adjective list. After drafting, apply the criterion evidence recoverability audit to supported hard screens, load-bearing qualifications, and material central responsibilities before release assurance. Do not treat keyword presence as proof or invent ATS scores, proprietary ranking behavior, or unsupported coverage. Treat generated files as staged and untrusted until the resume-release contract completes. Do not present a downloadable artifact as final unless every required check is `PASS` and the matching manifest authorizes publication; any `FAIL` or `UNKNOWN` stops release.
 
 ---
 
@@ -353,9 +354,10 @@ Build a Staff Engineer recruiter resume with COMPASS.
 - `rules/08-human-authenticity.md`
 - `rules/16-resume-release-assurance.md`
 - `rules/20-professional-effectiveness-evidence.md`
+- `rules/22-criterion-evidence-recoverability.md`
 - `prompts/recruiter-targeted-resume.md`
 
-**Output discipline:** Preserve broad recruiter positioning while respecting TruthGuard, source-grounding, user-specific style rules, and do-not-claim constraints. Use recurring corroborated professional-effectiveness patterns only when the underlying evidence supports them. Do not include recruiter-legitimacy analysis or private risk commentary inside the resume. Treat generated files as staged and untrusted until the resume-release contract completes. Do not present a downloadable artifact as final unless every required check is `PASS` and the matching manifest authorizes publication; any `FAIL` or `UNKNOWN` stops release.
+**Output discipline:** Preserve broad recruiter positioning while respecting TruthGuard, source-grounding, user-specific style rules, and do-not-claim constraints. Use recurring corroborated professional-effectiveness patterns only when the underlying evidence supports them. Do not invent a bounded criterion taxonomy for a general recruiter resume; apply Rule 22 only when the user explicitly bounds the recruiter resume to a concrete job description or requirement set. Do not include recruiter-legitimacy analysis, criterion-recoverability matrices, or private risk commentary inside the resume. Treat generated files as staged and untrusted until the resume-release contract completes. Do not present a downloadable artifact as final unless every required check is `PASS` and the matching manifest authorizes publication; any `FAIL` or `UNKNOWN` stops release.
 
 ---
 
