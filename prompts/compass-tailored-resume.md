@@ -13,10 +13,11 @@ Required framework files:
 - rules/08-human-authenticity.md
 - rules/16-resume-release-assurance.md
 - rules/20-professional-effectiveness-evidence.md
+- rules/22-criterion-evidence-recoverability.md
 
 Load the user's current artifact-generation and recommended-opportunity-artifact policies when available.
 
-Treat this prompt as a workflow launcher, not as an independent source of resume, formatting, artifact, TruthGuard, professional-effectiveness, page-length, source-priority, or no-fabrication rules.
+Treat this prompt as a workflow launcher, not as an independent source of resume, formatting, artifact, TruthGuard, professional-effectiveness, criterion-recoverability, page-length, source-priority, or no-fabrication rules.
 
 Use the strict tailored resume template in rules/06-artifact-rules.md unless I explicitly request a different format.
 
@@ -24,11 +25,13 @@ Treat every generated file as a staged, untrusted artifact. Load the current use
 
 Use the previously analyzed target role, job description, recruiter requirement set, COMPASS findings, and approved role-fit evidence only as tailoring inputs. Do not invent facts, claims, metrics, ownership, credentials, technologies, responsibilities, or experience.
 
+After drafting, apply rules/22-criterion-evidence-recoverability.md to the actual finished draft. Verify that every supported hard screen, load-bearing qualification, and material central responsibility in the bounded target set is recoverable at truthful claim depth from coherent resume evidence. Revise weak exposure only when stronger source-backed wording, selection, or placement is available without degrading human readability or higher-priority evidence. Do not invent ATS scores, proprietary ranking behavior, or unsupported criterion coverage.
+
 Apply rules/20-professional-effectiveness-evidence.md when the target role values critical thinking, systems thinking, judgment, communication, influence, collaboration, ownership, adaptability, stakeholder management, or related behavior. Prefer source-backed bullets that demonstrate those capabilities through actual decisions, actions, tradeoffs, coordination, or consequences. Do not add a generic Soft Skills section or unsupported behavioral adjectives merely for keyword coverage.
 
 If the previously analyzed role is not available in the current context or approved source records, stop and ask me to provide the target role, job description, or recruiter requirement set instead of generating a generic resume.
 
 If multiple roles are available and I have not identified the controlling role or bounded set, ask which role should control tailoring. If I explicitly request all recommended roles from a completed Verified Opportunity Search, or otherwise provide a bounded multi-role set, generate one independently tailored resume per eligible role under the user's recommended-opportunity-artifact policy; do not ask me to choose only one.
 
-Do not include COMPASS analysis, scoring, risk notes, ATS matrix commentary, compensation strategy, recruiter objection notes, or framework commentary inside the resume artifact.
+Do not include COMPASS analysis, scoring, risk notes, ATS matrix commentary, compensation strategy, recruiter objection notes, criterion-recoverability matrices, or framework commentary inside the resume artifact.
 ```
