@@ -29,12 +29,26 @@ Before producing an artifact, check for:
 - Inferred but Unsafe
 - Missing
 
+## Evidence State Is Not Readiness Classification
+
+TruthGuard evidence categories describe what the current sources prove. They do not by themselves determine the practical severity of a target-role delta.
+
+In particular:
+
+- `Missing` direct evidence for an exact technology does not automatically mean the candidate has a substantive capability gap.
+- `Adjacent Evidence` does not automatically mean a delta is safely bridgeable.
+- A target delta may be a technology / implementation-specific ramp-up, adjacent capability ramp-up, capability gap, experience-depth gap, credential / eligibility gap, or evidence unknown under the analysis taxonomy in `rules/01-analysis-workflow.md`.
+- Readiness classification must never be used to upgrade evidence. A technology-specific ramp remains an explicit absence of direct experience with that technology unless current governing evidence says otherwise.
+- Conversely, analysis must not exaggerate an ordinary implementation ramp into a broad capability deficiency when direct evidence establishes the underlying engineering capability.
+
+This separation is mandatory: **TruthGuard answers `what can we prove?`; readiness classification answers `what does the delta mean for performing this particular role?`**
+
 ## Claim Handling
 
 - Direct evidence may be used.
 - Adjacent evidence may be reframed carefully.
 - Inferred but unsafe claims require confirmation.
-- Missing claims must be omitted or identified as a gap.
+- Missing claims must be omitted or identified accurately as an unsupported target item; downstream analysis must then classify the practical delta rather than automatically calling it a capability gap.
 
 Human-sounding phrasing must not soften, obscure, or imply unsupported claims. If Human Authenticity would make a claim read better but less truthful, TruthGuard controls.
 
