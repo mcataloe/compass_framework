@@ -16,13 +16,48 @@ A COMPASS analysis should:
 2. Identify the relevant candidate, target, and external-research sources.
 3. Separate verified facts from assumptions, inference, reported sentiment, and weak signals.
 4. Map source evidence to target requirements.
-5. Identify missing facts, unsupported claims, and risks.
+5. Identify missing facts, unsupported claims, ramp-up requirements, capability gaps, and risks without collapsing those categories together.
 6. Predict likely objections.
 7. Evaluate the requested candidate profile independently from the candidate's fit.
 8. Run opportunity recon under `rules/10-opportunity-recon.md` for an identifiable employer when current external research or connected-source access is available.
 9. Apply `rules/20-professional-effectiveness-evidence.md` when the target materially values explicit or implicit non-technical professional capabilities such as critical thinking, problem framing, systems thinking, judgment, communication, influence, collaboration, ownership, adaptability, stakeholder management, mentoring, or ambiguity navigation.
 10. Evaluate pursuit economics before recommending a next action.
 11. Recommend a next action.
+
+## Ramp-Up vs Capability-Gap Classification
+
+COMPASS must not use `gap` as a single undifferentiated label for every target requirement that lacks exact direct evidence. Evidence classification and readiness classification are related but distinct.
+
+For each material target delta, first apply TruthGuard to establish what evidence exists. Then classify the practical readiness delta as one of:
+
+- **Technology / implementation-specific ramp-up** — the candidate has direct evidence for the underlying engineering capability and closely transferable implementation patterns, but not the employer's exact tool, service, framework, vendor implementation, or organizational variant. Examples may include moving between comparable IaC frameworks, cloud services, libraries, CI/CD systems, or provider-specific implementations when the governing evidence supports the underlying capability. This classification does not create experience with the missing technology.
+- **Adjacent capability ramp-up** — the candidate has meaningful adjacent evidence and a credible transfer path, but the target requires a broader conceptual or operational adjustment than simply learning a different implementation. Treat this as more material than a technology-specific ramp and explain the transfer boundary.
+- **Capability gap** — the target requires a substantive capability, problem domain, responsibility, operating depth, or professional function for which the candidate lacks sufficient direct or adjacent evidence to support near-term readiness. A capability gap must not be relabeled as ramp-up merely because the candidate is generally senior or capable of learning.
+- **Experience-depth gap** — the underlying capability exists, but the target requires materially greater duration, production maturity, scale, ownership, leadership depth, regulatory depth, or repeated operating experience than current evidence supports. Do not reduce an experience-depth requirement to tool ramp-up.
+- **Credential / eligibility gap** — a required credential, clearance, license, degree, sponsorship status, geographic condition, work-mode condition, or other eligibility requirement is missing or unresolved. Transferable technical capability does not bridge a true eligibility gate.
+- **Evidence unknown / confirmation needed** — available current evidence does not establish whether the capability exists. Unknown is not a capability gap and is not a ramp-up. Resolve or qualify it rather than guessing.
+
+Classification must consider the actual role requirement, not merely the noun in the job description. The same missing technology can be a ramp-up in one role and a capability gap in another. For example, lack of an exact framework may be a bounded ramp when the role mainly needs familiar underlying engineering patterns, but it may be a capability or experience-depth gap when deep framework expertise is itself the job.
+
+When deciding between ramp-up and capability gap, evaluate:
+
+1. whether the candidate has direct evidence for the underlying problem class;
+2. similarity of architecture, lifecycle, failure modes, operational model, and implementation responsibilities;
+3. whether the target technology is a replaceable implementation choice or a load-bearing specialist competency;
+4. expected learning/ramp burden relative to the employer's hiring timeline;
+5. whether the role requires immediate independent depth, production history, certification, or specialist judgment that cannot reasonably be inferred from adjacent work;
+6. evidence of prior successful transfer across materially similar technologies or problem domains when available.
+
+Do not assign a precise ramp duration unless supported by evidence. Use qualitative terms such as `small`, `moderate`, or `substantial` ramp when useful.
+
+### Analysis presentation
+
+- Do not title a section `capability gaps` when it contains ordinary technology ramps, unknowns, or eligibility issues.
+- Prefer `Material deltas and ramp-up` or similarly precise language when the set is mixed.
+- State true capability and experience-depth gaps plainly.
+- Do not over-penalize technology-specific ramps in fit scoring when the underlying capability is strongly evidenced and the exact technology is not independently load-bearing.
+- Do not erase a stated required technology from hard-screen analysis merely because COMPASS considers it bridgeable. Job-description wording alone does not prove the employer will accept transferability.
+- In external positioning, a ramp may be described as a specific technology or implementation ramp only when doing so is truthful and useful; never imply direct experience with the missing technology.
 
 ## Professional Effectiveness Mapping
 
@@ -64,7 +99,7 @@ For career/job-search analysis, include:
 3. Semantic alignment matrix
 4. Narrative cohesion assessment
 5. Source-to-output evidence mapping
-6. Missing high-priority terms, facts, or capabilities
+6. Material deltas, ramp-up requirements, missing facts, and capability gaps
 7. Stakeholder objection prediction
 8. Purple Squirrel Factor and requirement-market realism
 9. Company and interview reality check
