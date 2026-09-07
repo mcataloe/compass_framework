@@ -12,16 +12,18 @@ This rule governs tailored resumes and any recruiter-targeted resume that is exp
 
 ## Relationship to Existing Resume Prioritization
 
-`rules/02-resume-generation.md` governs target-criterion importance, qualification versus differentiation, claim-depth-aware wording, bullet construction, and resume structure.
+`rules/02-resume-generation.md` governs the Resume Advancement Objective, target-criterion importance, qualification versus differentiation, claim-depth-aware wording, bullet construction, and resume structure.
 
-This rule does not replace those decisions. It adds a verification loop after a draft has been assembled:
+Recoverability is necessary for advancement but is not sufficient by itself. A qualification can be technically present yet too buried, generic, repetitive, or low-salience to affect an initial reviewer decision. This rule therefore verifies both criterion recoverability and proportionate decision salience for the strongest available truthful evidence.
+
+This rule does not replace Rule 02 decisions. It adds a verification loop after a draft has been assembled:
 
 1. classify the bounded target criteria under Rule 02;
 2. resolve only source-backed candidate evidence under the active Source of Truth;
-3. select and order evidence using qualification-plus-differentiation logic;
+3. select and order evidence using qualification-plus-differentiation and advancement logic;
 4. draft the resume;
-5. audit criterion-level evidence recoverability in the actual finished draft;
-6. revise only when recoverability is materially weak and stronger truthful presentation is available;
+5. audit criterion-level evidence recoverability and decision salience in the actual finished draft;
+6. revise only when recoverability or salience is materially weak and stronger truthful presentation is available;
 7. preserve human readability, TruthGuard, claim depth, artifact cleanliness, and release assurance.
 
 ## Criterion Scope
@@ -47,6 +49,7 @@ For each in-scope target criterion, build an internal record containing at least
 - approved claim depth and any do-not-claim boundary;
 - resume location or locations where the evidence appears;
 - recoverability status;
+- decision-salience status or note when materially relevant;
 - revision action when needed.
 
 This internal record is validation working state. Do not place the matrix, scores, framework labels, or validation notes inside the resume artifact unless the user explicitly requests an annotated artifact.
@@ -83,6 +86,22 @@ Unsupported is not a drafting defect. Do not revise the resume to manufacture co
 
 The target element does not require resume exposure under the active bounded criterion set, or the active Source-of-Truth/public-disclosure policy prohibits or makes exposure inappropriate.
 
+## Decision Salience
+
+For supported hard screens, load-bearing qualifications, material central responsibilities, and material differentiators, also ask whether the evidence is proportionately visible in the hiring decision.
+
+Decision salience is not a score and does not claim hiring probability. It asks whether the strongest available truthful evidence is positioned where an initial reviewer is reasonably likely to encounter and understand it before making an early continue-or-stop judgment.
+
+A criterion may be recoverable but still have weak decision salience when, for example:
+
+- decisive evidence appears only late in an older role despite stronger recent placement being available;
+- the summary and early bullets repeat generic baseline claims while stronger differentiating evidence is buried;
+- a likely reviewer uncertainty is answerable from verified evidence but the draft leaves the answer unnecessarily obscure;
+- several prominent bullets prove the same baseline capability while another load-bearing criterion or stronger differentiator receives little visibility;
+- the wording is technically accurate but so generic that the consequence, scope, or seniority signal is not apparent.
+
+Revise weak decision salience only when placement, wording, selection, or compression can improve the hiring signal without overstating evidence or harming a higher-priority qualification.
+
 ## Recoverability Tests
 
 A criterion is not Strong merely because the exact target keyword appears somewhere in the document.
@@ -96,6 +115,8 @@ Evaluate at least these questions:
 5. **Placement** — Is the evidence visible in a section and position proportionate to the criterion's importance?
 6. **Distinct coverage** — Are different load-bearing criteria actually represented, rather than several early bullets redundantly proving one baseline capability?
 7. **Human readability** — Would the wording still make sense to a human reviewer if no ATS optimization existed?
+8. **Decision salience** — If this evidence materially affects qualification or differentiation, is the strongest truthful version prominent enough to influence the initial review rather than merely exist somewhere in the document?
+9. **First-scan contribution** — Across the target-title line, professional summary, curated Core Skills, and early relevant-role bullets, does each element add distinct decision value rather than repeat the same baseline claim?
 
 ## Skills-Section Rule
 
@@ -124,19 +145,21 @@ A criterion may be Strong without an exact lexical match when the resume's evide
 After drafting the tailored resume:
 
 1. Audit every in-scope criterion against the actual draft.
-2. Identify only material Weak findings where governing evidence exists.
+2. Identify material Weak recoverability findings and materially weak decision-salience findings where governing evidence exists.
 3. Revise by improving one or more of:
    - evidence selection;
    - wording specificity;
    - target-accurate terminology;
    - evidence placement;
    - bullet order;
+   - first-scan emphasis;
    - non-redundant coverage across early bullets;
-   - contextual support for a skills-section term.
+   - contextual support for a skills-section term;
+   - source-backed response to a likely reviewer uncertainty when that response belongs naturally in the resume.
 4. Rerun the audit after revision.
-5. Stop revising when every supported hard screen and load-bearing qualification is Strong or Adequate and material central responsibilities have proportionate recoverability.
+5. Stop revising when every supported hard screen and load-bearing qualification is Strong or Adequate, material central responsibilities have proportionate recoverability, and the strongest material differentiators have reasonable decision salience without displacing required evidence.
 
-Do not continue rewriting merely to maximize keyword count or make every criterion Strong. Adequate is a valid terminal state when further optimization would weaken truthfulness, claim-depth precision, readability, differentiation, or overall resume quality.
+Do not continue rewriting merely to maximize keyword count, make every criterion Strong, or manufacture reviewer interest. Adequate is a valid terminal state when further optimization would weaken truthfulness, claim-depth precision, readability, differentiation, or overall resume quality.
 
 ## Human-First Constraint
 
@@ -163,13 +186,14 @@ COMPASS must not invent or report:
 - a reranker score;
 - an embedding similarity score;
 - a probability that an ATS will advance the candidate;
+- a resume-conversion probability or numeric advancement score;
 - a claim that a named vendor uses a particular model architecture unless current reliable evidence establishes it and the workflow actually requires that research.
 
-System-specific knowledge may inform terminology or artifact choices when verified, but the core resume behavior remains vendor-neutral criterion evidence recoverability.
+System-specific knowledge may inform terminology or artifact choices when verified, but the core resume behavior remains vendor-neutral criterion evidence recoverability and truthful decision-salience optimization.
 
 ## TruthGuard and Source Authority
 
-This rule may change selection, wording, ordering, and placement only. It cannot create candidate evidence.
+This rule may change selection, wording, ordering, placement, and compression only. It cannot create candidate evidence.
 
 All candidate facts remain governed by the active Source of Truth, claim-depth boundaries, do-not-claim controls, collaborator and ownership boundaries, implementation stage, outcome status, confidentiality, and public-disclosure policy.
 
@@ -180,5 +204,7 @@ If the audit reveals that a material target criterion lacks governing evidence, 
 Criterion Evidence Recoverability is a content-quality gate that runs before final resume release assurance.
 
 A tailored resume should not be treated as content-complete when a supported hard screen or load-bearing qualification remains materially Weak solely because the draft failed to expose available governing evidence and a truthful revision is available.
+
+Likewise, when a materially important supported qualification or differentiator has clearly weak decision salience solely because stronger truthful selection or placement is available, revise before treating the content as complete. Do not block release merely because a speculative alternative might perform better; the gate applies only to material, supportable improvements.
 
 This rule does not alter the executable resume-release contract, artifact-name integrity rules, visual validation, employment coverage requirements, or `PASS` / `FAIL` / `UNKNOWN` semantics of `rules/16-resume-release-assurance.md`.
