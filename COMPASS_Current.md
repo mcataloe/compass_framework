@@ -27,6 +27,24 @@ COMPASS Source Rebase and COMPASS Experience Sync are repository-maintenance wor
 
 Resolve candidate claim safety through the current user-owned Source-of-Truth persistence and authority policy. Under default artifact persistence, approved claim ledgers and do-not-claim lists are the current evidence-control layer when present. Under an explicit repository-defined canonical persistence contract, the governing current canonical record may own the same approval, claim-depth, and do-not-claim boundaries directly. Imported artifacts remain evidence inputs and provenance; after verified ingestion, the governing current Source-of-Truth authorities supersede them for downstream use.
 
+## Resume Advancement Objective
+
+For a role-tailored application resume with a bounded target, COMPASS optimizes the truthful presentation for advancement from initial resume review to the next hiring stage rather than treating lexical or requirement matching as the terminal objective.
+
+The default decision sequence is:
+
+> Qualification -> differentiation -> source-backed uncertainty or objection reduction -> narrative coherence -> credibility -> reviewer interest -> advancement.
+
+Qualification remains the first constraint. Supported hard screens and load-bearing qualifications should be recognizable quickly. Once that constraint is satisfied, COMPASS should prefer the strongest verified evidence that differentiates through contribution depth, senior scope, decision consequence, meaningful outcomes, uncommon relevant experience, or target-relevant professional-effectiveness behavior.
+
+The first-scan zone — target-title line, professional summary, curated Core Skills, and early bullets of materially relevant recent roles — should contribute distinct decision value rather than repeat the same baseline positioning. A prior COMPASS Analysis may inform requirement importance, evidence emphasis, and likely reviewer questions, but internal scoring, objections, pursuit economics, conversion commentary, and framework analysis remain outside the clean resume.
+
+`rules/22-criterion-evidence-recoverability.md` verifies that important supported qualifications are independently recoverable from the finished artifact and proportionately visible in the initial reviewer decision when stronger truthful presentation is available.
+
+Advancement is an optimization objective, not a measured hiring probability, ATS score, rank, or promise of interview success. It may change evidence selection, wording, ordering, placement, and compression only. It may not create candidate evidence, strengthen claim depth, conceal a hard-screen failure, or weaken TruthGuard, Human Authenticity, public-disclosure controls, or user-specific Source-of-Truth policy.
+
+Broad recruiter-targeted resumes without a bounded role do not inherit an invented role-specific advancement model; they use the verified target-role-family strategy and senior-evidence prioritization rules instead.
+
 ## Professional Effectiveness Evidence
 
 COMPASS treats non-technical hiring capabilities as **professional effectiveness** rather than as a generic soft-skills inventory. Durable behavior is governed by `rules/20-professional-effectiveness-evidence.md`.
@@ -327,7 +345,7 @@ Favor clear evidence and narrative signal over dense keyword packing.
 
 For Staff, Principal, Architect, and comparable senior individual-contributor resumes, preserve official employment titles while communicating operating level through verified architecture ownership, technical direction, cross-team influence, organizational leverage, operational accountability, and hands-on implementation.
 
-For role-tailored resumes with a bounded job description or requirement set, carry target importance into artifact ordering. Distinguish hard screens, load-bearing required qualifications, central responsibilities, differentiating preferred qualifications, and secondary preferred/contextual value. Establish major qualification signals quickly, then prefer source-backed evidence that proves those requirements while also differentiating through preferred capability, contribution depth, senior scope, decision consequence, meaningful outcomes, or target-relevant professional-effectiveness behavior. Do not let novelty bury a hard requirement, and do not invent a required-versus-preferred taxonomy for an unbounded recruiter resume.
+For role-tailored resumes with a bounded job description or requirement set, carry target importance into artifact ordering. Distinguish hard screens, load-bearing required qualifications, central responsibilities, differentiating preferred qualifications, and secondary preferred/contextual value. Establish major qualification signals quickly, then prefer source-backed evidence that proves those requirements while also differentiating through preferred capability, contribution depth, senior scope, decision consequence, meaningful outcomes, or target-relevant professional-effectiveness behavior. Apply the Resume Advancement Objective so strong truthful evidence is not only present but proportionately visible in the first-scan decision. Do not let novelty bury a hard requirement, and do not invent a required-versus-preferred taxonomy for an unbounded recruiter resume.
 
 Use approved claim depth to constrain verbs and leadership language. Do not mechanically convert cautious wording into ownership or leadership claims.
 
