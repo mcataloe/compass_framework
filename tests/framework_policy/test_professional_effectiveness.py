@@ -58,7 +58,7 @@ class ProfessionalEffectivenessPolicyTests(unittest.TestCase):
         current = read("COMPASS_Current.md")
         changelog = read("COMPASS_Changelog.md")
 
-        self.assertIn("Current COMPASS Version: vNext 2026-08.8", version)
+        self.assertIn("Current COMPASS Version: vNext 2026-09.2", version)
         self.assertIn("rules/20-professional-effectiveness-evidence.md", version)
         self.assertIn("## Professional Effectiveness Evidence", current)
         self.assertIn("## vNext 2026-08.7 - Professional Effectiveness Evidence", changelog)
