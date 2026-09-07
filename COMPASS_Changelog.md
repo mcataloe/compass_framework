@@ -2,6 +2,22 @@
 
 All notable framework changes should be documented here.
 
+## vNext 2026-09.2 - Resume Advancement Objective
+
+Made next-stage advancement the explicit application-stage objective for role-tailored resumes while preserving TruthGuard, claim-depth boundaries, human readability, and vendor-neutral ATS behavior.
+
+Behavior updates:
+
+- Added a first-class Resume Advancement Objective to `rules/02-resume-generation.md` so role-tailored resumes optimize truthful evidence presentation for advancement rather than treating requirement or keyword matching as the terminal objective.
+- Defined the default decision sequence as qualification, differentiation, source-backed uncertainty or objection reduction, narrative coherence, credibility, reviewer interest, and advancement.
+- Required the title, summary, curated Core Skills, and early bullets of materially relevant recent roles to function as a deliberate first-scan zone with distinct decision value rather than repeated baseline positioning.
+- Clarified that prior COMPASS Analysis may inform evidence emphasis and likely reviewer questions while private scoring, objections, pursuit economics, and internal framework commentary remain outside the clean resume.
+- Extended `rules/22-criterion-evidence-recoverability.md` with decision-salience and first-scan tests so important supported evidence must be not only recoverable but proportionately visible in the initial reviewer decision when stronger truthful placement is available.
+- Added bounded revision for weak decision salience through evidence selection, wording, placement, ordering, compression, and first-scan emphasis without inventing reviewer interest or displacing higher-priority qualification proof.
+- Prohibited numeric resume-conversion probabilities, advancement scores, ATS scores, candidate ranks, and proprietary-system simulation.
+- Preserved broad recruiter resumes from invented role-specific conversion models when no bounded job description or requirement set exists.
+- Advanced the active framework identifier from `vNext 2026-09.1` to `vNext 2026-09.2`.
+
 ## vNext 2026-09.1 - Criterion Evidence Recoverability
 
 Added a vendor-neutral post-draft recoverability gate for role-tailored resumes so important truthful qualifications are not merely present in the candidate Source of Truth but are actually discoverable from the finished artifact.
