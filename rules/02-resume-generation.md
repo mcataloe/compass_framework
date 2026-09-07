@@ -81,6 +81,30 @@ Avoid unnatural bullet symmetry, buzzword stacking, inflated executive language,
 
 Keep ATS-safe formatting intact. Human Authenticity must not add hidden text, parser tricks, fake imperfections, or AI-detector evasion tactics.
 
+## Resume Advancement Objective
+
+A role-tailored resume is an application-stage decision artifact, not merely a requirement-matching document. Within TruthGuard, claim-depth, public-disclosure, artifact-cleanliness, and user-specific policy boundaries, COMPASS should optimize the truthful presentation for advancement from initial resume review to the next hiring stage.
+
+Advancement is an objective for evidence selection and presentation. It is not a measured probability, ATS score, candidate rank, or promise of interview success.
+
+For bounded role-tailored resumes, use this decision sequence:
+
+> Qualification -> differentiation -> uncertainty or objection reduction -> narrative coherence -> credibility -> reviewer interest -> advancement.
+
+Operationally:
+
+- Establish hard screens and load-bearing qualifications quickly enough that a reviewer does not need to infer basic eligibility or fit from scattered evidence.
+- After qualification is established, prefer the strongest source-backed differentiators that communicate contribution depth, senior scope, decision consequence, meaningful outcomes, uncommon but relevant experience, or target-relevant professional-effectiveness behavior.
+- Reduce likely reviewer uncertainty or objections only by surfacing verified evidence that answers the underlying question. Do not place internal objections, gap analysis, risk notes, or defensive commentary inside the clean resume.
+- Use the target-title line, professional summary, curated Core Skills, and the early bullets of materially relevant recent roles as the primary first-scan zone. Each should contribute distinct decision value rather than repeat the same baseline claim.
+- Preserve a coherent role-specific narrative so the reviewer can understand why the candidate's verified background fits the target role without reconstructing that story across unrelated bullets.
+- Prefer evidence that gives a reviewer a stronger reason to continue reading when qualification strength is otherwise comparable. Consequential, specific, source-backed work should outrank repetitive baseline matching.
+- Use target terminology when it improves truthful recognizability, but do not treat keyword count or lexical similarity as the objective.
+- A prior COMPASS Analysis may inform evidence emphasis, likely reviewer questions, and ordering, but private scoring, objection analysis, pursuit economics, and internal framework commentary must remain outside the resume.
+- Advancement optimization may change evidence selection, wording, ordering, placement, and compression only. It may not create evidence, strengthen claim depth, conceal a hard-screen failure, or convert an unsupported target criterion into a supported one.
+
+For broad recruiter-targeted resumes without a bounded role, use the Staff and Principal Evidence Prioritization rules and verified target-role-family strategy rather than inventing a role-specific advancement model.
+
 ## Staff and Principal Evidence Prioritization
 
 For Staff Engineer, Principal Engineer, Architect, senior platform, and comparable senior individual-contributor resumes:
