@@ -11,12 +11,12 @@ def read(path: str) -> str:
 
 class VerifiedOpportunitySearchReadinessTests(unittest.TestCase):
     def test_active_version_and_changelog_are_aligned(self) -> None:
-        self.assertIn("Current COMPASS Version: vNext 2026-08.8", read("VERSION.md"))
+        self.assertIn("Current COMPASS Version: vNext 2026-09.2", read("VERSION.md"))
         self.assertIn(
-            "## vNext 2026-08.8 - Adaptive Opportunity Yield and Staged Contract Readiness",
+            "## vNext 2026-09.2 - Resume Advancement Objective",
             read("COMPASS_Changelog.md"),
         )
-        self.assertIn("Current active version: `vNext 2026-08.8`", read("AGENTS.override.md"))
+        self.assertIn("Current active version: `vNext 2026-09.2`", read("AGENTS.override.md"))
 
     def test_contract_readiness_is_staged(self) -> None:
         rule = read("rules/12-verified-opportunity-search.md")
