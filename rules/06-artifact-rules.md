@@ -254,17 +254,19 @@ Use this section order:
 
 Recruiter-targeted resumes must remain broad enough for multiple opportunities while staying source-grounded.
 
-## Cover Letter Template
+## Cover Letter Structural Scaffold
 
-Use this section order:
+Use the applicable user-specific presentation policy when available. At the generic framework level, preserve this semantic-neutral order:
 
-1. Date and recipient block, when available
+1. Date or candidate presentation required by the active user policy, when applicable
 2. Greeting
-3. Opening fit statement
-4. Evidence-backed value paragraph
-5. Role-specific alignment paragraph
-6. Closing paragraph
-7. Signature
+3. Narrative body
+4. Closing
+5. Signature
+
+The narrative body must not be forced into fixed semantic paragraph roles. It should advance one central argument, add information beyond the resume and job description, use verified evidence selectively, preserve source and entity boundaries, and use the adaptive narrative behavior defined in `rules/03-cover-letter-generation.md`.
+
+Use the most specific known content limit in this order: explicit application-provider limit, current user-specific limit, then the COMPASS portable default ceiling of 2,000 characters including spaces and punctuation. The limit is a ceiling, not a quota; COMPASS has no generic cover-letter minimum.
 
 Cover letters must be clean deliverables. Do not include gaps, ATS notes, compensation strategy, internal analysis, company-review findings, interview-risk notes, or unsupported motivation.
 
