@@ -2,6 +2,26 @@
 
 All notable framework changes should be documented here.
 
+
+## vNext 2026-10.0 - Adaptive Cover Letter Narrative
+
+Redesigned COMPASS cover-letter generation around relationship context, grounded personalization, selective evidence, and portable application-field constraints instead of one fixed rhetorical paragraph sequence.
+
+Behavior updates:
+
+- Replaced the fixed opening-fit / evidence / role-alignment cover-letter sequence with an adaptive narrative model.
+- Added five candidate-neutral narrative archetypes: Conversation Continuation, Story / Lesson Led, Operating-Model Fit, Problem / Insight Led, and Direct Fit.
+- Required relationship-context resolution before drafting so prior recruiter, referral, or hiring-manager interactions can continue naturally rather than resetting to cold-application language.
+- Added the one-central-argument rule so cover letters add decision-relevant information instead of cataloging resume evidence.
+- Added grounded-personalization rules that permit real conversational context, verified experience, supportable working preferences, domain familiarity, and concrete observations while continuing to prohibit invented motivation, passion, mission affinity, culture fit, or emotional connection.
+- Added progressive technical disclosure so context and relevance precede dense implementation mechanics.
+- Added semantic review for resume recap, job-description echo, grounded personalization, technical-density timing, central argument, continuity, and deletion value.
+- Added portable content-budget precedence: explicit application-provider limit, then user-specific Source-of-Truth limit, then the COMPASS default ceiling of 2,000 characters including spaces and punctuation.
+- Removed the generic cover-letter minimum-length concept; the content limit is a ceiling rather than a quota.
+- Kept deterministic document structure and user-specific presentation contracts separate from model-evaluated narrative quality.
+- Updated the cover-letter launcher, Human Authenticity guidance, artifact scaffold, current-framework summary, repository metadata, and framework-policy regression tests.
+- Advanced the active framework identifier from `vNext 2026-09.2` to `vNext 2026-10.0`.
+
 ## vNext 2026-09.2 - Resume Advancement Objective
 
 Made next-stage advancement the explicit application-stage objective for role-tailored resumes while preserving TruthGuard, claim-depth boundaries, human readability, and vendor-neutral ATS behavior.
