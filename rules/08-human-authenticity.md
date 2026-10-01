@@ -98,6 +98,27 @@ A conversational message fails this gate when it restates shared context without
 
 User-specific Source of Truth policies may define a more specific conversational sequence, voice, deletion test, or channel rule. Those policies override this generic gate within their documented scope, subject to TruthGuard and artifact-cleanliness requirements.
 
+## Grounded Personalization and Cover-Letter Continuity
+
+For cover letters and other opportunity-specific narrative artifacts, personalization is valid when it arises from established context rather than invented sentiment.
+
+Valid sources can include:
+
+- an actual recruiter, referral, or hiring-manager interaction;
+- a specific aspect of the work the candidate has genuinely identified as interesting;
+- a verified experience that shaped the candidate's approach;
+- a source-backed working preference or operating pattern;
+- real domain familiarity;
+- a concrete, supportable observation about the opportunity.
+
+When prior interaction exists, preserve continuity where useful. Do not restate role facts already established merely to demonstrate fit, and do not reset an active professional conversation into generic first-contact language.
+
+A personalized sentence is weak when removing the company or role name reveals that it could have been sent unchanged to almost any employer, unless the sentence performs a necessary structural or factual function.
+
+Do not invent passion, admiration, culture fit, mission affinity, values alignment, or emotional connection.
+
+For cover letters, prefer progressive disclosure of technical detail: establish context and reader relevance before dense implementation mechanics. Natural transitions and source-grounded reflection are allowed when they promptly advance a verified argument; Human Authenticity does not require every paragraph to begin with a project, employer, or accomplishment.
+
 ## Style Guidance
 
 Prefer:
