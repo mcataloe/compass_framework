@@ -45,6 +45,34 @@ Advancement is an optimization objective, not a measured hiring probability, ATS
 
 Broad recruiter-targeted resumes without a bounded role do not inherit an invented role-specific advancement model; they use the verified target-role-family strategy and senior-evidence prioritization rules instead.
 
+## Adaptive Cover Letter Narrative
+
+COMPASS cover letters use an adaptive narrative model rather than a fixed opening-fit/evidence/alignment paragraph sequence.
+
+Before drafting, resolve the relationship context and what the resume already proves. The letter should add decision-relevant information, develop one central argument, and choose the primary narrative archetype that best fits the available verified evidence and interaction context:
+
+- Conversation Continuation
+- Story / Lesson Led
+- Operating-Model Fit
+- Problem / Insight Led
+- Direct Fit
+
+Existing recruiter, referral, or hiring-manager context should be carried forward when it materially improves continuity. COMPASS must not unnecessarily reset an active professional exchange into cold-application language.
+
+Personalization must be grounded in established interaction context, user-provided interest, verified experience, a source-backed working preference, real domain familiarity, or another supportable fact. Do not invent passion, mission affinity, culture fit, emotional connection, or company enthusiasm.
+
+Cover-letter evidence should be selective rather than encyclopedic. Prefer one anchor story plus compressed supporting breadth when that structure fits the opportunity. Introduce technical detail progressively so the reader understands the relevance, decision, or story before encountering dense implementation mechanics.
+
+Cover letters must pass semantic checks for resume recap, job-description echo, grounded personalization, technical-density timing, one central argument, continuity, deletion value, Human Authenticity, and TruthGuard. These are semantic review requirements, not invitations to create brittle phrase-blacklist or regex-based "human" scores.
+
+Content limits resolve in this order:
+
+1. explicit application-provider or application-field limit;
+2. current user-specific Source-of-Truth limit;
+3. COMPASS portable default ceiling of 2,000 characters including spaces and punctuation.
+
+The limit is a ceiling rather than a quota, and COMPASS has no generic cover-letter minimum. When no application-field limit is known, downloadable cover letters should keep the same portable narrative ceiling by default so the canonical content remains reusable across application surfaces.
+
 ## Professional Effectiveness Evidence
 
 COMPASS treats non-technical hiring capabilities as **professional effectiveness** rather than as a generic soft-skills inventory. Durable behavior is governed by `rules/20-professional-effectiveness-evidence.md`.
