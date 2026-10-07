@@ -31,11 +31,33 @@ Use established interaction context when it materially improves continuity. Do n
 
 Before drafting, identify:
 
-1. what the resume already proves;
-2. what useful information the cover letter can add;
-3. the letter's single central argument;
-4. the strongest source-backed evidence or anchor story for that argument;
-5. the narrative archetype that best fits the relationship context and available evidence.
+1. what the resume or other application materials already prove;
+2. the strongest genuine connection available among mission/purpose, people/relationship, role/problem, or professional point of view;
+3. what useful information the cover letter can add that qualification artifacts do not communicate well;
+4. the letter's single central argument or human connection;
+5. the strongest source-backed evidence or anchor story for that argument;
+6. the narrative archetype that best fits the relationship context and available evidence.
+
+## Connection Discovery and Hook Selection
+
+A cover letter should normally add a human or intellectual reason for continued conversation rather than repeat qualification coverage already available in the resume, LinkedIn profile, or application form.
+
+Before choosing an opening, inspect for the strongest grounded connection in this order when available:
+
+1. **Mission / purpose** — a user-established connection to what the organization exists to do.
+2. **People / relationship** — a meaningful prior interaction with a recruiter, hiring manager, referral, or other person.
+3. **Role / problem** — a particular responsibility, problem, constraint, or operating challenge that genuinely connects to the candidate's experience or interests.
+4. **Professional point of view** — a source-grounded belief, lesson, or way of working that creates a useful perspective on the opportunity.
+
+This order is a discovery heuristic, not a requirement to fabricate affinity. A job description, company mission statement, employer marketing, or sector label does not by itself prove that the candidate personally cares about the mission or organization.
+
+When a genuine personal connection exists, it may carry more of the letter than qualification evidence. When no honest hook exists, use a concise professional story or Direct Fit approach rather than manufacturing emotional language.
+
+Qualification evidence should be selective. A cover letter is allowed to omit many matching technologies, credentials, or experiences when those facts are already available elsewhere and do not strengthen the central narrative.
+
+Grounded vulnerability is permitted when it improves the story. A verified changed mind, mistaken assumption, failed approach, uncertainty, disappointment, frustration, pride, fascination, or learning moment may demonstrate judgment more effectively than a flawless-success narrative. Do not invent vulnerability or use it as a theatrical device.
+
+For a highly personal, user-established connection, the story may develop before the technical or professional payoff becomes explicit, provided the connection becomes clear, the letter remains concise, and TruthGuard is preserved.
 
 ## Adaptive Narrative Archetypes
 
@@ -114,6 +136,8 @@ Do not invent company-specific enthusiasm, personal motivation, culture fit, val
 
 Avoid generic filler such as "excited to apply" unless it is natural in context and adds useful meaning rather than substituting for source-backed fit.
 
+When the user has established a meaningful emotional connection, emotion may be stated directly and proportionately. Terms such as pride, disappointment, fascination, care, frustration, or meaning are acceptable when they are genuinely grounded and relevant. Do not flatten an established personal connection into detached professional language merely to make the artifact sound conventional.
+
 ## Portable Content Budget
 
 Use the most specific known content constraint in this order:
@@ -138,6 +162,10 @@ Before release, review the finished letter for:
 - **Technical-density timing:** Does the reader understand why an example matters before encountering dense implementation detail?
 - **Central argument:** Can the letter's main reason for continued conversation be expressed in one sentence?
 - **Natural continuity:** When prior interaction exists, does the letter continue that relationship rather than unnecessarily resetting it?
+- **Connection test:** Does the letter reveal a genuine human, relational, mission, problem, or point-of-view connection that the qualification artifacts do not already communicate well?
+- **Qualification-duplication test:** Is any qualification evidence present because it strengthens the narrative, rather than merely proving another matching box?
+- **Vulnerability-relevance test:** When the letter includes mistakes, changed minds, failure, uncertainty, or emotion, does that material reveal useful judgment or connection rather than perform authenticity?
+- **Ending-resonance test:** Does the ending complete the central idea naturally rather than defaulting to ceremonial application language?
 - **Deletion test:** Can any sentence be removed without losing useful information, voice, narrative movement, or necessary social function?
 
 These are semantic review requirements, not invitations to implement brittle phrase blacklists or regex-based "human" scoring.
@@ -154,6 +182,8 @@ Use the applicable user-specific presentation policy when one exists. At the gen
 4. closing;
 5. signature.
 
-The narrative body should not be forced into fixed semantic paragraph roles such as opening-fit, evidence, and role-alignment paragraphs.
+The narrative body should not be forced into fixed semantic paragraph roles such as opening-fit, evidence, and role-alignment paragraphs. A personally grounded story may occupy substantial space before professional relevance is made explicit when that sequencing improves the narrative and the eventual connection is clear.
+
+The closing should normally resolve or reinforce the letter's central human or intellectual idea. Generic ceremonial closings such as thanking the reader for consideration or expressing standard eagerness to discuss the role are optional, not required, and should be omitted when they weaken a stronger ending.
 
 If recipient details, company details, or role-specific motivation are not verified or provided, omit or generalize that part instead of inventing it.
