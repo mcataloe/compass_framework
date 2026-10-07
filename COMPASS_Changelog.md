@@ -18,6 +18,23 @@ Behavior updates:
 - Updated the cover-letter launcher, current-framework summary, version behavior notes, and framework-policy regression tests.
 - Retained the active `vNext 2026-10.0` identifier because this refines the adaptive cover-letter behavior introduced in the same version rather than adding a separate command or cross-workflow contract.
 
+## vNext 2026-10.1 - Pre-Draft Artifact Materiality Gate
+
+Added an inspect-first materiality gate for opportunity-specific resume and cover-letter generation so COMPASS asks only questions that can materially change the artifact and coordinates companion-artifact clarification into one session.
+
+Behavior updates:
+
+- Added a shared `INSPECT -> CLASSIFY -> ASK / ASSUME / STOP -> RE-EVALUATE` pre-draft gate to the artifact rules.
+- Classified unresolved artifact context as discoverable, non-material, safe assumption, material, or hard blocker.
+- Made zero questions a valid and common outcome and bounded ordinary questioning to no more than three targeted questions normally and five per round maximum unless exhaustive discovery is requested.
+- Added coordinated multi-artifact clarification so a resume and cover letter requested for the same target are inspected together and use one optional Shared / Resume / Cover Letter question session.
+- Added resume-specific materiality criteria covering qualification, direct-versus-adjacent evidence, evidence ordering, target-level positioning, gap boundaries, claim depth, and newly surfaced evidence.
+- Added cover-letter-specific materiality criteria covering relationship context, personal or mission connection, central argument, narrative archetype, anchor story, vulnerability, emotional openness, and motivation that COMPASS must not invent.
+- Added recursive re-evaluation after answers and prohibited clarification responses from bypassing Source-of-Truth maintenance for newly surfaced career claims.
+- Added an explicit `No Gate` modifier that converts only safely assumable ASK outcomes into disclosed working assumptions while preserving hard blockers and TruthGuard.
+- Updated tailored-resume and cover-letter launchers, command registry, current-framework summary, repository metadata, and framework-policy regression tests.
+- Advanced the active framework identifier from `vNext 2026-10.0` to `vNext 2026-10.1`.
+
 ## vNext 2026-10.0 - Adaptive Cover Letter Narrative
 
 Redesigned COMPASS cover-letter generation around relationship context, grounded personalization, selective evidence, and portable application-field constraints instead of one fixed rhetorical paragraph sequence.
