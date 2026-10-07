@@ -26,6 +26,25 @@ class CoverLetterNarrativePolicyTests(unittest.TestCase):
         ):
             self.assertIn(anchor, text)
 
+    def test_rule_03_uses_connection_first_discovery_without_forced_affinity(self) -> None:
+        text = read("rules/03-cover-letter-generation.md")
+        for anchor in (
+            "## Connection Discovery and Hook Selection",
+            "Mission / purpose",
+            "People / relationship",
+            "Role / problem",
+            "Professional point of view",
+            "Qualification evidence should be selective",
+            "Grounded vulnerability is permitted",
+            "does not by itself prove that the candidate personally cares",
+        ):
+            self.assertIn(anchor, text)
+
+        prompt = read("prompts/compass-cover-letter.md")
+        self.assertIn("Discover the strongest genuine connection", prompt)
+        self.assertIn("Use qualification evidence selectively", prompt)
+        self.assertIn("ending that lands the central human or intellectual idea", prompt)
+
     def test_rule_03_defines_portable_character_budget_without_minimum(self) -> None:
         text = read("rules/03-cover-letter-generation.md")
         self.assertIn("2,000 characters including spaces and punctuation", text)

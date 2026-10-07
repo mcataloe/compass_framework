@@ -18,14 +18,17 @@ Load the user's current artifact-generation, cover-letter style, candidate-voice
 Before drafting:
 
 1. Determine the relationship context: cold application, prior recruiter contact, completed recruiter screen, referral, direct hiring-manager interaction, or established professional relationship.
-2. Identify what the resume already proves.
-3. Identify what useful information the cover letter can add.
-4. Define one central argument for continued conversation.
-5. Choose one primary narrative archetype from Rule 03: Conversation Continuation, Story / Lesson Led, Operating-Model Fit, Problem / Insight Led, or Direct Fit.
-6. Select one anchor story when one materially strengthens the argument; use supporting evidence selectively rather than cataloging projects.
-7. Resolve the content budget using this precedence: explicit application-provider limit, current user-specific limit, then the COMPASS default portable ceiling of 2,000 characters including spaces and punctuation.
-8. Draft with progressive technical disclosure so the reader understands why an example matters before encountering dense implementation detail.
-9. Run the finished draft through the resume-recap, job-description-echo, grounded-personalization, technical-density, central-argument, continuity, deletion, TruthGuard, and Human Authenticity checks.
+2. Identify what the resume, LinkedIn profile, and other application materials already prove.
+3. Discover the strongest genuine connection available among mission/purpose, people/relationship, role/problem, or professional point of view. Do not invent one.
+4. Identify what useful human, relational, reflective, or judgment-based information the cover letter can add.
+5. Define one central argument or connection for continued conversation.
+6. Choose one primary narrative archetype from Rule 03: Conversation Continuation, Story / Lesson Led, Operating-Model Fit, Problem / Insight Led, or Direct Fit.
+7. Select one anchor story when one materially strengthens the argument; allow grounded vulnerability, changed minds, mistakes, failed approaches, or direct emotion when they reveal useful judgment or connection.
+8. Use qualification evidence selectively rather than cataloging matching skills or projects already established elsewhere.
+9. Resolve the content budget using this precedence: explicit application-provider limit, current user-specific limit, then the COMPASS default portable ceiling of 2,000 characters including spaces and punctuation.
+10. Draft with progressive technical disclosure so the reader understands why an example matters before encountering dense implementation detail; for a highly personal grounded connection, the story may develop before the technical payoff.
+11. Prefer an ending that lands the central human or intellectual idea over ceremonial application language when the stronger ending reads naturally.
+12. Run the finished draft through the connection, qualification-duplication, resume-recap, job-description-echo, grounded-personalization, vulnerability-relevance, technical-density, central-argument, continuity, ending-resonance, deletion, TruthGuard, and Human Authenticity checks.
 
 Do not default to an opening-fit-statement structure. Do not force a cold-application voice when prior interaction provides meaningful context. Do not invent motivation, affinity, enthusiasm, mission alignment, culture fit, or personality in order to personalize the letter.
 
