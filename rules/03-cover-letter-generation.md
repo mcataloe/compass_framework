@@ -14,6 +14,26 @@ Use a calm, professional, forward-looking tone.
 
 Cover letters must be specific, source-grounded, non-generic, and additive to the resume. A cover letter should tell the reader something decision-relevant that the resume and job description do not already communicate clearly.
 
+## Cover Letter Materiality Criteria
+
+Before drafting a cover letter, apply the Pre-Draft Artifact Materiality Gate in `rules/06-artifact-rules.md`.
+
+Cover-letter materiality is broader than resume materiality because COMPASS may infer technical relevance from verified evidence but must not invent personal meaning, motivation, affinity, or emotional connection.
+
+An unresolved question is material when materially different plausible answers could change one or more of the following:
+
+- the relationship context or whether an existing recruiter, referral, hiring-manager, or professional interaction should shape the letter;
+- the central human or intellectual argument for continued conversation;
+- whether a genuine mission, purpose, people, role, problem, or domain connection exists and how strongly it should shape the narrative;
+- the primary narrative archetype;
+- the anchor story, reflection, lesson, changed mind, mistake, or vulnerability that would carry the letter;
+- the appropriate degree of emotional openness or restraint;
+- whether a personal motivation or affinity may be stated at all without invention.
+
+Do not ask for personal connection merely to manufacture one. When no genuine connection is established and none is required to resolve a material narrative fork, use a restrained source-grounded narrative rather than interrupting generation.
+
+When a resume and cover letter are requested together for the same target, participate in the single coordinated materiality session required by Rule 06. Do not wait until the resume is complete before discovering cover-letter questions.
+
 ## Narrative Objective
 
 A cover letter should normally develop one central argument about why the candidate's verified experience, judgment, operating model, or grounded connection to the opportunity merits continued conversation.
