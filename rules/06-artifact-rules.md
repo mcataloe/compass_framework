@@ -72,6 +72,62 @@ Company research, employee sentiment, interview reports, opportunity scoring, co
 
 Generated artifacts are downstream outputs, not factual authorities. Do not use an old resume, cover letter, recruiter message, LinkedIn draft, application answer, portfolio draft, or public experience repository as source truth unless it has been separately imported, extracted, reconciled, and verified through COMPASS Intake.
 
+## Pre-Draft Artifact Materiality Gate
+
+Before drafting an opportunity-specific clean application artifact, COMPASS must inspect the current authoritative evidence and context and decide whether any unresolved question is material to the artifact.
+
+Use this decision sequence:
+
+```text
+INSPECT -> CLASSIFY -> ASK / ASSUME / STOP -> RE-EVALUATE
+```
+
+### Inspect first
+
+Before asking the user, inspect the sources already available for the requested artifact, including the controlling target role or requirement set, current COMPASS analysis when available, current conversation context, current user-specific Source-of-Truth policy, resolved candidate evidence, prior recruiter or hiring-team interaction when relevant, and artifact-specific style rules.
+
+Do not ask for information that is already established, directly discoverable from an approved source, or reasonably inferable without changing a material artifact decision.
+
+### Classify unresolved context
+
+Classify each unresolved item as one of:
+
+- **Discoverable** — inspect an available authoritative source before asking.
+- **Non-material** — plausible answers would change only minor wording, formatting, ordering, tone, or polish.
+- **Safe assumption** — the artifact can proceed on a reasonable assumption without creating a material factual, strategic, or narrative distortion.
+- **Material** — materially different plausible answers could change evidence selection, qualification or gap positioning, claim-safe wording, target-level framing, narrative strategy, relationship context, central argument, or another decision that substantially changes the artifact.
+- **Hard blocker** — proceeding would require unsupported candidate claims, violate current Source-of-Truth authority, cross a do-not-claim boundary, or otherwise require unsafe guessing.
+
+### Ask only when the answer changes the artifact
+
+Ask only unresolved material questions needed for the next safe drafting decision.
+
+Zero questions is a valid and common outcome. Do not create a questionnaire merely because additional detail could improve the artifact.
+
+Normally ask no more than three targeted questions in one round and never more than five unless the user explicitly requests exhaustive discovery. Batch closely related questions and stop asking when the remaining uncertainty is discoverable, non-material, or safely assumable.
+
+### Coordinate multiple requested artifacts
+
+When the user requests more than one opportunity-specific artifact for the same target in the same operation, inspect the materiality needs of all requested artifacts before asking any clarification question.
+
+Use one coordinated clarification session rather than serial artifact-by-artifact questioning. When useful, organize the questions as:
+
+1. **Shared** — facts or decisions that materially affect more than one requested artifact.
+2. **Resume** — unresolved questions material only to the resume.
+3. **Cover Letter** — unresolved questions material only to the cover letter.
+
+Omit any empty section. Ask each underlying question once even when its answer affects multiple artifacts. Do not draft one requested artifact merely to discover questions that should have been identified for the companion artifact during the same pre-draft inspection.
+
+### Re-evaluate after answers
+
+After the user answers, re-run the gate only for remaining or newly exposed uncertainty. Continue questioning only while another unresolved answer could materially change the artifact. Do not continue discovery merely because more detail is available.
+
+If an answer introduces a new candidate fact, technology, metric, responsibility, ownership claim, leadership scope, outcome, credential, or other career evidence that is not authorized by the current Source of Truth, route that fact through the applicable Source-of-Truth maintenance workflow before using it as established external evidence.
+
+### No Gate modifier
+
+If the user explicitly invokes `No Gate`, convert only safely assumable material ASK outcomes into explicit working assumptions and proceed. Keep consequential assumptions outside the clean artifact unless the artifact itself requires them. `No Gate` never converts a hard blocker into permission to proceed and never weakens TruthGuard, claim-depth boundaries, do-not-claim controls, privacy, or required source authority.
+
 ## Human Authenticity Pass
 
 Clean external deliverables must pass a Human Authenticity review before final output.
