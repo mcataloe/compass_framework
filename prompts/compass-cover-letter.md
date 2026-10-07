@@ -15,6 +15,9 @@ Required framework files:
 
 Load the user's current artifact-generation, cover-letter style, candidate-voice, and recommended-opportunity-artifact policies when available.
 
+Before drafting, run the Pre-Draft Artifact Materiality Gate in `rules/06-artifact-rules.md` and the cover-letter-specific criteria in `rules/03-cover-letter-generation.md`. Inspect available authoritative context first and ask only unresolved material questions. Zero questions is valid. If the user requested a resume for the same target in the same operation, inspect both artifacts first and issue one coordinated materiality session before drafting either artifact.
+
+
 Before drafting:
 
 1. Determine the relationship context: cold application, prior recruiter contact, completed recruiter screen, referral, direct hiring-manager interaction, or established professional relationship.

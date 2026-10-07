@@ -17,6 +17,9 @@ Required framework files:
 
 Load the user's current artifact-generation and recommended-opportunity-artifact policies when available.
 
+Before drafting, run the Pre-Draft Artifact Materiality Gate in `rules/06-artifact-rules.md` and the resume-specific criteria in `rules/02-resume-generation.md`. Inspect available authoritative context first and ask only unresolved material questions. Zero questions is valid. If the user requested a cover letter for the same target in the same operation, inspect both artifacts first and issue one coordinated materiality session before drafting either artifact.
+
+
 Treat this prompt as a workflow launcher, not as an independent source of resume, formatting, artifact, TruthGuard, professional-effectiveness, criterion-recoverability, page-length, source-priority, or no-fabrication rules.
 
 Use the strict tailored resume template in rules/06-artifact-rules.md unless I explicitly request a different format.

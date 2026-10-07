@@ -18,6 +18,24 @@ A tailored resume must be derived from:
 6. The current COMPASS analysis, when available
 7. Any user-provided constraints or confirmations
 
+## Resume Materiality Criteria
+
+Before drafting a role-tailored resume, apply the Pre-Draft Artifact Materiality Gate in `rules/06-artifact-rules.md`.
+
+For a resume, an unresolved question is material when materially different plausible answers could change one or more of the following:
+
+- whether a hard screen, load-bearing qualification, or central responsibility is actually supported;
+- whether evidence is direct, adjacent, transferable, provisional, or outside the approved claim boundary;
+- which verified evidence should occupy the first-scan zone or the early bullets of a materially relevant role;
+- target-level or target-title positioning when more than one materially different positioning is supportable;
+- whether a gap must be disclosed, bounded, or omitted from the clean artifact;
+- claim depth, contribution depth, implementation stage, ownership, leadership scope, outcome wording, or another TruthGuard-sensitive boundary;
+- whether newly surfaced career evidence must enter Source-of-Truth maintenance before it can be used.
+
+Do not ask the user to choose among comparable verified bullets, projects, or wording options when the target criteria and current evidence provide a clear basis for COMPASS to make that decision. Do not ask which project to emphasize merely because several examples are relevant; ask only when different answers would materially alter qualification, positioning, or claim safety.
+
+Minor section ordering, formatting, synonyms, and other polish choices are non-material unless a current user-specific policy makes them controlling.
+
 ## No-Fabrication Rule
 
 Do not add unverified technologies, ownership, metrics, credentials, team sizes, budgets, customer names, project names, responsibilities, or achievements.

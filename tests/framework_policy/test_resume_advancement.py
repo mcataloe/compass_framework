@@ -40,9 +40,9 @@ class ResumeAdvancementPolicyTests(unittest.TestCase):
         agents = read("AGENTS.override.md")
 
         self.assertIn("## Resume Advancement Objective", current)
-        self.assertIn("Current COMPASS Version: vNext 2026-10.0", version)
+        self.assertIn("Current COMPASS Version: vNext 2026-10.1", version)
         self.assertIn("## vNext 2026-09.2 - Resume Advancement Objective", changelog)
-        self.assertIn("Current active version: `vNext 2026-10.0`", agents)
+        self.assertIn("Current active version: `vNext 2026-10.1`", agents)
 
     def test_advancement_preserves_truthguard_and_clean_artifact_boundary(self) -> None:
         rule = read("rules/02-resume-generation.md")

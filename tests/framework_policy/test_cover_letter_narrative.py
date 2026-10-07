@@ -74,10 +74,10 @@ class CoverLetterNarrativePolicyTests(unittest.TestCase):
         current = read("COMPASS_Current.md")
         changelog = read("COMPASS_Changelog.md")
         agents = read("AGENTS.override.md")
-        self.assertIn("Current COMPASS Version: vNext 2026-10.0", version)
+        self.assertIn("Current COMPASS Version: vNext 2026-10.1", version)
         self.assertIn("## Adaptive Cover Letter Narrative", current)
         self.assertIn("## vNext 2026-10.0 - Adaptive Cover Letter Narrative", changelog)
-        self.assertIn("Current active version: `vNext 2026-10.0`", agents)
+        self.assertIn("Current active version: `vNext 2026-10.1`", agents)
 
 
 if __name__ == "__main__":
