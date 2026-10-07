@@ -3,21 +3,6 @@
 All notable framework changes should be documented here.
 
 
-## vNext 2026-10.0 - Connection-First Cover Letter Refinement
-
-Refined the adaptive cover-letter model so the artifact searches for a genuine human or intellectual connection before repeating qualification evidence.
-
-Behavior updates:
-
-- Added connection discovery across mission/purpose, people/relationship, role/problem, and professional point of view, with explicit prohibition on manufacturing affinity from employer marketing or a job description.
-- Clarified that resumes, LinkedIn profiles, and application forms carry most qualification proof; cover letters may intentionally omit matching skills or experience that do not strengthen the central story.
-- Allowed grounded vulnerability, changed minds, mistaken assumptions, failed approaches, uncertainty, and direct emotion when they reveal useful judgment or authentic connection.
-- Allowed highly personal, user-established stories to develop before the technical or professional payoff when the connection becomes clear and the letter remains concise.
-- Added connection, qualification-duplication, vulnerability-relevance, and ending-resonance semantic checks.
-- Made ceremonial closing language optional and preferred endings that complete the letter's central human or intellectual idea.
-- Updated the cover-letter launcher, current-framework summary, version behavior notes, and framework-policy regression tests.
-- Retained the active `vNext 2026-10.0` identifier because this refines the adaptive cover-letter behavior introduced in the same version rather than adding a separate command or cross-workflow contract.
-
 ## vNext 2026-10.1 - Pre-Draft Artifact Materiality Gate
 
 Added an inspect-first materiality gate for opportunity-specific resume and cover-letter generation so COMPASS asks only questions that can materially change the artifact and coordinates companion-artifact clarification into one session.
@@ -34,6 +19,21 @@ Behavior updates:
 - Added an explicit `No Gate` modifier that converts only safely assumable ASK outcomes into disclosed working assumptions while preserving hard blockers and TruthGuard.
 - Updated tailored-resume and cover-letter launchers, command registry, current-framework summary, repository metadata, and framework-policy regression tests.
 - Advanced the active framework identifier from `vNext 2026-10.0` to `vNext 2026-10.1`.
+
+## vNext 2026-10.0 - Connection-First Cover Letter Refinement
+
+Refined the adaptive cover-letter model so the artifact searches for a genuine human or intellectual connection before repeating qualification evidence.
+
+Behavior updates:
+
+- Added connection discovery across mission/purpose, people/relationship, role/problem, and professional point of view, with explicit prohibition on manufacturing affinity from employer marketing or a job description.
+- Clarified that resumes, LinkedIn profiles, and application forms carry most qualification proof; cover letters may intentionally omit matching skills or experience that do not strengthen the central story.
+- Allowed grounded vulnerability, changed minds, mistaken assumptions, failed approaches, uncertainty, and direct emotion when they reveal useful judgment or authentic connection.
+- Allowed highly personal, user-established stories to develop before the technical or professional payoff when the connection becomes clear and the letter remains concise.
+- Added connection, qualification-duplication, vulnerability-relevance, and ending-resonance semantic checks.
+- Made ceremonial closing language optional and preferred endings that complete the letter's central human or intellectual idea.
+- Updated the cover-letter launcher, current-framework summary, version behavior notes, and framework-policy regression tests.
+- Retained the active `vNext 2026-10.0` identifier because this refines the adaptive cover-letter behavior introduced in the same version rather than adding a separate command or cross-workflow contract.
 
 ## vNext 2026-10.0 - Adaptive Cover Letter Narrative
 
