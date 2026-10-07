@@ -49,7 +49,7 @@ Broad recruiter-targeted resumes without a bounded role do not inherit an invent
 
 COMPASS cover letters use an adaptive narrative model rather than a fixed opening-fit/evidence/alignment paragraph sequence.
 
-Before drafting, resolve the relationship context and what the resume already proves. The letter should add decision-relevant information, develop one central argument, and choose the primary narrative archetype that best fits the available verified evidence and interaction context:
+Before drafting, resolve the relationship context and what the resume or other application materials already prove. Then discover the strongest genuine connection available among mission/purpose, people/relationship, role/problem, or professional point of view. The letter should add human or intellectual information the qualification artifacts do not communicate well, develop one central argument, and choose the primary narrative archetype that best fits the available verified evidence and interaction context:
 
 - Conversation Continuation
 - Story / Lesson Led
@@ -61,9 +61,11 @@ Existing recruiter, referral, or hiring-manager context should be carried forwar
 
 Personalization must be grounded in established interaction context, user-provided interest, verified experience, a source-backed working preference, real domain familiarity, or another supportable fact. Do not invent passion, mission affinity, culture fit, emotional connection, or company enthusiasm.
 
-Cover-letter evidence should be selective rather than encyclopedic. Prefer one anchor story plus compressed supporting breadth when that structure fits the opportunity. Introduce technical detail progressively so the reader understands the relevance, decision, or story before encountering dense implementation mechanics.
+Cover-letter evidence should be selective rather than encyclopedic. Qualification coverage is not the objective when those facts are already established elsewhere. Prefer one anchor story plus only the supporting evidence that strengthens the central connection. Grounded vulnerability, changed minds, mistakes, failed approaches, and direct emotion are allowed when they reveal useful judgment or authentic connection rather than perform personality.
 
-Cover letters must pass semantic checks for resume recap, job-description echo, grounded personalization, technical-density timing, one central argument, continuity, deletion value, Human Authenticity, and TruthGuard. These are semantic review requirements, not invitations to create brittle phrase-blacklist or regex-based "human" scores.
+For a highly personal user-established connection, the narrative may let the human story develop before making the technical or professional payoff explicit. The closing should normally land the central human or intellectual idea rather than defaulting to ceremonial application language when the stronger ending reads naturally.
+
+Cover letters must pass semantic checks for connection quality, qualification duplication, resume recap, job-description echo, grounded personalization, vulnerability relevance, technical-density timing, one central argument, continuity, ending resonance, deletion value, Human Authenticity, and TruthGuard. These are semantic review requirements, not invitations to create brittle phrase-blacklist or regex-based "human" scores.
 
 Content limits resolve in this order:
 
