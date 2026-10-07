@@ -27,6 +27,20 @@ COMPASS Source Rebase and COMPASS Experience Sync are repository-maintenance wor
 
 Resolve candidate claim safety through the current user-owned Source-of-Truth persistence and authority policy. Under default artifact persistence, approved claim ledgers and do-not-claim lists are the current evidence-control layer when present. Under an explicit repository-defined canonical persistence contract, the governing current canonical record may own the same approval, claim-depth, and do-not-claim boundaries directly. Imported artifacts remain evidence inputs and provenance; after verified ingestion, the governing current Source-of-Truth authorities supersede them for downstream use.
 
+## Pre-Draft Artifact Materiality Gate
+
+Opportunity-specific resume and cover-letter generation uses an inspect-first clarification gate before drafting.
+
+COMPASS must inspect the controlling target, current conversation context, current analysis when available, current user-specific Source-of-Truth policy, resolved candidate evidence, relationship context when relevant, and artifact-specific rules before asking the user for more information. Unresolved context is classified as discoverable, non-material, safe assumption, material, or hard blocker.
+
+Ask only when materially different plausible answers could substantially change the artifact's evidence selection, qualification or gap positioning, claim-safe wording, target-level framing, central argument, narrative strategy, relationship context, or grounded personalization. Zero questions is a valid and common outcome; additional detail that changes only polish is not a reason to interrupt generation.
+
+When a resume and cover letter are requested together for the same target, inspect both before asking and use one coordinated clarification session with optional Shared, Resume, and Cover Letter sections. Ask an underlying question once, omit empty sections, and do not complete one artifact only to discover questions that should have been identified for the other.
+
+After answers, re-evaluate only remaining or newly exposed uncertainty and stop questioning when the rest is discoverable, non-material, or safely assumable. Newly surfaced candidate facts that are not authorized by current Source-of-Truth evidence must enter the applicable maintenance workflow before external use.
+
+An explicit `No Gate` modifier converts only safely assumable material ASK outcomes into disclosed working assumptions. It never bypasses hard blockers, TruthGuard, claim-depth or do-not-claim controls, privacy, or source authority.
+
 ## Resume Advancement Objective
 
 For a role-tailored application resume with a bounded target, COMPASS optimizes the truthful presentation for advancement from initial resume review to the next hiring stage rather than treating lexical or requirement matching as the terminal objective.
