@@ -328,9 +328,9 @@ COMPASS is a career-focused, source-grounded framework for turning messy career 
 Application type and maturity:
 
 - Type: Markdown framework repository with a bounded Python standard-library validation CLI.
-- Maturity: Active framework; current version is `vNext 2026-07.6`.
+- Maturity: Active framework; `VERSION.md` is the canonical current-version record.
 - Canonical branch: `main`.
-- Product runtime: `python -m tools.resume_release`; no frontend, backend service, database, package manager, or deployment target is documented.
+- Product runtime: `python -m tools.resume_release` for candidate-neutral validation; `deployments/chatgpt-custom-gpt/` defines a separate candidate-neutral GPT distribution. No frontend service, database, or package manager is used by the Python tooling.
 
 Primary users and use cases:
 
@@ -342,6 +342,8 @@ Primary product/architecture docs:
 - `README.md` - repository overview, canonical source files, COMPASS Intake setup, branch policy, memory/context policy, and source-of-truth policy.
 - `VERSION.md` - active version, status, canonical branch, naming rule, compatibility rule, and material behavior notes.
 - `COMPASS_Current.md` - canonical active framework definition, workflow phases, source priority, recommendation values, and TruthGuard summary.
+- `COMPASS_COMMANDS.md` - current workflow command registry.
+- `AGENTS.override.md` - repository-specific instruction compatibility surface; retain it while tests and agent loaders consume it.
 - `COMPASS_Changelog.md` - framework change history and change-management rules.
 - `rules/` - durable behavior rules; prompt templates defer to these files.
 - `rules/07-compass-intake.md` - COMPASS Intake source-of-truth onboarding, storage disclosure, checkpoint artifact, and pause/resume rules.
@@ -350,7 +352,8 @@ Primary product/architecture docs:
 - `tools/resume_release/` - executable candidate-neutral resume validation and atomic-release tooling.
 - `prompts/` - reusable workflow launcher prompt templates.
 - `examples/` - example output and COMPASS Intake checkpoint patterns.
-- `migration/COMPASS_MIGRATION_NOTES.md` - COMPASS-only canonicalization notes.
+- `migration/COMPASS_MIGRATION_NOTES.md` - historical COMPASS-only canonicalization context.
+- `deployments/chatgpt-custom-gpt/README.md` - GPT distribution, structural checks, and required Preview validation.
 
 Read the relevant docs before implementing layer, architecture, workflow, data model, or user-facing changes.
 
@@ -368,10 +371,11 @@ Read the relevant docs before implementing layer, architecture, workflow, data m
 - `tools/` - approved candidate-neutral tooling interfaces and implementations.
 - `prompts/` - reusable COMPASS launcher prompts.
 - `examples/` - sample analyses and COMPASS Intake checkpoint output patterns.
-- `migration/` - COMPASS canonicalization notes.
+- `migration/` - historical COMPASS canonicalization notes.
+- `deployments/chatgpt-custom-gpt/` - candidate-neutral GPT configuration, instructions, evals, and structural tests.
 - Frontend path: none documented.
 - Backend/API path: none documented.
-- Tests path: `tests/resume_release/` for candidate-neutral standard-library regression tests.
+- Tests paths: `tests/resume_release/` for candidate-neutral release regression tests, `tests/framework_policy/` for framework-policy checks, and `deployments/chatgpt-custom-gpt/tests/` for distribution checks.
 - Scripts path: `tools/resume_release/` provides the executable resume-release module and command interface.
 - Infrastructure path: none documented.
 
@@ -388,9 +392,9 @@ If the repository structure changes, update this section.
 - Backend/API: none documented.
 - Database/storage/queue/cache: none documented for the repository itself.
 - External datastore references: COMPASS Intake may use Google Drive, GitHub, or another user-selected datastore for source-of-truth artifacts, but only when access is available and explicitly disclosed.
-- Infrastructure/deployment: none documented.
+- Infrastructure/deployment: the GPT distribution is documented in `deployments/chatgpt-custom-gpt/README.md`; no hosted backend or infrastructure-as-code is present.
 - Package manager: none documented.
-- Test framework: Python standard-library `unittest` for `tests/resume_release/`.
+- Test framework: Python standard-library `unittest` for release, framework-policy, and GPT-distribution structural checks.
 - Runtime versions: Python 3.10 or newer for the resume-release CLI; system renderer versions are discovered and recorded at runtime.
 
 Use the existing stack unless the user explicitly requests evaluation or migration.
@@ -399,11 +403,7 @@ Use the existing stack unless the user explicitly requests evaluation or migrati
 
 ## Setup Commands
 
-No install or application setup command is documented.
-
-```bash
-# TBD - Project owner should answer: "Is any local setup required beyond cloning the repository?"
-```
+The Python validator and unittest suites use the standard library; see `tools/resume_release/README.md` for Python requirements and optional system rendering tools. GPT builder setup and acceptance steps are documented separately in `deployments/chatgpt-custom-gpt/README.md`.
 
 ```bash
 # No local dev server is documented.
@@ -448,11 +448,12 @@ Use the most relevant validation commands for the changed area.
 ```
 
 ```bash
-python -m compileall -q tools/resume_release tests/resume_release
+python -m compileall -q tools/resume_release tests/resume_release tests/framework_policy deployments/chatgpt-custom-gpt/tests
 ```
 
 ```bash
 python -m unittest discover -s tests -v
+python -m unittest discover -s deployments/chatgpt-custom-gpt/tests -v
 ```
 
 ```bash
@@ -501,26 +502,25 @@ COMPASS is the only canonical framework name. New active rules, prompts, example
 
 ## Project Source of Truth
 
-Use this order of truth when making decisions:
+Follow system/user instructions and applicable repository agent guidance, including `AGENTS.override.md`. For COMPASS behavior, use the same current authority order as that override:
 
 1. Explicit user instruction for the current task.
-2. Current repository files.
-3. Repository `AGENTS.md` and scoped `AGENTS.md` / `AGENTS.override.md` files, if any.
-4. `README.md`, `VERSION.md`, `COMPASS_Current.md`, and `COMPASS_Changelog.md`.
-5. Relevant `rules/` files.
-6. Relevant `prompts/` files.
-7. Relevant `examples/` and `migration/` notes.
-8. Existing issue/task text.
-9. Reasonable inference from nearby patterns.
+2. `VERSION.md` for current version and compatibility.
+3. `COMPASS_Current.md` for active framework behavior.
+4. `COMPASS_COMMANDS.md` for workflow routing.
+5. Relevant `rules/` files for durable behavior.
+6. Relevant launcher prompts and examples as supporting consumers; migration notes as historical context.
 
-If these conflict, call out the conflict and prefer the more specific, more recent, and safer source.
+Inspect current code, schemas, and tests to reconcile implementation reality. Do not make examples, historical instructions, or an inferred convention independent policy. Surface unresolved material conflicts rather than silently merging authorities.
+
+Keep candidate factual authority, employer/market context, and user-specific presentation policy separate. Apply current user-owned Source-of-Truth overrides within their stated scope without weakening TruthGuard, privacy, claim controls, artifact cleanliness, or storage honesty.
 
 Known source status:
 
 - Canonical active files: `README.md`, `VERSION.md`, `COMPASS_Current.md`, `COMPASS_Changelog.md`, `rules/`, COMPASS-named prompts, and `examples/`.
 - Deprecated compatibility shims and predecessor-name files have been removed; do not restore them without explicit approval.
 - Migration notes record the COMPASS-only canonicalization posture.
-- The active version is `vNext 2026-07.6`; older changelog entries remain historical context.
+- Read the active version from `VERSION.md`; older changelog entries remain historical context.
 - This repository does not vendor a separate LEAP Charter or `/prompts/leap-recon-standard.md`; use this editable repository section as the repo-local LEAP operating source.
 
 ---
@@ -550,7 +550,7 @@ Project-specific architecture constraints:
 
 ## Data and Migration Rules
 
-This repo has no documented database schema, seed data, queue, cache, or persistence layer. Migration currently means framework/document canonicalization.
+This repository has no database, queue, or application persistence service. Framework templates define a generic downstream Source-of-Truth scaffold; explicit user-owned repository policies may replace its storage shape while preserving equivalent controls.
 
 Before changing migration or canonicalization behavior:
 
@@ -563,7 +563,7 @@ Project-specific data rules:
 
 - Do not claim source-of-truth files were saved to Google Drive, GitHub, or another datastore unless the write was actually performed and verified.
 - COMPASS Intake source documents are evidence leads, not automatic truth.
-- Treat claim ledgers and do-not-claim lists as evidence-control data. Do-not-claim entries must block downstream artifacts from reintroducing rejected claims.
+- Resolve the current user-owned persistence contract before reading or writing evidence-control state. Default ledgers or explicitly declared equivalent current authorities must preserve approval/rejection state, claim depth, do-not-claim boundaries, coverage, continuity, historical retention, and storage honesty. Do not infer an override from layout or missing files, and do not recreate manifest-retired paths.
 - Preserve existing migration notes unless the user explicitly asks for cleanup.
 - Removed predecessor-name files should not be restored without explicit project-owner approval.
 
@@ -571,7 +571,7 @@ Project-specific data rules:
 
 ## API and Contract Rules
 
-No software API contracts are documented. The repository's contracts are the framework behavior, source-priority rules, prompt-launcher expectations, artifact standards, and output section shapes.
+The repository contracts include framework behavior, source-priority rules, launcher expectations, artifact standards, output section shapes, the resume-release CLI, and JSON schemas. See `tools/resume_release/README.md`, `rules/16-resume-release-assurance.md`, and `schemas/resume-release/` for executable contracts.
 
 When changing framework contracts:
 
@@ -591,7 +591,7 @@ Project-specific contract rules:
 
 ## UI/UX Rules
 
-No UI is documented in this repository. Treat user experience as prompt, workflow, and artifact experience.
+Treat user experience as prompt, workflow, artifact, and GPT-distribution experience. The repository does not contain a custom frontend application.
 
 For workflow and artifact UX:
 
@@ -605,7 +605,7 @@ Project-specific UX rules:
 - Keep workflow instructions plain, practical, and small-batch where documented.
 - For COMPASS Intake, ask generally 3-5 questions at a time and support pause/resume checkpoints.
 - Keep generated artifacts clean: no internal COMPASS analysis, scoring, fit commentary, compensation strategy, risk notes, or private tactical notes unless explicitly requested.
-- Make storage status explicit for checkpoint artifacts.
+- Make storage status explicit for checkpoints or equivalent current state required by the active persistence contract.
 - For DOCX-style artifacts, do not claim a verified page count unless a rendered Word/DOCX artifact was validated.
 
 ---
@@ -624,7 +624,7 @@ If the project uses AI-assisted parsing, evaluation, generation, recommendations
 Project-specific AI rules:
 
 - Never invent technologies, employers, responsibilities, achievements, credentials, clearances, certifications, metrics, team sizes, budgets, dates, ownership claims, career achievements, business outcomes, or other material claims.
-- Every strong claim in an artifact should trace to source material, a user's direct statement, or a user-confirmed Intake claim ledger entry.
+- Every strong claim in an artifact should trace to current governing source material, a user's direct statement, or user-confirmed claim-control state under the active persistence contract.
 - Inferred claims are allowed only as questions until confirmed.
 - Direct evidence may be used; adjacent evidence must be reframed carefully; inferred but unsafe claims require confirmation; missing claims must be omitted or identified as gaps.
 - TruthGuard must flag unsupported technologies, domain claims, credentials, security/compliance/legal claims, metrics, ownership, leadership scope, timeline inconsistencies, and target-document keyword pressure.
@@ -655,14 +655,14 @@ Project-specific security/privacy rules:
 
 ## Testing Expectations
 
-No automated test framework is documented. When behavior changes, validate by targeted repository inspection:
+Automated standard-library release and policy tests are present, with separate GPT-distribution structural tests. Run the relevant suites in Validation Commands and also inspect semantic framework alignment:
 
 1. Confirm relevant `rules/`, prompts, examples, `VERSION.md`, and `COMPASS_Changelog.md` remain aligned.
 2. Search for deprecated or conflicting terminology when naming or migration behavior changes.
 3. Check that prompt templates still defer to active rule files.
 4. Check that examples do not contain policy that contradicts active rules.
 5. Run documented helper scripts when applicable and available.
-6. Report clearly when no automated tests were run because none are documented.
+6. Report exactly which suites ran, any failures, and checks not performed. Structural tests do not prove model behavior, connected-app access, or Preview acceptance.
 
 Repository validation priorities:
 
@@ -762,9 +762,9 @@ When producing an implementation handoff for this repo:
 
 ## Infrastructure and Deployment Notes
 
-- No application deployment, hosting target, container, CI workflow, infrastructure-as-code, or release automation is documented.
-- The repository's active publication model is Git on the canonical `main` branch.
-- TBD - Project owner should answer: "Is there an external publication, release, marketplace, or ChatGPT Project sync process for COMPASS updates?"
+- Canonical framework publication is Git on `main`; no container, hosted backend, CI workflow, or infrastructure-as-code is present.
+- `deployments/chatgpt-custom-gpt/` documents a separate GPT builder distribution and its acceptance process. Installed GPT/Project copies must not be claimed refreshed from repository edits alone.
+- Current framework version and last validated distribution revision are distinct records. Do not relabel an unvalidated distribution to resolve a version mismatch; follow its structural and Preview validation requirements.
 
 ---
 
@@ -772,7 +772,7 @@ When producing an implementation handoff for this repo:
 
 - `COMPASS_Changelog.md` includes historical entries for earlier `vNext 2026-05` behavior; treat them as history unless superseded by `VERSION.md` and `COMPASS_Current.md`.
 - `migration/COMPASS_MIGRATION_NOTES.md` records COMPASS-only canonicalization and removed predecessor-name compatibility; it is migration context, not a separate active behavior source.
-- No `draft`, `archive`, or stale-document directories were discovered during onboarding.
+- Historical migration notes retain public-path traceability; they do not define current behavior. The GPT distribution has an unresolved framework-validation-version mismatch; do not change its marker without its own validation lifecycle.
 - No standalone LEAP Charter or `/prompts/leap-recon-standard.md` is present in this repository; repo-local LEAP shortcut behavior is defined in the editable repository section above.
 
 ---

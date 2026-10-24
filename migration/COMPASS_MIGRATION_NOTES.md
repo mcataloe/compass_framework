@@ -1,10 +1,14 @@
 # COMPASS Canonicalization Notes
 
-## Goal
+**Status: Historical migration record.** This file describes the completed May 2026 canonicalization and Intake rename. It remains at its existing path for traceability; it is not a current implementation plan, version declaration, or independent policy source.
 
-Keep the repository aligned around COMPASS-only terminology and source-of-truth behavior.
+For current behavior, use [`../VERSION.md`](../VERSION.md), [`../COMPASS_Current.md`](../COMPASS_Current.md), [`../COMPASS_COMMANDS.md`](../COMPASS_COMMANDS.md), and the relevant [`../rules/`](../rules/) files. [`../COMPASS_Changelog.md`](../COMPASS_Changelog.md) records subsequent changes.
 
-## Canonical files
+## Historical goal
+
+The migration aligned the repository around COMPASS-only terminology and source-of-truth behavior.
+
+## Files affected by the migration
 
 - `COMPASS_Current.md`
 - `COMPASS_Changelog.md`
@@ -13,17 +17,17 @@ Keep the repository aligned around COMPASS-only terminology and source-of-truth 
 - `prompts/compass-tailored-resume.md`
 - `prompts/compass-cover-letter.md`
 
-## Compatibility policy
+## Historical compatibility decision
 
-Do not maintain predecessor-name redirect files or independent compatibility policy. If an old external prompt points at removed files, route the user to the current COMPASS prompt or rule file instead.
+The migration removed predecessor-name redirect files rather than maintaining a parallel compatibility policy. Current naming and compatibility requirements are governed by `VERSION.md` and the active rules, not this record.
 
 ## Scope correction
 
 COMPASS active scope was corrected back to careers / job-search in `vNext 2026-05.4`.
 
-Do not add product, strategy, research, consulting, grant, policy, or personal knowledge examples or prompts unless the project owner explicitly reopens scope.
+That correction removed the broader product, strategy, research, consulting, grant, policy, and personal-knowledge scope. Current scope is defined in `COMPASS_Current.md`.
 
-## Version bump
+## Completed version bump
 
 Updated to `vNext 2026-05.5`.
 
@@ -31,7 +35,7 @@ Updated to `vNext 2026-05.5`.
 
 The former "Layer 0" source-of-truth onboarding workflow was renamed to "COMPASS Intake" in `vNext 2026-05.5`.
 
-Active framework files should use "COMPASS Intake" on first mention and "Intake" after that. Historical changelog and migration notes may mention "Layer 0" only to explain the rename.
+The migration changed active terminology to "COMPASS Intake" on first mention and "Intake" thereafter. Historical changelog and migration notes retained "Layer 0" only to explain the rename.
 
 Updated active file names:
 
@@ -39,6 +43,6 @@ Updated active file names:
 - `prompts/compass-intake.md`
 - `examples/compass-intake-checkpoint-example.md`
 
-## Recommended PR title
+## Historical PR title
 
-Rename Layer 0 to COMPASS Intake
+The recorded PR-title recommendation was "Rename Layer 0 to COMPASS Intake"; it is retained as historical context, not a pending PR recommendation.
