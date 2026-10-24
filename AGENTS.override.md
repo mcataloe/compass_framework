@@ -1,6 +1,6 @@
 # COMPASS Framework Repository Override
 
-This repository-level override applies to `mcataloe/compass_framework` and corrects stale repository metadata and current project-specific operating guidance in the editable portion of `AGENTS.md` without modifying the locked global LEAP section.
+This repository-level override applies to `mcataloe/compass_framework` and provides the repository-specific instruction compatibility surface alongside the aligned editable portion of `AGENTS.md`. Tests read this file directly, and agent loaders may also apply it; keep it until those consumers are explicitly migrated. The locked global LEAP section remains unchanged.
 
 ## Canonical Identity
 
@@ -112,4 +112,4 @@ Do not restore retired scaffold paths merely because older generic COMPASS behav
 
 ## Scope of This Override
 
-This file keeps repository-specific version, identity, and active persistence/rebase guidance current without changing the locked global LEAP operating section. It does not add candidate data, alter the canonical COMPASS name, weaken TruthGuard, or replace the durable behavior defined in `rules/07-compass-intake.md` and `rules/09-source-rebase.md`.
+This file keeps repository-specific identity and active persistence/rebase guidance aligned with the editable repository section of `AGENTS.md`, and retains the version assertion used by existing tests. `VERSION.md` remains the canonical version owner; maintain the assertion here when that version changes. The locked global LEAP operating section is unchanged. It does not add candidate data, alter the canonical COMPASS name, weaken TruthGuard, or replace the durable behavior defined in `rules/07-compass-intake.md` and `rules/09-source-rebase.md`.
